@@ -137,7 +137,8 @@ module Wowr
 			attr_reader :char_url, :title, :known_titles,
 									:faction, :faction_id,
 			 						:arena_teams,
-									:last_modified
+									:last_modified,
+									:points
 			
 			# character_tab
 			attr_reader :health, :second_bar,
@@ -185,6 +186,7 @@ module Wowr
 			#  level="41"
 			#  name="Jonlok"
 			#  prefix="" 
+			#  points="2270"
 			#  race="Orc"
 			#  raceId="2"
 			#  realm="Genjuros"
@@ -213,6 +215,8 @@ module Wowr
 				
 				@prefix			= elem[:prefix] == "" ? nil : elem[:prefix]
 				@suffix			= elem[:suffix] == "" ? nil : elem[:suffix]
+				
+				@points     = elem[:points].to_i
 				
 				@realm			= elem[:realm]
 				
