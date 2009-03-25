@@ -131,7 +131,7 @@ module Wowr
     # Character details without reputations
     # uses characterInfo element
 		# Made up of two parts, character and charactertab
-		class InfosCharacter < Character
+		class InfoCharacter < Character
 			
 			# character_info
 			attr_reader :char_url, :title, :known_titles,
@@ -167,7 +167,7 @@ module Wowr
 				character_info(sheet%'character')
 				
 				# Check if characterTab is defined. If not, the character have no infos on the armory (not logged since last armory wipe)
-				raise Wowr::Exceptions::CharacterNoInfos.new(@name) if (sheet%'characterTab').nil?
+				raise Wowr::Exceptions::CharacterNoInfo.new(@name) if (sheet%'characterTab').nil?
 				
 				character_tab(sheet%'characterTab')
 			end
@@ -309,7 +309,7 @@ module Wowr
 		end
 		
 		# Full character details with reputations
-		class FullCharacter < InfosCharacter
+		class FullCharacter < InfoCharacter
 		  attr_reader :reputation_categories
 			
 			alias_method :rep, :reputation_categories
@@ -318,7 +318,7 @@ module Wowr
 			def initialize(sheet, reputation, api = nil)
 				@api = api
 			
-			  # Build the InfosCharacter
+			  # Build the InfoCharacter
 			  super(sheet, api)
 			  
 			  # Add reputations
