@@ -282,6 +282,19 @@ module Wowr
 					(elem%'spellData'/:spell).each do |spell|
 						@spells << ItemSpell.new(spell)
 					end
+					
+					# Convert specific spell descriptions into bonus values
+					regex = {
+					  :spell_power => /^Increases spell power by ([0-9]+)\.$/,
+					  :mana_regen  => /^Restores ([0-9]+) mana per 5 sec\.$/,
+					}
+					@spells.each do |spell|
+						regex.each do |bonus, exp|
+							if spell.description =~ exp
+								@bonuses[bonus] = spell.description.gsub(exp, '\1').to_i
+							end
+						end
+					end
 				end
 				
 				@setData = ItemSetData.new(elem%'setData') if (elem%'setData')
