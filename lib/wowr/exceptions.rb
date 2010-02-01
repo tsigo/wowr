@@ -3,9 +3,9 @@ module Wowr
 		def self.raise_me(code, options = {})
 			case code
 				when "noCharacter"
-					raise CharacterNotFound.new("Character '#{options[:character_name]}' not found.")
+					raise CharacterNotFound.new(options[:character_name])
 				when "belowMinLevel"
-				  raise CharacterBelowMinLevel.new("Character '#{options[:character_name]}' is below min level (10).")
+					raise CharacterBelowMinLevel.new(options[:character_name])
 				else
 					raise StandardError.new("The XML returned an error: #{code.to_s}")
 			end
@@ -118,10 +118,10 @@ module Wowr
 		end
 		
 		class CharacterNoInfo < StandardError
-		  def initialize(string)
-		    super "Character with name '#{string}' have no informations in the armory (not logged on WoW since last armory reset)"
-                  end
-                end
+			def initialize(string)
+				super "Character with name '#{string}' have no informations in the armory (not logged on WoW since last armory reset)"
+			end
+		end
 		
 		class ItemNotFound < ElementNotFoundError
 			def initialize(string)
