@@ -119,7 +119,7 @@ module Wowr
 		
 		class CharacterNoInfo < StandardError
 			def initialize(string)
-				super "Character with name '#{string}' have no informations in the armory (not logged on WoW since last armory reset)"
+				super "Character with name '#{string}' has no information in the Armory (not logged on WoW since last Armory reset)"
 			end
 		end
 		
