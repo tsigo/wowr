@@ -1,9 +1,15 @@
-$:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'test_helper'
 
-require 'wowr_test.rb'
+class WowrGuildTest < Test::Unit::TestCase
+  def setup
+    @api_empty = Wowr::API.new
+    @api_set = Wowr::API.new(:character_name => 'Clublife', :realm => "Barthilas", :guild_name => "Cake")
+  end
+  
+  def teardown
+    @api_set.clear_cache
+  end
 
-class WowrGuildTest < WowrTest
 	def test_guild
 		assert_not_nil @api_set.get_guild
 		assert_not_nil @api_set.get_guild("cake")
