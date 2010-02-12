@@ -1,9 +1,14 @@
-$:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'test_helper'
 
-require 'wowr_test.rb'
-
-class WowrCharacterTest < WowrTest
+class WowrCharacterTest < Test::Unit::TestCase
+  def setup
+    @api_set = Wowr::API.new(:character_name => 'Clublife', :realm => "Barthilas", :guild_name => "Cake")
+  end
+  
+  def teardown
+    @api_set.clear_cache
+  end
+  
 	def test_character_contents
 		
 		# Reve::API.cakes = XML_BASE + '.xml'

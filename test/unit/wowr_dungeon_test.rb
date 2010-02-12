@@ -1,9 +1,9 @@
-$:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'test_helper'
 
-require 'wowr_test.rb'
-
-class WowrDungeonTest < WowrTest
+class WowrDungeonTest < Test::Unit::TestCase
+  def setup
+    @api_no_cache = Wowr::API.new(:caching => false)
+  end
 	
 	def test_dungeons
 		dungeons = @api_no_cache.get_dungeons
