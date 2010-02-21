@@ -1018,27 +1018,31 @@ module Wowr
 	  end
 
 		
-		# Return an Hpricot document for the given URL
+		# Return an Hpricot document for the given URL, TODO: see :parser
 		def get_xml(url, options = {})
 			response = get_file(url, options)
-			doc = Hpricot.XML(response)
-			errors = doc.search("*[@errCode]")
-			if errors.size > 0
-				errors.each do |error|
-					raise Wowr::Exceptions::raise_me(error[:errCode], options)
-				end
-
-      elsif (doc%'achievements')
-			  return doc
-			elsif (doc%'dungeons')
-				return doc
-			elsif (doc%'page').nil?
-				raise Wowr::Exceptions::EmptyPage
-			else
-				return (doc%'page')
-			end
+			parser(response)
 		end
-
+    
+    # TODO: moved parsing out of get_xml, maybe add Nokogiri faster than Hpricot?
+    def parser(response)
+      doc = Hpricot.XML(response)
+      errors = doc.search("*[@errCode]")
+      if errors.size > 0
+        errors.each do |error|
+          raise Wowr::Exceptions::raise_me(error[:errCode], options)
+        end  
+      elsif (doc%'achievements')
+        return doc
+      elsif (doc%'dungeons')
+        return doc
+      elsif (doc%'page').nil?
+        raise Wowr::Exceptions::EmptyPage
+      else
+        return (doc%'page')
+      end
+    end
+    
 		# Return an array of hashes for the given URL
 		def get_json(url, options = {})
 			response = get_file(url, options)

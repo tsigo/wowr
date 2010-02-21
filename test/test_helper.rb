@@ -2,10 +2,10 @@ require 'rubygems'
 require 'test/unit'
 require 'yaml'
 # require 'rr'
-# require 'shoulda'
+require 'shoulda'
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-$LOAD_PATH.unshift(File.dirname(__FILE__))
+$: << File.join(File.dirname(__FILE__), '..', 'lib')
+
 require 'wowr'
 
 XML_BASE = File.join(File.dirname(__FILE__) + '/xml/')
