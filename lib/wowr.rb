@@ -1025,7 +1025,7 @@ module Wowr
 		end
     
     # TODO: moved parsing out of get_xml, maybe add Nokogiri faster than Hpricot?
-    def parser(response, options)
+    def parser(response, options = {})
       doc = Hpricot.XML(response)
       errors = doc.search("*[@errCode]")
       if errors.size > 0
