@@ -1021,11 +1021,11 @@ module Wowr
 		# Return an Hpricot document for the given URL, TODO: see :parser
 		def get_xml(url, options = {})
 			response = get_file(url, options)
-			parser(response)
+			parser(response, options)
 		end
     
     # TODO: moved parsing out of get_xml, maybe add Nokogiri faster than Hpricot?
-    def parser(response)
+    def parser(response, options)
       doc = Hpricot.XML(response)
       errors = doc.search("*[@errCode]")
       if errors.size > 0
