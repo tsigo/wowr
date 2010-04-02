@@ -16,6 +16,7 @@ module Wowr
 		# * level (Fixnum) - Level
     # See Also: Guild
 		class Character
+		  # TODO: remove non existant attr_readers? :rank, :relevance
 			attr_reader :name, :level, :url, :rank,
 									:klass, :klass_id,
 									:gender, :gender_id,
@@ -42,7 +43,7 @@ module Wowr
 				@name	 			= elem[:name]
 				@level 			= elem[:level].to_i
 				@url 				= elem[:url] || elem[:charUrl]
-				@rank 			= elem[:rank].to_i
+				@rank 			= elem[:rank].to_i # TODO: remove? this doesn't seem to exist anymore in xml
 				
 				@klass 			= elem[:class]
 				@klass_id		= elem[:classId].to_i
@@ -60,17 +61,17 @@ module Wowr
 				@realm			= elem[:realm] == "" ? nil : elem[:realm]
 				
 				@battle_group 		= elem[:battleGroup] == "" ? nil : elem[:battleGroup]
-				@battle_group_id 	= elem[:battleGroupId].to_i
+				@battle_group_id 	= elem[:battleGroupId].to_i # TODO :remove? this doesn't seem to be used
 				
-				@relevance 		= elem[:relevance].to_i
-				@search_rank 	= elem[:searchRank].to_i
+				@relevance 		= elem[:relevance].to_i # TODO: remove? this doesn't seem to exist anymore in xml
+				@search_rank 	= elem[:searchRank].to_i # TODO: remove? this doesn't seem to exist anymore in xml
 				
 				@achievement_points = elem[:points].to_i if elem[:points]
 				@achievement_points = elem[:achPoints].to_i if elem[:achPoints]
 				
 				# Incoming string is 2007-02-24 20:33:04.0, parse to datetime
 				#@last_login 	= elem[:lastLoginDate] == "" ? nil : DateTime.parse(elem[:lastLoginDate])
-				@last_login 	= elem[:lastLoginDate] == "" ? nil : elem[:lastLoginDate]
+				@last_login 	= elem[:lastLoginDate] == "" ? nil : elem[:lastLoginDate] # TODO: remove? this doesn't seem to exist anymore in xml
 				
 				# From ArenaTeam info, can be blank on normal requests
 				#<character battleGroup="" charUrl="r=Draenor&amp;n=Lothaar" class="Paladin" classId="2"
@@ -81,7 +82,6 @@ module Wowr
 				@season_games_won 		= elem[:seasonGamesWon] == "" ? nil : elem[:seasonGamesWon].to_i
 				@team_rank 						= elem[:teamRank] == "" ? nil : elem[:teamRank].to_i
 				@contribution					= elem[:contribution] == "" ? nil : elem[:contribution].to_i
-				#@char_url 						= elem[:charUrl]	# TODO: Merge with URL?
 			end
 			
 			
