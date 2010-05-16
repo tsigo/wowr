@@ -23,7 +23,7 @@ module Wowr
 			alias_method :to_s, :name
 			alias_method :to_i, :id
 
-			@@icon_url_base = 'images/icons/'
+			@@icon_url_base = 'wow-icons/_images/'
 			@@icon_url_base_tw = 'wow-icons/_images/'
 			@@icon_sizes = {:large => ['64x64', 'jpg'], :medium => ['43x43', 'png'], :small => ['21x21', 'png']}
 
