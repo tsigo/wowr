@@ -215,12 +215,11 @@ module Wowr
 			options = character_options(name, options)
 			character_sheet = get_xml(@@character_sheet_url, options)
 			character_reputation = get_xml(@@character_reputation_url, options)
+			character_talents = get_xml(@@character_talents_url, options)
 
 			# FIXME
 			if true
-				return Wowr::Classes::FullCharacter.new(character_sheet,
-																								character_reputation,
-																								self)
+				return Wowr::Classes::FullCharacter.new(character_sheet, character_reputation, character_talents, self)
 			else
 				raise Wowr::Excceptions::CharacterNotFound.new(options[:character_name])
 			end
