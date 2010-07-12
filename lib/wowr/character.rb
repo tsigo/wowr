@@ -285,7 +285,7 @@ module Wowr
 				end
 
 				@all_talent_specs = []
-				(@talents/:talentGroup).each do |spec|
+				(@talents/'//characterInfo/talents/talentGroup').each do |spec|
 				   new_spec = TalentSpec.new(spec)
 				   @all_talent_specs << new_spec
 
