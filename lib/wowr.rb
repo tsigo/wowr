@@ -221,7 +221,7 @@ module Wowr
 			if true
 				return Wowr::Classes::FullCharacter.new(character_sheet, character_reputation, character_talents, self)
 			else
-				raise Wowr::Excceptions::CharacterNotFound.new(options[:character_name])
+				raise Wowr::Exceptions::CharacterNotFound.new(options[:character_name])
 			end
 		end
 
