@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
+  s.add_development_dependency "rcov"
+
   s.add_dependency "hpricot", "= 0.8.2"
   s.add_dependency "json", "= 1.4.3"
 end

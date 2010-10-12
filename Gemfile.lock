@@ -10,6 +10,7 @@ GEM
   specs:
     hpricot (0.8.2)
     json (1.4.3)
+    rcov (0.9.9)
 
 PLATFORMS
   ruby
@@ -17,4 +18,5 @@ PLATFORMS
 DEPENDENCIES
   hpricot (= 0.8.2)
   json (= 1.4.3)
+  rcov
   wowr!
