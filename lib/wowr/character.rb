@@ -164,10 +164,11 @@ module Wowr
 			# It's made up of two parts
 			# Don't care about battlegroups yet
 			# I don't think I can call stuff from the constructor?
-			def initialize(sheet, api = nil)
+			def initialize(sheet, talents, api = nil)
 				super(sheet%'character', api)
 
 				@api = api
+				@talents = talents
 
 				character_info(sheet%'character')
 
@@ -287,13 +288,13 @@ module Wowr
 				end
 
 				@all_talent_specs = []
-
-				(elem%'talentSpecs'/:talentSpec).each do |spec|
+				(@talents/'//characterInfo/talents/talentGroup').each do |spec|
 				   new_spec = TalentSpec.new(spec)
 				   @all_talent_specs << new_spec
 
 				   @talent_spec = new_spec if (new_spec.active)
-				end
+			  end
+
 
 				@pvp = Pvp.new(elem%'pvp')
 
@@ -326,11 +327,11 @@ module Wowr
 			alias_method :rep, :reputation_categories
 			alias_method :reputation, :reputation_categories
 
-			def initialize(sheet, reputation, api = nil)
+			def initialize(sheet, reputation, talents, api = nil)
 				@api = api
 
 			  # Build the InfoCharacter
-			  super(sheet, api)
+			  super(sheet, talents, api)
 
 			  # Add reputations
 				character_reputation(reputation)
@@ -702,16 +703,18 @@ module Wowr
 
 		# Note the list of talent trees starts at 1. This is quirky, but that's what's used in the XML
 		class TalentSpec
-			attr_reader :trees, :active, :group, :primary
+			attr_reader :trees, :active, :group, :primary, :point_distribution
 
 			def initialize(elem)
+			  tree_elem = elem%'talentSpec'
 				@trees = []
-				@trees[1] = elem[:treeOne].to_i
-				@trees[2] = elem[:treeTwo].to_i
-				@trees[3] = elem[:treeThree].to_i
+				@trees[0] = tree_elem[:treeOne].to_i
+				@trees[1] = tree_elem[:treeTwo].to_i
+				@trees[2] = tree_elem[:treeThree].to_i
 				@active = (elem[:active].to_i == 1 ? true : false)
 				@group = elem[:group].to_i
 				@primary = elem[:prim]
+				@point_distribution = tree_elem[:value]
 			end
 		end
 
