@@ -1,4 +1,4 @@
-source :rubygems
+source "http://rubygems.org"
 
-gem "hpricot", "0.8.2"
-gem "json", "1.4.3"
+# Specify your gem's dependencies in wowr.gemspec
+gemspec

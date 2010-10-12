@@ -1,19 +1,20 @@
---- 
-dependencies: 
-  json: 
-    group: 
-    - :default
-    version: = 1.4.3
-  hpricot: 
-    group: 
-    - :default
-    version: = 0.8.2
-specs: 
-- hpricot: 
-    version: 0.8.2
-- json: 
-    version: 1.4.3
-hash: ba6ad39ba573f433e03cd02c968769b910088320
-sources: 
-- Rubygems: 
-    uri: http://gemcutter.org
+PATH
+  remote: .
+  specs:
+    wowr (0.5.4)
+      hpricot (= 0.8.2)
+      json (= 1.4.3)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    hpricot (0.8.2)
+    json (1.4.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hpricot (= 0.8.2)
+  json (= 1.4.3)
+  wowr!
