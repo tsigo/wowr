@@ -8,9 +8,22 @@ PATH
 GEM
   remote: http://rubygems.org/
   specs:
+    diff-lcs (1.1.2)
     hpricot (0.8.2)
     json (1.4.3)
+    rake (0.8.7)
     rcov (0.9.9)
+    rspec (2.0.0)
+      rspec-core (= 2.0.0)
+      rspec-expectations (= 2.0.0)
+      rspec-mocks (= 2.0.0)
+    rspec-core (2.0.0)
+    rspec-expectations (2.0.0)
+      diff-lcs (>= 1.1.2)
+    rspec-mocks (2.0.0)
+      rspec-core (= 2.0.0)
+      rspec-expectations (= 2.0.0)
+    shoulda (2.11.3)
 
 PLATFORMS
   ruby
@@ -18,5 +31,8 @@ PLATFORMS
 DEPENDENCIES
   hpricot (= 0.8.2)
   json (= 1.4.3)
-  rcov
+  rake (= 0.8.7)
+  rcov (= 0.9.9)
+  rspec (= 2.0.0)
+  shoulda (= 2.11.3)
   wowr!

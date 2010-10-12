@@ -12,65 +12,6 @@ class WowrTest < Test::Unit::TestCase
 		@api_set.clear_cache
     FileUtils.rm_rf(SAVE_PATH)
   end
-	
-	def test_api_defaults
-		assert_nil @api_empty.character_name
-		assert_nil @api_empty.guild_name
-		assert_nil @api_empty.realm
-		
-		assert_equal @api_empty.locale, 'us'
-		assert_equal @api_empty.lang, 'default'
-		assert_equal @api_empty.caching, true
-		assert_equal @api_empty.cache_timeout, (7*24*60*60)
-		assert_equal @api_empty.debug, false
-	end
-	
-	def test_api_constants
-		assert_equal Wowr::API.armory_base_url, 'wowarmory.com/'
-		
-		assert_equal Wowr::API.search_url, 'search.xml'
-		
-		assert_equal Wowr::API.character_sheet_url, 'character-sheet.xml'
-		assert_equal Wowr::API.character_talents_url, 'character-talents.xml'
-		assert_equal Wowr::API.character_reputation_url, 'character-reputation.xml'
-		
-		assert_equal Wowr::API.guild_info_url, 'guild-info.xml'
-		
-		assert_equal Wowr::API.item_info_url, 'item-info.xml'
-		assert_equal Wowr::API.item_tooltip_url, 'item-tooltip.xml'
-		
-		assert_equal Wowr::API.arena_team_url, 'team-info.xml'
-		
-		assert_equal Wowr::API.guild_bank_contents_url, 'vault/guild-bank-contents.xml'
-		assert_equal Wowr::API.guild_bank_log_url, 'vault/guild-bank-log.xml'
-		
-		assert_equal Wowr::API.login_url, 'login/login.xml'
-		
-		assert_equal Wowr::API.max_connection_tries, 10
-		
-		assert_equal Wowr::API.cache_directory_path, 'test_cache/'
-		
-		assert_equal Wowr::API.default_cache_timeout, (7*24*60*60)
-		assert_equal Wowr::API.failed_cache_timeout, (60*60*24)
-	end
-
-	def test_api_params
-		api = Wowr::API.new(:character_name => 'foo',
-												:guild_name => 'bar',
-												:realm => 'baz',
-												:locale => 'hoge',
-												:lang => 'hogehoge',
-												:caching => false,
-												:debug => true)
-		
-		assert_equal api.character_name, 'foo'
-		assert_equal api.guild_name, 'bar'
-		assert_equal api.realm, 'baz'
-		assert_equal api.locale, 'hoge'
-		assert_equal api.lang, 'hogehoge'
-		assert_equal api.caching, false
-		assert_equal api.debug, true
-	end
 
 	def test_no_server
 		api = Wowr::API.new(:locale => 'hoge')

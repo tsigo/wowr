@@ -7,10 +7,14 @@ Gem::Specification.new do |s|
   s.version     = Wowr::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ben Humphreys", "Peter Wood", "Renaud Chaput"]
+  s.date        = %q{2010-05-16}
   s.email       = ["peter+wowr@alastria.net"]
   s.homepage    = "http://wowr.rubyforge.org/"
   s.summary     = %q{A Ruby library for the World of Warcraft Armory}
-  s.description = %q{Wowr is a Ruby library for accessing data in the World of Warcraft Armory. It provides an object-oriented interface to the XML data provided by the armory, giving access to items, characters, guilds and arena teams. It is designed for both single users and larger guild or portal sites for many users.}
+  s.description = <<-EOS.strip
+Wowr is a Ruby library for accessing data in the World of Warcraft Armory. It provides an object-oriented interface to the XML data provided by the armory, 
+giving access to items, characters, guilds and arena teams. It is designed for both single users and larger guild or portal sites for many users.
+  EOS
 
   s.rubyforge_project = "wowr"
 
@@ -19,7 +23,10 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency "rcov"
+  s.add_development_dependency "rake",    "= 0.8.7"
+  s.add_development_dependency "rspec",   "= 2.0.0"
+  s.add_development_dependency "rcov",    "= 0.9.9"
+  s.add_development_dependency "shoulda", "= 2.11.3" # required for 'rake test'
 
   s.add_dependency "hpricot", "= 0.8.2"
   s.add_dependency "json", "= 1.4.3"
