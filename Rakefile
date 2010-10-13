@@ -15,6 +15,7 @@ RSpec::Core::RakeTask.new do |t|
   t.pattern = "./spec/**/*_spec.rb"
 end
 
+# bundle exec rcov -Ilib -t test/**/*.rb --exclude gems/ -o coverage_test
 desc "Generate code coverage"
 RSpec::Core::RakeTask.new(:coverage) do |t|
   t.pattern = "./spec/**/*_spec.rb"
