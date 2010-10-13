@@ -26,12 +26,12 @@ current filenames and line counts:
 
 purposed new structure something like:
 
-    lib/wowr/classes/character/base.rb
-    lib/wowr/classes/characeter/info.rb
-    lib/wowr/classes/characeter/full.rb
-    lib/wowr/classes/character/detail/melee.rb
-    lib/wowr/classes/character/detail/ranged.rb
-    lib/wowr/classes/character/detail/weapon_skill.rb
+    lib/wowr/armory/character/base.rb
+    lib/wowr/armory/characeter/info.rb
+    lib/wowr/armory/characeter/full.rb
+    lib/wowr/armory/character/detail/melee.rb
+    lib/wowr/armory/character/detail/ranged.rb
+    lib/wowr/armory/character/detail/weapon_skill.rb
 
 ## Mock Web Requests to WoWArmory.com in Specs
 
@@ -59,3 +59,7 @@ Unix Commands:
     cat filename | sed 's/\t/  /g' > .soft_tabs; cp .soft_tabs filename; rm .soft_tabs; echo filename;
     cat filename | sed 's/[ \t]*$//' > .whitespace; cp .whitespace filename; rm .whitespace; echo filename;
     cat filename | sed '/./,/^$/!d' > .blank_lines; cp .blank_lines filename; rm .blank_lines; echo filename;
+
+## Use Nokogiri gem
+
+  replace Hpricot with Nokogiri gem, but wait until more specs and code coverage are in place
