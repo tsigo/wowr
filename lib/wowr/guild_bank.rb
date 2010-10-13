@@ -4,88 +4,17 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'item.rb'
 require 'general.rb'
 
+require 'armory/guild_bank/base'
+require 'armory/guild_bank/bag'
+require 'armory/guild_bank/contents'
+require 'armory/guild_bank/log'
+
 module Wowr
   module Classes
-
-    # def get_login_status
-    #   name = xml%'loginStatus'[:username]
-    #   return name == "" ? nil : name
-    # end
-
-    class GuildBank < Guild
-      attr_reader :motd, :info, :money, :ranks, :bags
-
-      def initialize(elem)
-        super(elem%'guildHeader')
-
-        @motd = (elem%'guildMessages')[:motd]
-        @info = (elem%'guildMessages')[:info]
-        @info.gsub("&#10;", "\n")
-
-        @bags = []
-        (elem%'bags'/:bag).each do |bag|
-          @bags[bag[:id].to_i] = GuildBankBag.new(bag)
-        end
-
-        @ranks = []
-        (elem%'guildRanks'/:rank).each do |rank|
-          @ranks[rank[:id].to_i] = rank[:name]
-        end
-      end
-    end
-
-    # bags now contain references to the items
-    # Items can be accessed from items (within Wowr::Classes::GuildBankContents)
-    # Or by their individual bags using bag.items
-    class GuildBankContents < GuildBank
-      attr_reader :items
-
-      def initialize(elem, api = nil)
-        super(elem)
-        @money = Money.new((elem%'guildBank')[:money].to_i)
-
-        @items = []
-        (elem%'items'/:item).each do |item|
-          @items << GuildBankItem.new(item, bags, api)
-        end
-      end
-    end
-
-
-    # Consists of multiple groups, each with 1000 entries
-    class GuildBankLog < GuildBank
-      attr_reader :entries, :group_now, :group_next, :group_prev
-
-      def initialize(elem, api = nil)
-        super(elem)
-
-        @entries = []
-
-        if (elem%'banklogs')
-            (elem%'banklogs'/:banklog).each do |entry|
-          @entries << GuildBankLogEntry.new(entry, self, api)
-            end
-
-                  @group_now = (elem%'banklogs')[:now].to_i
-                  @group_next = (elem%'banklogs')[:next].to_i
-                  @group_prev = (elem%'banklogs')[:prev].to_i
-        end
-      end
-    end
-
-
-    class GuildBankBag < Item
-      attr_reader   :viewable
-      attr_accessor :items
-
-      def initialize(elem, api = nil)
-        super(elem, api)
-        @viewable = (@viewable == "true")
-
-        @items = []
-      end
-    end
-
+    class GuildBank         < Wowr::Armory::GuildBank::Base; end
+    class GuildBankContents < Wowr::Armory::GuildBank::Contents; end
+    class GuildBankLog      < Wowr::Armory::GuildBank::Log; end
+    class GuildBankBag      < Wowr::Armory::GuildBank::Bag; end
 
     # Zero to 1 items
     # <banklog dtab="" money="1200000" otab="" player="Quixsilver" rank="0" ts="1212595269000" type="4"/>
@@ -145,7 +74,6 @@ module Wowr
       end
     end
 
-
     # Simple item that appears in Wowr::Classes::GuildBankLog entries
     # <item count="1" icon="inv_potion_92" id="12820" name="Winterfall Firewater" qi="1" subtype="" type="consumables"/>
     class GuildBankLogItem < Item
@@ -159,7 +87,6 @@ module Wowr
         @type     = elem[:type]
       end
     end
-
 
     # More detailed item used in full Wowr::Classes::GuildBank
     # Very close to Wowr::Classes::EquippedItem
