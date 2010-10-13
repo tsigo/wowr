@@ -14,7 +14,8 @@ class WowrCharacterTest < Test::Unit::TestCase
       api = Wowr::API.new
       @character_sheet = api.send(:parser, example_character_sheet_xml)
       @character_reputation = api.send(:parser, example_character_reputation_xml)
-      @character = Wowr::Classes::FullCharacter.new(@character_sheet, @character_reputation)
+      @character_talents = api.send(:parser, example_character_talents_xml)
+      @character = Wowr::Classes::FullCharacter.new(@character_sheet, @character_reputation, @character_talents)
     end
     
     # assert class is FullCharacter
@@ -355,6 +356,40 @@ class WowrCharacterTest < Test::Unit::TestCase
             </faction>
           </faction>
         </reputationTab>
+      </characterInfo>
+    </page>
+    XML
+  end
+  
+  def example_character_talents_xml
+    <<-XML
+    <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/talents.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-talents.xml">
+      <tabInfo subTab="talents" tab="character" tabGroup="character" tabUrl="r=Spirestone&amp;cn=Wimnock"/>
+      <characterInfo>
+        <character battleGroup="Reckoning" charUrl="r=Spirestone&amp;cn=Wimnock" class="Warlock" classId="9" classUrl="c=Warlock" faction="Alliance" factionId="0" gender="Male" genderId="0" guildName="" lastModified="June 23, 2010" level="80" name="Wimnock" points="0" prefix="" race="Gnome" raceId="7" realm="Spirestone" suffix=" the Patient" titleId="137">
+          <modelBasePath value="http://us.media.battle.net.edgesuite.net/"/>
+        </character>
+        <talents>
+          <talentGroup active="1" group="2" icon="ability_seal" prim="">
+            <talentSpec treeOne="0" treeThree="0" treeTwo="0" value=""/>
+            <glyphs>
+              <glyph effect="Increases the damage done by your Imp's Firebolt spell by 20%." icon="spell_shadow_summonimp" id="284" name="Glyph of Imp" type="major"/>
+              <glyph effect="Reduces the cast time of your Enslave Demon spell by 50%." icon="spell_shadow_enslavedemon" id="481" name="Glyph of Enslave Demon" type="minor"/>
+              <glyph effect="Your Drain Soul restores 10% of your total mana after you kill a target that yields experience or honor." icon="spell_shadow_haunting" id="478" name="Glyph of Drain Soul" type="minor"/>
+              <glyph effect="Reduces the cooldown of your Conflagrate by 2 sec." icon="spell_fire_fireball" id="273" name="Glyph of Conflagrate" type="major"/>
+              <glyph effect="Increases the movement speed of your Eye of Kilrogg by 50% and allows it to fly in areas where flying mounts are enabled." icon="spell_shadow_evileye" id="479" name="Glyph of Eye of Kilrogg" type="minor"/>
+              <glyph effect="Increases the periodic damage of your Immolate by 10%." icon="spell_fire_immolation" id="283" name="Glyph of Immolate" type="major"/>
+            </glyphs>
+          </talentGroup>
+          <talentGroup group="1" icon="ability_seal" prim="">
+            <talentSpec treeOne="0" treeThree="0" treeTwo="0" value=""/>
+            <glyphs>
+              <glyph effect="Reduces the global cooldown of your Life Tap by .5 sec." icon="spell_shadow_burningspirit" id="760" name="Glyph of Life Tap" type="major"/>
+              <glyph effect="Reduces the cooldown of your Conflagrate by 2 sec." icon="spell_fire_fireball" id="273" name="Glyph of Conflagrate" type="major"/>
+              <glyph effect="Increases the periodic damage of your Immolate by 10%." icon="spell_fire_immolation" id="283" name="Glyph of Immolate" type="major"/>
+            </glyphs>
+          </talentGroup>
+        </talents>
       </characterInfo>
     </page>
     XML
