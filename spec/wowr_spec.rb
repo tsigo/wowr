@@ -419,7 +419,7 @@ describe Wowr::API do
     describe "#clear_cache" do
       it { pending }
     end
-    
+
     describe "#base_url" do
       it { pending }
     end

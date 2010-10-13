@@ -17,36 +17,36 @@ module Wowr
     @@cache_directory_path = 'test_cache/'
 
     # def get_xml(url, opts = {})
-    # 	response = File.open(url,'r')
-    # 	begin
-    # 		doc = Hpricot.XML(response)
-    # 		# xml = check_exception(response)
-    # 		# ret = []
-    # 		# return xml if just_xml
-    # 		# xml.search("//rowset/row").each do |elem|
-    # 		# 	ret << klass.new(elem)
-    # 		# end
-    # 		# ret
-    # 	ensure
-    # 		response.close
-    # 		
-    # 	end
+    #   response = File.open(url,'r')
+    #   begin
+    #     doc = Hpricot.XML(response)
+    #     # xml = check_exception(response)
+    #     # ret = []
+    #     # return xml if just_xml
+    #     # xml.search("//rowset/row").each do |elem|
+    #     #   ret << klass.new(elem)
+    #     # end
+    #     # ret
+    #   ensure
+    #     response.close
+    #
+    #   end
     # end
 
     # def process_query(klass,url,just_xml,args = {})
-    # 	response = File.open(url,'r')
-    # 	@last_hash = compute_hash(args.merge({:url => url, :just_hash => true })) # compute hash
-    # 	begin
-    # 		xml = check_exception(response)
-    # 		ret = []
-    # 		return xml if just_xml
-    # 		xml.search("//rowset/row").each do |elem|
-    # 			ret << klass.new(elem)
-    # 		end
-    # 		ret
-    # 	ensure
-    # 		response.close
-    # 	end
+    #   response = File.open(url,'r')
+    #   @last_hash = compute_hash(args.merge({:url => url, :just_hash => true })) # compute hash
+    #   begin
+    #     xml = check_exception(response)
+    #     ret = []
+    #     return xml if just_xml
+    #     xml.search("//rowset/row").each do |elem|
+    #       ret << klass.new(elem)
+    #     end
+    #     ret
+    #   ensure
+    #     response.close
+    #   end
     # end
   end
 end

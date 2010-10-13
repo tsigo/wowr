@@ -4,11 +4,11 @@ class WowrCharacterTest < Test::Unit::TestCase
   def setup
     @api_set = Wowr::API.new(:character_name => 'Clublife', :realm => "Barthilas", :guild_name => "Cake")
   end
-  
+
   def teardown
     @api_set.clear_cache
   end
-  
+
   context "A Wowr::Classes::FullCharacter instance given example character sheet and reputation XML" do
     setup do
       api = Wowr::API.new
@@ -17,9 +17,9 @@ class WowrCharacterTest < Test::Unit::TestCase
       @character_talents = api.send(:parser, example_character_talents_xml)
       @character = Wowr::Classes::FullCharacter.new(@character_sheet, @character_reputation, @character_talents)
     end
-    
+
     # assert class is FullCharacter
-    
+
     ###
     # Wowr::Classes::Character methods
     # should(name, options = {}, &blk)
@@ -41,15 +41,15 @@ class WowrCharacterTest < Test::Unit::TestCase
     should "return search rank when sent :search_rank" do assert_equal(0, @character.search_rank) end # TODO: remove? doesn't seem to be returned in xml
     should "return achievement points when sent :achievement_points" do assert_equal(1865, @character.achievement_points) end
     should "return last login when sent :last_login" do assert_equal(nil, @character.last_login) end  # TODO: remove? doesn't seem to be returned in xml
-    
+
     context "given a replacement with mock data for elem" do
       setup do
         @guilded_character = Wowr::Classes::FullCharacter.new({:guild => "ThanksForAllTheFish", :guild_id => "42", :guild_url => "/thank-you-for-all-the-fish"}, @character_reputation)
-        # @soloed_character = 
+        # @soloed_character =
       end
-      
+
       # assert class is Character
-      
+
       ###
       # Wowr::Classes::Character methods
     end
@@ -59,71 +59,71 @@ class WowrCharacterTest < Test::Unit::TestCase
     # should "return guild url or nil when sent :guild_url", { }
     # should "return prefix or nil when sent :prefix", { }
     # should "retun suffix or nil when sent :suffix", { }
-    
+
     ###
     # Wowr::Classes::CharacterInfo
     # should "return last modified date when sent :last_modified", { }
     # should "return a url when sent :char_url" do assert_equal("r=Spirestone&cn=Wimnock", @character.char_url) end
   end
-  
+
 =begin
-	def test_character_contents
-		
-		# Reve::API.cakes = XML_BASE + '.xml'
-		character = nil
-		assert_nothing_raised do
-			character = @api_set.get_character
-		end
-		
-		assert_instance_of Wowr::Classes::FullCharacter, character
-		
-		# assert_not_nil character.last_modified
-		
-		assert_instance_of Wowr::Classes::Agility, character.agi
-		assert_instance_of Wowr::Classes::Agility, character.agility
-		
-		# assert_equals character.agi.base, character.agility.base
-		# assert_equals character.agi.armor, character.agility.armor
-		
-		character.arena_teams do |arena_team|
-			
-		
-		
-		end
-	end
-	
-	def test_character_exceptions
-		no_data_api = Wowr::API.new
-		only_realm_api = Wowr::API.new(:realm => "Stormrage")
-		defaults_api = Wowr::API.new(:character_name => "cake", :realm => "Barthilas")
-		
-		assert_raises Wowr::Exceptions::CharacterNameNotSet do
-			no_data_api.get_character
-		end
-		
-		assert_raises Wowr::Exceptions::CharacterNameNotSet do
-			only_realm_api.get_character
-		end
-		
-		assert_raises Wowr::Exceptions::RealmNotSet do
-			no_data_api.get_character("Phog")
-		end
-				
-		assert_nothing_raised do
-			defaults_api.get_character
-			only_realm_api.get_character("Phog")
-		end
-		
-		assert_nothing_raised do
-			defaults_api.get_character_sheet
-			only_realm_api.get_character_sheet("Phog")
-		end
-		
-	end
+  def test_character_contents
+
+    # Reve::API.cakes = XML_BASE + '.xml'
+    character = nil
+    assert_nothing_raised do
+      character = @api_set.get_character
+    end
+
+    assert_instance_of Wowr::Classes::FullCharacter, character
+
+    # assert_not_nil character.last_modified
+
+    assert_instance_of Wowr::Classes::Agility, character.agi
+    assert_instance_of Wowr::Classes::Agility, character.agility
+
+    # assert_equals character.agi.base, character.agility.base
+    # assert_equals character.agi.armor, character.agility.armor
+
+    character.arena_teams do |arena_team|
+
+
+
+    end
+  end
+
+  def test_character_exceptions
+    no_data_api = Wowr::API.new
+    only_realm_api = Wowr::API.new(:realm => "Stormrage")
+    defaults_api = Wowr::API.new(:character_name => "cake", :realm => "Barthilas")
+
+    assert_raises Wowr::Exceptions::CharacterNameNotSet do
+      no_data_api.get_character
+    end
+
+    assert_raises Wowr::Exceptions::CharacterNameNotSet do
+      only_realm_api.get_character
+    end
+
+    assert_raises Wowr::Exceptions::RealmNotSet do
+      no_data_api.get_character("Phog")
+    end
+
+    assert_nothing_raised do
+      defaults_api.get_character
+      only_realm_api.get_character("Phog")
+    end
+
+    assert_nothing_raised do
+      defaults_api.get_character_sheet
+      only_realm_api.get_character_sheet("Phog")
+    end
+
+  end
 =end
 
   private
-  
+
   def example_character_sheet_xml
     <<-XML
     <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/sheet.xsl"?>
@@ -275,10 +275,10 @@ class WowrCharacterTest < Test::Unit::TestCase
           </category>
         </summary>
       </characterInfo>
-    </page>    
+    </page>
     XML
   end
-  
+
   def example_character_reputation_xml
     <<-XML
     <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/reputation.xsl"?>
@@ -360,7 +360,7 @@ class WowrCharacterTest < Test::Unit::TestCase
     </page>
     XML
   end
-  
+
   def example_character_talents_xml
     <<-XML
     <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/talents.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-talents.xml">
