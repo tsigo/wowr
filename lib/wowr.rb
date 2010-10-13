@@ -40,8 +40,6 @@ require 'wowr/guild_bank.rb'
 
 module Wowr
   class API
-    VERSION = '0.4.1'
-
     @@armory_base_url = 'wowarmory.com/'
     @@login_base_url = 'battle.net/'
 
