@@ -1,5 +1,4 @@
-dir = File.dirname(__FILE__)
-$LOAD_PATH.unshift "#{dir}/../lib"
+$:.unshift(File.expand_path('../../lib', __FILE__))
 
 require 'rubygems'
 require 'rspec'
