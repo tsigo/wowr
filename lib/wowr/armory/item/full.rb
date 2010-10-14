@@ -5,8 +5,8 @@ module Wowr
       class Full < Wowr::Armory::Item::Base
         def initialize(info, tooltip, api = nil)
           super(info, api)
-          @info = ItemInfo.new(info, api)
-          @tooltip = ItemTooltip.new(tooltip, api)
+          @info = Info.new(info, api)
+          @tooltip = Tooltip.new(tooltip, api)
         end
 
         def method_missing(m, *args)
