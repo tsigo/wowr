@@ -1,6 +1,8 @@
 pkg/*
 *.gem
+.autotest
 .bundle
+.rspec
 coverage
 coverage.data
 cache
