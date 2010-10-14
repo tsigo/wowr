@@ -3,8 +3,9 @@ When /^I search for an? (.+) named "([^"]+)"$/ do |type, name|
   search_method = "search_#{(type + 's').downcase.gsub(/\s+/, '_')}"
   fixture_path  = type.downcase.gsub(/\s+/, '_')
 
-  FakeWeb.register_uri(:get, /searchQuery=#{name}/, :body => file_fixture("#{fixture_path}_search_#{name.downcase}.xml"))
-  @results = Wowr::API.new.send(search_method, name)
+  FakeWeb.register_uri(:get, /searchQuery=#{name}/,
+                       :body => file_fixture("#{fixture_path}_search_#{name.downcase}.xml"))
+  @results = Wowr::API.new(:cache => false).send(search_method, name)
 end
 
 Then /^I should see the following YAML:$/ do |output|
