@@ -23,11 +23,13 @@ giving access to items, characters, guilds and arena teams. It is designed for b
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency "rake",    "= 0.8.7"
-  s.add_development_dependency "rspec",   "= 2.0.0"
-  s.add_development_dependency "rcov",    "= 0.9.9"
-  s.add_development_dependency "shoulda", "= 2.11.3" # required for 'rake test'
+  s.add_development_dependency "cucumber", "~> 0.9.2"
+  s.add_development_dependency "fakeweb",  "~> 1.3"
+  s.add_development_dependency "rake",     "~> 0.8.7"
+  s.add_development_dependency "rcov",     "~> 0.9.9"
+  s.add_development_dependency "rspec",    "~> 2.0.0"
+  s.add_development_dependency "shoulda",  "~> 2.11.3" # required for 'rake test'
 
   s.add_dependency "hpricot", "= 0.8.2"
-  s.add_dependency "json", "= 1.4.3"
+  s.add_dependency "json", "~> 1.4.3"
 end
