@@ -400,7 +400,7 @@ module Wowr
 
       xml = get_xml(@@arena_team_url, options)
 
-      if !(xml%'arenaTeam').children.empty?
+      if !(xml%'arenaTeam').nil? and !(xml%'arenaTeam').children.empty?
         return Wowr::Classes::ArenaTeam.new(xml%'arenaTeam')
       else
         raise Wowr::Exceptions::ArenaTeamNotFound.new(options[:team_name])
