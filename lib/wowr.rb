@@ -22,7 +22,6 @@ Bundler.setup
 require 'json'
 require 'hpricot'
 
-
 $:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
@@ -84,17 +83,17 @@ module Wowr
     @@cache_failed_requests = true # cache requests that resulted in an error from the armory
 
     cattr_accessor :armory_base_url, :search_url,
-                   :character_sheet_url, :character_talents_url, :character_reputation_url,
-                   :guild_info_url,
-                   :item_info_url, :item_tooltip_url,
-                   :arena_team_url,
-                   :guild_bank_contents_url, :guild_bank_log_url,
-                   :login_url,
-                   :dungeons_url, :dungeons_strings_url,
-                   :max_connection_tries,
-                   :cache_directory_path,
-                         :default_cache_timeout, :failed_cache_timeout, :cache_failed_requests,
-                   :calendar_user_url, :calendar_world_url, :calendar_detail_url, :persistant_cookie, :temporary_cookie
+      :character_sheet_url, :character_talents_url, :character_reputation_url,
+      :guild_info_url,
+      :item_info_url, :item_tooltip_url,
+      :arena_team_url,
+      :guild_bank_contents_url, :guild_bank_log_url,
+      :login_url,
+      :dungeons_url, :dungeons_strings_url,
+      :max_connection_tries,
+      :cache_directory_path,
+      :default_cache_timeout, :failed_cache_timeout, :cache_failed_requests,
+      :calendar_user_url, :calendar_world_url, :calendar_detail_url, :persistant_cookie, :temporary_cookie
 
     @@search_types = {
       :item => 'items',
@@ -110,7 +109,6 @@ module Wowr
 
     attr_accessor :character_name, :guild_name, :realm, :locale, :lang, :caching, :cache_timeout, :debug
 
-
     # Constructor
     # Accepts an optional hash of parameters to create defaults for all API requests
     # * options (Hash) - Hash used to set default values for all API requests
@@ -124,7 +122,6 @@ module Wowr
       @cache_timeout  = options[:cache_timeout] || @@default_cache_timeout
       @debug          = options[:debug] || false
     end
-
 
     # General-purpose search
     # All specific searches are wrappers around this method. Best to use those instead.
@@ -160,31 +157,30 @@ module Wowr
       if (xml) && (xml%'armorySearch') && (xml%'armorySearch'%'searchResults')
         case options[:type]
 
-          when @@search_types[:item]
-            (xml%'armorySearch'%'searchResults'%'items'/:item).each do |item|
-              results << Wowr::Classes::SearchItem.new(item)
-            end
+        when @@search_types[:item]
+          (xml%'armorySearch'%'searchResults'%'items'/:item).each do |item|
+            results << Wowr::Classes::SearchItem.new(item)
+          end
 
-          when @@search_types[:character]
-            (xml%'armorySearch'%'searchResults'%'characters'/:character).each do |char|
-              results << Wowr::Classes::SearchCharacter.new(char, self)
-            end
+        when @@search_types[:character]
+          (xml%'armorySearch'%'searchResults'%'characters'/:character).each do |char|
+            results << Wowr::Classes::SearchCharacter.new(char, self)
+          end
 
-          when @@search_types[:guild]
-            (xml%'armorySearch'%'searchResults'%'guilds'/:guild).each do |guild|
-              results << Wowr::Classes::SearchGuild.new(guild)
-            end
+        when @@search_types[:guild]
+          (xml%'armorySearch'%'searchResults'%'guilds'/:guild).each do |guild|
+            results << Wowr::Classes::SearchGuild.new(guild)
+          end
 
-          when @@search_types[:arena_team]
-            (xml%'armorySearch'%'searchResults'%'arenaTeams'/:arenaTeam).each do |team|
-              results << Wowr::Classes::SearchArenaTeam.new(team)
-            end
+        when @@search_types[:arena_team]
+          (xml%'armorySearch'%'searchResults'%'arenaTeams'/:arenaTeam).each do |team|
+            results << Wowr::Classes::SearchArenaTeam.new(team)
+          end
         end
       end
 
       return results
     end
-
 
     # Characters
     # Returns an array of results of Wowr::Classes::SearchCharacter or an empty array.
@@ -204,7 +200,6 @@ module Wowr
       return search(options)
     end
 
-
     # Get the full details of a character.
     # Requires realm.
     # * name (String) Name of the character to get, defaults to that specified in constructor
@@ -222,7 +217,6 @@ module Wowr
         raise Wowr::Exceptions::CharacterNotFound.new(options[:character_name])
       end
     end
-
 
     # DEPRECATED
     # See get_character
@@ -256,7 +250,6 @@ module Wowr
       return Wowr::Classes::AchievementsList.new(character_achievements_category, self)
     end
 
-
     # Find all guilds with the given string, return array of Wowr::Classes::SearchGuild.
     # Searches across all realms.
     # Caching is disabled for searching.
@@ -273,7 +266,6 @@ module Wowr
       options.merge!(:type => @@search_types[:guild])
       return search(options)
     end
-
 
     # Get the guild details.
     # Guild name is optional, assuming it's set in the api constructor.
@@ -304,7 +296,6 @@ module Wowr
       end
     end
 
-
     # Search for items with the specified name.
     # Returns an array of Wowr::Classes::SearchItem.
     # Searches across all realms.
@@ -325,7 +316,6 @@ module Wowr
       puts options.inspect if options[:debug]
       return search(options)
     end
-
 
     # Get the full item details (Wowr::Classes::FullItem) with the given id.
     # Composite of Wowr::Classes::ItemInfo and Wowr::Classes::ItemTooltip data.
@@ -352,7 +342,6 @@ module Wowr
       end
     end
 
-
     # Get the basic item information Wowr::Classes::ItemInfo.
     # Item requests are identical across realms.
     # * id (Fixnum) ID of the item
@@ -375,7 +364,6 @@ module Wowr
         raise Wowr::Exceptions::ItemNotFound.new(options[:item_id])
       end
     end
-
 
     # Get full item details including stats Wowr::Classes::ItemTooltip.
     # Item requests are identical across realms.
@@ -400,7 +388,6 @@ module Wowr
       end
     end
 
-
     # Search for arena teams with the given name of any size.
     # Returns an array of Wowr::Classes::SearchArenaTeam
     # Searches across all realms.
@@ -417,7 +404,6 @@ module Wowr
       options.merge!(:type => @@search_types[:arena_team])
       return search(options)
     end
-
 
     # Get the arena team of the given name and size, on the specified realm.
     # Returns Wowr::Classes::FullArenaTeam
@@ -458,7 +444,6 @@ module Wowr
       end
     end
 
-
     # Get the current items within the guild bank.
     # Note that the bags and items the user can see is dependent on their privileges.
     # Requires realm.
@@ -498,7 +483,6 @@ module Wowr
         raise Wowr::Exceptions::GuildBankNotFound.new(options[:guild_name])
       end
     end
-
 
     # Get a particular page of the guild bank transaction log.
     # Each page contains up to 1000 transactions, other pages can be specified using :group in the options hash.
@@ -542,7 +526,6 @@ module Wowr
       end
     end
 
-
     def get_complete_world_calendar(cookie, name = @character_name, realm = @realm, options = {})
       full_cookie = ' JSESSIONID='+cookie
 
@@ -577,7 +560,6 @@ module Wowr
 
       return events
     end
-
 
     def get_world_calendar(cookie, name = @character_name, realm = @realm, options = {})
       full_cookie = ' JSESSIONID='+cookie
@@ -621,14 +603,13 @@ module Wowr
       events = []
 
       json["events"].each do |event|
-          events << Wowr::Classes::WorldCalendar.new(event, nil)
+        events << Wowr::Classes::WorldCalendar.new(event, nil)
       end
 
       return events
     end
 
-
-        def get_full_user_calendar(cookie, name = @character_name, realm = @realm, options = {})
+    def get_full_user_calendar(cookie, name = @character_name, realm = @realm, options = {})
       full_cookie = ' JSESSIONID='+cookie
 
       if (cookie.is_a?(Hash))
@@ -663,7 +644,6 @@ module Wowr
 
       return full_events
     end
-
 
     def get_user_calendar(cookie, name = @character_name, realm = @realm, options = {})
       full_cookie = ' JSESSIONID='+cookie
@@ -707,12 +687,11 @@ module Wowr
       events = []
 
       json["events"].each do |event|
-          events << Wowr::Classes::UserCalendar.new(event, nil)
+        events << Wowr::Classes::UserCalendar.new(event, nil)
       end
 
       return events
     end
-
 
     def get_calendar_event (cookie, event = nil, name = @character_name, realm = @realm, options = {})
       full_cookie = ' JSESSIONID='+cookie
@@ -767,7 +746,6 @@ module Wowr
       return Wowr::Classes::UserDetailCalendar.new(json, nil)
     end
 
-
     # Get complete list of dungeons.
     # WARNING: This gets two 6k xml files so it's not that fast
     # Takes 0.2s with cache, 2s without
@@ -810,7 +788,6 @@ module Wowr
 
       return results
     end
-
 
     # Logs the user into the armory using their main world of warcraft username, password and authenticator if given/required.
     # Uses SSL to send details to the login page. Both must be set to true in order to recieve the long life cookie as the second value.
@@ -859,7 +836,7 @@ module Wowr
 
         # Get the *authentication sites* JSESSIONID.
         stage1.header['set-cookie'].scan(/JSESSIONID=(.*?);/) {
-            stage1cookie = $1
+          stage1cookie = $1
         }
 
         # Let's post the authenticator and the session for this login.
@@ -894,7 +871,7 @@ module Wowr
       long_cookie = nil
 
       redirectstage.header['set-cookie'].scan(/#{@@persistant_cookie}=(.*?);/) {
-          long_cookie = $1
+        long_cookie = $1
       }
 
       # Let's bounce to our page that will give us our short term cookie, URL has Kerbrose style ticket.
@@ -946,7 +923,6 @@ module Wowr
       end
     end
 
-
     # Return the base url for the armory, e.g. http://eu.wowarmory.com/
     # * locale (String) The locale, defaults to that specified in the API constructor
     def base_url(locale = @locale, options = {})
@@ -965,14 +941,13 @@ module Wowr
       end
 
       if (options[:login] == true)
-              str += @@login_base_url
+        str += @@login_base_url
       else
         str += @@armory_base_url
       end
 
       return str
     end
-
 
     protected
 
@@ -1015,7 +990,6 @@ module Wowr
       return options
     end
 
-
     # Return an Hpricot document for the given URL, TODO: see :parser
     def get_xml(url, options = {})
       response = get_file(url, options)
@@ -1047,7 +1021,6 @@ module Wowr
       raw_json = response.scan(/\w+\((.+)\);\z/)[0][0]
       return JSON.parse(raw_json)
     end
-
 
     # Return an raw document for the given URL
     # TODO: Tidy up?
@@ -1100,7 +1073,6 @@ module Wowr
       end
     end
 
-
     # Perform an HTTP request and return the contents of the document
     def http_request(url, options = {})
       req = Net::HTTP::Get.new(url)
@@ -1120,7 +1092,6 @@ module Wowr
         http.use_ssl = true
       end
 
-
       begin
         tries = 0
         http.start do
@@ -1129,16 +1100,16 @@ module Wowr
           # response = res.body
 
           response = case res
-            when Net::HTTPSuccess, Net::HTTPRedirection
-              res.body
-            else
-              tries += 1
-              if tries > @@max_connection_tries
-                raise Wowr::Exceptions::NetworkTimeout.new('Timed out')
-              else
-                redo
-              end
-            end
+                     when Net::HTTPSuccess, Net::HTTPRedirection
+                       res.body
+                     else
+                       tries += 1
+                       if tries > @@max_connection_tries
+                         raise Wowr::Exceptions::NetworkTimeout.new('Timed out')
+                       else
+                         redo
+                       end
+                     end
         end
       rescue Timeout::Error => e
         raise Wowr::Exceptions::NetworkTimeout.new('Timed out - Timeout::Error Exception')
@@ -1147,7 +1118,6 @@ module Wowr
       end
     end
 
-
     # Translate the specified URL to the cache location, and return the file
     # If the cache does not exist, get the contents using http_request and create it
     def get_cache(url, options = {})
@@ -1155,8 +1125,8 @@ module Wowr
 
       # file doesn't exist, make it
       if !File.exists?(path) ||
-          options[:refresh_cache] ||
-          (File.mtime(path) < Time.now - @cache_timeout)
+        options[:refresh_cache] ||
+        (File.mtime(path) < Time.now - @cache_timeout)
 
         if options[:debug]
           if !File.exists?(path)
@@ -1189,11 +1159,9 @@ module Wowr
       return xml_content
     end
 
-
     def cache_path(url, options)
       @@cache_directory_path + options[:lang] + '/' + url_to_filename(url)
     end
-
 
     # remove http://*.wowarmory.com/ leaving just xml file part and request parameters
     # Kind of assuming incoming URL is the same as the current locale
@@ -1203,13 +1171,9 @@ module Wowr
       return temp
     end
 
-
-
     def localised_cache_path(lang = @lang) #:nodoc:
       return @@cache_directory_path + lang
     end
-
-
 
     def u(str) #:nodoc:
       if str.instance_of?(String)
@@ -1264,16 +1228,16 @@ module Wowr
 
         tries = 0
         response = case res
-          when Net::HTTPSuccess, Net::HTTPRedirection
-            return res
-          else
-            tries += 1
-            if tries > @@max_connection_tries
-              raise Wowr::Exceptions::NetworkTimeout.new('Timed out')
-            else
-              redo
-            end
-          end
+                   when Net::HTTPSuccess, Net::HTTPRedirection
+                     return res
+                   else
+                     tries += 1
+                     if tries > @@max_connection_tries
+                       raise Wowr::Exceptions::NetworkTimeout.new('Timed out')
+                     else
+                       redo
+                     end
+                   end
       end
     end
   end
