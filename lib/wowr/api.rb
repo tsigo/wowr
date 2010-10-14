@@ -717,6 +717,9 @@ module Wowr
     # adding data to classes as they appear using hash lookup.
     # Went from 14s to 2s :)
     # * options (Hash) Optional hash of arguments identical to those used in the API constructor (realm, debug, cache etc.)
+    # ---
+    # FIXME: wowarmory.com/data/dungeons.xml is no longer a valid file
+    #        However, wowarmory.com/data/dungeonStrings.xml does exist
     def get_dungeons(options = {})
       options = merge_defaults(options)
 
