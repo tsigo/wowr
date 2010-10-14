@@ -111,7 +111,7 @@ module Wowr
 
           @arena_teams = []
           (elem/:arenaTeam).each do |arena_team|
-            @arena_teams << ArenaTeam.new(arena_team)
+            @arena_teams << Wowr::Classes::ArenaTeam.new(arena_team)
           end
 
         end
