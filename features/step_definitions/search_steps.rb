@@ -3,7 +3,12 @@ When /^I search for a character named "([^"]+)"$/ do |name|
   @results = Wowr::API.new.search_characters(name)
 end
 
-Then /^I should receive the following YAML:$/ do |output|
+When /^I search for a guild named "([^"]+)"$/ do |name|
+  FakeWeb.register_uri(:get, /searchQuery=#{name}/, :body => file_fixture("guild_search_#{name.downcase}.xml"))
+  @results = Wowr::API.new.search_guilds(name)
+end
+
+Then /^I should see the following YAML:$/ do |output|
   @results.to_yaml.to_s.should match(output)
 end
 

@@ -1,4 +1,4 @@
-Feature: Character search
+Feature: Search
 
   Scenario: Search for a character by name
     When I search for a character named "Tsigo"
@@ -11,3 +11,10 @@ Feature: Character search
       | name         | Tsigo       |
       | race         | Undead      |
       | realm        | Mal'Ganis   |
+
+  Scenario: Search for a guild by name
+    When I search for a guild named "Juggernaut"
+    Then I should see the following result:
+      | battle_group | Stormstrike |
+      | realm        | Mal'Ganis   |
+      | faction      | Horde       |
