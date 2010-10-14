@@ -349,7 +349,10 @@ describe Wowr::API do
     end
 
     describe "#get_guild" do
-      it { pending }
+      it "should raise GuildNotFound when given an invalid giuld" do
+        FakeWeb.register_uri(:get, /guild-info\.xml/, :body => file_fixture('armory/guild-info/not_found.xml'))
+        expect { @api.get_guild('does_not_exist', :realm => 'does_not_exist') }.to raise_error(Wowr::Exceptions::GuildNotFound)
+      end
     end
 
     describe "#search_items" do

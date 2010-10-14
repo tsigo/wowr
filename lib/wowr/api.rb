@@ -252,7 +252,7 @@ module Wowr
 
       xml = get_xml(@@guild_info_url, options)
 
-      if !(xml%'guildInfo').children.empty?
+      if !(xml%'guildInfo').nil? and !(xml%'guildInfo').children.empty?
         return Wowr::Classes::FullGuild.new(xml)
       else
         raise Wowr::Exceptions::GuildNotFound.new(options[:guild_name])
@@ -1064,6 +1064,9 @@ module Wowr
 
           response = case res
                      when Net::HTTPSuccess, Net::HTTPRedirection
+                       res.body
+                     when Net::HTTPInternalServerError
+                       # TODO: Better handling of standard Armory server errors? (tsigo)
                        res.body
                      else
                        tries += 1
