@@ -18,7 +18,7 @@ module Wowr
 
           @members = {}
           (elem%'members'/:character).each do |character|
-            @members[character[:name]] = SearchCharacter.new(character)
+            @members[character[:name]] = Wowr::Classes::SearchCharacter.new(character)
           end
         end
       end

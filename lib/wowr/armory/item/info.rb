@@ -20,7 +20,7 @@ module Wowr
           @type     = elem[:type]
 
           # Cost can be in gold, or tokens
-          @cost = ItemCost.new(elem%'cost') if (elem%'cost')
+          @cost = Wowr::Classes::ItemCost.new(elem%'cost') if (elem%'cost')
 
           # is costs really an array?
           #@costs     = []
@@ -30,13 +30,13 @@ module Wowr
 
           etc = [
             # xml element name,   member variable         item list class name,   requires api link
-            ['disenchantLoot',    '@disenchant_items',    'item',     DisenchantItem, true],
-            ['objectiveOfQuests', '@objective_of_quests', 'quest',    ItemQuest, false],
-            ['rewardFromQuests',  '@reward_from_quests',  'quest',    ItemQuest, false],
-            ['vendors',           '@vendors',             'creature', ItemVendor, false],
-            ['dropCreatures',     '@drop_creatures',      'creature', ItemDropCreature, false],
-            ['plansFor',          '@plans_for',           'spell',    ItemPlansFor, true],
-            ['createdBy',         '@created_by',          'spell',    ItemCreatedBy, true],
+            ['disenchantLoot',    '@disenchant_items',    'item',     Wowr::Classes::DisenchantItem, true],
+            ['objectiveOfQuests', '@objective_of_quests', 'quest',    Wowr::Classes::ItemQuest, false],
+            ['rewardFromQuests',  '@reward_from_quests',  'quest',    Wowr::Classes::ItemQuest, false],
+            ['vendors',           '@vendors',             'creature', Wowr::Classes::ItemVendor, false],
+            ['dropCreatures',     '@drop_creatures',      'creature', Wowr::Classes::ItemDropCreature, false],
+            ['plansFor',          '@plans_for',           'spell',    Wowr::Classes::ItemPlansFor, true],
+            ['createdBy',         '@created_by',          'spell',    Wowr::Classes::ItemCreatedBy, true],
           ]
 
           etc.each do |b|

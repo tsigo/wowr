@@ -1,5 +1,3 @@
-require 'wowr/armory/character/base'
-
 module Wowr
   module Armory
     module Character
@@ -125,7 +123,6 @@ module Wowr
             @title = (@prefix ? @prefix : "") + "%s" + (@suffix ? @suffix : "")
           end
 
-
           @known_titles = []
 
           @known_titles << @title if (@title)
@@ -136,57 +133,56 @@ module Wowr
           #end
 
           @health     = (elem%'characterBars'%'health')[:effective].to_i
-          @second_bar = SecondBar.new(elem%'characterBars'%'secondBar')
+          @second_bar = Wowr::Classes::SecondBar.new(elem%'characterBars'%'secondBar')
 
           # base stats
-          @strength   = Strength.new(elem%'baseStats'%'strength')
-          @agility    = Agility.new(elem%'baseStats'%'agility')
-          @stamina    = Stamina.new(elem%'baseStats'%'stamina')
-          @intellect  = Intellect.new(elem%'baseStats'%'intellect')
-          @spirit     = Spirit.new(elem%'baseStats'%'spirit')
+          @strength   = Wowr::Classes::Strength.new(elem%'baseStats'%'strength')
+          @agility    = Wowr::Classes::Agility.new(elem%'baseStats'%'agility')
+          @stamina    = Wowr::Classes::Stamina.new(elem%'baseStats'%'stamina')
+          @intellect  = Wowr::Classes::Intellect.new(elem%'baseStats'%'intellect')
+          @spirit     = Wowr::Classes::Spirit.new(elem%'baseStats'%'spirit')
 
           # damage stuff
-          @melee    = Melee.new(elem%'melee')
-          @ranged   = Ranged.new(elem%'ranged')
-          @spell    = Spell.new(elem.at(' > spell'))  # TODO: hacky?
-          @defenses = Defenses.new(elem%'defenses')
+          @melee    = Wowr::Classes::Melee.new(elem%'melee')
+          @ranged   = Wowr::Classes::Ranged.new(elem%'ranged')
+          @spell    = Wowr::Classes::Spell.new(elem.at(' > spell'))  # TODO: hacky?
+          @defenses = Wowr::Classes::Defenses.new(elem%'defenses')
 
           # TODO: Massive problem, doesn't fill in resistances for some reason
           resist_types = ['arcane', 'fire', 'frost', 'holy', 'nature', 'shadow']
           @resistances = {}
           resist_types.each do |res|
-            @resistances[res] = Resistance.new(elem%'resistances'%res)
+            @resistances[res] = Wowr::Classes::Resistance.new(elem%'resistances'%res)
           end
 
           @all_talent_specs = []
           (@talents/'//characterInfo/talents/talentGroup').each do |spec|
-             new_spec = TalentSpec.new(spec)
+             new_spec = Wowr::Classes::TalentSpec.new(spec)
              @all_talent_specs << new_spec
 
              @talent_spec = new_spec if (new_spec.active)
           end
 
-
-          @pvp = Pvp.new(elem%'pvp')
+          @pvp = Wowr::Classes::Pvp.new(elem%'pvp')
 
           @professions = []
           (elem%'professions'/:skill).each do |skill|
-            @professions << Skill.new(skill)
+            @professions << Wowr::Classes::Skill.new(skill)
           end
 
           @items = []
           (elem%'items'/:item).each do |item|
-            @items << EquippedItem.new(item, @api)
+            @items << Wowr::Classes::EquippedItem.new(item, @api)
           end
 
           @buffs = []
           (elem%'buffs'/:spell).each do |buff|
-            @buffs << Buff.new(buff, @api)
+            @buffs << Wowr::Classes::Buff.new(buff, @api)
           end
 
           @debuffs = []
           (elem%'debuffs'/:spell).each do |debuff|
-            @debuffs << Buff.new(debuff, @api)
+            @debuffs << Wowr::Classes::Buff.new(debuff, @api)
           end
         end
       end

@@ -11,10 +11,10 @@ module Wowr
         attr_reader :buy_price, :sell_price, :tokens, :honor_price, :arena_price
 
         def initialize(elem)
-          @honor_price = Money.new(elem[:honor].to_i) if elem[:honor]
-          @arena_price = Money.new(elem[:arena].to_i) if elem[:arena]
-          @buy_price  = Money.new(elem[:buyPrice].to_i) if elem[:buyPrice]
-          @sell_price = Money.new(elem[:sellPrice].to_i)  if elem[:sellPrice]
+          @honor_price = Wowr::Classes::Money.new(elem[:honor].to_i) if elem[:honor]
+          @arena_price = Wowr::Classes::Money.new(elem[:arena].to_i) if elem[:arena]
+          @buy_price  = Wowr::Classes::Money.new(elem[:buyPrice].to_i) if elem[:buyPrice]
+          @sell_price = Wowr::Classes::Money.new(elem[:sellPrice].to_i)  if elem[:sellPrice]
 
           if (elem%'token')
             @tokens = []

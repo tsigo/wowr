@@ -85,9 +85,6 @@ class WowrTest < Test::Unit::TestCase
     end
   end
 
-
-
-
   # def test_character
   #
   #   char = defaults_api.get_character_sheet
@@ -112,8 +109,6 @@ class WowrTest < Test::Unit::TestCase
   #
   #
 
-
-
   # ensure that the requested language is being returned
   def test_languages
     language = 'fr_fr'
@@ -128,8 +123,6 @@ class WowrTest < Test::Unit::TestCase
 
   end
 
-
-
   # def test_bad_xml
   #   Wowr::API.character_sheet_url = XML_BASE + 'bad_character.xml'
   #   skill = @api.skill_in_training
@@ -141,11 +134,9 @@ class WowrTest < Test::Unit::TestCase
   # end
   #
 
-
   def test_item
     item = @api_empty.get_item_info(4336)
   end
-
 
   def test_item_api_references
 
@@ -262,8 +253,6 @@ class WowrTest < Test::Unit::TestCase
   #
   # end
 
-
-
   # def test_skill_tree_clean
   #   Reve::API.skill_tree_url = XML_BASE + 'skilltree.xml'
   #   skilltrees = nil
@@ -298,15 +287,11 @@ class WowrTest < Test::Unit::TestCase
 
     # char = api.get_character
 
-
-
-
     # path defaults_api.cache_path(url)
     #
     # if File.exists?(path) ||
     #     options[:refresh_cache] ||
     #     (File.mtime(path) < Time.now - @cache_timeout)
-
 
   end
 
@@ -327,7 +312,6 @@ class WowrTest < Test::Unit::TestCase
     assert_equal (money - no_gold_silver).total, 5552200
   end
 
-
   def test_assignment
     assert_nothing_raised do
       temp = Wowr::API.search_url
@@ -341,7 +325,6 @@ class WowrTest < Test::Unit::TestCase
   end
 
 end
-
 
 # require 'wowr_character_test.rb'
 # require 'wowr_guild_test.rb'

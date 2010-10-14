@@ -1,7 +1,9 @@
-require 'spec_helper'
+require File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'spec_helper'))
 
-describe Wowr::Armory::Character::Base do
+module Wowr::Armory::Character
+  describe Base do
 
-  it { pending }
+    it { pending }
 
+  end
 end

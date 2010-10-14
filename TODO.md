@@ -46,20 +46,6 @@ identify slow areas within codebase
 
 * http://github.com/tmm1/perftools.rb
 
-## Overall Codebase Cleanup
-
-new rake tasks to perform code formatting tasks
-
-* convert hard-tabs to soft-tabs
-* remove trailing whitespace
-* remove gratuitous blank lines
-
-Unix Commands:
-
-    cat filename | sed 's/\t/  /g' > .soft_tabs; cp .soft_tabs filename; rm .soft_tabs; echo filename;
-    cat filename | sed 's/[ \t]*$//' > .whitespace; cp .whitespace filename; rm .whitespace; echo filename;
-    cat filename | sed '/./,/^$/!d' > .blank_lines; cp .blank_lines filename; rm .blank_lines; echo filename;
-
 ## Use Nokogiri gem
 
   replace Hpricot with Nokogiri gem, but wait until more specs and code coverage are in place

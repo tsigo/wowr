@@ -60,7 +60,6 @@ module Wowr
       end
     end
 
-
     # Note Key or id can be nil
     # Not both
     class Boss

@@ -33,10 +33,10 @@ Bugfixes:
   cookie = api.login('myuser', 'mypass')
   api.get_guild_bank_contents(cookie)
   api.get_guild_bank_log(cookie)
-  
+
   It's possible to specify the guild and usual extra parameters
   api.get_guild_bank_contents(cookie, "my_other_guild", :realm => 'other_realm)
-  
+
   At no point are your user details stored and SSH is used for connections to the server.
   Thanks to Hesperus and SheepCow of Rawr for help with this.
 

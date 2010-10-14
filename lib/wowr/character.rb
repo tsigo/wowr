@@ -5,125 +5,30 @@ require 'wowr/item.rb'
 
 require 'armory/character/base'
 require 'armory/character/info'
+require 'armory/character/full'
+require 'armory/character/second_bar'
+require 'armory/character/stat/base'
+require 'armory/character/stat/strength'
+require 'armory/character/stat/agility'
+require 'armory/character/stat/stamina'
+require 'armory/character/stat/intellect'
+require 'armory/character/stat/spirit'
+require 'armory/character/stat/armor'
 
 module Wowr
   module Classes
-    class Character < Wowr::Armory::Character::Base
-    end
-
-    class SearchCharacter < Character
-    end
-
-    class InfoCharacter < Wowr::Armory::Character::Info
-    end
-
-    # Full character details with reputations
-    class FullCharacter < InfoCharacter
-      attr_reader :reputation_categories
-
-      alias_method :rep, :reputation_categories
-      alias_method :reputation, :reputation_categories
-
-      def initialize(sheet, reputation, talents, api = nil)
-        @api = api
-
-        # Build the InfoCharacter
-        super(sheet, talents, api)
-
-        # Add reputations
-        character_reputation(reputation)
-      end
-
-      # character-reputation.xml
-      def character_reputation(elem)
-        @reputation_categories = {}
-        (elem/:factionCategory).each do |category|
-          @reputation_categories[category[:key]] = RepFactionCategory.new(category)
-        end
-      end
-    end
-
-
-    # Second stat bar, depends on character class
-    class SecondBar
-      attr_reader :effective, :casting, :not_casting, :type
-
-      def initialize(elem)
-        @effective    = elem[:effective].to_i
-        @casting      = elem[:casting].to_i == -1 ? nil : elem[:casting].to_i
-        @not_casting  = elem[:notCasting].to_i == -1 ? nil : elem[:notCasting].to_i
-        @type         = elem[:type]
-      end
-    end
-
-
-    class BaseStat  # abstract?
-      attr_reader :base, :effective
-    end
-
-    class Strength < BaseStat
-      attr_reader :attack, :block
-      def initialize(elem)
-        @base       = elem['base'].to_i
-        @effective  = elem['effective'].to_i
-        @attack     = elem['attack'].to_i
-        @block      = elem['block'].to_i == -1 ? nil : elem['block'].to_i
-      end
-    end
-
-    class Agility < BaseStat
-      attr_reader :armor, :attack, :crit_hit_percent
-      def initialize(elem)
-        @base             = elem[:base].to_i
-        @effective        = elem[:effective].to_i
-        @armor            = elem[:armor].to_i
-        @attack           = elem[:attack].to_i == -1 ? nil : elem[:attack].to_i
-        @crit_hit_percent = elem[:critHitPercent].to_f
-      end
-    end
-
-    class Stamina < BaseStat
-      attr_reader :health, :pet_bonus
-      def initialize(elem)
-        @base       = elem[:base].to_i
-        @effective  = elem[:effective].to_i
-        @health     = elem[:health].to_i
-        @pet_bonus  = elem[:petBonus].to_i == -1 ? nil : elem[:petBonus].to_i
-      end
-    end
-
-    class Intellect < BaseStat
-      attr_reader :mana, :crit_hit_percent, :pet_bonus
-      def initialize(elem)
-        @base             = elem[:base].to_i
-        @effective        = elem[:effective].to_i
-        @mana             = elem[:mana].to_i
-        @crit_hit_percent = elem[:critHitPercent].to_f
-        @pet_bonus        = elem[:petBonus].to_i == -1 ? nil : elem[:petBonus].to_i
-      end
-    end
-
-    class Spirit < BaseStat
-      attr_reader :health_regen, :mana_regen
-      def initialize(elem)
-        @base         = elem[:base].to_i
-        @effective    = elem[:effective].to_i
-        @health_regen = elem[:healthRegen].to_i
-        @mana_regen   = elem[:manaRegen].to_i
-      end
-    end
-
-    class Armor < BaseStat
-      attr_reader :percent, :pet_bonus
-      def initialize(elem)
-        @base       = elem[:base].to_i
-        @effective  = elem[:effective].to_i
-        @percent    = elem[:percent].to_f
-        @pet_bonus  = elem[:petBonus].to_i == -1 ? nil : elem[:petBonus].to_i
-      end
-    end
-
-
+    class Character < Wowr::Armory::Character::Base; end
+    class SearchCharacter < Wowr::Armory::Character::Base; end
+    class InfoCharacter < Wowr::Armory::Character::Info; end
+    class FullCharacter < Wowr::Armory::Character::Full; end
+    class SecondBar < Wowr::Armory::Character::SecondBar; end
+    class BaseStat < Wowr::Armory::Character::Stat::Base; end
+    class Strength < Wowr::Armory::Character::Stat::Strength; end
+    class Agility < Wowr::Armory::Character::Stat::Agility; end
+    class Stamina < Wowr::Armory::Character::Stat::Stamina; end
+    class Intellect < Wowr::Armory::Character::Stat::Intellect; end
+    class Spirit < Wowr::Armory::Character::Stat::Spirit; end
+    class Armor < Wowr::Armory::Character::Stat::Armor; end
 
     # <melee>
     #   <mainHandDamage dps="65.6" max="149" min="60" percent="0" speed="1.60"/>
@@ -258,7 +163,6 @@ module Wowr
       end
     end
 
-
     # Decided to do funky stuff to the XML to make it more useful.
     # instead of having two seperate lists of bonusDamage and critChance
     # merged it into one set of objects for each thing
@@ -329,8 +233,6 @@ module Wowr
       end
     end
 
-
-
     class Defenses
       attr_reader :armor, :defense, :dodge, :parry, :block, :resilience
 
@@ -387,7 +289,6 @@ module Wowr
       end
     end
 
-
     class Resistance
       attr_reader :value, :pet_bonus
 
@@ -396,7 +297,6 @@ module Wowr
         @pet_bonus  = elem[:petBonus].to_i == -1 ? nil : elem[:petBonus].to_i
       end
     end
-
 
     # Note the list of talent trees starts at 1. This is quirky, but that's what's used in the XML
     class TalentSpec
@@ -415,7 +315,6 @@ module Wowr
       end
     end
 
-
     # Player-versus-player data
     class Pvp
       attr_reader :lifetime_honorable_kills, :arena_currency
@@ -425,7 +324,6 @@ module Wowr
         @arena_currency           = (elem%'arenacurrency')[:value].to_i
       end
     end
-
 
     # A buff
     # TODO: Code duplication, see basic Item class. Make extend Icon class?
@@ -461,7 +359,6 @@ module Wowr
       end
     end
 
-
     # An item equipped to a player
     class EquippedItem < Item
       attr_reader :durability, :max_durability, #:id, :item_id, :icon,
@@ -483,7 +380,6 @@ module Wowr
       end
     end
 
-
     # eg Daggers, Riding, Fishing, language
     class Skill
       attr_reader :key, :name, :value, :max
@@ -497,7 +393,6 @@ module Wowr
         @max    = elem[:max].to_i
       end
     end
-
 
     # Larger group of factions
     # Used for faction information
@@ -522,7 +417,6 @@ module Wowr
         return total
       end
     end
-
 
     # Smaller NPC faction that is part of a FactionCategory
     # eg Darnassus, Argent Dawn

@@ -31,7 +31,7 @@ module Wowr
           @relevance    = elem[:relevance].to_i
           @url          = elem[:url]
 
-          @emblem       = ArenaTeamEmblem.new(elem%'emblem')
+          @emblem       = Wowr::Classes::ArenaTeamEmblem.new(elem%'emblem')
         end
       end
     end

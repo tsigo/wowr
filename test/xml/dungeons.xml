@@ -66,16 +66,16 @@
       </boss>
       <boss id="186672" key="ashlisbag" type="object">
         <lootTable difficulty="n" id="186672" type="object"/>
-      </boss>	  
+      </boss>
       <boss id="186667" key="krazspackage" type="object">
         <lootTable difficulty="n" id="186667" type="object"/>
       </boss>
       <boss id="187021" key="harkorssatchel" type="object">
         <lootTable difficulty="n" id="187021" type="object"/>
-      </boss>	  
+      </boss>
       <boss id="186648" key="tanzarstrunk" type="object">
         <lootTable difficulty="n" id="186648" type="object"/>
-      </boss>	  
+      </boss>
     </bosses>
   </dungeon>
 
@@ -83,11 +83,11 @@
     <bosses>
       <boss id="20885" key="dalliahthedoomsayer" type="npc">
         <lootTable difficulty="n" id="20885" type="npc"/>
-        <lootTable difficulty="h" id="21590" type="npc"/>        
+        <lootTable difficulty="h" id="21590" type="npc"/>
       </boss>
       <boss id="20912" key="harbingerskyriss" type="npc">
         <lootTable difficulty="n" id="20912" type="npc"/>
-        <lootTable difficulty="h" id="21599" type="npc"/>        
+        <lootTable difficulty="h" id="21599" type="npc"/>
       </boss>
       <boss id="20886" key="wrathscryersoccothrates" type="npc">
         <lootTable difficulty="n" id="20886" type="npc"/>
@@ -99,8 +99,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3790" key="auchenaicrypts" levelMax="67" levelMin="65" nameId="3790" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="18373" key="exarchmaladaar" type="npc">
@@ -122,7 +121,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
+
   <dungeon hasHeroic="1" id="2366" key="blackmorass" levelMax="70" levelMin="70" nameId="2366" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="17881" key="aeonus" type="npc">
@@ -166,7 +165,7 @@
       <boss id="22952" key="darkshadow" type="npc">
         <lootTable difficulty="n" id="22952" type="npc"/>
       </boss>
-	  
+
       <boss id="22887" key="highwarlordnajentus" type="npc">
         <lootTable difficulty="n" id="22887" type="npc"/>
       </boss>
@@ -184,8 +183,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3713" key="bloodfurnace" levelMax="63" levelMin="61" nameId="3713" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="17380" key="broggok" type="npc">
@@ -202,8 +200,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3847" key="botanica" levelMax="70" levelMin="70" nameId="3847" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="3847" key="commandersarannis" type="npc">
@@ -239,13 +236,13 @@
       </boss>
       <boss id="19622" type="npc">
         <lootTable difficulty="n" id="19622" type="npc"/>
-      </boss>	  
+      </boss>
       <boss id="19516" type="npc">
         <lootTable difficulty="n" id="19516" type="npc"/>
-      </boss>	  	  
+      </boss>
     </bosses>
-  </dungeon>  
-  
+  </dungeon>
+
   <dungeon id="3923" key="gruulslair" levelMax="70" levelMin="70" nameId="3923" partySize="25" raid="1" release="1">
     <bosses>
       <boss id="19044" key="gruulthedragonkiller" type="npc">
@@ -256,8 +253,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3562" key="hellfireramparts" levelMax="62" levelMin="60" nameId="3562" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="17308" key="omortheunscarred" type="npc">
@@ -294,8 +290,8 @@
         <lootTable difficulty="n" id="17968" type="npc"/>
       </boss>
     </bosses>
-  </dungeon>  
-  
+  </dungeon>
+
   <dungeon id="3457" key="karazhan" levelMax="70" levelMin="70" nameId="3457" partySize="10" raid="1" release="1">
     <bosses>
       <boss id="16152" key="attumenthehuntsman" type="npc">
@@ -351,8 +347,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon id="3836" key="magtheridonslair" levelMax="70" levelMin="70" nameId="3836" partySize="25" raid="1" release="1">
     <bosses>
       <boss id="17257" key="magtheridon" type="npc">
@@ -360,8 +355,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3792" key="manatombs" levelMax="66" levelMin="64" nameId="3792" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="18344" key="nexusprinceshaffar" type="npc">
@@ -378,14 +372,13 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3849" key="mechanar" levelMax="70" levelMin="70" nameId="3849" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="184465" key="cacheofthelegion" type="object">
         <lootTable difficulty="n" id="184465" type="object"/>
-        <lootTable difficulty="h" id="184849" type="object"/>       
-      </boss>   
+        <lootTable difficulty="h" id="184849" type="object"/>
+      </boss>
       <boss id="19218" key="gatewatchergyrokill" type="npc">
         <lootTable difficulty="n" id="19218" type="npc"/>
         <lootTable difficulty="h" id="21525" type="npc"/>
@@ -408,8 +401,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="2367" key="oldhillsbradfoothills" levelMax="68" levelMin="66" nameId="2367" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="17862" key="captainskarloc" type="npc">
@@ -426,8 +418,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon id="3607" key="serpentshrinecavern" levelMax="70" levelMin="70" nameId="3607" partySize="25" raid="1" release="1">
     <bosses>
       <boss id="21214" key="fathomlordkarathress" type="npc">
@@ -444,14 +435,13 @@
       </boss>
       <boss id="21212" key="ladyvashj" type="npc">
         <lootTable difficulty="n" id="21212" type="npc"/>
-      </boss>	  
+      </boss>
       <boss id="21217" key="thelurkerbelow" type="npc">
         <lootTable difficulty="n" id="21217" type="npc"/>
-      </boss>	  	  
+      </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3791" key="sethekkhalls" levelMax="69" levelMin="67" nameId="3791" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="18472" key="darkweaversyth" type="npc">
@@ -464,8 +454,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3789" key="shadowlabyrinth" levelMax="70" levelMin="70" nameId="3789" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="18731" key="ambassadorhellmaw" type="npc">
@@ -486,8 +475,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3714" key="shatteredhalls" levelMax="70" levelMin="70" nameId="3714" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="20923" key="bloodguardporung" type="npc">
@@ -508,8 +496,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3717" key="slavepens" levelMax="64" levelMin="62" nameId="3717" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="17941" key="mennuthebetrayer" type="npc">
@@ -526,8 +513,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3715" key="steamvault" levelMax="70" levelMin="70" nameId="3715" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="17797" key="hydromancerthespia" type="npc">
@@ -544,8 +530,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
+
   <dungeon hasHeroic="1" id="3716" key="underbog" levelMax="65" levelMin="63" nameId="3716" partySize="5" raid="0" release="1">
     <bosses>
       <boss id="17882" key="blackstalker" type="npc">
@@ -566,21 +551,7 @@
       </boss>
     </bosses>
   </dungeon>
-  
-  
-  
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <dungeon id="719" key="blackfathomdepths" levelMax="32" levelMin="24" nameId="719" partySize="5" raid="0" release="0">
     <bosses>
       <boss id="4829" key="akumai" type="npc">
@@ -804,7 +775,7 @@
       </boss>
       <boss id="10429" key="" type="npc">
         <lootTable difficulty="n" id="10429" type="npc"/>
-      </boss>                               
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="2677" key="blackwinglair" levelMax="60" levelMin="60" nameId="2677" partySize="40" raid="1" release="0">
@@ -891,7 +862,7 @@
       </boss>
       <boss id="14321" key="" type="npc">
         <lootTable difficulty="n" id="14321" type="npc"/>
-      </boss>   
+      </boss>
       <boss id="14326" key="" type="npc">
         <lootTable difficulty="n" id="14326" type="npc"/>
       </boss>
@@ -945,7 +916,7 @@
       </boss>
       <boss id="179564" key="gordoktribute" type="object">
         <lootTable difficulty="n" id="179564" type="object"/>
-      </boss>   
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="721" key="gnomeregan" levelMax="38" levelMin="29" nameId="721" partySize="5" raid="0" release="0">
@@ -970,7 +941,7 @@
       </boss>
       <boss id="7079" key="" type="npc">
         <lootTable difficulty="n" id="7079" type="npc"/>
-      </boss>                       
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="2100" key="maraudon" levelMax="55" levelMin="46" nameId="2100" partySize="5" raid="0" release="0">
@@ -1023,7 +994,7 @@
       </boss>
       <boss id="12118" key="" type="npc">
         <lootTable difficulty="n" id="12118" type="npc"/>
-      </boss>               
+      </boss>
       <boss id="11982" key="" type="npc">
         <lootTable difficulty="n" id="11982" type="npc"/>
       </boss>
@@ -1045,7 +1016,7 @@
     <bosses>
       <boss id="181366" key="fourhorseman" type="object">
         <lootTable difficulty="n" id="181366" type="object"/>
-      </boss>	
+      </boss>
       <boss id="15956" key="" type="npc">
         <lootTable difficulty="n" id="15956" type="npc"/>
       </boss>
@@ -1113,7 +1084,7 @@
       </boss>
       <boss id="17830" key="" type="npc">
         <lootTable difficulty="n" id="17830" type="npc"/>
-      </boss>               
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="722" key="razorfendowns" levelMax="46" levelMin="37" nameId="722" partySize="5" raid="0" release="0">
@@ -1135,7 +1106,7 @@
       </boss>
       <boss id="7355" key="" type="npc">
         <lootTable difficulty="n" id="7355" type="npc"/>
-      </boss>   
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="491" key="razorfenkraul" levelMax="38" levelMin="29" nameId="491" partySize="5" raid="0" release="0">
@@ -1163,7 +1134,7 @@
       </boss>
       <boss id="6168" key="" type="npc">
         <lootTable difficulty="n" id="6168" type="npc"/>
-      </boss>               
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="3429" key="ruinsofahnqiraj" levelMax="60" levelMin="60" nameId="3429" partySize="20" raid="1" release="0">
@@ -1185,7 +1156,7 @@
       </boss>
       <boss id="15339" key="" type="npc">
         <lootTable difficulty="n" id="15339" type="npc"/>
-      </boss>           
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="796" key="scarletmonastery" levelMax="45" levelMin="34" nameId="796" partySize="5" raid="0" release="0">
@@ -1222,7 +1193,7 @@
       </boss>
       <boss id="3976" key="" type="npc">
         <lootTable difficulty="n" id="3976" type="npc"/>
-      </boss>                                       
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="2057" key="scholomance" levelMax="60" levelMin="57" nameId="2057" partySize="5" raid="0" release="0">
@@ -1271,7 +1242,7 @@
       </boss>
       <boss id="10432" key="" type="npc">
         <lootTable difficulty="n" id="10432" type="npc"/>
-      </boss>                       
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="209" key="shadowfangkeep" levelMax="30" levelMin="22" nameId="209" partySize="5" raid="0" release="0">
@@ -1290,7 +1261,7 @@
       </boss>
       <boss id="4274" key="" type="npc">
         <lootTable difficulty="n" id="4274" type="npc"/>
-      </boss>               
+      </boss>
       <boss id="4279" key="" type="npc">
         <lootTable difficulty="n" id="4279" type="npc"/>
       </boss>
@@ -1302,7 +1273,7 @@
       </boss>
       <boss id="3927" key="" type="npc">
         <lootTable difficulty="n" id="3927" type="npc"/>
-      </boss>           
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="717" key="stockade" levelMax="32" levelMin="24" nameId="717" partySize="5" raid="0" release="0">
@@ -1324,7 +1295,7 @@
       </boss>
       <boss id="1696" key="" type="npc">
         <lootTable difficulty="n" id="1696" type="npc"/>
-      </boss>                   
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="2017" key="stratholme" levelMax="60" levelMin="58" nameId="2017" partySize="5" raid="0" release="0">
@@ -1394,7 +1365,7 @@
       </boss>
       <boss id="10808" key="" type="npc">
         <lootTable difficulty="n" id="10808" type="npc"/>
-      </boss>                               
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="1477" key="sunkentemple" levelMax="55" levelMin="45" nameId="1417" partySize="5" raid="0" release="0">
@@ -1458,7 +1429,7 @@
       </boss>
       <boss id="5716" key="" type="npc">
         <lootTable difficulty="n" id="5716" type="npc"/>
-      </boss>                           
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="3428" key="templeofahnqiraj" levelMax="60" levelMin="60" nameId="3428" partySize="40" raid="1" release="0">
@@ -1498,7 +1469,7 @@
       </boss>
       <boss id="15299" key="" type="npc">
         <lootTable difficulty="n" id="15299" type="npc"/>
-      </boss>                                           
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="1337" key="uldaman" levelMax="47" levelMin="35" nameId="1337" partySize="5" raid="0" release="0">
@@ -1541,7 +1512,7 @@
       </boss>
       <boss id="4857" key="" type="npc">
         <lootTable difficulty="n" id="4857" type="npc"/>
-      </boss>                                               
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="718" key="wailingcaverns" levelMax="21" levelMin="15" nameId="718" partySize="5" raid="0" release="0">
@@ -1560,7 +1531,7 @@
       </boss>
       <boss id="3670" key="" type="npc">
         <lootTable difficulty="n" id="3670" type="npc"/>
-      </boss>               
+      </boss>
       <boss id="3673" key="" type="npc">
         <lootTable difficulty="n" id="3673" type="npc"/>
       </boss>
@@ -1578,7 +1549,7 @@
       </boss>
       <boss id="5775" key="" type="npc">
         <lootTable difficulty="n" id="5775" type="npc"/>
-      </boss>                   
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="1176" key="zulfarrak" levelMax="54" levelMin="44" nameId="1176" partySize="5" raid="0" release="0">
@@ -1600,7 +1571,7 @@
       </boss>
       <boss id="7796" key="" type="npc">
         <lootTable difficulty="n" id="7796" type="npc"/>
-      </boss>                     
+      </boss>
       <boss id="7797" key="" type="npc">
         <lootTable difficulty="n" id="7797" type="npc"/>
       </boss>
@@ -1621,7 +1592,7 @@
       </boss>
       <boss id="10082" key="" type="npc">
         <lootTable difficulty="n" id="10082" type="npc"/>
-      </boss>                         
+      </boss>
     </bosses>
   </dungeon>
   <dungeon id="1977" key="zulgurub" levelMax="60" levelMin="60" nameId="1977" partySize="20" raid="1" release="0">
@@ -1652,7 +1623,7 @@
       </boss>
       <boss id="11380" key="" type="npc">
         <lootTable difficulty="n" id="11380" type="npc"/>
-      </boss>                                 
+      </boss>
     </bosses>
-  </dungeon>      
+  </dungeon>
 </dungeons>

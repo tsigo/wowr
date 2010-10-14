@@ -2,7 +2,7 @@ $:.unshift(File.expand_path('../../../lib', __FILE__))
 
 # PROJECT_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..', '..')).freeze
 # LIB_PATH = File.join(PROJECT_ROOT, 'lib').freeze
-# 
+#
 # ENV['RUBYLIB'] = LIB_PATH
 
 require 'rspec/expectations'

@@ -25,7 +25,7 @@ module Wowr
             @members = {}
             (elem%'guildInfo'%'guild'%'members'/:character).each do |char|
               # TODO: Change to search character?
-              members[char[:name]] = Character.new(char)
+              members[char[:name]] = Wowr::Classes::Character.new(char)
             end
           end
         end

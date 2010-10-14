@@ -1,0 +1,35 @@
+#
+# autotest-fsevent and autotest-grwwl gems are not managed through Bundler
+# do not want to add platform specific gems to Gemfile
+#
+# to start autotest run `autotest` (system installed gem version)
+# `bundle exec autotest` will use the bundled gem which does not have the system's autotest-fsevent and autotest-growl
+#
+
+begin
+  require 'autotest/fsevent'
+rescue LoadError
+  if RUBY_PLATFORM =~ /darwin/
+    puts "INFO: To use FSEvent (Mac OS X 10.5 or higher) instead of filesystem polling `gem install autotest-fsevent`."
+  end
+  # else do nothing if "autotest-fsevent" gem is not installed.
+end
+
+begin
+  require 'autotest/growl'
+rescue LoadError
+  # `gem install autotest-growl`
+  # else do nothing if "autotest-growl" gem is not installed
+end
+
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .DS_Store ._* features pkg vendor}.each { |exception| autotest.add_exception(exception) }
+
+  autotest.clear_mappings # remove the default (test/test*rb)
+
+  autotest.add_mapping(%r{^lib/.*\.rb$}) {|f, _|
+      Dir['spec/**/*.rb']
+    }
+
+  nil
+end

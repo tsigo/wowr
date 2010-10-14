@@ -87,8 +87,6 @@ class WowrCharacterTest < Test::Unit::TestCase
 
     character.arena_teams do |arena_team|
 
-
-
     end
   end
 

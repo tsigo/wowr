@@ -100,12 +100,10 @@ module Wowr
           return base + @@portrait_url_base + dir + "/#{@gender_id}-#{@race_id}-#{@klass_id}.gif"
         end
 
-
         def race_icon
           # http://armory.worldofwarcraft.com/images/icons/race/11-1.gif
           return base + @@race_icon_url_base + "#{@race_id}-#{@gender_id.to_s}.gif"
         end
-
 
         def class_icon
           # http://armory.worldofwarcraft.com/images/icons/class/8.gif

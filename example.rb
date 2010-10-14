@@ -1,8 +1,8 @@
 #begin
-#	require 'wowr'
+#  require 'wowr'
 #rescue LoadError
-#	require 'rubygems'
-#	require 'wowr'
+#  require 'rubygems'
+#  require 'wowr'
 #£end
 
 require 'lib/wowr.rb'
@@ -32,13 +32,13 @@ guilds = api.search_guilds("Cake")
 
 # error handling
 begin
-	no_guild = api.get_guild("moo", :realm => 'bar')
+  no_guild = api.get_guild("moo", :realm => 'bar')
 rescue Wowr::Exceptions::GuildNotFound => e
-	puts "Guild not found!"
+  puts "Guild not found!"
 end
 
 jim.items.each do |item|
-	puts item.icon
+  puts item.icon
 end
 
 # Items
@@ -54,18 +54,15 @@ end
 arena_teams = api.search_arena_teams("Lemon")
 arena_team = api.get_arena_team("Lemon", 2, :realm => "Darksorrow")
 
-
-
 # Guild Bank
 #cookie = api.login('myuser', 'mypass')
 #api.get_guild_bank_contents(cookie)
 #api.get_guild_bank_log(cookie)
 
-
 # Dungeon Data
 dungeons = api.get_dungeons()
 puts dungeons.to_yaml
 dungeons.each do |dungeon|
-	puts dungeon
+  puts dungeon
 end
 

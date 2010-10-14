@@ -1,4 +1,3 @@
-
 module Wowr
   module Armory
     module Item

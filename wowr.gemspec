@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://wowr.rubyforge.org/"
   s.summary     = %q{A Ruby library for the World of Warcraft Armory}
   s.description = <<-EOS.strip
-Wowr is a Ruby library for accessing data in the World of Warcraft Armory. It provides an object-oriented interface to the XML data provided by the armory, 
+Wowr is a Ruby library for accessing data in the World of Warcraft Armory. It provides an object-oriented interface to the XML data provided by the armory,
 giving access to items, characters, guilds and arena teams. It is designed for both single users and larger guild or portal sites for many users.
   EOS
 
@@ -23,6 +23,7 @@ giving access to items, characters, guilds and arena teams. It is designed for b
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
+  s.add_development_dependency "autotest", "~> 4.4.1"
   s.add_development_dependency "cucumber", "~> 0.9.2"
   s.add_development_dependency "fakeweb",  "~> 1.3"
   s.add_development_dependency "rake",     "~> 0.8.7"

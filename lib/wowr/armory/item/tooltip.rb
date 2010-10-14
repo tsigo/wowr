@@ -26,15 +26,14 @@ module Wowr
           @class_id           = (elem%'classId').html.to_i
           @required_level     = (elem%'requiredLevel').html.to_i if (elem%'requiredLevel')
 
-          @equip_data         = ItemEquipData.new(elem%'equipData')
+          @equip_data         = Wowr::Classes::ItemEquipData.new(elem%'equipData')
 
           # TODO: This appears to be a plain string at the moment
           #<gemProperties>+26 Healing +9 Spell Damage and 2% Reduced Threat</gemProperties>
           @gem_properties     = (elem%'gemProperties').html if (elem%'gemProperties')
 
           # not all items have damage data
-          @damage             = ItemDamageData.new(elem%'damageData') unless !(elem%'damageData') || (elem%'damageData').empty?
-
+          @damage             = Wowr::Classes::ItemDamageData.new(elem%'damageData') unless !(elem%'damageData') || (elem%'damageData').empty?
 
           # TODO: Test socket data with a variety of items
           # TODO: replace with socket Class?
@@ -46,7 +45,6 @@ module Wowr
 
             @socket_match_enchant = (elem%'socketData'%'socketMatchEnchant')
           end
-
 
           # When there is no data, stats are not present in @bonuses
           # TODO: When there is no stats at all, @bonuses shouldn't be set
@@ -114,7 +112,6 @@ module Wowr
             @resistances[stat] = test_stat(elem/xml_elem) if test_stat(elem/xml_elem)
           end
 
-
           if (elem%'allowableClasses')
             @allowable_classes = []
             (elem%'allowableClasses'/:class).each do |klass|
@@ -131,7 +128,7 @@ module Wowr
           if (elem%'spellData')
             @spells = []
             (elem%'spellData'/:spell).each do |spell|
-              @spells << ItemSpell.new(spell)
+              @spells << Wowr::Classes::ItemSpell.new(spell)
             end
 
             # Convert specific spell descriptions into bonus values
@@ -148,13 +145,13 @@ module Wowr
             end
           end
 
-          @setData = ItemSetData.new(elem%'setData') if (elem%'setData')
+          @setData = Wowr::Classes::ItemSetData.new(elem%'setData') if (elem%'setData')
 
           # @item_sources = []
           # (elem/:itemSource).each do |source|
           #   @item_sources << ItemSource.new(source)
           # end
-          @item_source = ItemSource.new(elem%'itemSource') if (elem%'itemSource')  # TODO: More than once source?
+          @item_source = Wowr::Classes::ItemSource.new(elem%'itemSource') if (elem%'itemSource')  # TODO: More than once source?
         end
 
         private
