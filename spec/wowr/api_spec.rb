@@ -88,8 +88,8 @@ describe Wowr::API do
     end
 
     describe "#dungeons_url" do
-      it "should return a string of 'data/dungeons.xml'" do
-        @class.dungeons_url.should == 'data/dungeons.xml'
+      it "should return a string of '_data/dungeons.xml'" do
+        @class.dungeons_url.should == '_data/dungeons.xml'
       end
     end
 
