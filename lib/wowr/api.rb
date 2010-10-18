@@ -45,7 +45,7 @@ module Wowr
     @@failed_cache_timeout = (60*60*24)
     @@cache_failed_requests = true # cache requests that resulted in an error from the armory
 
-    cattr_accessor :armory_base_url, :search_url,
+    cattr_accessor :armory_base_url, :login_base_url, :search_url,
       :character_sheet_url, :character_talents_url, :character_reputation_url,
       :guild_info_url,
       :item_info_url, :item_tooltip_url,
@@ -65,6 +65,7 @@ module Wowr
       :arena_team => 'arenateams'
     }
 
+    # TODO: This is only used in one place and it doesn't change; can we just define it in the method it's used in?
     @@arena_team_sizes = [2, 3, 5]
 
     @@calendar_world_types = ['player', 'holiday', 'bg', 'darkmoon', 'raidLockout', 'raidReset', 'holidayWeekly']
@@ -312,6 +313,7 @@ module Wowr
         options.merge!(:item_id => id)
       end
 
+      options[:item_id] = options[:item_id].to_i
       options = merge_defaults(options)
       options.delete(:realm)
 
@@ -335,12 +337,13 @@ module Wowr
         options.merge!(:item_id => id)
       end
 
+      options[:item_id] = options[:item_id].to_i
       options = merge_defaults(options)
       options.delete(:realm)
 
       xml = get_xml(@@item_tooltip_url, options)
 
-      if !xml.nil?
+      if (xml%'itemTooltip')
         return Wowr::Classes::ItemTooltip.new(xml%'itemTooltip')
       else
         raise Wowr::Exceptions::ItemNotFound.new(options[:item_id])
@@ -1137,6 +1140,7 @@ module Wowr
       return @@cache_directory_path + lang
     end
 
+    # TODO: This method is only used in one place; remove it
     def u(str) #:nodoc:
       if str.instance_of?(String)
         return CGI.escape(str)
