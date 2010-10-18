@@ -21,16 +21,6 @@ class WowrTest < Test::Unit::TestCase
     end
   end
 
-  def test_no_item
-    assert_raises Wowr::Exceptions::ItemNotFound do
-      @api_empty.get_item_info(:item_id => 9999999)
-    end
-
-    assert_raises Wowr::Exceptions::ItemNotFound do
-      @api_empty.get_item_info(9999999)
-    end
-  end
-
   def test_blah
     item_id = 24032
     options = {:lang => 'fr_fr'}
@@ -55,18 +45,6 @@ class WowrTest < Test::Unit::TestCase
     assert_not_equal @api_empty.search_items("cake"), []
     assert_not_equal @api_empty.search_guilds("cake"), []
     assert_not_equal @api_empty.search_arena_teams("cake"), []
-
-    assert_raises Wowr::Exceptions::NoSearchString do
-      @api_empty.search("")
-    end
-
-    assert_raises Wowr::Exceptions::InvalidSearchType do
-      @api_empty.search("Hi")
-    end
-
-    assert_raises Wowr::Exceptions::InvalidSearchType do
-      @api_empty.search("Hi", :type => 'cakes')
-    end
 
     assert_raises ArgumentError do
       @api_empty.search_characters
@@ -133,10 +111,6 @@ class WowrTest < Test::Unit::TestCase
   #
   # end
   #
-
-  def test_item
-    item = @api_empty.get_item_info(4336)
-  end
 
   def test_item_api_references
 

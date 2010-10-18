@@ -255,7 +255,7 @@ describe Wowr::API do
 
   describe "instance" do
     before :each do
-      @api = Wowr::API.new
+      @api = Wowr::API.new(:caching => false)
     end
 
     #
@@ -321,7 +321,13 @@ describe Wowr::API do
     # Public Methods (WoW Armory API Calls)
     #
     describe "#search" do
-      it { pending }
+      it "should raise NoSearchString when first param is blank" do
+        expect { @api.search({}) }.to raise_error(Wowr::Exceptions::NoSearchString)
+      end
+
+      it "should raise InvalidSearchType when given an invalid search type" do
+        expect { @api.search('Foo', :type => 'bar') }.to raise_error(Wowr::Exceptions::InvalidSearchType)
+      end
     end
 
     describe "#search_characters" do
@@ -349,6 +355,19 @@ describe Wowr::API do
     end
 
     describe "#get_guild" do
+      it "should raise GuildNameNotSet when not given a name" do
+        expect { @api.get_guild({}) }.to raise_error(Wowr::Exceptions::GuildNameNotSet)
+      end
+
+      it "should raise RealmNotSet when given a guild name but not a realm" do
+        expect { @api.get_guild('Foo') }.to raise_error(Wowr::Exceptions::RealmNotSet)
+      end
+
+      it "should return an instance of FullGuild when given valid parameters" do
+        FakeWeb.register_uri(:get, /guild-info\.xml.*Juggernaut/, :body => file_fixture('armory/guild-info/juggernaut_mal_ganis.xml'))
+        @api.get_guild(:guild_name => 'Juggernaut', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::FullGuild)
+      end
+
       it "should raise GuildNotFound when given an invalid guild" do
         FakeWeb.register_uri(:get, /guild-info\.xml/, :body => file_fixture('armory/guild-info/not_found.xml'))
         expect { @api.get_guild('does_not_exist', :realm => 'does_not_exist') }.to raise_error(Wowr::Exceptions::GuildNotFound)
@@ -360,7 +379,17 @@ describe Wowr::API do
     end
 
     describe "#get_item" do
-      it { pending }
+      it "should return an instance of FullItem when given valid parameters" do
+        FakeWeb.register_uri(:get, /item-info\.xml/,    :body => file_fixture('armory/item-info/40395.xml'))
+        FakeWeb.register_uri(:get, /item-tooltip\.xml/, :body => file_fixture('armory/item-tooltip/40395.xml'))
+        @api.get_item(:item_id => 40395).should be_kind_of(Wowr::Classes::FullItem)
+      end
+
+      it "should raise ItemNotFound when given an invalid item number" do
+        FakeWeb.register_uri(:get, /item-info\.xml/,    :body => file_fixture('armory/item-info/not_found.xml'))
+        FakeWeb.register_uri(:get, /item-tooltip\.xml/, :body => file_fixture('armory/item-tooltip/not_found.xml'))
+        expect { @api.get_item(0) }.to raise_error(Wowr::Exceptions::ItemNotFound)
+      end
     end
 
     describe "#get_item_info" do
