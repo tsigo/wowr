@@ -4,6 +4,7 @@ Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
 require 'rspec/core/rake_task'
+require 'cucumber/rake/task'
 
 $LOAD_PATH.unshift('lib')
 
@@ -15,14 +16,31 @@ RSpec::Core::RakeTask.new do |t|
   t.pattern = "./spec/**/*_spec.rb"
 end
 
-# bundle exec rcov -Ilib -t test/**/*.rb --exclude gems/ -o coverage_test
-desc "Generate code coverage"
-RSpec::Core::RakeTask.new(:coverage) do |t|
-  t.pattern = "./spec/**/*_spec.rb"
-  t.rcov = true
-  t.rcov_opts = ['--exclude', 'spec/,gems/', '--sort', 'coverage', '--text-report']
+desc "Generate aggregate code coverage"
+task :coverage do
+  rm_f "coverage"
+  rm_f "coverage.data"
+  Rake::Task["coverage:rspec"].invoke
+  Rake::Task["coverage:cucumber"].invoke
 end
 
+namespace :coverage do
+  desc "Generate code coverage for RSpec tests"
+  RSpec::Core::RakeTask.new(:rspec) do |t|
+    t.pattern = "./spec/**/*_spec.rb"
+    t.rcov = true
+    t.rcov_opts = %w{--exclude gems\/,spec\/,features\/ --sort coverage --aggregate coverage.data --text-report}
+  end
+
+  desc "Generate code coverage for Cucmber tests"
+  Cucumber::Rake::Task.new(:cucumber) do |t|
+    t.rcov = true
+    t.rcov_opts = %w{--exclude gems\/,spec\/,features\/ --sort coverage --aggregate coverage.data}
+  end
+end
+
+# TODO: remove Rake::TestTask :test once tests have been converted and functionality has been confirmed with Specs
+# bundle exec rcov -Ilib -t test/**/*.rb --exclude gems/ -o coverage_test
 desc "Run tests"
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
