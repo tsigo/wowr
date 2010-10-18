@@ -137,7 +137,12 @@ describe Wowr::API do
   end
 
   describe "#get_character" do
-    it { pending }
+    it "should raise CharacterNotFound when given an invalid character" do
+      %w(sheet talents reputation).each do |tab|
+        FakeWeb.register_uri(:get, /character-#{tab}\.xml/, :body => file_fixture("armory/character-#{tab}/not_found.xml"))
+      end
+      expect { api.get_character(:character_name => 'Foo', :realm => 'Bar') }.to raise_error(Wowr::Exceptions::CharacterNotFound)
+    end
   end
 
   describe "#get_character_sheet" do
