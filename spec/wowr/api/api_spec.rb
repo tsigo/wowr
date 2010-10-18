@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Wowr::API, "class accessors" do
-  subject { Wowr::API }
+describe Wowr::API::API, "class accessors" do
+  subject { Wowr::API::API }
 
   it "should have a version string" do
     subject::VERSION.should_not be_nil
@@ -33,7 +33,7 @@ describe Wowr::API, "class accessors" do
   its(:temporary_cookie)         { should eql('JSESSIONID') }
 end
 
-describe Wowr::API, "initialization" do
+describe Wowr::API::API, "initialization" do
   context "without options" do
     subject { Wowr::API.new }
 
@@ -59,7 +59,7 @@ describe Wowr::API, "initialization" do
   end
 end
 
-describe Wowr::API, "attribute accessors" do
+describe Wowr::API::API, "attribute accessors" do
   let(:api) { Wowr::API.new(:caching => false) }
 
   describe "#character_name= and #character_name" do
@@ -119,7 +119,7 @@ describe Wowr::API, "attribute accessors" do
   end
 end
 
-describe Wowr::API, "search" do
+describe Wowr::API::API, "search" do
   let(:api) { Wowr::API.new(:caching => false) }
 
   it "should raise NoSearchString when first param is blank" do
@@ -192,7 +192,7 @@ describe Wowr::API, "search" do
 
 end
 
-describe Wowr::API do
+describe Wowr::API::API do
   let(:api) { Wowr::API.new(:caching => false) }
 
   describe "#get_character" do
@@ -357,11 +357,11 @@ describe Wowr::API do
     end
 
     it "should handle a :login option" do
-      api.base_url('us', :login => true).should match(Wowr::API.login_base_url)
+      api.base_url('us', :login => true).should match(Wowr::API::API.login_base_url)
     end
 
     it "should return a default when given no parameters" do
-      api.base_url.should match(Wowr::API.armory_base_url)
+      api.base_url.should match(Wowr::API::API.armory_base_url)
     end
   end
 end
