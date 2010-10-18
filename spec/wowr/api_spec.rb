@@ -146,7 +146,10 @@ describe Wowr::API do
   end
 
   describe "#get_character_sheet" do
-    it { pending }
+    it "should call get_character" do
+      api.should_receive(:get_character).with('name_argument', {:foo => 'bar'})
+      api.get_character_sheet('name_argument', {:foo => 'bar'})
+    end
   end
 
   describe "#get_character_achievements" do
