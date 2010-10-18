@@ -292,6 +292,7 @@ module Wowr
         options.merge!(:item_id => id)
       end
 
+      options[:item_id] = options[:item_id].to_i
       options = merge_defaults(options)
       options.delete(:realm)
 
