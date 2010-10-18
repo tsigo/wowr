@@ -11,7 +11,6 @@
 
 require 'net/http'
 require 'net/https'
-require 'cgi'
 require 'fileutils'
 
 # gems
