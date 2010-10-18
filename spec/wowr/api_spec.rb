@@ -347,10 +347,6 @@ describe Wowr::API do
     it { pending }
   end
 
-  describe "#clear_cache" do
-    it { pending }
-  end
-
   describe "#base_url" do
     it "should handle a :secure option" do
       api.base_url('us', :secure => true).should match(/^https/)

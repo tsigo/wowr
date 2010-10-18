@@ -877,6 +877,7 @@ module Wowr
 
     # Clear the cache, optional directory name.
     # * cache_path (String) Relative path of the cache directory to be deleted
+    # TODO: This method is only used by test teardown; remove it when we remove tests
     def clear_cache(cache_path = @@cache_directory_path)
       begin
         FileUtils.remove_dir(cache_path)
