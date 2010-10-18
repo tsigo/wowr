@@ -153,11 +153,17 @@ describe Wowr::API do
   end
 
   describe "#get_character_achievements" do
-    it { pending }
+    it "should return an instance of CharacterAchievementsInfo when given valid parameters" do
+      FakeWeb.register_uri(:get, /character-achievements\.xml.*Tsigo/, :body => file_fixture('armory/character-achievements/tsigo_mal_ganis.xml'))
+      api.get_character_achievements(:character_name => 'Tsigo', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::CharacterAchievementsInfo)
+    end
   end
 
   describe "#get_character_achievements_category" do
-    it { pending }
+    it "should return an instance of AchievementsList when given valid parameters" do
+      FakeWeb.register_uri(:get, /character-achievements\.xml.*Tsigo/, :body => file_fixture('armory/character-achievements/tsigo_mal_ganis.xml'))
+      api.get_character_achievements_category(168, 'Tsigo', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::AchievementsList)
+    end
   end
 
   describe "#search_guilds" do
@@ -203,11 +209,27 @@ describe Wowr::API do
   end
 
   describe "#get_item_info" do
-    it { pending }
+    it "should return an instance of ItemInfo when given valid parameters" do
+      FakeWeb.register_uri(:get, /item-info\.xml/, :body => file_fixture('armory/item-info/40395.xml'))
+      api.get_item_info(:item_id => 40395).should be_kind_of(Wowr::Classes::ItemInfo)
+    end
+
+    it "should raise ItemNotFound when given an invalid item number" do
+      FakeWeb.register_uri(:get, /item-info\.xml/, :body => file_fixture('armory/item-info/not_found.xml'))
+      expect { api.get_item_info(:item_id => 0) }.to raise_error(Wowr::Exceptions::ItemNotFound)
+    end
   end
 
   describe "#get_item_tooltip" do
-    it { pending }
+    it "should return an instance of ItemTooltip when given valid parameters" do
+      FakeWeb.register_uri(:get, /item-tooltip\.xml/, :body => file_fixture('armory/item-tooltip/40395.xml'))
+      api.get_item_tooltip(:item_id => 40395).should be_kind_of(Wowr::Classes::ItemTooltip)
+    end
+
+    it "should raise ItemNotFound when given an invalid item number" do
+      FakeWeb.register_uri(:get, /item-tooltip\.xml/, :body => file_fixture('armory/item-tooltip/not_found.xml'))
+      expect { api.get_item_tooltip(:item_id => 0) }.to raise_error(Wowr::Exceptions::ItemNotFound)
+    end
   end
 
   describe "#search_arena_teams" do
@@ -215,7 +237,27 @@ describe Wowr::API do
   end
 
   describe "#get_arena_team" do
-    it { pending }
+    it "should return an instance of ArenaTeam when given valid parameters" do
+      FakeWeb.register_uri(:get, /team-info\.xml/, :body => file_fixture('armory/team-info/fav_five_mal_ganis.xml'))
+      api.get_arena_team('Fav Five', 5, :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::ArenaTeam)
+    end
+
+    it "should raise ArenaTeamNotFound when given an invalid team name" do
+      FakeWeb.register_uri(:get, /team-info\.xml/, :body => file_fixture('armory/team-info/not_found.xml'))
+      expect { api.get_arena_team(:team_name => 'name', :team_size => 5, :realm => "Mal'Ganis") }.to raise_error(Wowr::Exceptions::ArenaTeamNotFound)
+    end
+
+    it "should raise ArenaTeamNameNotSet when not given a team name" do
+      expect { api.get_arena_team('', 2) }.to raise_error(Wowr::Exceptions::ArenaTeamNameNotSet)
+    end
+
+    it "should raise RealmNotSet when not given a valid realm name" do
+      expect { api.get_arena_team(:team_name => 'name', :team_size => 2) }.to raise_error(Wowr::Exceptions::RealmNotSet)
+    end
+
+    it "should raise InvalidArenaTeamSize when given an invalid team size" do
+      expect { api.get_arena_team('name', 10, :realm => "Mal'Ganis") }.to raise_error(Wowr::Exceptions::InvalidArenaTeamSize)
+    end
   end
 
   describe "#get_guild_bank_contents" do
@@ -263,6 +305,20 @@ describe Wowr::API do
   end
 
   describe "#base_url" do
-    it { pending }
+    it "should handle a :secure option" do
+      api.base_url('us', :secure => true).should match(/^https/)
+    end
+
+    it "should handle a non-US locale" do
+      api.base_url('fr').should match(%r{^http://fr\.})
+    end
+
+    it "should handle a :login option" do
+      api.base_url('us', :login => true).should match(Wowr::API.login_base_url)
+    end
+
+    it "should return a default when given no parameters" do
+      api.base_url.should match(Wowr::API.armory_base_url)
+    end
   end
 end
