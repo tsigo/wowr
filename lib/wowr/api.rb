@@ -5,7 +5,7 @@ module Wowr
     @@armory_base_url = 'wowarmory.com/'
     @@login_base_url = 'battle.net/'
 
-    @@persistant_cookie = 'COM-warcraft'
+    @@persistent_cookie = 'COM-warcraft'
     @@temporary_cookie = 'JSESSIONID'
 
     @@search_url = 'search.xml'
@@ -56,7 +56,7 @@ module Wowr
       :max_connection_tries,
       :cache_directory_path,
       :default_cache_timeout, :failed_cache_timeout, :cache_failed_requests,
-      :calendar_user_url, :calendar_world_url, :calendar_detail_url, :persistant_cookie, :temporary_cookie
+      :calendar_user_url, :calendar_world_url, :calendar_detail_url, :persistent_cookie, :temporary_cookie
 
     @@search_types = {
       :item => 'items',
@@ -834,7 +834,7 @@ module Wowr
       # Time to obtain our next URL and our long term cookie.
       long_cookie = nil
 
-      redirectstage.header['set-cookie'].scan(/#{@@persistant_cookie}=(.*?);/) {
+      redirectstage.header['set-cookie'].scan(/#{@@persistent_cookie}=(.*?);/) {
         long_cookie = $1
       }
 
@@ -862,7 +862,7 @@ module Wowr
       end
 
       # All we need to do is goto the armory login page passing our long life cookie, we should get 302 instantly.
-      stage1 = login_http(authentication_url, true, { @@persistant_cookie => long_life_cookie })
+      stage1 = login_http(authentication_url, true, { @@persistent_cookie => long_life_cookie })
 
       # Let's see
       if (stage1.code == "200")
