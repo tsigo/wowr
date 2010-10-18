@@ -119,22 +119,81 @@ describe Wowr::API, "attribute accessors" do
   end
 end
 
-describe Wowr::API do
+describe Wowr::API, "search" do
   let(:api) { Wowr::API.new(:caching => false) }
 
-  describe "#search" do
-    it "should raise NoSearchString when first param is blank" do
-      expect { api.search({}) }.to raise_error(Wowr::Exceptions::NoSearchString)
+  it "should raise NoSearchString when first param is blank" do
+    expect { api.search({}) }.to raise_error(Wowr::Exceptions::NoSearchString)
+  end
+
+  it "should raise InvalidSearchType when given an invalid search type" do
+    expect { api.search('Foo', :type => 'bar') }.to raise_error(Wowr::Exceptions::InvalidSearchType)
+  end
+
+  describe "#search_items" do
+    it "should call #search with the correct parameters" do
+      api.should_receive(:search).with(:search => 'ItemName', :type => 'items').twice
+      api.search_items('ItemName')
+      api.search_items(:search => 'ItemName')
     end
 
-    it "should raise InvalidSearchType when given an invalid search type" do
-      expect { api.search('Foo', :type => 'bar') }.to raise_error(Wowr::Exceptions::InvalidSearchType)
+    it "should return an array of instances of SearchItem" do
+      FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Cake/, :body => file_fixture('armory/search/items_cake.xml'))
+      results = api.search_items('Cake')
+      results.should be_kind_of(Array)
+      results[0].should be_kind_of(Wowr::Classes::SearchItem)
+    end
+  end
+
+  describe "#search_guilds" do
+    it "should call #search with the correct parameters" do
+      api.should_receive(:search).with(:search => 'GuildName', :type => 'guilds').twice
+      api.search_guilds('GuildName')
+      api.search_guilds(:search => 'GuildName')
+    end
+
+    it "should return an array of instances of SearchGuild" do
+      FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Juggernaut/, :body => file_fixture('armory/search/guilds_juggernaut.xml'))
+      results = api.search_guilds('Juggernaut')
+      results.should be_kind_of(Array)
+      results[0].should be_kind_of(Wowr::Classes::SearchGuild)
     end
   end
 
   describe "#search_characters" do
-    it { pending }
+    it "should call #search with the correct parameters" do
+      api.should_receive(:search).with(:search => 'CharacterName', :type => 'characters').twice
+      api.search_characters('CharacterName')
+      api.search_characters(:search => 'CharacterName')
+    end
+
+    it "should return an array of instances of SearchCharacter" do
+      FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Tsigo/, :body => file_fixture('armory/search/characters_tsigo.xml'))
+      results = api.search_characters('Tsigo')
+      results.should be_kind_of(Array)
+      results[0].should be_kind_of(Wowr::Classes::SearchCharacter)
+    end
   end
+
+  describe "#search_arena_teams" do
+    it "should call #search with the correct parameters" do
+      api.should_receive(:search).with(:search => 'TeamName', :type => 'arenateams').twice
+      api.search_arena_teams('TeamName')
+      api.search_arena_teams(:search => 'TeamName')
+    end
+
+    it "should return an array of instances of SearchCharacter" do
+      FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Lemon/, :body => file_fixture('armory/search/arena_teams_lemon.xml'))
+      results = api.search_arena_teams('Lemon')
+      results.should be_kind_of(Array)
+      results[0].should be_kind_of(Wowr::Classes::SearchArenaTeam)
+    end
+  end
+
+end
+
+describe Wowr::API do
+  let(:api) { Wowr::API.new(:caching => false) }
 
   describe "#get_character" do
     it "should raise CharacterNotFound when given an invalid character" do
@@ -166,10 +225,6 @@ describe Wowr::API do
     end
   end
 
-  describe "#search_guilds" do
-    it { pending }
-  end
-
   describe "#get_guild" do
     it "should raise GuildNameNotSet when not given a name" do
       expect { api.get_guild({}) }.to raise_error(Wowr::Exceptions::GuildNameNotSet)
@@ -188,10 +243,6 @@ describe Wowr::API do
       FakeWeb.register_uri(:get, /guild-info\.xml/, :body => file_fixture('armory/guild-info/not_found.xml'))
       expect { api.get_guild('does_not_exist', :realm => 'does_not_exist') }.to raise_error(Wowr::Exceptions::GuildNotFound)
     end
-  end
-
-  describe "#search_items" do
-    it { pending }
   end
 
   describe "#get_item" do
@@ -230,10 +281,6 @@ describe Wowr::API do
       FakeWeb.register_uri(:get, /item-tooltip\.xml/, :body => file_fixture('armory/item-tooltip/not_found.xml'))
       expect { api.get_item_tooltip(:item_id => 0) }.to raise_error(Wowr::Exceptions::ItemNotFound)
     end
-  end
-
-  describe "#search_arena_teams" do
-    it { pending }
   end
 
   describe "#get_arena_team" do
