@@ -189,18 +189,32 @@ describe Wowr::API::API, "search" do
       results[0].should be_kind_of(Wowr::Classes::SearchArenaTeam)
     end
   end
-
 end
 
 describe Wowr::API::API do
   let(:api) { Wowr::API.new(:caching => false) }
 
   describe "#get_character" do
+    it "should return an instance of FullCharacter when given valid parameters" do
+      %w(sheet talents reputation).each do |tab|
+        FakeWeb.register_uri(:get, /character-#{tab}\.xml/, :body => file_fixture("armory/character-#{tab}/tsigo_mal_ganis.xml"))
+      end
+      api.get_character('Tsigo', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::FullCharacter)
+    end
+
     it "should raise CharacterNotFound when given an invalid character" do
       %w(sheet talents reputation).each do |tab|
         FakeWeb.register_uri(:get, /character-#{tab}\.xml/, :body => file_fixture("armory/character-#{tab}/not_found.xml"))
       end
       expect { api.get_character(:character_name => 'Foo', :realm => 'Bar') }.to raise_error(Wowr::Exceptions::CharacterNotFound)
+    end
+
+    it "should raise CharacterNameNotSet when not given a name" do
+      expect { api.get_character(nil, :realm => 'Bar') }.to raise_error(Wowr::Exceptions::CharacterNameNotSet)
+    end
+
+    it "should raise RealmNotSet when given a name but not a realm" do
+      expect { api.get_character('Foo') }.to raise_error(Wowr::Exceptions::RealmNotSet)
     end
   end
 
