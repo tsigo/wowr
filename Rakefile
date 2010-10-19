@@ -88,3 +88,65 @@ namespace :whitespace do
     }
   end
 end
+
+namespace :file_fixtures do
+  def download_file(remote, local)
+    `curl -s -A "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10" -o "#{local}" "#{remote}"`
+  end
+
+  desc "Update file fixtures"
+  task :update do
+    # key is the folder relative to spec/file_fixtures/armory/, value is an array of hashes:
+    #   r: remote path after "wowarmory.com/file.xml?"
+    #   l: local filename without extension
+    {
+      'character-achievements' => [
+        {:r => "r=Mal'Ganis&cn=Tsigo", :l => 'tsigo_mal_ganis'}
+      ],
+      'character-reputation' => [
+        {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
+        {:r => "r=Mal'Ganis&cn=Tsigo",        :l => 'tsigo_mal_ganis'}
+      ],
+      'character-sheet' => [
+        {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
+        {:r => "r=Mal'Ganis&cn=Tsigo",        :l => 'tsigo_mal_ganis'}
+      ],
+      'character-talents' => [
+        {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
+        {:r => "r=Mal'Ganis&cn=Tsigo",        :l => 'tsigo_mal_ganis'}
+      ],
+      'guild-info' => [
+        {:r => "r=Mal'Ganis&gn=DoesNotExist", :l => 'not_found'},
+        {:r => "r=Mal'Ganis&gn=Juggernaut",   :l => 'juggernaut_mal_ganis'}
+      ],
+      'item-info' => [
+        {:r => "i=40395", :l => '40395'},
+        {:r => "i=0",     :l => 'not_found'}
+      ],
+      'item-tooltip' => [
+        {:r => "i=40395", :l => '40395'},
+        {:r => "i=0",     :l => 'not_found'}
+      ],
+      'search' => [
+        {:r => "searchQuery=Lemon&searchType=arenateams",  :l => 'arena_teams_lemon'},
+        {:r => "searchQuery=Tsigo&searchType=characters",  :l => 'characters_tsigo'},
+        {:r => "searchQuery=Juggernaut&searchType=guilds", :l => 'guilds_juggernaut'},
+        {:r => "searchQuery=Cake&searchType=items",        :l => 'items_cake'}
+      ],
+      'team-info' => [
+        {:r => "r=Mal'Ganis&ts=5&t=Fav+Five",     :l => 'fav_five_mal_ganis'},
+        {:r => "r=Mal'Ganis&ts=5&t=DoesNotExist", :l => 'not_found'}
+      ]
+    }.each do |folder, hashes|
+      hashes.each do |hash|
+        remote = "http://www.wowarmory.com/#{folder}.xml?#{hash[:r]}"
+        local  = "spec/file_fixtures/armory/#{folder}/#{hash[:l]}.xml"
+        puts "#{remote.ljust(80)} -> #{local}"
+        download_file(remote, File.expand_path("../#{local}", __FILE__))
+      end
+    end
+
+    puts ""
+    system "git status -s"
+  end
+end
