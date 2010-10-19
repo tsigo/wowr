@@ -7,6 +7,7 @@ module Wowr
         base.class_eval do
           @@armory_base_url   = 'wowarmory.com/'
           @@login_base_url    = 'battle.net/'
+          @@login_url         = 'login/login.xml'
           @@persistent_cookie = 'COM-warcraft'
           @@temporary_cookie  = 'JSESSIONID'
 
@@ -20,6 +21,7 @@ module Wowr
 
           cattr_accessor :armory_base_url
           cattr_accessor :login_base_url
+          cattr_accessor :login_url
           cattr_accessor :persistent_cookie
           cattr_accessor :temporary_cookie
 

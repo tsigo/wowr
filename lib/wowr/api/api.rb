@@ -12,14 +12,11 @@ module Wowr
       @@guild_bank_contents_url = 'vault/guild-bank-contents.xml'
       @@guild_bank_log_url      = 'vault/guild-bank-log.xml'
 
-      @@login_url = 'login/login.xml'
-
       @@dungeons_url = '_data/dungeons.xml'
       @@dungeons_strings_url = 'data/dungeonStrings.xml'
 
       cattr_accessor :search_url,
         :guild_bank_contents_url, :guild_bank_log_url,
-        :login_url,
         :dungeons_url, :dungeons_strings_url,
         :calendar_user_url, :calendar_world_url, :calendar_detail_url
 
