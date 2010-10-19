@@ -192,26 +192,7 @@ module Wowr
       end
 
       def get_complete_world_calendar(cookie, name = @character_name, realm = @realm, options = {})
-        full_cookie = ' JSESSIONID='+cookie
-
-        if (cookie.is_a?(Hash))
-          options = full_cookie
-        elsif (name.is_a?(Hash))
-          options = name
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => @character_name)
-          options.merge!(:realm => @realm)
-        elsif (realm.is_a?(Hash))
-          options = realm
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => @realm)
-        else
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => realm)
-        end
-
+        options = calendar_options(cookie, event, name, realm, options)
         options = merge_defaults(options)
 
         events = []
@@ -227,26 +208,7 @@ module Wowr
       end
 
       def get_world_calendar(cookie, name = @character_name, realm = @realm, options = {})
-        full_cookie = ' JSESSIONID='+cookie
-
-        if (cookie.is_a?(Hash))
-          options = full_cookie
-        elsif (name.is_a?(Hash))
-          options = name
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => @character_name)
-          options.merge!(:realm => @realm)
-        elsif (realm.is_a?(Hash))
-          options = realm
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => @realm)
-        else
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => realm)
-        end
-
+        options = calendar_options(cookie, event, name, realm, options)
         options = merge_defaults(options)
 
         if options[:cookie].nil? || options[:cookie] == ""
@@ -275,26 +237,7 @@ module Wowr
       end
 
       def get_full_user_calendar(cookie, name = @character_name, realm = @realm, options = {})
-        full_cookie = ' JSESSIONID='+cookie
-
-        if (cookie.is_a?(Hash))
-          options = full_cookie
-        elsif (name.is_a?(Hash))
-          options = name
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => @character_name)
-          options.merge!(:realm => @realm)
-        elsif (realm.is_a?(Hash))
-          options = realm
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => @realm)
-        else
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => realm)
-        end
-
+        options = calendar_options(cookie, event, name, realm, options)
         options = merge_defaults(options)
 
         skel_events = get_user_calendar(options)
@@ -311,26 +254,7 @@ module Wowr
       end
 
       def get_user_calendar(cookie, name = @character_name, realm = @realm, options = {})
-        full_cookie = ' JSESSIONID='+cookie
-
-        if (cookie.is_a?(Hash))
-          options = full_cookie
-        elsif (name.is_a?(Hash))
-          options = name
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => @character_name)
-          options.merge!(:realm => @realm)
-        elsif (realm.is_a?(Hash))
-          options = realm
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => @realm)
-        else
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => realm)
-        end
-
+        options = calendar_options(cookie, event, name, realm, options)
         options = merge_defaults(options)
 
         if options[:cookie].nil? || options[:cookie] == ""
@@ -359,35 +283,7 @@ module Wowr
       end
 
       def get_calendar_event (cookie, event = nil, name = @character_name, realm = @realm, options = {})
-        full_cookie = ' JSESSIONID='+cookie
-
-        if (cookie.is_a?(Hash))
-          options = full_cookie
-        elsif (event.is_a?(Hash))
-          options = event
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:event => nil)
-          options.merge!(:character_name => @character_name)
-          options.merge!(:realm => @realm)
-        elsif (name.is_a?(Hash))
-          options = name
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:event => event)
-          options.merge!(:character_name => @character_name)
-          options.merge!(:realm => @realm)
-        elsif (realm.is_a?(Hash))
-          options = realm
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:event => event)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => @realm)
-        else
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:event => event)
-          options.merge!(:character_name => name)
-          options.merge!(:realm => realm)
-        end
-
+        options = calendar_options(cookie, event, name, realm, options)
         options = merge_defaults(options)
 
         if options[:cookie].nil? || options[:cookie] == ""
@@ -466,6 +362,30 @@ module Wowr
       end
 
       private
+
+      def calendar_options(cookie, event = nil, name = @character_name, realm = @realm, options = {})
+        full_cookie = ' JSESSIONID='+cookie
+
+        if (cookie.is_a?(Hash))
+          options = full_cookie
+        elsif (name.is_a?(Hash))
+          options = name
+          options.merge!(:cookie => full_cookie)
+          options.merge!(:character_name => @character_name)
+          options.merge!(:realm => @realm)
+        elsif (realm.is_a?(Hash))
+          options = realm
+          options.merge!(:cookie => full_cookie)
+          options.merge!(:character_name => name)
+          options.merge!(:realm => @realm)
+        else
+          options.merge!(:cookie => full_cookie)
+          options.merge!(:character_name => name)
+          options.merge!(:realm => realm)
+        end
+
+        options
+      end
 
       # Determines if the given +value+ is a valid search type
       def valid_search_type?(value)
