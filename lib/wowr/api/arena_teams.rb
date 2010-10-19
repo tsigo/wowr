@@ -6,8 +6,8 @@ module Wowr
           @@arena_team_url   = 'team-info.xml'.freeze
           @@arena_team_sizes = [2, 3, 5].freeze
 
-          cattr_accessor :arena_team_url
-          cattr_accessor :arena_team_sizes
+          cattr_reader :arena_team_url
+          cattr_reader :arena_team_sizes
         end
       end
 
