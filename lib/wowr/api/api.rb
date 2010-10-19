@@ -9,8 +9,6 @@ module Wowr
       @@calendar_world_url = 'vault/calendar/month-world.json'
       @@calendar_detail_url = 'vault/calendar/detail.json'
 
-      @@arena_team_url = 'team-info.xml'
-
       @@guild_bank_contents_url = 'vault/guild-bank-contents.xml'
       @@guild_bank_log_url      = 'vault/guild-bank-log.xml'
 
@@ -20,14 +18,10 @@ module Wowr
       @@dungeons_strings_url = 'data/dungeonStrings.xml'
 
       cattr_accessor :search_url,
-        :arena_team_url,
         :guild_bank_contents_url, :guild_bank_log_url,
         :login_url,
         :dungeons_url, :dungeons_strings_url,
         :calendar_user_url, :calendar_world_url, :calendar_detail_url
-
-      # TODO: This is only used in one place and it doesn't change; can we just define it in the method it's used in?
-      @@arena_team_sizes = [2, 3, 5]
 
       @@calendar_world_types = ['player', 'holiday', 'bg', 'darkmoon', 'raidLockout', 'raidReset', 'holidayWeekly']
       @@calendar_user_types = ['raid', 'dungeon', 'pvp', 'meeting', 'other']
@@ -36,6 +30,8 @@ module Wowr
 
       include Client
       include Login
+
+      include ArenaTeams
       include Characters
       include Guilds
       include Items
@@ -111,62 +107,6 @@ module Wowr
         end
 
         return results
-      end
-
-      # Search for arena teams with the given name of any size.
-      # Returns an array of Wowr::Classes::SearchArenaTeam
-      # Searches across all realms.
-      # Caching is disabled for searching.
-      # * name (String) Name of the arena team to seach for
-      # * options (Hash) Optional hash of arguments identical to those used in the API constructor (realm, debug, cache etc.)
-      def search_arena_teams(name, options = {})
-        if (name.is_a?(Hash))
-          options = name
-        else
-          options.merge!(:search => name)
-        end
-
-        options.merge!(:type => 'arenateams')
-        return search(options)
-      end
-
-      # Get the arena team of the given name and size, on the specified realm.
-      # Returns Wowr::Classes::FullArenaTeam
-      # Requires realm.
-      # * name (String) Team arena name
-      # * size (Fixnum) Must be 2, 3 or 5
-      # * options (Hash) Optional hash of arguments identical to those used in the API constructor (realm, debug, cache etc.)
-      def get_arena_team(name, size = nil, options = {})
-        if name.is_a?(Hash)
-          options = name
-        elsif size.is_a?(Hash)
-          options = size
-          options.merge!(:team_name => name)
-        else
-          options.merge!(:team_name => name, :team_size => size)
-        end
-
-        options = merge_defaults(options)
-
-        if options[:team_name].nil? || options[:team_name].empty?
-          raise Wowr::Exceptions::ArenaTeamNameNotSet.new
-        end
-
-        if options[:realm].nil? || options[:realm].empty?
-          raise Wowr::Exceptions::RealmNotSet.new
-        end
-
-        if !@@arena_team_sizes.include?(options[:team_size])
-          raise Wowr::Exceptions::InvalidArenaTeamSize.new("Arena teams size must be: #{@@arena_team_sizes.inspect}")
-        end
-
-        xml = get_xml(@@arena_team_url, options)
-
-        if !(xml%'arenaTeam').nil? and !(xml%'arenaTeam').children.empty?
-          return Wowr::Classes::ArenaTeam.new(xml%'arenaTeam')
-        else
-          raise Wowr::Exceptions::ArenaTeamNotFound.new(options[:team_name])
-        end
       end
 
       # Get the current items within the guild bank.
@@ -525,7 +465,7 @@ module Wowr
         end
       end
 
-      protected
+      private
 
       # Determines if the given +value+ is a valid search type
       def valid_search_type?(value)
