@@ -114,8 +114,8 @@ module Wowr
 
         if (cookie.is_a?(Hash))
           options = full_cookie
-        elsif (guild_name.is_a?(Hash))
-          options = guild_name
+        elsif (name.is_a?(Hash))
+          options = name
           options.merge!(:cookie => full_cookie)
           options.merge!(:guild_name => name)
         else
