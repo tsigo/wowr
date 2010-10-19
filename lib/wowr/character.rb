@@ -1,8 +1,6 @@
 $:.unshift(File.dirname(__FILE__)) unless $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
-require 'wowr/item.rb'
-
 require 'armory/character/base'
 require 'armory/character/info'
 require 'armory/character/full'

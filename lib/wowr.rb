@@ -28,11 +28,8 @@ require 'wowr/api'
 
 require 'wowr/exceptions.rb'
 
+require 'wowr/classes'
 require 'wowr/calendar.rb'
 require 'wowr/character.rb'
 require 'wowr/achievements.rb'
-require 'wowr/guild.rb'
-require 'wowr/item.rb'
-require 'wowr/arena_team.rb'
 require 'wowr/dungeon.rb'
-require 'wowr/guild_bank.rb'
