@@ -1,11 +1,12 @@
 module Wowr
   module API
     autoload :API,        'wowr/api/api'
+    autoload :Client,     'wowr/api/client'
     autoload :Login,      'wowr/api/login'
 
     autoload :ArenaTeams, 'wowr/api/arena_teams'
     autoload :Characters, 'wowr/api/characters'
-    autoload :Client,     'wowr/api/client'
+    autoload :Dungeons,   'wowr/api/dungeons'
     autoload :Guilds,     'wowr/api/guilds'
     autoload :Items,      'wowr/api/items'
 
