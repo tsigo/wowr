@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/items/tooltip.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/item-tooltip.xml">
+  <itemTooltips>
+    <itemTooltip>
+      <id>40395</id>
+      <name>Torch of Holy Fire</name>
+      <icon>inv_mace_82</icon>
+      <overallQualityId>4</overallQualityId>
+      <bonding>1</bonding>
+      <classId>2</classId>
+      <equipData>
+        <inventoryType>21</inventoryType>
+        <subclassName>Mace</subclassName>
+      </equipData>
+      <damageData>
+        <damage>
+          <type>0</type>
+          <min>216</min>
+          <max>401</max>
+        </damage>
+        <speed>1.8</speed>
+        <dps>85.83</dps>
+      </damageData>
+      <bonusStamina>82</bonusStamina>
+      <bonusSpirit>38</bonusSpirit>
+      <durability current="105" max="105"/>
+      <requiredLevel>80</requiredLevel>
+      <itemLevel>226</itemLevel>
+      <bonusHasteRating>48</bonusHasteRating>
+      <bonusSpellPower>651</bonusSpellPower>
+      <itemSource areaId="3456" areaName="Naxxramas" creatureId="15990" creatureName="Kel'Thuzad" difficulty="h" dropRate="3" value="sourceType.creatureDrop"/>
+    </itemTooltip>
+  </itemTooltips>
+</page>

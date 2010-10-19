@@ -44,12 +44,4 @@ class Class #:nodoc:
     cattr_reader(*syms)
     cattr_writer(*syms)
   end
-
-  def stringy(sym) #:nodoc:
-    class_eval(<<-EOS, __FILE__, __LINE__ + 1)
-      def to_s
-        @#{sym}
-      end
-    EOS
-  end
 end

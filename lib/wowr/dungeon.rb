@@ -54,8 +54,8 @@ module Wowr
           id = boss_elem[:id].to_i
           key = boss_elem[:key]
 
-          @bosses[id].add_name_data(boss_elem)  if id
-          @bosses[key].add_name_data(boss_elem) if key
+          @bosses[id].add_name_data(boss_elem)  if id && @bosses[id]
+          @bosses[key].add_name_data(boss_elem) if key && @bosses[key]
         end
       end
     end

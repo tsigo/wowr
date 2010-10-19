@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/search/search.xsl"?><page globalSearch="1" lang="en_us" requestQuery="searchQuery=Lemon&amp;searchType=arenateams" requestUrl="/search.xml">
+  <armorySearch>
+    <tabs count="7" selected="arenateams">
+      <tab count="7" label="armory.tabs.arenateams" type="arenateams"/>
+    </tabs>
+    <searchResults pageCount="1" pageCurrent="1" searchError="" searchFilter="" searchMsg="" searchText="Lemon" searchType="arenateams" url="searchType=arenateams&amp;searchQuery=Lemon&amp;p=1&amp;selectedTab=arenateams&amp;sd=a" version="1.0">
+      <filters/>
+      <arenaTeams>
+        <arenaTeam battleGroup="Retaliation" created="1275350400000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="LEMON" ranking="0" rating="1038" realm="The Scryers" realmUrl="b=Retaliation&amp;r=The+Scryers&amp;ts=2&amp;t=LEMON&amp;ff=realm&amp;fv=The+Scryers&amp;select=LEMON" relevance="100" season="0" seasonGamesPlayed="120" seasonGamesWon="55" size="2" teamSize="2" teamUrl="r=The+Scryers&amp;ts=2&amp;t=LEMON&amp;select=LEMON" url="r=The+Scryers&amp;ts=2&amp;t=LEMON&amp;select=LEMON">
+          <emblem background="ffed27ae" borderColor="ff786003" borderStyle="4" iconColor="ffd6c614" iconStyle="67"/>
+        </arenaTeam>
+        <arenaTeam battleGroup="Stormstrike" created="1254355200000" faction="Alliance" factionId="0" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="Lemon" ranking="0" rating="192" realm="Ysera" realmUrl="b=Stormstrike&amp;r=Ysera&amp;ts=2&amp;t=Lemon&amp;ff=realm&amp;fv=Ysera&amp;select=Lemon" relevance="54" season="0" seasonGamesPlayed="18" seasonGamesWon="4" size="2" teamSize="2" teamUrl="r=Ysera&amp;ts=2&amp;t=Lemon&amp;select=Lemon" url="r=Ysera&amp;ts=2&amp;t=Lemon&amp;select=Lemon">
+          <emblem background="ff7a0700" borderColor="ff3b7800" borderStyle="6" iconColor="ffffdc08" iconStyle="95"/>
+        </arenaTeam>
+        <arenaTeam battleGroup="Cyclone" created="1231545600000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="LEMON" ranking="0" rating="0" realm="Stormscale" realmUrl="b=Cyclone&amp;r=Stormscale&amp;ts=2&amp;t=LEMON&amp;ff=realm&amp;fv=Stormscale&amp;select=LEMON" relevance="50" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="2" teamSize="2" teamUrl="r=Stormscale&amp;ts=2&amp;t=LEMON&amp;select=LEMON" url="r=Stormscale&amp;ts=2&amp;t=LEMON&amp;select=LEMON">
+          <emblem background="fff20f0a" borderColor="ffcc4fc4" borderStyle="5" iconColor="ffbd9e99" iconStyle="11"/>
+        </arenaTeam>
+        <arenaTeam battleGroup="Rampage" created="1246147200000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="6939" name="lemon" ranking="0" rating="0" realm="Blackhand" realmUrl="b=Rampage&amp;r=Blackhand&amp;ts=2&amp;t=lemon&amp;ff=realm&amp;fv=Blackhand&amp;select=lemon" relevance="50" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="2" teamSize="2" teamUrl="r=Blackhand&amp;ts=2&amp;t=lemon&amp;select=lemon" url="r=Blackhand&amp;ts=2&amp;t=lemon&amp;select=lemon">
+          <emblem background="ff454dc4" borderColor="ff5fff55" borderStyle="2" iconColor="ff96662a" iconStyle="2"/>
+        </arenaTeam>
+        <arenaTeam battleGroup="Ruin" created="1269907200000" faction="Alliance" factionId="0" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="Lemon" ranking="0" rating="0" realm="Lothar" realmUrl="b=Ruin&amp;r=Lothar&amp;ts=2&amp;t=Lemon&amp;ff=realm&amp;fv=Lothar&amp;select=Lemon" relevance="50" season="0" seasonGamesPlayed="12" seasonGamesWon="0" size="2" teamSize="2" teamUrl="r=Lothar&amp;ts=2&amp;t=Lemon&amp;select=Lemon" url="r=Lothar&amp;ts=2&amp;t=Lemon&amp;select=Lemon">
+          <emblem background="ff5cc93d" borderColor="ff66d6cf" borderStyle="1" iconColor="ff875966" iconStyle="91"/>
+        </arenaTeam>
+        <arenaTeam battleGroup="Whirlwind" created="1270252800000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="lemon" ranking="0" rating="0" realm="Korialstrasz" realmUrl="b=Whirlwind&amp;r=Korialstrasz&amp;ts=2&amp;t=lemon&amp;ff=realm&amp;fv=Korialstrasz&amp;select=lemon" relevance="50" season="0" seasonGamesPlayed="4" seasonGamesWon="0" size="2" teamSize="2" teamUrl="r=Korialstrasz&amp;ts=2&amp;t=lemon&amp;select=lemon" url="r=Korialstrasz&amp;ts=2&amp;t=lemon&amp;select=lemon">
+          <emblem background="ff009937" borderColor="ffd69942" borderStyle="2" iconColor="ffcf042c" iconStyle="90"/>
+        </arenaTeam>
+        <arenaTeam battleGroup="Coliseum 1" created="1238284800000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="430" name="Lemon" ranking="0" rating="0" realm="Arena Tournament 2" realmUrl="b=Coliseum+1&amp;r=Arena+Tournament+2&amp;ts=2&amp;t=Lemon&amp;ff=realm&amp;fv=Arena+Tournament+2&amp;select=Lemon" relevance="50" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="2" teamSize="2" teamUrl="r=Arena+Tournament+2&amp;ts=2&amp;t=Lemon&amp;select=Lemon" tournament="true" url="r=Arena+Tournament+2&amp;ts=2&amp;t=Lemon&amp;select=Lemon">
+          <emblem background="ff9cdbf7" borderColor="ff30f552" borderStyle="5" iconColor="ff4587cf" iconStyle="63"/>
+        </arenaTeam>
+      </arenaTeams>
+    </searchResults>
+  </armorySearch>
+</page>

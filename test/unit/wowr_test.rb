@@ -21,29 +21,6 @@ class WowrTest < Test::Unit::TestCase
     end
   end
 
-  def test_no_item
-    assert_raises Wowr::Exceptions::ItemNotFound do
-      @api_empty.get_item_info(:item_id => 9999999)
-    end
-
-    assert_raises Wowr::Exceptions::ItemNotFound do
-      @api_empty.get_item_info(9999999)
-    end
-  end
-
-  def test_blah
-    item_id = 24032
-    options = {:lang => 'fr_fr'}
-    y1 = @api_empty.get_item_tooltip(item_id)
-    y2 = @api_empty.get_item_tooltip(:item_id => item_id, :lang => 'fr_fr')
-    y3 = @api_empty.get_item_tooltip(item_id, {:lang => 'fr_fr'})
-    y4 = @api_empty.get_item_tooltip(item_id, options)
-
-    # assert_equal y1, y2
-    # assert_equal y2, y3
-    # assert_equal y3, y4
-  end
-
   def test_searching
     assert_not_nil @api_empty.search_characters("cake")
     assert_not_nil @api_empty.search_items("cake")
@@ -55,18 +32,6 @@ class WowrTest < Test::Unit::TestCase
     assert_not_equal @api_empty.search_items("cake"), []
     assert_not_equal @api_empty.search_guilds("cake"), []
     assert_not_equal @api_empty.search_arena_teams("cake"), []
-
-    assert_raises Wowr::Exceptions::NoSearchString do
-      @api_empty.search("")
-    end
-
-    assert_raises Wowr::Exceptions::InvalidSearchType do
-      @api_empty.search("Hi")
-    end
-
-    assert_raises Wowr::Exceptions::InvalidSearchType do
-      @api_empty.search("Hi", :type => 'cakes')
-    end
 
     assert_raises ArgumentError do
       @api_empty.search_characters
@@ -84,30 +49,6 @@ class WowrTest < Test::Unit::TestCase
       @api_empty.search_arena_teams
     end
   end
-
-  # def test_character
-  #
-  #   char = defaults_api.get_character_sheet
-  #
-  #   assert_not_nil char
-  #
-  #   assert_equals char, defaults_api.get_character_sheet("cake")
-  #
-  #   assert_not_nil defaults_api.get_character_sheet("cake")
-  #   assert_not_nil defaults_api.get_character_sheet("Phog")
-  #
-  #   phog = assert_not_nil defaults_api.get_character_sheet("Phog")
-  #
-  #   defaults_api.get_character_sheet("Phog", :realm => "Stormrage")
-  #
-  #   api2.get_character_sheet("Phog") # should be ok
-  #   api.get_character_sheet("cake", :realm => "Barthilas")
-  #   api2.get_character_sheet("cake", :realm => "Barthilas")
-  #   api.get_character_sheet(:character_name => "cake", :realm => "Barthilas")
-  #   api2.get_character_sheet(:character_name => "cake", :realm => "Barthilas")
-  # end
-  #
-  #
 
   # ensure that the requested language is being returned
   def test_languages
@@ -133,10 +74,6 @@ class WowrTest < Test::Unit::TestCase
   #
   # end
   #
-
-  def test_item
-    item = @api_empty.get_item_info(4336)
-  end
 
   def test_item_api_references
 

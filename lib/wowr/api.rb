@@ -5,7 +5,7 @@ module Wowr
     @@armory_base_url = 'wowarmory.com/'
     @@login_base_url = 'battle.net/'
 
-    @@persistant_cookie = 'COM-warcraft'
+    @@persistent_cookie = 'COM-warcraft'
     @@temporary_cookie = 'JSESSIONID'
 
     @@search_url = 'search.xml'
@@ -32,7 +32,7 @@ module Wowr
 
     @@login_url = 'login/login.xml'
 
-    @@dungeons_url = 'data/dungeons.xml'
+    @@dungeons_url = '_data/dungeons.xml'
     @@dungeons_strings_url = 'data/dungeonStrings.xml'
 
     @@max_connection_tries = 10
@@ -45,7 +45,7 @@ module Wowr
     @@failed_cache_timeout = (60*60*24)
     @@cache_failed_requests = true # cache requests that resulted in an error from the armory
 
-    cattr_accessor :armory_base_url, :search_url,
+    cattr_accessor :armory_base_url, :login_base_url, :search_url,
       :character_sheet_url, :character_talents_url, :character_reputation_url,
       :guild_info_url,
       :item_info_url, :item_tooltip_url,
@@ -56,7 +56,7 @@ module Wowr
       :max_connection_tries,
       :cache_directory_path,
       :default_cache_timeout, :failed_cache_timeout, :cache_failed_requests,
-      :calendar_user_url, :calendar_world_url, :calendar_detail_url, :persistant_cookie, :temporary_cookie
+      :calendar_user_url, :calendar_world_url, :calendar_detail_url, :persistent_cookie, :temporary_cookie
 
     @@search_types = {
       :item => 'items',
@@ -65,6 +65,7 @@ module Wowr
       :arena_team => 'arenateams'
     }
 
+    # TODO: This is only used in one place and it doesn't change; can we just define it in the method it's used in?
     @@arena_team_sizes = [2, 3, 5]
 
     @@calendar_world_types = ['player', 'holiday', 'bg', 'darkmoon', 'raidLockout', 'raidReset', 'holidayWeekly']
@@ -173,12 +174,7 @@ module Wowr
       character_reputation = get_xml(@@character_reputation_url, options)
       character_talents = get_xml(@@character_talents_url, options)
 
-      # FIXME
-      if true
-        return Wowr::Classes::FullCharacter.new(character_sheet, character_reputation, character_talents, self)
-      else
-        raise Wowr::Exceptions::CharacterNotFound.new(options[:character_name])
-      end
+      return Wowr::Classes::FullCharacter.new(character_sheet, character_reputation, character_talents, self)
     end
 
     # DEPRECATED
@@ -292,6 +288,7 @@ module Wowr
         options.merge!(:item_id => id)
       end
 
+      options[:item_id] = options[:item_id].to_i
       options = merge_defaults(options)
       options.delete(:realm)
 
@@ -316,6 +313,7 @@ module Wowr
         options.merge!(:item_id => id)
       end
 
+      options[:item_id] = options[:item_id].to_i
       options = merge_defaults(options)
       options.delete(:realm)
 
@@ -339,12 +337,13 @@ module Wowr
         options.merge!(:item_id => id)
       end
 
+      options[:item_id] = options[:item_id].to_i
       options = merge_defaults(options)
       options.delete(:realm)
 
       xml = get_xml(@@item_tooltip_url, options)
 
-      if !xml.nil?
+      if (xml%'itemTooltip')
         return Wowr::Classes::ItemTooltip.new(xml%'itemTooltip')
       else
         raise Wowr::Exceptions::ItemNotFound.new(options[:item_id])
@@ -717,9 +716,6 @@ module Wowr
     # adding data to classes as they appear using hash lookup.
     # Went from 14s to 2s :)
     # * options (Hash) Optional hash of arguments identical to those used in the API constructor (realm, debug, cache etc.)
-    # ---
-    # FIXME: wowarmory.com/data/dungeons.xml is no longer a valid file
-    #        However, wowarmory.com/data/dungeonStrings.xml does exist
     def get_dungeons(options = {})
       options = merge_defaults(options)
 
@@ -836,7 +832,7 @@ module Wowr
       # Time to obtain our next URL and our long term cookie.
       long_cookie = nil
 
-      redirectstage.header['set-cookie'].scan(/#{@@persistant_cookie}=(.*?);/) {
+      redirectstage.header['set-cookie'].scan(/#{@@persistent_cookie}=(.*?);/) {
         long_cookie = $1
       }
 
@@ -864,7 +860,7 @@ module Wowr
       end
 
       # All we need to do is goto the armory login page passing our long life cookie, we should get 302 instantly.
-      stage1 = login_http(authentication_url, true, { @@persistant_cookie => long_life_cookie })
+      stage1 = login_http(authentication_url, true, { @@persistent_cookie => long_life_cookie })
 
       # Let's see
       if (stage1.code == "200")
@@ -881,6 +877,7 @@ module Wowr
 
     # Clear the cache, optional directory name.
     # * cache_path (String) Relative path of the cache directory to be deleted
+    # TODO: This method is only used by test teardown; remove it when we remove tests
     def clear_cache(cache_path = @@cache_directory_path)
       begin
         FileUtils.remove_dir(cache_path)
@@ -1144,6 +1141,7 @@ module Wowr
       return @@cache_directory_path + lang
     end
 
+    # TODO: This method is only used in one place; remove it
     def u(str) #:nodoc:
       if str.instance_of?(String)
         return CGI.escape(str)
