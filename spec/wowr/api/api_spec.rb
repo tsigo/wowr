@@ -267,7 +267,7 @@ describe Wowr::API::API do
 
     it "should raise ItemNotFound when given an invalid item number" do
       FakeWeb.register_uri(:get, /item-info\.xml/, :body => file_fixture('armory/item-info/not_found.xml'))
-      expect { api.get_item_info(:item_id => 0) }.to raise_error(Wowr::Exceptions::ItemNotFound)
+      expect { api.get_item_info(0) }.to raise_error(Wowr::Exceptions::ItemNotFound)
     end
   end
 
@@ -279,7 +279,7 @@ describe Wowr::API::API do
 
     it "should raise ItemNotFound when given an invalid item number" do
       FakeWeb.register_uri(:get, /item-tooltip\.xml/, :body => file_fixture('armory/item-tooltip/not_found.xml'))
-      expect { api.get_item_tooltip(:item_id => 0) }.to raise_error(Wowr::Exceptions::ItemNotFound)
+      expect { api.get_item_tooltip(0) }.to raise_error(Wowr::Exceptions::ItemNotFound)
     end
   end
 
@@ -291,7 +291,7 @@ describe Wowr::API::API do
 
     it "should raise ArenaTeamNotFound when given an invalid team name" do
       FakeWeb.register_uri(:get, /team-info\.xml/, :body => file_fixture('armory/team-info/not_found.xml'))
-      expect { api.get_arena_team(:team_name => 'name', :team_size => 5, :realm => "Mal'Ganis") }.to raise_error(Wowr::Exceptions::ArenaTeamNotFound)
+      expect { api.get_arena_team('name', :team_size => 5, :realm => "Mal'Ganis") }.to raise_error(Wowr::Exceptions::ArenaTeamNotFound)
     end
 
     it "should raise ArenaTeamNameNotSet when not given a team name" do
