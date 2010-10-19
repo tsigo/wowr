@@ -2,12 +2,12 @@
   <tabInfo subTab="guildRoster" tab="guild" tabGroup="guild" tabUrl="r=Mal%27Ganis&amp;gn=Juggernaut"/>
   <guildInfo>
     <guildHeader battleGroup="Stormstrike" count="119" faction="1" name="Juggernaut" nameUrl="Juggernaut" realm="Mal'Ganis" realmUrl="Mal%27Ganis" url="r=Mal%27Ganis&amp;gn=Juggernaut">
-      <emblem emblemBackground="43" emblemBorderColor="14" emblemBorderStyle="1" emblemIconColor="14" emblemIconStyle="164"/>
+      <emblem emblemBackground="4" emblemBorderColor="15" emblemBorderStyle="1" emblemIconColor="15" emblemIconStyle="84"/>
     </guildHeader>
     <guild>
       <members memberCount="119">
         <character achPoints="3530" classId="7" genderId="0" level="80" name="Daemonar" raceId="6" rank="5" url="r=Mal%27Ganis&amp;cn=Daemonar"/>
-        <character achPoints="10195" classId="9" genderId="1" level="80" name="Aktinos" raceId="10" rank="3" url="r=Mal%27Ganis&amp;cn=Aktinos"/>
+        <character achPoints="10215" classId="9" genderId="1" level="80" name="Aktinos" raceId="10" rank="3" url="r=Mal%27Ganis&amp;cn=Aktinos"/>
         <character achPoints="1530" classId="1" genderId="0" level="80" name="Gwaihiir" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Gwaihiir"/>
         <character achPoints="3355" classId="1" genderId="0" level="80" name="Resolve" raceId="6" rank="3" url="r=Mal%27Ganis&amp;cn=Resolve"/>
         <character achPoints="190" classId="6" genderId="0" level="65" name="Timur" raceId="6" rank="1" url="r=Mal%27Ganis&amp;cn=Timur"/>
@@ -17,8 +17,8 @@
         <character achPoints="4560" classId="7" genderId="0" level="80" name="Rumors" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Rumors"/>
         <character achPoints="70" classId="1" genderId="0" level="30" name="Othu" raceId="6" rank="1" url="r=Mal%27Ganis&amp;cn=Othu"/>
         <character achPoints="9930" classId="2" genderId="1" level="80" name="Grim" raceId="10" rank="3" url="r=Mal%27Ganis&amp;cn=Grim"/>
-        <character achPoints="1040" classId="7" genderId="0" level="80" name="Verato" raceId="8" rank="2" url="r=Mal%27Ganis&amp;cn=Verato"/>
-        <character achPoints="9945" classId="3" genderId="0" level="80" name="Czer" raceId="2" rank="3" url="r=Mal%27Ganis&amp;cn=Czer"/>
+        <character achPoints="1060" classId="7" genderId="0" level="80" name="Verato" raceId="8" rank="2" url="r=Mal%27Ganis&amp;cn=Verato"/>
+        <character achPoints="9975" classId="3" genderId="0" level="80" name="Czer" raceId="2" rank="3" url="r=Mal%27Ganis&amp;cn=Czer"/>
         <character achPoints="85" classId="4" genderId="0" level="80" name="Hereshotkid" raceId="2" rank="6" url="r=Mal%27Ganis&amp;cn=Hereshotkid"/>
         <character achPoints="3750" classId="11" genderId="1" level="80" name="Kirkie" raceId="6" rank="2" url="r=Mal%27Ganis&amp;cn=Kirkie"/>
         <character achPoints="4395" classId="8" genderId="0" level="80" name="Undeadmerlin" raceId="5" rank="3" url="r=Mal%27Ganis&amp;cn=Undeadmerlin"/>
@@ -34,66 +34,66 @@
         <character achPoints="4845" classId="3" genderId="1" level="80" name="Trapsquare" raceId="2" rank="4" url="r=Mal%27Ganis&amp;cn=Trapsquare"/>
         <character achPoints="80" classId="4" genderId="0" level="74" name="Stunlôck" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Stunl%C3%B4ck"/>
         <character achPoints="1820" classId="3" genderId="0" level="80" name="Verrater" raceId="2" rank="1" url="r=Mal%27Ganis&amp;cn=Verrater"/>
-        <character achPoints="565" classId="5" genderId="0" level="80" name="Saal" raceId="5" rank="1" url="r=Mal%27Ganis&amp;cn=Saal"/>
+        <character achPoints="575" classId="5" genderId="0" level="80" name="Saal" raceId="5" rank="1" url="r=Mal%27Ganis&amp;cn=Saal"/>
         <character achPoints="9125" classId="9" genderId="0" level="80" name="Fearsom" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Fearsom"/>
         <character achPoints="5770" classId="6" genderId="0" level="80" name="Modk" raceId="2" rank="3" url="r=Mal%27Ganis&amp;cn=Modk"/>
-        <character achPoints="9465" classId="4" genderId="0" level="80" name="Magss" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Magss"/>
+        <character achPoints="9475" classId="4" genderId="0" level="80" name="Magss" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Magss"/>
         <character achPoints="3580" classId="6" genderId="0" level="80" name="Duab" raceId="10" rank="1" url="r=Mal%27Ganis&amp;cn=Duab"/>
         <character achPoints="5500" classId="11" genderId="0" level="80" name="Parawon" raceId="6" rank="3" url="r=Mal%27Ganis&amp;cn=Parawon"/>
         <character achPoints="350" classId="5" genderId="0" level="80" name="Crixis" raceId="10" rank="7" url="r=Mal%27Ganis&amp;cn=Crixis"/>
-        <character achPoints="70" classId="3" genderId="1" level="21" name="Magdains" raceId="2" rank="7" url="r=Mal%27Ganis&amp;cn=Magdains"/>
-        <character achPoints="1970" classId="3" genderId="0" level="80" name="Muirey" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Muirey"/>
+        <character achPoints="80" classId="3" genderId="1" level="22" name="Magdains" raceId="2" rank="7" url="r=Mal%27Ganis&amp;cn=Magdains"/>
+        <character achPoints="1980" classId="3" genderId="0" level="80" name="Muirey" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Muirey"/>
         <character achPoints="1150" classId="6" genderId="0" level="80" name="Marza" raceId="6" rank="2" url="r=Mal%27Ganis&amp;cn=Marza"/>
-        <character achPoints="445" classId="3" genderId="0" level="80" name="Aagi" raceId="2" rank="4" url="r=Mal%27Ganis&amp;cn=Aagi"/>
+        <character achPoints="455" classId="3" genderId="0" level="80" name="Aagi" raceId="2" rank="4" url="r=Mal%27Ganis&amp;cn=Aagi"/>
         <character achPoints="1630" classId="2" genderId="0" level="80" name="Kyne" raceId="10" rank="2" url="r=Mal%27Ganis&amp;cn=Kyne"/>
-        <character achPoints="475" classId="5" genderId="0" level="80" name="Syroln" raceId="5" rank="2" url="r=Mal%27Ganis&amp;cn=Syroln"/>
+        <character achPoints="485" classId="5" genderId="0" level="80" name="Syroln" raceId="5" rank="2" url="r=Mal%27Ganis&amp;cn=Syroln"/>
         <character achPoints="2040" classId="5" genderId="1" level="80" name="Vanadis" raceId="5" rank="5" url="r=Mal%27Ganis&amp;cn=Vanadis"/>
         <character achPoints="340" classId="3" genderId="1" level="71" name="Seway" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Seway"/>
         <character achPoints="2470" classId="5" genderId="1" level="80" name="Mnemia" raceId="5" rank="5" url="r=Mal%27Ganis&amp;cn=Mnemia"/>
-        <character achPoints="5545" classId="6" genderId="0" level="80" name="Dbok" raceId="2" rank="4" url="r=Mal%27Ganis&amp;cn=Dbok"/>
-        <character achPoints="1185" classId="11" genderId="0" level="80" name="Mekor" raceId="6" rank="1" url="r=Mal%27Ganis&amp;cn=Mekor"/>
-        <character achPoints="1150" classId="6" genderId="1" level="80" name="Kirque" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Kirque"/>
-        <character achPoints="3460" classId="5" genderId="1" level="80" name="Mixtape" raceId="10" rank="7" url="r=Mal%27Ganis&amp;cn=Mixtape"/>
+        <character achPoints="5555" classId="6" genderId="0" level="80" name="Dbok" raceId="2" rank="4" url="r=Mal%27Ganis&amp;cn=Dbok"/>
+        <character achPoints="1195" classId="11" genderId="0" level="80" name="Mekor" raceId="6" rank="1" url="r=Mal%27Ganis&amp;cn=Mekor"/>
+        <character achPoints="1160" classId="6" genderId="1" level="80" name="Kirque" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Kirque"/>
+        <character achPoints="3470" classId="5" genderId="1" level="80" name="Mixtape" raceId="10" rank="7" url="r=Mal%27Ganis&amp;cn=Mixtape"/>
         <character achPoints="2135" classId="2" genderId="0" level="80" name="Magdaiin" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Magdaiin"/>
         <character achPoints="10710" classId="11" genderId="0" level="80" name="Stauros" raceId="6" rank="3" url="r=Mal%27Ganis&amp;cn=Stauros"/>
         <character achPoints="5835" classId="1" genderId="1" level="80" name="Mahida" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Mahida"/>
         <character achPoints="5745" classId="6" genderId="1" level="80" name="Pandaplush" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Pandaplush"/>
         <character achPoints="8525" classId="6" genderId="0" level="80" name="Kartane" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Kartane"/>
         <character achPoints="80" classId="1" genderId="1" level="21" name="Kerke" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Kerke"/>
-        <character achPoints="10500" classId="5" genderId="0" level="80" name="Crt" raceId="8" rank="2" url="r=Mal%27Ganis&amp;cn=Crt"/>
+        <character achPoints="10540" classId="5" genderId="0" level="80" name="Crt" raceId="8" rank="2" url="r=Mal%27Ganis&amp;cn=Crt"/>
         <character achPoints="9910" classId="2" genderId="1" level="80" name="Alephone" raceId="10" rank="1" url="r=Mal%27Ganis&amp;cn=Alephone"/>
         <character achPoints="2380" classId="2" genderId="0" level="80" name="Tremalane" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Tremalane"/>
         <character achPoints="10405" classId="8" genderId="1" level="80" name="Thoronos" raceId="10" rank="2" url="r=Mal%27Ganis&amp;cn=Thoronos"/>
-        <character achPoints="410" classId="7" genderId="1" level="74" name="Yokodama" raceId="8" rank="1" url="r=Mal%27Ganis&amp;cn=Yokodama"/>
+        <character achPoints="440" classId="7" genderId="1" level="75" name="Yokodama" raceId="8" rank="1" url="r=Mal%27Ganis&amp;cn=Yokodama"/>
         <character achPoints="7815" classId="7" genderId="0" level="80" name="Scipion" raceId="6" rank="3" url="r=Mal%27Ganis&amp;cn=Scipion"/>
         <character achPoints="1990" classId="2" genderId="1" level="80" name="Gwaii" raceId="10" rank="4" url="r=Mal%27Ganis&amp;cn=Gwaii"/>
         <character achPoints="590" classId="7" genderId="1" level="71" name="Lran" raceId="8" rank="5" url="r=Mal%27Ganis&amp;cn=Lran"/>
-        <character achPoints="10025" classId="11" genderId="0" level="80" name="Hamlet" raceId="6" rank="2" url="r=Mal%27Ganis&amp;cn=Hamlet"/>
+        <character achPoints="10035" classId="11" genderId="0" level="80" name="Hamlet" raceId="6" rank="2" url="r=Mal%27Ganis&amp;cn=Hamlet"/>
         <character achPoints="5475" classId="11" genderId="0" level="80" name="Baudz" raceId="6" rank="1" url="r=Mal%27Ganis&amp;cn=Baudz"/>
         <character achPoints="780" classId="3" genderId="1" level="80" name="Paganii" raceId="8" rank="5" url="r=Mal%27Ganis&amp;cn=Paganii"/>
         <character achPoints="95" classId="8" genderId="0" level="80" name="Dellgado" raceId="5" rank="5" url="r=Mal%27Ganis&amp;cn=Dellgado"/>
         <character achPoints="5855" classId="11" genderId="0" level="80" name="Bainatolie" raceId="6" rank="1" url="r=Mal%27Ganis&amp;cn=Bainatolie"/>
         <character achPoints="1950" classId="5" genderId="1" level="80" name="Xandrie" raceId="8" rank="4" url="r=Mal%27Ganis&amp;cn=Xandrie"/>
-        <character achPoints="1350" classId="6" genderId="0" level="80" name="Hamburgêr" raceId="6" rank="5" url="r=Mal%27Ganis&amp;cn=Hamburg%C3%AAr"/>
+        <character achPoints="1410" classId="6" genderId="0" level="80" name="Hamburgêr" raceId="6" rank="5" url="r=Mal%27Ganis&amp;cn=Hamburg%C3%AAr"/>
         <character achPoints="3150" classId="5" genderId="1" level="80" name="Reeyah" raceId="5" rank="5" url="r=Mal%27Ganis&amp;cn=Reeyah"/>
         <character achPoints="4550" classId="7" genderId="0" level="80" name="Cpu" raceId="2" rank="4" url="r=Mal%27Ganis&amp;cn=Cpu"/>
         <character achPoints="1540" classId="2" genderId="0" level="80" name="Syrodin" raceId="10" rank="4" url="r=Mal%27Ganis&amp;cn=Syrodin"/>
         <character achPoints="590" classId="8" genderId="0" level="62" name="Ub" raceId="5" rank="5" url="r=Mal%27Ganis&amp;cn=Ub"/>
         <character achPoints="740" classId="2" genderId="1" level="80" name="Paragon" raceId="10" rank="3" url="r=Mal%27Ganis&amp;cn=Paragon"/>
         <character achPoints="5550" classId="2" genderId="0" level="80" name="Mekon" raceId="10" rank="4" url="r=Mal%27Ganis&amp;cn=Mekon"/>
-        <character achPoints="290" classId="8" genderId="0" level="73" name="Chickenheart" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Chickenheart"/>
+        <character achPoints="310" classId="8" genderId="0" level="73" name="Chickenheart" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Chickenheart"/>
         <character achPoints="5010" classId="9" genderId="1" level="80" name="Cerula" raceId="10" rank="4" url="r=Mal%27Ganis&amp;cn=Cerula"/>
-        <character achPoints="3895" classId="8" genderId="0" level="80" name="Panglossian" raceId="8" rank="1" url="r=Mal%27Ganis&amp;cn=Panglossian"/>
-        <character achPoints="3360" classId="3" genderId="1" level="80" name="Guttershot" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Guttershot"/>
+        <character achPoints="3985" classId="8" genderId="0" level="80" name="Panglossian" raceId="8" rank="1" url="r=Mal%27Ganis&amp;cn=Panglossian"/>
+        <character achPoints="3370" classId="3" genderId="1" level="80" name="Guttershot" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Guttershot"/>
         <character achPoints="5615" classId="1" genderId="0" level="80" name="Critspec" raceId="2" rank="4" url="r=Mal%27Ganis&amp;cn=Critspec"/>
         <character achPoints="3610" classId="4" genderId="1" level="80" name="Gutterscum" raceId="5" rank="5" url="r=Mal%27Ganis&amp;cn=Gutterscum"/>
         <character achPoints="9505" classId="9" genderId="1" level="80" name="Mithal" raceId="5" rank="2" url="r=Mal%27Ganis&amp;cn=Mithal"/>
         <character achPoints="6590" classId="7" genderId="1" level="80" name="Souai" raceId="2" rank="3" url="r=Mal%27Ganis&amp;cn=Souai"/>
         <character achPoints="9465" classId="2" genderId="1" level="80" name="Xonk" raceId="10" rank="2" url="r=Mal%27Ganis&amp;cn=Xonk"/>
-        <character achPoints="9360" classId="7" genderId="0" level="80" name="Koushirou" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Koushirou"/>
+        <character achPoints="9420" classId="7" genderId="0" level="80" name="Koushirou" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Koushirou"/>
         <character achPoints="1250" classId="7" genderId="1" level="71" name="Niami" raceId="8" rank="5" url="r=Mal%27Ganis&amp;cn=Niami"/>
-        <character achPoints="3395" classId="1" genderId="1" level="80" name="Redefine" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Redefine"/>
-        <character achPoints="5525" classId="5" genderId="1" level="80" name="Xandrine" raceId="10" rank="2" url="r=Mal%27Ganis&amp;cn=Xandrine"/>
+        <character achPoints="3425" classId="1" genderId="1" level="80" name="Redefine" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Redefine"/>
+        <character achPoints="5535" classId="5" genderId="1" level="80" name="Xandrine" raceId="10" rank="2" url="r=Mal%27Ganis&amp;cn=Xandrine"/>
         <character achPoints="1145" classId="5" genderId="1" level="80" name="Arli" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Arli"/>
         <character achPoints="1130" classId="5" genderId="1" level="80" name="Ahbsan" raceId="8" rank="2" url="r=Mal%27Ganis&amp;cn=Ahbsan"/>
         <character achPoints="9185" classId="3" genderId="0" level="80" name="Sebudai" raceId="2" rank="0" url="r=Mal%27Ganis&amp;cn=Sebudai"/>
@@ -105,19 +105,19 @@
         <character achPoints="1940" classId="1" genderId="1" level="80" name="Hebakh" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Hebakh"/>
         <character achPoints="1070" classId="2" genderId="1" level="80" name="Kurky" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Kurky"/>
         <character achPoints="1260" classId="7" genderId="1" level="80" name="Kerky" raceId="8" rank="5" url="r=Mal%27Ganis&amp;cn=Kerky"/>
-        <character achPoints="455" classId="8" genderId="1" level="80" name="Arly" raceId="8" rank="2" url="r=Mal%27Ganis&amp;cn=Arly"/>
+        <character achPoints="465" classId="8" genderId="1" level="80" name="Arly" raceId="8" rank="2" url="r=Mal%27Ganis&amp;cn=Arly"/>
         <character achPoints="4095" classId="2" genderId="1" level="80" name="Crionna" raceId="10" rank="4" url="r=Mal%27Ganis&amp;cn=Crionna"/>
         <character achPoints="4315" classId="6" genderId="0" level="80" name="Scippy" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Scippy"/>
         <character achPoints="400" classId="2" genderId="1" level="80" name="Blessin" raceId="10" rank="2" url="r=Mal%27Ganis&amp;cn=Blessin"/>
         <character achPoints="3515" classId="1" genderId="1" level="80" name="Gutterspunk" raceId="5" rank="5" url="r=Mal%27Ganis&amp;cn=Gutterspunk"/>
-        <character achPoints="1745" classId="7" genderId="1" level="80" name="Mindriot" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Mindriot"/>
+        <character achPoints="1755" classId="7" genderId="1" level="80" name="Mindriot" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Mindriot"/>
         <character achPoints="3145" classId="7" genderId="0" level="80" name="Shamudai" raceId="2" rank="1" url="r=Mal%27Ganis&amp;cn=Shamudai"/>
         <character achPoints="2805" classId="4" genderId="1" level="80" name="Gobstopper" raceId="8" rank="5" url="r=Mal%27Ganis&amp;cn=Gobstopper"/>
         <character achPoints="8360" classId="7" genderId="0" level="80" name="Sweetmeat" raceId="8" rank="3" url="r=Mal%27Ganis&amp;cn=Sweetmeat"/>
         <character achPoints="1395" classId="5" genderId="1" level="80" name="Kerkie" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Kerkie"/>
         <character achPoints="20" classId="4" genderId="0" level="80" name="Gonzaga" raceId="8" rank="7" url="r=Mal%27Ganis&amp;cn=Gonzaga"/>
         <character achPoints="20" classId="9" genderId="0" level="80" name="Novado" raceId="10" rank="5" url="r=Mal%27Ganis&amp;cn=Novado"/>
-        <character achPoints="2610" classId="2" genderId="1" level="80" name="Kipzlight" raceId="10" rank="4" url="r=Mal%27Ganis&amp;cn=Kipzlight"/>
+        <character achPoints="2620" classId="2" genderId="1" level="80" name="Kipzlight" raceId="10" rank="4" url="r=Mal%27Ganis&amp;cn=Kipzlight"/>
         <character achPoints="830" classId="4" genderId="1" level="80" name="Wovado" raceId="2" rank="5" url="r=Mal%27Ganis&amp;cn=Wovado"/>
         <character achPoints="10410" classId="8" genderId="1" level="80" name="Guttermouth" raceId="5" rank="3" url="r=Mal%27Ganis&amp;cn=Guttermouth"/>
         <character achPoints="1650" classId="7" genderId="0" level="80" name="Gwaiihir" raceId="2" rank="2" url="r=Mal%27Ganis&amp;cn=Gwaiihir"/>
