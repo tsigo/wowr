@@ -12,6 +12,32 @@ require 'armory/character/stat/stamina'
 require 'armory/character/stat/intellect'
 require 'armory/character/stat/spirit'
 require 'armory/character/stat/armor'
+require 'armory/character/weapon/melee'
+require 'armory/character/weapon/ranged'
+require 'armory/character/weapon/skill'
+require 'armory/character/weapon/damage'
+require 'armory/character/weapon/speed'
+require 'armory/character/weapon/power'
+require 'armory/character/weapon/hit_rating'
+require 'armory/character/weapon/crit_chance'
+require 'armory/character/weapon/expertise'
+require 'armory/character/spell/spell'
+require 'armory/character/spell/speed'
+require 'armory/character/spell/damage'
+require 'armory/character/spell/mana_regen'
+require 'armory/character/weapon/pet_bonus'
+require 'armory/character/stat/defenses'
+require 'armory/character/stat/defense'
+require 'armory/character/stat/dodge_parry_block'
+require 'armory/character/stat/resilience'
+require 'armory/character/stat/resistance'
+require 'armory/character/talent_spec'
+require 'armory/character/pvp'
+require 'armory/character/buff'
+require 'armory/character/equipped_item'
+require 'armory/character/skill'
+require 'armory/character/rep_faction_category'
+require 'armory/character/rep_faction'
 
 module Wowr
   module Classes
@@ -27,410 +53,31 @@ module Wowr
     class Intellect < Wowr::Armory::Character::Stat::Intellect; end
     class Spirit < Wowr::Armory::Character::Stat::Spirit; end
     class Armor < Wowr::Armory::Character::Stat::Armor; end
-
-    # <melee>
-    #   <mainHandDamage dps="65.6" max="149" min="60" percent="0" speed="1.60"/>
-    #   <offHandDamage dps="0.0" max="0" min="0" percent="0" speed="2.00"/>
-    #   <mainHandSpeed hastePercent="0.00" hasteRating="0" value="1.60"/>
-    #   <offHandSpeed hastePercent="0.00" hasteRating="0" value="2.00"/>
-    #   <power base="338" effective="338" increasedDps="24.0"/>
-    #   <hitRating increasedHitPercent="0.00" value="0"/>
-    #   <critChance percent="4.16" plusPercent="0.00" rating="0"/>
-    #   <expertise additional="0" percent="0.00" rating="0" value="0"/>
-    # </melee>
-    class Melee
-      attr_reader :main_hand_skill, :off_hand_skill,
-                  :main_hand_damage, :off_hand_damage,
-                  :main_hand_speed, :off_hand_speed,
-                  :power, :hit_rating, :crit_chance,
-                  :expertise
-
-      def initialize(elem)
-        # TODO: Do these not exist anymore?
-        @main_hand_skill  = WeaponSkill.new(elem%'mainHandWeaponSkill') if (elem%'mainHandWeaponSkill')
-        @off_hand_skill   = WeaponSkill.new(elem%'offHandWeaponSkill') if (elem%'offHandWeaponSkill')
-
-        @main_hand_damage = WeaponDamage.new(elem%'mainHandDamage')
-        @off_hand_damage  = WeaponDamage.new(elem%'offHandDamage')
-
-        @main_hand_speed  = WeaponSpeed.new(elem%'mainHandSpeed')
-        @off_hand_speed   = WeaponSpeed.new(elem%'offHandSpeed')
-
-        @power            = WeaponPower.new(elem%'power')
-        @hit_rating       = WeaponHitRating.new(elem%'hitRating')
-        @crit_chance      = WeaponCritChance.new(elem%'critChance')
-
-        @expertise        = WeaponExpertise.new(elem%'expertise')
-      end
-    end
-
-    # <ranged>
-    #   <weaponSkill rating="0" value="-1"/>
-    #   <damage dps="0.0" max="0" min="0" percent="0" speed="0.00"/>
-    #   <speed hastePercent="0.00" hasteRating="0" value="0.00"/>
-    #   <power base="57" effective="57" increasedDps="4.0" petAttack="-1.00" petSpell="-1.00"/>
-    #   <hitRating increasedHitPercent="0.00" value="0"/>
-    #   <critChance percent="0.92" plusPercent="0.00" rating="0"/>
-    # </ranged>
-    class Ranged
-      attr_reader :weapon_skill, :damage, :speed, :power,
-                  :hit_rating, :crit_chance
-
-      def initialize(elem)
-        @weapon_skill = WeaponSkill.new(elem%'weaponSkill')
-        @damage       = WeaponDamage.new(elem%'damage')
-        @speed        = WeaponSpeed.new(elem%'speed')
-        @power        = WeaponPower.new(elem%'power')
-        @hit_rating   = WeaponHitRating.new(elem%'hitRating')
-        @crit_chance  = WeaponCritChance.new(elem%'critChance')
-      end
-    end
-
-    class WeaponSkill
-      attr_reader :rating, :value
-
-      def initialize(elem)
-        @value  = elem[:value].to_i == -1 ? nil : elem[:value].to_i
-        @rating = elem[:rating].to_i
-      end
-    end
-
-    class WeaponDamage
-      attr_reader :dps, :max, :min, :percent, :speed
-
-      def initialize(elem)
-        @dps      = elem[:dps].to_f
-        @max      = elem[:max].to_i
-        @min      = elem[:min].to_i
-        @percent  = elem[:percent].to_f
-        @speed  = elem[:speed].to_f
-      end
-    end
-
-    class WeaponSpeed
-      attr_reader :haste_percent, :haste_rating, :value
-
-      def initialize(elem)
-        @haste_percent  = elem[:hastePercent].to_f
-        @haste_rating   = elem[:hasteRating].to_f
-        @value        = elem[:value].to_f
-      end
-    end
-
-    class WeaponPower
-      attr_reader :base, :effective, :increased_dps, :pet_attack, :pet_spell, :haste_rating
-
-      def initialize(elem)
-        @base           = elem[:base].to_i
-        @haste_rating   = elem[:effective].to_i
-        @increased_dps  = elem[:increasedDps].to_f
-        @pet_attack     = (elem[:petAttack].to_f == -1 ? nil : elem[:petAttack].to_f)
-        @pet_spell      = (elem[:petSpell].to_f == -1 ? nil : elem[:petSpell].to_f)
-      end
-    end
-
-    class WeaponHitRating
-      attr_reader :increased_hit_percent, :value, :armor_penetration
-
-      def initialize(elem)
-        @armor_penetration = elem[:penetration].to_f
-        @increased_hit_percent  = elem[:increasedHitPercent].to_f
-        @value                  = elem[:value].to_f
-      end
-    end
-
-    class WeaponCritChance
-      attr_reader :percent, :plus_percent, :rating
-
-      def initialize(elem)
-        @percent      = elem[:percent].to_f
-        @plus_percent = elem[:plusPercent].to_f
-        @rating       = elem[:rating].to_i
-      end
-    end
-
-    # <expertise additional="0" percent="0.00" rating="0" value="0"/>
-    class WeaponExpertise
-      attr_reader :additional, :percent, :rating, :value
-
-      def initialize(elem)
-        @additional = elem[:additional].to_i
-        @percent    = elem[:percent].to_f
-        @rating     = elem[:rating].to_i
-        @value      = elem[:value].to_i
-      end
-    end
-
-    # Decided to do funky stuff to the XML to make it more useful.
-    # instead of having two seperate lists of bonusDamage and critChance
-    # merged it into one set of objects for each thing
-    class Spell
-      attr_reader :arcane, :fire, :frost, :holy, :nature, :shadow,
-                  :hit_rating, :bonus_healing, :penetration, :mana_regen, :speed
-
-      def initialize(elem)
-        @arcane = SpellDamage.new(elem%'bonusDamage'%'arcane', elem%'critChance'%'arcane')
-        @fire   = SpellDamage.new(elem%'bonusDamage'%'fire', elem%'critChance'%'fire')
-        @frost  = SpellDamage.new(elem%'bonusDamage'%'frost', elem%'critChance'%'frost')
-        @holy   = SpellDamage.new(elem%'bonusDamage'%'holy', elem%'critChance'%'holy')
-        @nature = SpellDamage.new(elem%'bonusDamage'%'nature', elem%'critChance'%'nature')
-        @shadow = SpellDamage.new(elem%'bonusDamage'%'shadow', elem%'critChance'%'shadow')
-
-        @bonus_healing  = (elem%'bonusHealing')[:value].to_i # is this right??
-        @penetration    = (elem%'penetration')[:value].to_i
-        @hit_rating     = WeaponHitRating.new(elem%'hitRating')
-        @mana_regen     = ManaRegen.new(elem%'manaRegen')
-        @speed      = SpellSpeed.new(elem%'hasteRating')
-
-        # elements = %w[arcane fire frost holy nature shadow]
-        # elements.each do |element|
-        #   # TODO: is this a good idea?
-        #   #instance_variable_set("@#{element}", foo) #??
-        #   #eval("@#{element} = SpellDamage.new(elem[:bonusDamage][element][:value], elem[:critChance][element][:percent]).to_f)")
-        #   # eval("@#{element} = SpellDamage.new((elem%'bonusDamage'%element)[:value].to_i,
-        #   #                                             (elem%'critChance'%element)[:percent].to_f)")
-        # end
-      end
-    end
-
-    class SpellSpeed
-      attr_reader :percent_increase, :haste_rating
-
-      def initialize(elem)
-        @percent_increase = elem[:hastePercent].to_f
-        @haste_rating   = elem[:hasteRating].to_i
-      end
-    end
-
-    class SpellDamage
-      attr_reader :value, :crit_chance_percent
-      alias_method :percent, :crit_chance_percent
-
-      def initialize(bonusDamage_elem, critChance_elem)
-        @value    = bonusDamage_elem[:value].to_i
-        @crit_chance_percent  = critChance_elem[:percent].to_f
-      end
-    end
-
-    class ManaRegen
-      attr_reader :casting, :not_casting
-
-      def initialize(elem)
-        @casting      = elem[:casting].to_f
-        @not_casting  = elem[:notCasting].to_f
-      end
-    end
-
-    class PetBonus
-      attr_reader :attack, :damage, :from_Type
-
-      def initialize(elem)
-        @attack     = elem[:attack].to_i == -1 ? nil : elem[:attack].to_i
-        @damage     = elem[:damage].to_i == -1 ? nil : elem[:damage].to_i
-        @from_type  = elem[:fromType] if elem[:fromType]
-      end
-    end
-
-    class Defenses
-      attr_reader :armor, :defense, :dodge, :parry, :block, :resilience
-
-      def initialize(elem)
-        @armor      = Armor.new(elem%'armor')
-        @defense    = Defense.new(elem%'defense')
-        @dodge      = DodgeParryBlock.new(elem%'dodge')
-        @parry      = DodgeParryBlock.new(elem%'parry')
-        @block      = DodgeParryBlock.new(elem%'block')
-        @resilience = Resilience.new(elem%'resilience')
-      end
-    end
-
-    class Armor
-      attr_reader :base, :effective, :percent, :pet_bonus
-
-      def initialize(elem)
-        @base       = elem[:base].to_i
-        @effective  = elem[:effective].to_i
-        @percent    = elem[:percent].to_f
-        @pet_bonus  = elem[:petBonus].to_i == -1 ? nil : elem[:petBonus].to_i
-      end
-    end
-
-    class Defense
-      attr_reader :value, :increase_percent, :decrease_percent, :plus_defense, :rating
-
-      def initialize(elem)
-        @value            = elem[:value].to_i
-        @increase_percent = elem[:increasePercent].to_f
-        @decrease_percent = elem[:decreasePercent].to_f
-        @plus_defense     = elem[:plusDefense].to_i
-        @rating           = elem[:rating].to_i
-      end
-    end
-
-    class DodgeParryBlock
-      attr_reader :percent, :increase_percent, :rating
-
-      def initialize(elem)
-        @percent          = elem[:percent].to_f
-        @increase_percent = elem[:increasePercent].to_f
-        @rating           = elem[:rating].to_i
-      end
-    end
-
-    class Resilience
-      attr_reader :damage_percent, :hit_percent, :value
-
-      def initialize(elem)
-        @damage_percent = elem[:damagePercent].to_f
-        @hit_percent    = elem[:hitPercent].to_f
-        @value          = elem[:value].to_f
-      end
-    end
-
-    class Resistance
-      attr_reader :value, :pet_bonus
-
-      def initialize(elem)
-        @value      = elem[:value].to_i
-        @pet_bonus  = elem[:petBonus].to_i == -1 ? nil : elem[:petBonus].to_i
-      end
-    end
-
-    # Note the list of talent trees starts at 1. This is quirky, but that's what's used in the XML
-    class TalentSpec
-      attr_reader :trees, :active, :group, :primary, :point_distribution
-
-      def initialize(elem)
-        tree_elem = elem%'talentSpec'
-        @trees = []
-        @trees[0] = tree_elem[:treeOne].to_i
-        @trees[1] = tree_elem[:treeTwo].to_i
-        @trees[2] = tree_elem[:treeThree].to_i
-        @active = (elem[:active].to_i == 1 ? true : false)
-        @group = elem[:group].to_i
-        @primary = elem[:prim]
-        @point_distribution = tree_elem[:value]
-      end
-    end
-
-    # Player-versus-player data
-    class Pvp
-      attr_reader :lifetime_honorable_kills, :arena_currency
-
-      def initialize(elem)
-        @lifetime_honorable_kills = (elem%'lifetimehonorablekills')[:value].to_i
-        @arena_currency           = (elem%'arenacurrency')[:value].to_i
-      end
-    end
-
-    # A buff
-    # TODO: Code duplication, see basic Item class. Make extend Icon class?
-    class Buff
-      attr_reader :name, :effect, :icon_base
-      alias_method :to_s, :name
-
-      @@icon_url_base = 'images/icons/'
-      @@icon_sizes = {:large => ['64x64', 'jpg'], :medium => ['43x43', 'png'], :small => ['21x21', 'png']}
-
-      def initialize(elem, api = nil)
-        @api = api
-
-        @name       = elem[:name]
-        @effect     = elem[:effect]
-        @icon_base  = elem[:icon]
-      end
-
-      # http://armory.worldofwarcraft.com/images/icons/21x21/spell_holy_arcaneintellect.png
-      def icon(size = :medium)
-        if !@@icon_sizes.include?(size)
-          raise Wowr::Exceptions::InvalidIconSize.new(@@icon_sizes)
-        end
-
-        if @api
-          base = @api.base_url
-        else
-          base = 'http://www.wowarmory.com/'
-        end
-
-        # http://www.wowarmory.com/images/icons/64x64/blahblah.jpg
-        return base + @@icon_url_base + @@icon_sizes[size][0] + '/' + @icon_base + '.' + @@icon_sizes[size][1]
-      end
-    end
-
-    # An item equipped to a player
-    class EquippedItem < Item
-      attr_reader :durability, :max_durability, #:id, :item_id, :icon,
-                  :gems, :permanent_enchant,
-                  :random_properties_id, :seed, :slot
-
-      def initialize(elem, api = nil)
-        super(elem, api)
-        @durability           = elem[:durability].to_i
-        @max_durability       = elem[:maxDurability].to_i
-        @gems = []
-        @gems[0]              = elem[:gem0Id].to_i == 0 ? nil : elem[:gem0Id].to_i
-        @gems[1]              = elem[:gem1Id].to_i == 0 ? nil : elem[:gem1Id].to_i
-        @gems[2]              = elem[:gem2Id].to_i == 0 ? nil : elem[:gem2Id].to_i
-        @permanent_enchant    = elem[:permanentenchant].to_i
-        @random_properties_id = elem[:randomPropertiesId] == 0 ? nil : elem[:randomPropertiesId].to_i
-        @seed                 = elem[:seed].to_i # not sure if seed is so big it's overloading
-        @slot                 = elem[:slot].to_i
-      end
-    end
-
-    # eg Daggers, Riding, Fishing, language
-    class Skill
-      attr_reader :key, :name, :value, :max
-      alias_method :to_s, :name
-      alias_method :to_i, :value
-
-      def initialize(elem)
-        @key    = elem[:key]
-        @name   = elem[:name]
-        @value  = elem[:value].to_i
-        @max    = elem[:max].to_i
-      end
-    end
-
-    # Larger group of factions
-    # Used for faction information
-    # eg Alliance, Shattrath City, Steamwheedle Cartel
-    class RepFactionCategory
-      attr_reader :key, :name, :factions
-      alias_method :to_s, :name
-
-      def initialize(elem)
-        @key  = elem[:key]
-        @name = elem[:name]
-
-        @factions = {}
-        (elem/:faction).each do |faction|
-          @factions[faction[:key]] = RepFaction.new(faction)
-        end
-      end
-
-      def total
-        total = 0
-        factions.each_value { |faction| total += faction.reputation }
-        return total
-      end
-    end
-
-    # Smaller NPC faction that is part of a FactionCategory
-    # eg Darnassus, Argent Dawn
-    class RepFaction
-      attr_reader :key, :name, :reputation
-      alias_method :to_s, :name
-      alias_method :to_i, :reputation
-
-      alias_method :rep, :reputation
-
-      def initialize(elem)
-        @key        = elem[:key]
-        @name       = elem[:name]
-        @reputation = elem[:reputation].to_i
-      end
-    end
-
+    class Melee < Wowr::Armory::Character::Weapon::Melee; end
+    class Ranged < Wowr::Armory::Character::Weapon::Ranged; end
+    class WeaponSkill < Wowr::Armory::Character::Weapon::Skill; end
+    class WeaponDamage < Wowr::Armory::Character::Weapon::Damage; end
+    class WeaponSpeed < Wowr::Armory::Character::Weapon::Speed; end
+    class WeaponPower < Wowr::Armory::Character::Weapon::Power; end
+    class WeaponHitRating < Wowr::Armory::Character::Weapon::HitRating; end
+    class WeaponCritChance < Wowr::Armory::Character::Weapon::CritChance; end
+    class WeaponExpertise < Wowr::Armory::Character::Weapon::Expertise; end
+    class Spell < Wowr::Armory::Character::Spell::Spell; end
+    class SpellSpeed < Wowr::Armory::Character::Spell::Speed; end
+    class SpellDamage < Wowr::Armory::Character::Spell::Damage; end
+    class ManaRegen < Wowr::Armory::Character::Spell::ManaRegen; end
+    class PetBonus < Wowr::Armory::Character::Weapon::PetBonus; end
+    class Defenses < Wowr::Armory::Character::Stat::Defenses; end
+    class Defense < Wowr::Armory::Character::Stat::Defense; end
+    class DodgeParryBlock < Wowr::Armory::Character::Stat::DodgeParryBlock; end
+    class Resilience < Wowr::Armory::Character::Stat::Resilience; end
+    class Resistance < Wowr::Armory::Character::Stat::Resistance; end
+    class TalentSpec < Wowr::Armory::Character::TalentSpec; end
+    class Pvp < Wowr::Armory::Character::Pvp; end
+    class Buff < Wowr::Armory::Character::Buff; end
+    class EquippedItem < Wowr::Armory::Character::EquippedItem; end
+    class Skill < Wowr::Armory::Character::Skill; end
+    class RepFactionCategory < Wowr::Armory::Character::RepFactionCategory; end
+    class RepFaction < Wowr::Armory::Character::RepFaction; end
   end
 end
