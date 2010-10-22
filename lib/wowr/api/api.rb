@@ -22,7 +22,6 @@ module Wowr
       attr_accessor :character_name, :guild_name, :realm, :locale, :lang, :caching, :cache_timeout, :debug
 
       include Client
-      include Login
 
       include ArenaTeams
       include Characters
