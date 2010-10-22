@@ -6,7 +6,7 @@ require 'rake/testtask'
 require 'rspec/core/rake_task'
 require 'cucumber/rake/task'
 
-$LOAD_PATH.unshift('lib')
+$:.unshift(File.expand_path('../lib', __FILE__))
 
 desc 'Default: run specs.'
 task :default => :spec
