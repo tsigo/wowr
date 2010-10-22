@@ -5,33 +5,33 @@ module Wowr
     module Client
       def self.included(base)
         base.class_eval do
-          @@armory_base_url   = 'wowarmory.com/'
-          @@login_base_url    = 'battle.net/'
-          @@login_url         = 'login/login.xml'
-          @@persistent_cookie = 'COM-warcraft'
-          @@temporary_cookie  = 'JSESSIONID'
+          @@armory_base_url   = 'wowarmory.com/'.freeze
+          @@login_base_url    = 'battle.net/'.freeze
+          @@login_url         = 'login/login.xml'.freeze
+          @@persistent_cookie = 'COM-warcraft'.freeze
+          @@temporary_cookie  = 'JSESSIONID'.freeze
 
-          @@max_connection_tries = 10
-          @@user_agent           = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10'
+          @@max_connection_tries = 10.freeze
+          @@user_agent           = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10'.freeze
 
-          @@cache_directory_path  = 'cache/'
-          @@default_cache_timeout = (7*24*60*60)
-          @@failed_cache_timeout  = (60*60*24)
-          @@cache_failed_requests = true # cache requests that resulted in an error from the armory
+          @@cache_directory_path  = 'cache/'.freeze
+          @@default_cache_timeout = (7*24*60*60).freeze
+          @@failed_cache_timeout  = (60*60*24).freeze
+          @@cache_failed_requests = true.freeze
 
-          cattr_accessor :armory_base_url
-          cattr_accessor :login_base_url
-          cattr_accessor :login_url
-          cattr_accessor :persistent_cookie
-          cattr_accessor :temporary_cookie
+          cattr_reader :armory_base_url
+          cattr_reader :login_base_url
+          cattr_reader :login_url
+          cattr_reader :persistent_cookie
+          cattr_reader :temporary_cookie
 
-          cattr_accessor :max_connection_tries
-          cattr_accessor :user_agent
+          cattr_reader :max_connection_tries
+          cattr_reader :user_agent
 
-          cattr_accessor :cache_directory_path
-          cattr_accessor :default_cache_timeout
-          cattr_accessor :failed_cache_timeout
-          cattr_accessor :cache_failed_requests
+          cattr_reader :cache_directory_path
+          cattr_reader :default_cache_timeout
+          cattr_reader :failed_cache_timeout
+          cattr_reader :cache_failed_requests
         end
       end
 

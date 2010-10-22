@@ -3,18 +3,18 @@ module Wowr
     class API
       VERSION = '0.4.1'
 
-      @@search_url = 'search.xml'
+      @@search_url = 'search.xml'.freeze
 
-      @@calendar_user_url = 'vault/calendar/month-user.json'
-      @@calendar_world_url = 'vault/calendar/month-world.json'
-      @@calendar_detail_url = 'vault/calendar/detail.json'
+      @@calendar_user_url   = 'vault/calendar/month-user.json'.freeze
+      @@calendar_world_url  = 'vault/calendar/month-world.json'.freeze
+      @@calendar_detail_url = 'vault/calendar/detail.json'.freeze
 
-      @@guild_bank_contents_url = 'vault/guild-bank-contents.xml'
-      @@guild_bank_log_url      = 'vault/guild-bank-log.xml'
+      @@guild_bank_contents_url = 'vault/guild-bank-contents.xml'.freeze
+      @@guild_bank_log_url      = 'vault/guild-bank-log.xml'.freeze
 
-      cattr_accessor :search_url,
-        :guild_bank_contents_url, :guild_bank_log_url,
-        :calendar_user_url, :calendar_world_url, :calendar_detail_url
+      cattr_reader :search_url,
+        :calendar_user_url, :calendar_world_url, :calendar_detail_url,
+        :guild_bank_contents_url, :guild_bank_log_url
 
       @@calendar_world_types = ['player', 'holiday', 'bg', 'darkmoon', 'raidLockout', 'raidReset', 'holidayWeekly']
       @@calendar_user_types = ['raid', 'dungeon', 'pvp', 'meeting', 'other']

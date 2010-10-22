@@ -3,9 +3,9 @@ module Wowr
     module Guilds
       def self.included(base)
         base.class_eval do
-          @@guild_info_url    = 'guild-info.xml'
+          @@guild_info_url    = 'guild-info.xml'.freeze
 
-          cattr_accessor :guild_info_url
+          cattr_reader :guild_info_url
         end
       end
 

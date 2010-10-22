@@ -3,11 +3,11 @@ module Wowr
     module Items
       def self.included(base)
         base.class_eval do
-          @@item_info_url    = 'item-info.xml'
-          @@item_tooltip_url = 'item-tooltip.xml'
+          @@item_info_url    = 'item-info.xml'.freeze
+          @@item_tooltip_url = 'item-tooltip.xml'.freeze
 
-          cattr_accessor :item_info_url
-          cattr_accessor :item_tooltip_url
+          cattr_reader :item_info_url
+          cattr_reader :item_tooltip_url
         end
       end
 

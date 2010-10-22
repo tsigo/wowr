@@ -3,15 +3,15 @@ module Wowr
     module Characters
       def self.included(base)
         base.class_eval do
-          @@character_sheet_url        = 'character-sheet.xml'
-          @@character_talents_url      = 'character-talents.xml'
-          @@character_reputation_url   = 'character-reputation.xml'
-          @@character_achievements_url = 'character-achievements.xml'
+          @@character_sheet_url        = 'character-sheet.xml'.freeze
+          @@character_talents_url      = 'character-talents.xml'.freeze
+          @@character_reputation_url   = 'character-reputation.xml'.freeze
+          @@character_achievements_url = 'character-achievements.xml'.freeze
 
-          cattr_accessor :character_sheet_url
-          cattr_accessor :character_talents_url
-          cattr_accessor :character_reputation_url
-          cattr_accessor :character_achievements_url
+          cattr_reader :character_sheet_url
+          cattr_reader :character_talents_url
+          cattr_reader :character_reputation_url
+          cattr_reader :character_achievements_url
         end
       end
 

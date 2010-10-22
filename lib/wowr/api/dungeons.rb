@@ -3,11 +3,11 @@ module Wowr
     module Dungeons
       def self.included(base)
         base.class_eval do
-          @@dungeons_url         = '_data/dungeons.xml'
-          @@dungeons_strings_url = 'data/dungeonStrings.xml'
+          @@dungeons_url         = '_data/dungeons.xml'.freeze
+          @@dungeons_strings_url = 'data/dungeonStrings.xml'.freeze
 
-          cattr_accessor :dungeons_url
-          cattr_accessor :dungeons_strings_url
+          cattr_reader :dungeons_url
+          cattr_reader :dungeons_strings_url
         end
       end
 
