@@ -18,7 +18,7 @@ module Wowr
           @id                 = (elem%'id').html.to_i
           @name               = (elem%'name').html
           @icon_base          = (elem%'icon').html
-          @desc               = (elem%'desc').html if (elem%'desc')
+          @desc               = (elem/"/desc").text if (elem%'desc')
           @overall_quality_id = (elem%'overallQualityId').html.to_i
           @bonding            = (elem%'bonding').html.to_i
           @stackable          = (elem%'stackable').html.to_i if (elem%'stackable')
