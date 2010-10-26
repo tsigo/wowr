@@ -132,7 +132,7 @@ describe Wowr::API::API, "search" do
 
   describe "#search_items" do
     it "should call #search with the correct parameters" do
-      api.should_receive(:search).with(:search => 'ItemName', :type => 'items').twice
+      api.expects(:search).with(:search => 'ItemName', :type => 'items').twice
       api.search_items('ItemName')
       api.search_items(:search => 'ItemName')
     end
@@ -147,7 +147,7 @@ describe Wowr::API::API, "search" do
 
   describe "#search_guilds" do
     it "should call #search with the correct parameters" do
-      api.should_receive(:search).with(:search => 'GuildName', :type => 'guilds').twice
+      api.expects(:search).with(:search => 'GuildName', :type => 'guilds').twice
       api.search_guilds('GuildName')
       api.search_guilds(:search => 'GuildName')
     end
@@ -162,7 +162,7 @@ describe Wowr::API::API, "search" do
 
   describe "#search_characters" do
     it "should call #search with the correct parameters" do
-      api.should_receive(:search).with(:search => 'CharacterName', :type => 'characters').twice
+      api.expects(:search).with(:search => 'CharacterName', :type => 'characters').twice
       api.search_characters('CharacterName')
       api.search_characters(:search => 'CharacterName')
     end
@@ -177,7 +177,7 @@ describe Wowr::API::API, "search" do
 
   describe "#search_arena_teams" do
     it "should call #search with the correct parameters" do
-      api.should_receive(:search).with(:search => 'TeamName', :type => 'arenateams').twice
+      api.expects(:search).with(:search => 'TeamName', :type => 'arenateams').twice
       api.search_arena_teams('TeamName')
       api.search_arena_teams(:search => 'TeamName')
     end
@@ -220,7 +220,7 @@ describe Wowr::API::API do
 
   describe "#get_character_sheet" do
     it "should call get_character" do
-      api.should_receive(:get_character).with('name_argument', {:foo => 'bar'})
+      api.expects(:get_character).with('name_argument', {:foo => 'bar'})
       api.get_character_sheet('name_argument', {:foo => 'bar'})
     end
   end

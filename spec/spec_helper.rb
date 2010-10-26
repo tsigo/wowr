@@ -14,6 +14,6 @@ module FileFixtures
 end
 
 RSpec.configure do |config|
-  config.mock_with :rspec
+  config.mock_with :mocha
   config.include(FileFixtures)
 end

@@ -35,7 +35,7 @@ module Wowr::Armory::Item
     end
 
     it "should use API's base_url when initialized with an API instance" do
-      api.should_receive(:base_url).and_return('')
+      api.expects(:base_url).returns('')
       Base.new(fake_element, api).icon
     end
 
@@ -44,7 +44,7 @@ module Wowr::Armory::Item
     end
 
     it "should use a special icon_url_base for Taiwan" do
-      api.should_receive(:locale).and_return('tw')
+      api.expects(:locale).returns('tw')
       Base.new(fake_element, api).icon.should match(%r{wow-icons/_images/})
     end
 
