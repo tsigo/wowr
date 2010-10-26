@@ -15,6 +15,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
+      # http://www.wowarmory.com/item-tooltip.xml?i=49098
       xml = <<-XML
       <spellData>
         <spell>

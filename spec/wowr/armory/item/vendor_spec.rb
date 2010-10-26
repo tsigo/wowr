@@ -20,6 +20,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
+      # http://www.wowarmory.com/item-info.xml?i=46163
       xml = <<-XML
       <vendors>
         <creature area="Crystalsong Forest" classification="0" heroic="1" id="28995" maxLevel="75" minLevel="75" name="Paldesse" title="Cloth Armor Merchant" type="Humanoid"/>
