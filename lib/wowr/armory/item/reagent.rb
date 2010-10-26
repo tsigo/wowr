@@ -6,9 +6,6 @@ module Wowr
 
         def initialize(elem, api = nil)
           super(elem, api)
-          # @id = elem[:id].to_i
-          # @name = elem[:name]
-          # @icon = elem[:icon]
           @count = elem[:count].to_i
         end
       end
