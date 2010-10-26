@@ -15,7 +15,7 @@ module Wowr::Armory::Item
     end
 
     it "should raise NoMethodError when given an invalid method" do
-      expect { subject.foo }.to raise_error(NoMethodError, /undefined method 'foo'/)
+      expect { subject.foo }.to raise_error(NoMethodError)
     end
 
     protected

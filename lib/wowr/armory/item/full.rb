@@ -1,7 +1,8 @@
 module Wowr
   module Armory
     module Item
-      # Full data from item-info and item-tooltip
+      # Represents an item containing full information from both item-info and
+      # item-tooltip pages
       class Full < Wowr::Armory::Item::Base
         def initialize(info, tooltip, api = nil)
           super(info, api)
@@ -10,14 +11,12 @@ module Wowr
         end
 
         def method_missing(m, *args)
-          begin
+          if @info.respond_to? m
             return @info.send(m, *args)
-          rescue NoMethodError => e
-            begin
-              return @tooltip.send(m, *args)
-            rescue
-              raise NoMethodError.new("undefined method '#{m}' for #{self.class}")
-            end
+          elsif @tooltip.respond_to? m
+            return @tooltip.send(m, *args)
+          else
+            super
           end
         end
       end
