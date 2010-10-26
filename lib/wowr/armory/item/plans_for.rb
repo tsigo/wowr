@@ -7,11 +7,12 @@ module Wowr
       #     <reagent name="Heavy Knothide Leather" icon="inv_misc_leatherscrap_11" id="23793" count="10"></reagent>
       #   </spell>
       # </plansFor>
+      # FIXME: I cannot find "plansFor" anywhere on the Armory. Has it been removed? (tsigo)
       class PlansFor < Wowr::Armory::Item::Creation
         def initialize(elem, api = nil)
           super(elem, api)
           # TODO: Multiple items?
-          @item = CreatedItem.new(elem%'item')  if (elem%'item')
+          @item = CreatedItem.new(elem%'item') if (elem%'item')
         end
       end
     end

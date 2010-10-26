@@ -6,13 +6,10 @@ module Wowr
         attr_reader :count
 
         def initialize(elem, api = nil)
-          super(elem)
-          # @id = elem[:id].to_i
-          # @icon_bse = elem[:icon]
+          super(elem, api)
           @count = elem[:count].to_i
         end
       end
-
     end
   end
 end
