@@ -1,20 +1,123 @@
 module Wowr
   module Armory
     module Item
-      # Provides detailed item information
-      # Note that the item-tooltip.xml just returns an empty document when the item
-      # can't be found.
+      # Represents all of the information found in an Item's tooltip information
+      #
+      # Noteworthy data available on the info page but not tooltip includes ...
+      #
+      # == Relevant XML example:
+      #
+      #   <itemTooltip>
+      #     <id>40395</id>
+      #     <name>Torch of Holy Fire</name>
+      #     <icon>inv_mace_82</icon>
+      #     <overallQualityId>4</overallQualityId>
+      #     <bonding>1</bonding>
+      #     <classId>2</classId>
+      #     <equipData>
+      #       <inventoryType>21</inventoryType>
+      #       <subclassName>Mace</subclassName>
+      #     </equipData>
+      #     <damageData>
+      #       <damage>
+      #         <type>0</type>
+      #         <min>216</min>
+      #         <max>401</max>
+      #       </damage>
+      #       <speed>1.8</speed>
+      #       <dps>85.83</dps>
+      #     </damageData>
+      #     <bonusStamina>82</bonusStamina>
+      #     <bonusSpirit>38</bonusSpirit>
+      #     <durability current="105" max="105"/>
+      #     <requiredLevel>80</requiredLevel>
+      #     <itemLevel>226</itemLevel>
+      #     <bonusHasteRating>48</bonusHasteRating>
+      #     <bonusSpellPower>651</bonusSpellPower>
+      #     <itemSource areaId="3456" areaName="Naxxramas" creatureId="15990" creatureName="Kel'Thuzad" difficulty="h" dropRate="3" value="sourceType.creatureDrop"/>
+      #   </itemTooltip>
+      #
+      # == Example Pages:
+      #
+      # * http://www.wowarmory.com/item-tooltip.xml?i=16922
+      # * http://www.wowarmory.com/item-tooltip.xml?i=40111
+      # * http://www.wowarmory.com/item-tooltip.xml?i=40395
+      # * http://www.wowarmory.com/item-tooltip.xml?i=46017
+      # * http://www.wowarmory.com/item-tooltip.xml?i=50727
+      #
+      # @todo Explain differences between Tooltip and Info
       class Tooltip < Wowr::Armory::Item::Base
-        attr_reader :desc, :overall_quality_id, :bonding, :max_count, #:id, :name, :icon,
-          :class_id, :bonuses, :item_source,
-          :resistances, :required_level,
-          :allowable_classes, :armor, :durability,
-          :sockets, :socket_match_enchant,
-          :gem_properties, :equip_data
+        # Flavor text
+        # @example
+        #   "The power of creation courses through this weapon."
+        # @returns [String]
+        attr_reader :desc
+
+        # Item quality ID
+        # @return [Integer]
+        attr_reader :overall_quality_id
+
+        # Item bonding
+        # @return [Integer]
+        attr_reader :bonding
+
+        # Maximum stack count
+        # @return [Integer]
+        attr_reader :max_count
+
+        # @return [Integer]
+        attr_reader :class_id
+
+        # A hash of <tt>stat => bonus amount</tt> pairs representing stats
+        # increased by equipping this item
+        # @return [Hash]
+        attr_reader :bonuses
+
+        # @return [Source]
+        attr_reader :item_source
+
+        attr_reader :resistances
+
+        # @return [Integer]
+        attr_reader :required_level
+
+        # An array of allowed classes for class-specific items
+        # @return [Array]
+        attr_reader :allowable_classes
+
+        # Armor value
+        # @note Does not include bonus armor
+        # @return [Integer]
+        attr_reader :armor
+
+        # @return [Integer]
+        attr_reader :durability
+
+        # An array of socket colors on this item; non-unique
+        # @example Get the number of blue sockets
+        #   tooltip.sockets.count("Blue")
+        # @return [Array]
+        attr_reader :sockets
+
+        attr_reader :socket_match_enchant
+
+        # Stats granted by equipping a gem
+        # @example
+        #   "+20 Strength"
+        #   "+32 Stamina and 2% Increased Armor Value from Items"
+        # @return [String]
+        attr_reader :gem_properties
+
+        # Bonuses and effects conferred upon equiping this item
+        # @return [EquipData]
+        attr_reader :equip_data
+
         alias_method :description, :desc
 
+        # @param [Hpricot::Elem] elem <tt><itemTooltip></tt> element
         def initialize(elem, api = nil)
           super(elem, api)
+
           @id                 = (elem%'id').html.to_i
           @name               = (elem%'name').html
           @icon_base          = (elem%'icon').html
@@ -26,14 +129,14 @@ module Wowr
           @class_id           = (elem%'classId').html.to_i
           @required_level     = (elem%'requiredLevel').html.to_i if (elem%'requiredLevel')
 
-          @equip_data         = Wowr::Classes::ItemEquipData.new(elem%'equipData')
+          @equip_data         = EquipData.new(elem%'equipData')
 
           # TODO: This appears to be a plain string at the moment
           #<gemProperties>+26 Healing +9 Spell Damage and 2% Reduced Threat</gemProperties>
           @gem_properties     = (elem%'gemProperties').html if (elem%'gemProperties')
 
           # not all items have damage data
-          @damage             = Wowr::Classes::ItemDamageData.new(elem%'damageData') unless !(elem%'damageData') || (elem%'damageData').empty?
+          @damage             = DamageData.new(elem%'damageData') unless !(elem%'damageData') || (elem%'damageData').empty?
 
           # TODO: Test socket data with a variety of items
           # TODO: replace with socket Class?
@@ -68,19 +171,11 @@ module Wowr
             :melee_crit         => :bonusCritMeleeRating,
             :ranged_crit        => :bonusCritRangedRating,
             :spell_crit         => :bonusCritSpellRating,
-            # :bonusHitTakenMeleeRating,
-            # :bonusHitTakenRangedRating,
-            # :bonusHitTakenSpellRating,
-            # :bonusCritTakenMeleeRating,
-            # :bonusCritTakenRangedRating,
-            # :bonusCritTakenSpellRating,
             :melee_haste        => :bonusHasteMeleeRating,
             :ranged_haste       => :bonusHasteRangedRating,
             :spell_haste        => :bonusHasteSpellRating,
             :hit                => :bonusHitRating,
             :crit               => :bonusCritRating,
-            # :bonusHitTakenRating,
-            # :bonusCritTakenRating,
             :resilience         => :bonusResilienceRating,
             :haste              => :bonusHasteRating,
             :spell_power        => :bonusSpellPower,
@@ -102,9 +197,9 @@ module Wowr
 
           resist_stats = {
             :arcane => :arcaneResist,
-            :fire => :fireResist,
-            :frost => :frostResist,
-            :holy => :holyResist,
+            :fire   => :fireResist,
+            :frost  => :frostResist,
+            :holy   => :holyResist,
             :nature => :natureResist,
             :shadow => :shadowResist
           }
@@ -128,33 +223,22 @@ module Wowr
           if (elem%'spellData')
             @spells = []
             (elem%'spellData'/:spell).each do |spell|
-              @spells << Wowr::Classes::ItemSpell.new(spell)
-            end
-
-            # Convert specific spell descriptions into bonus values
-            regex = {
-              :spell_power => /^Increases spell power by ([0-9]+)\.$/,
-              :mana_regen  => /^Restores ([0-9]+) mana per 5 sec\.$/,
-            }
-            @spells.each do |spell|
-              regex.each do |bonus, exp|
-                if spell.description =~ exp
-                  @bonuses[bonus] = spell.description.gsub(exp, '\1').to_i
-                end
-              end
+              @spells << Spell.new(spell)
             end
           end
 
-          @setData = Wowr::Classes::ItemSetData.new(elem%'setData') if (elem%'setData')
+          # FIXME: Why the random CamelCase all of the sudden? (tsigo)
+          @setData = SetData.new(elem%'setData') if (elem%'setData')
 
           # @item_sources = []
           # (elem/:itemSource).each do |source|
           #   @item_sources << ItemSource.new(source)
           # end
-          @item_source = Wowr::Classes::ItemSource.new(elem%'itemSource') if (elem%'itemSource')  # TODO: More than once source?
+          @item_source = Source.new(elem%'itemSource') if (elem%'itemSource')  # TODO: More than once source?
         end
 
         private
+
         def test_stat(elem)
           if elem
             if !elem.html.empty?
