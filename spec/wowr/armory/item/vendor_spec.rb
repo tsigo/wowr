@@ -13,6 +13,10 @@ module Wowr::Armory::Item
     its(:max_level)      { should eql(75) }
     its(:min_level)      { should eql(75) }
 
+    # Alias methods
+    its(:to_s) { should eql("Paldesse") }
+    its(:to_i) { should eql(28995) }
+
     protected
 
     def fake_element
