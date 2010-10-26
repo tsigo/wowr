@@ -6,7 +6,7 @@ module Wowr
         alias_method :to_s, :name
 
         def initialize(elem)
-          @name = elem[:name]
+          @name = (elem/:name).text
 
           @items = []
           (elem/:item).each do |item|
@@ -15,7 +15,7 @@ module Wowr
 
           @set_bonuses = []
           (elem/:setBonus).each do |bonus|
-            @set_bonuses << ItemSetBonus.new(bonus)
+            @set_bonuses << SetBonus.new(bonus)
           end
         end
       end
