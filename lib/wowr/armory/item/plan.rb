@@ -7,10 +7,11 @@ module Wowr
 
         def initialize(elem, api = nil)
           super(elem, api)
-          @type = elem[:type]
-          @level = elem[:level].to_i
-          @quality = elem[:quality].to_i
-          @required_skill = elem[:requiredSkill]
+
+          @type                = elem[:type]
+          @level               = elem[:level].to_i
+          @quality             = elem[:quality].to_i
+          @required_skill      = elem[:requiredSkill]
           @required_skill_rank = elem[:requiredSkillRank].to_i
         end
       end
