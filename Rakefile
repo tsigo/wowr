@@ -126,7 +126,8 @@ namespace :file_fixtures do
       'item-tooltip' => [
         {:r => "i=40395", :l => '40395'},
         {:r => "i=0",     :l => 'not_found'},
-        {:r => "i=46017", :l => '46017'}
+        {:r => "i=46017", :l => '46017'},
+        {:r => "i=16922", :l => '16922'}
       ],
       'search' => [
         {:r => "searchQuery=Lemon&searchType=arenateams",  :l => 'arena_teams_lemon'},

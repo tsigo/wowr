@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/items/tooltip.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/item-tooltip.xml">
+  <itemTooltips>
+    <itemTooltip>
+      <id>16922</id>
+      <name>Leggings of Transcendence</name>
+      <icon>inv_pants_08</icon>
+      <overallQualityId>4</overallQualityId>
+      <bonding>1</bonding>
+      <classId>4</classId>
+      <equipData>
+        <inventoryType>7</inventoryType>
+        <subclassName>Cloth</subclassName>
+      </equipData>
+      <damageData/>
+      <bonusSpirit>29</bonusSpirit>
+      <bonusStamina>36</bonusStamina>
+      <bonusIntellect>21</bonusIntellect>
+      <armor armorBonus="0">221</armor>
+      <durability current="120" max="120"/>
+      <allowableClasses>
+        <class>Priest</class>
+      </allowableClasses>
+      <requiredLevel>60</requiredLevel>
+      <itemLevel>76</itemLevel>
+      <setData>
+        <name>Vestments of Transcendence</name>
+        <item name="Belt of Transcendence"/>
+        <item name="Bindings of Transcendence"/>
+        <item name="Boots of Transcendence"/>
+        <item name="Halo of Transcendence"/>
+        <item name="Handguards of Transcendence"/>
+        <item name="Leggings of Transcendence"/>
+        <item name="Pauldrons of Transcendence"/>
+        <item name="Robes of Transcendence"/>
+        <setBonus desc="Increases your Spirit by 50." threshold="3"/>
+        <setBonus desc="When struck in melee there is a 50% chance you will Fade for 4 sec." threshold="5"/>
+        <setBonus desc="Your Greater Heals now have a heal over time component equivalent to a rank 5 Renew." threshold="8"/>
+      </setData>
+      <itemSource areaId="2717" areaName="Molten Core" creatureId="11502" creatureName="Ragnaros" difficulty="n" dropRate="2" value="sourceType.creatureDrop"/>
+    </itemTooltip>
+  </itemTooltips>
+</page>
