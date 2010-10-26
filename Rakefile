@@ -94,8 +94,7 @@ namespace :file_fixtures do
     `curl -s -A "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10" -o "#{local}" "#{remote}"`
   end
 
-  desc "Update file fixtures"
-  task :update do
+  def fixtures
     # key is the folder relative to spec/file_fixtures/armory/, value is an array of hashes:
     #   r: remote path after "wowarmory.com/file.xml?"
     #   l: local filename without extension
@@ -140,7 +139,30 @@ namespace :file_fixtures do
         {:r => "r=Mal'Ganis&ts=5&t=Fav+Five",     :l => 'fav_five_mal_ganis'},
         {:r => "r=Mal'Ganis&ts=5&t=DoesNotExist", :l => 'not_found'}
       ]
-    }.each do |folder, hashes|
+    }
+  end
+
+  desc "Download only missing file fixtures"
+  task :download do
+    fixtures.each do |folder, hashes|
+      hashes.each do |hash|
+        remote = "http://www.wowarmory.com/#{folder}.xml?#{hash[:r]}"
+        local  = "spec/file_fixtures/armory/#{folder}/#{hash[:l]}.xml"
+
+        unless File.exists? File.expand_path("../#{local}", __FILE__)
+          puts "#{remote.ljust(80)} -> #{local}"
+          download_file(remote, File.expand_path("../#{local}", __FILE__))
+        end
+      end
+    end
+
+    puts ""
+    system "git status -s"
+  end
+
+  desc "Update all file fixtures"
+  task :update do
+    fixtures.each do |folder, hashes|
       hashes.each do |hash|
         remote = "http://www.wowarmory.com/#{folder}.xml?#{hash[:r]}"
         local  = "spec/file_fixtures/armory/#{folder}/#{hash[:l]}.xml"
