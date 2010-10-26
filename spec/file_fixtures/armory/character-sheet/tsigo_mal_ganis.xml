@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/sheet.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-sheet.xml">
   <tabInfo subTab="profile" tab="character" tabGroup="character" tabUrl="r=Mal%27Ganis&amp;cn=Tsigo"/>
   <characterInfo>
-    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Tsigo" class="Priest" classId="5" classUrl="c=Priest" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="" lastModified="July 14, 2010" level="80" name="Tsigo" points="0" prefix="" race="Undead" raceId="5" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138">
+    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Tsigo" class="Priest" classId="5" classUrl="c=Priest" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="" lastModified="July 14, 2010" level="80" name="Tsigo" points="8770" prefix="" race="Undead" raceId="5" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138">
       <modelBasePath value="http://us.media.battle.net.edgesuite.net/"/>
     </character>
     <characterTab>
@@ -22,6 +22,7 @@
       <secondaryProfessions>
         <skill id="185" key="cooking" max="450" name="Cooking" value="450"/>
         <skill id="129" key="firstaid" max="450" name="First Aid" value="450"/>
+        <skill id="356" key="fishing" max="450" name="Fishing" value="450"/>
       </secondaryProfessions>
       <characterBars>
         <health effective="21670"/>
@@ -87,7 +88,7 @@
       </spell>
       <defenses>
         <armor base="2381" effective="2381" percent="13.52" petBonus="-1"/>
-        <defense decreasePercent="0.00" increasePercent="0.00" plusDefense="0" rating="0" value="-1.00"/>
+        <defense decreasePercent="0.00" increasePercent="0.00" plusDefense="0" rating="0" value="400.00"/>
         <dodge increasePercent="0.00" percent="4.41" rating="0"/>
         <parry increasePercent="0.00" percent="0.00" rating="0"/>
         <block increasePercent="0.00" percent="0.00" rating="0"/>
@@ -115,42 +116,42 @@
         <item displayInfoId="60400" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_shirt_guildtabard_01" id="46874" level="1" maxDurability="0" name="Argent Crusader's Tabard" permanentenchant="0" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="3" seed="0" slot="18"/>
       </items>
       <glyphs>
-        <glyph effect="Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec." icon="spell_holy_prayerofhealing02" id="264" name="Glyph of Prayer of Healing" type="major"/>
+        <glyph effect="Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec." icon="spell_holy_prayerofhealing02" id="264" name="Glyph of Prayer of Healing" type="prime"/>
         <glyph effect="Reduces the mana cost of your Fade spell by 30%." icon="ability_mage_invisibility" id="458" name="Glyph of Fading" type="minor"/>
         <glyph effect="Your Levitate spell no longer requires a reagent." icon="spell_holy_layonhands" id="459" name="Glyph of Levitate" type="minor"/>
-        <glyph effect="Reduces the cooldown of your Guardian Spirit by 30 sec." icon="spell_holy_guardianspirit" id="709" name="Glyph of Guardian Spirit" type="major"/>
+        <glyph effect="Reduces the cooldown of your Guardian Spirit by 30 sec." icon="spell_holy_guardianspirit" id="709" name="Glyph of Guardian Spirit" type="prime"/>
         <glyph effect="Reduces the mana cost of your Power Word: Fortitude spell by 50%." icon="spell_holy_wordfortitude" id="460" name="Glyph of Fortitude" type="minor"/>
         <glyph effect="Your Circle of Healing spell heals 1 additional target." icon="spell_holy_circleofrenewal" id="251" name="Glyph of Circle of Healing" type="major"/>
       </glyphs>
     </characterTab>
     <summary>
-      <c earned="0" points="0" total="1056" totalPoints="11640"/>
+      <c earned="813" points="8770" total="1056" totalPoints="11640"/>
       <category id="92" name="General">
-        <c earned="0" earnedPoints="0" total="52" totalPoints="535"/>
+        <c earned="40" earnedPoints="415" total="52" totalPoints="535"/>
       </category>
       <category id="96" name="Quests">
-        <c earned="0" earnedPoints="0" total="49" totalPoints="530"/>
+        <c earned="44" earnedPoints="480" total="49" totalPoints="530"/>
       </category>
       <category id="97" name="Exploration">
-        <c earned="0" earnedPoints="0" total="70" totalPoints="830"/>
+        <c earned="67" earnedPoints="770" total="70" totalPoints="830"/>
       </category>
       <category id="95" name="Player vs. Player">
-        <c earned="0" earnedPoints="0" total="166" totalPoints="1930"/>
+        <c earned="42" earnedPoints="450" total="166" totalPoints="1930"/>
       </category>
       <category id="168" name="Dungeons &amp; Raids">
-        <c earned="0" earnedPoints="0" total="458" totalPoints="4955"/>
+        <c earned="421" earnedPoints="4570" total="458" totalPoints="4955"/>
       </category>
       <category id="169" name="Professions">
-        <c earned="0" earnedPoints="0" total="75" totalPoints="760"/>
+        <c earned="62" earnedPoints="620" total="75" totalPoints="760"/>
       </category>
       <category id="201" name="Reputation">
-        <c earned="0" earnedPoints="0" total="45" totalPoints="560"/>
+        <c earned="28" earnedPoints="345" total="45" totalPoints="560"/>
       </category>
       <category id="155" name="World Events">
-        <c earned="0" earnedPoints="0" total="141" totalPoints="1540"/>
+        <c earned="109" earnedPoints="1120" total="141" totalPoints="1540"/>
       </category>
       <category id="81" name="Feats of Strength">
-        <c earned="0"/>
+        <c earned="23"/>
       </category>
     </summary>
   </characterInfo>

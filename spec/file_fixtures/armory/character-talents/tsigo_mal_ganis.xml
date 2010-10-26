@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/talents.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-talents.xml">
   <tabInfo subTab="talents" tab="character" tabGroup="character" tabUrl="r=Mal%27Ganis&amp;cn=Tsigo"/>
   <characterInfo>
-    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Tsigo" class="Priest" classId="5" classUrl="c=Priest" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="" lastModified="July 14, 2010" level="80" name="Tsigo" points="0" prefix="" race="Undead" raceId="5" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138">
+    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Tsigo" class="Priest" classId="5" classUrl="c=Priest" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="" lastModified="July 14, 2010" level="80" name="Tsigo" points="8770" prefix="" race="Undead" raceId="5" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138">
       <modelBasePath value="http://us.media.battle.net.edgesuite.net/"/>
     </character>
     <talents>
       <talentGroup group="2" icon="ability_seal" prim="">
         <talentSpec treeOne="0" treeThree="0" treeTwo="0" value=""/>
         <glyphs>
-          <glyph effect="Your Power Word: Shield also heals the target for 20% of the absorption amount." icon="spell_holy_powerwordshield" id="263" name="Glyph of Power Word: Shield" type="major"/>
+          <glyph effect="Your Power Word: Shield also heals the target for 20% of the absorption amount." icon="spell_holy_powerwordshield" id="263" name="Glyph of Power Word: Shield" type="prime"/>
           <glyph effect="Your Levitate spell no longer requires a reagent." icon="spell_holy_layonhands" id="459" name="Glyph of Levitate" type="minor"/>
           <glyph effect="Receive 5% of your maximum mana if your Shadowfiend dies from damage." icon="spell_shadow_shadowfiend" id="463" name="Glyph of Shadowfiend" type="minor"/>
-          <glyph effect="Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec." icon="spell_holy_prayerofhealing02" id="264" name="Glyph of Prayer of Healing" type="major"/>
+          <glyph effect="Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec." icon="spell_holy_prayerofhealing02" id="264" name="Glyph of Prayer of Healing" type="prime"/>
           <glyph effect="Reduces the mana cost of your Power Word: Fortitude spell by 50%." icon="spell_holy_wordfortitude" id="460" name="Glyph of Fortitude" type="minor"/>
-          <glyph effect="Reduces the cooldown of Penance by 2 sec." icon="spell_holy_penance" id="710" name="Glyph of Penance" type="major"/>
+          <glyph effect="Reduces the cooldown of Penance by 2 sec." icon="spell_holy_penance" id="710" name="Glyph of Penance" type="prime"/>
         </glyphs>
       </talentGroup>
       <talentGroup active="1" group="1" icon="ability_seal" prim="">
         <talentSpec treeOne="0" treeThree="0" treeTwo="0" value=""/>
         <glyphs>
-          <glyph effect="Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec." icon="spell_holy_prayerofhealing02" id="264" name="Glyph of Prayer of Healing" type="major"/>
+          <glyph effect="Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec." icon="spell_holy_prayerofhealing02" id="264" name="Glyph of Prayer of Healing" type="prime"/>
           <glyph effect="Reduces the mana cost of your Fade spell by 30%." icon="ability_mage_invisibility" id="458" name="Glyph of Fading" type="minor"/>
           <glyph effect="Your Levitate spell no longer requires a reagent." icon="spell_holy_layonhands" id="459" name="Glyph of Levitate" type="minor"/>
-          <glyph effect="Reduces the cooldown of your Guardian Spirit by 30 sec." icon="spell_holy_guardianspirit" id="709" name="Glyph of Guardian Spirit" type="major"/>
+          <glyph effect="Reduces the cooldown of your Guardian Spirit by 30 sec." icon="spell_holy_guardianspirit" id="709" name="Glyph of Guardian Spirit" type="prime"/>
           <glyph effect="Reduces the mana cost of your Power Word: Fortitude spell by 50%." icon="spell_holy_wordfortitude" id="460" name="Glyph of Fortitude" type="minor"/>
           <glyph effect="Your Circle of Healing spell heals 1 additional target." icon="spell_holy_circleofrenewal" id="251" name="Glyph of Circle of Healing" type="major"/>
         </glyphs>

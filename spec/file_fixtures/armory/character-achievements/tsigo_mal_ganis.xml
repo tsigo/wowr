@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/achievements.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-achievements.xml">
   <tabInfo subTab="achievements" tab="character" tabGroup="character" tabUrl="r=Mal%27Ganis&amp;cn=Tsigo"/>
   <characterInfo>
-    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Tsigo" class="Priest" classId="5" classUrl="c=Priest" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="" lastModified="July 14, 2010" level="80" name="Tsigo" points="0" prefix="" race="Undead" raceId="5" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138"/>
+    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Tsigo" class="Priest" classId="5" classUrl="c=Priest" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="" lastModified="July 14, 2010" level="80" name="Tsigo" points="8770" prefix="" race="Undead" raceId="5" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138"/>
   </characterInfo>
   <achievements>
     <summary>
-      <c earned="0" points="0" total="1056" totalPoints="11640"/>
+      <c earned="813" points="8770" total="1056" totalPoints="11640"/>
       <category>
-        <c earned="0" earnedPoints="0" total="52" totalPoints="535"/>
+        <c earned="40" earnedPoints="415" total="52" totalPoints="535"/>
       </category>
       <category>
-        <c earned="0" earnedPoints="0" total="49" totalPoints="530"/>
+        <c earned="44" earnedPoints="480" total="49" totalPoints="530"/>
       </category>
       <category>
-        <c earned="0" earnedPoints="0" total="70" totalPoints="830"/>
+        <c earned="67" earnedPoints="770" total="70" totalPoints="830"/>
       </category>
       <category>
-        <c earned="0" earnedPoints="0" total="166" totalPoints="1930"/>
+        <c earned="42" earnedPoints="450" total="166" totalPoints="1930"/>
       </category>
       <category>
-        <c earned="0" earnedPoints="0" total="458" totalPoints="4955"/>
+        <c earned="421" earnedPoints="4570" total="458" totalPoints="4955"/>
       </category>
       <category>
-        <c earned="0" earnedPoints="0" total="75" totalPoints="760"/>
+        <c earned="62" earnedPoints="620" total="75" totalPoints="760"/>
       </category>
       <category>
-        <c earned="0" earnedPoints="0" total="45" totalPoints="560"/>
+        <c earned="28" earnedPoints="345" total="45" totalPoints="560"/>
       </category>
       <category>
-        <c earned="0" earnedPoints="0" total="141" totalPoints="1540"/>
+        <c earned="109" earnedPoints="1120" total="141" totalPoints="1540"/>
       </category>
       <category>
-        <c earned="0"/>
+        <c earned="23"/>
       </category>
       <achievement categoryId="168" dateCompleted="2010-07-04T22:06:00-05:00" desc="Defeat Halion in The Ruby Sanctum in 25-player Heroic mode." icon="spell_shadow_twilight" id="4816" points="10" title="Heroic: The Twilight Destroyer (25 player)"/>
       <achievement categoryId="168" dateCompleted="2010-07-04T22:06:00-05:00" desc="Defeat Halion in The Ruby Sanctum in 25-player mode." icon="spell_shadow_twilight" id="4815" points="10" title="The Twilight Destroyer (25 player)"/>

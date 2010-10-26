@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/items/tooltip.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/item-tooltip.xml">
+  <itemTooltips>
+    <itemTooltip>
+      <id>46017</id>
+      <name>Val'anyr, Hammer of Ancient Kings</name>
+      <icon>inv_mace_99</icon>
+      <overallQualityId>5</overallQualityId>
+      <bonding>1</bonding>
+      <classId>2</classId>
+      <equipData>
+        <inventoryType>21</inventoryType>
+        <subclassName>Mace</subclassName>
+      </equipData>
+      <damageData>
+        <damage>
+          <type>0</type>
+          <min>247</min>
+          <max>460</max>
+        </damage>
+        <speed>1.8</speed>
+        <dps>98.06</dps>
+      </damageData>
+      <bonusStamina>105</bonusStamina>
+      <durability current="125" max="125"/>
+      <requiredLevel>80</requiredLevel>
+      <itemLevel>245</itemLevel>
+      <bonusSpellPower>777</bonusSpellPower>
+      <bonusCritRating>50</bonusCritRating>
+      <bonusHasteRating>49</bonusHasteRating>
+      <spellData>
+        <spell>
+          <trigger>1</trigger>
+          <desc>Your healing spells have a chance to cause Blessing of Ancient Kings for 15 sec allowing your heals to shield the target absorbing damage equal to 15% of the amount healed.</desc>
+        </spell>
+      </spellData>
+      <desc>The power of creation courses through this weapon.</desc>
+      <itemSource value="sourceType.none"/>
+    </itemTooltip>
+  </itemTooltips>
+</page>
