@@ -19,7 +19,7 @@ module Wowr
           if (elem%'token')
             @tokens = []
             (elem/:token).each do |token|
-              @tokens << ItemCostToken.new(token)
+              @tokens << CostToken.new(token)
             end
           end
         end
