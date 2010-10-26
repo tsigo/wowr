@@ -4,6 +4,8 @@ module Wowr
       # TODO rename
       # There is some sort of opposite relationship between PlansFor and CreatedBy
       class Creation < Wowr::Armory::Item::Base
+
+        # FIXME: item attribute is never assigned to; working as intended? (tsigo)
         attr_reader :item, :reagents
 
         def initialize(elem, api = nil)

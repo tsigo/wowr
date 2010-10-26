@@ -1,6 +1,7 @@
 module Wowr
   module Armory
     module Item
+      # TODO: Remove this class? Every item-info page has this XML element, regardless of source (tsigo)
       # <item requiredSkill="Jewelcrafting" name="Design: Bracing Earthstorm Diamond" icon="inv_scroll_03" type="Jewelcrafting" level="73" id="25903" requiredSkillRank="365" quality="1"></item>
       class Plan < Wowr::Armory::Item::Base
         attr_reader :required_skill, :type, :required_skill_rank, :level, :quality

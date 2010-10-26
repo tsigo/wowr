@@ -1,6 +1,8 @@
 module Wowr
   module Armory
     module Item
+      # TODO: Remove this class? The <item> element has been removed on the Armory (tsigo)
+      # See http://www.wowarmory.com/item-info.xml?i=25897
       # <createdBy>
       #   <spell name="Bracing Earthstorm Diamond" icon="temp" id="32867">
       #     <item requiredSkill="Jewelcrafting" name="Design: Bracing Earthstorm Diamond" icon="inv_scroll_03" type="Jewelcrafting" level="73" id="25903" requiredSkillRank="365" quality="1"></item>
