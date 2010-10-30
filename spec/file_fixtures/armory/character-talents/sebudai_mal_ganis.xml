@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/talents.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-talents.xml">
+  <tabInfo subTab="talents" tab="character" tabGroup="character" tabUrl="r=Mal%27Ganis&amp;cn=Sebudai&amp;gn=Juggernaut"/>
+  <characterInfo>
+    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Sebudai" class="Hunter" classId="3" classUrl="c=Hunter" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="Juggernaut" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" lastModified="October 30, 2010" level="80" name="Sebudai" points="9180" prefix="" race="Orc" raceId="2" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138">
+      <arenaTeams>
+        <arenaTeam battleGroup="Stormstrike" created="1233878400000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="Former Phelps Fans" ranking="0" rating="0" realm="Mal'Ganis" realmUrl="b=Stormstrike&amp;r=Mal%27Ganis&amp;ts=2&amp;t=Former+Phelps+Fans&amp;ff=realm&amp;fv=Mal%27Ganis&amp;select=Former+Phelps+Fans" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="2" teamSize="2" teamUrl="r=Mal%27Ganis&amp;ts=2&amp;t=Former+Phelps+Fans&amp;select=Former+Phelps+Fans" url="r=Mal%27Ganis&amp;ts=2&amp;t=Former+Phelps+Fans&amp;select=Former+Phelps+Fans">
+          <emblem background="ffd3e0d1" borderColor="ff001e59" borderStyle="3" iconColor="ffba0008" iconStyle="61"/>
+          <members>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Sebudai" class="Hunter" classId="3" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Sebudai" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="0"/>
+          </members>
+        </arenaTeam>
+        <arenaTeam battleGroup="Stormstrike" created="1230163200000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="our DK is an ALT" ranking="0" rating="0" realm="Mal'Ganis" realmUrl="b=Stormstrike&amp;r=Mal%27Ganis&amp;ts=3&amp;t=our+DK+is+an+ALT&amp;ff=realm&amp;fv=Mal%27Ganis&amp;select=our+DK+is+an+ALT" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="3" teamSize="3" teamUrl="r=Mal%27Ganis&amp;ts=3&amp;t=our+DK+is+an+ALT&amp;select=our+DK+is+an+ALT" url="r=Mal%27Ganis&amp;ts=3&amp;t=our+DK+is+an+ALT&amp;select=our+DK+is+an+ALT">
+          <emblem background="ff5677b0" borderColor="ffb39e72" borderStyle="2" iconColor="ff090503" iconStyle="39"/>
+          <members>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Trithion" class="Mage" classId="8" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guildId="0" name="Trithion" race="Undead" raceId="5" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="0"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Sebudai" class="Hunter" classId="3" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Sebudai" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Parawon" class="Druid" classId="11" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Parawon" race="Tauren" raceId="6" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+          </members>
+        </arenaTeam>
+        <arenaTeam battleGroup="Stormstrike" created="1229817600000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="E P I X" ranking="0" rating="0" realm="Mal'Ganis" realmUrl="b=Stormstrike&amp;r=Mal%27Ganis&amp;ts=5&amp;t=E+P+I+X&amp;ff=realm&amp;fv=Mal%27Ganis&amp;select=E+P+I+X" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="5" teamSize="5" teamUrl="r=Mal%27Ganis&amp;ts=5&amp;t=E+P+I+X&amp;select=E+P+I+X" url="r=Mal%27Ganis&amp;ts=5&amp;t=E+P+I+X&amp;select=E+P+I+X">
+          <emblem background="ff7b0100" borderColor="ff000000" borderStyle="3" iconColor="ff310601" iconStyle="68"/>
+          <members>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Parawon" class="Druid" classId="11" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Parawon" race="Tauren" raceId="6" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="0"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Trithion" class="Mage" classId="8" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guildId="0" name="Trithion" race="Undead" raceId="5" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Sebudai" class="Hunter" classId="3" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Sebudai" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+          </members>
+        </arenaTeam>
+      </arenaTeams>
+      <modelBasePath value="http://us.media.battle.net.edgesuite.net/"/>
+    </character>
+    <talents>
+      <talentGroup active="1" group="2" icon="ability_hunter_focusedaim" prim="Marksmanship">
+        <talentSpec treeOne="0" treeThree="5" treeTwo="31" value="0000000000000000000230231103212023122103200000000000000000"/>
+        <glyphs>
+          <glyph effect="Reduces the focus cost of Trap Launcher by 10." icon="ability_hunter_traplauncher" id="353" name="Glyph of Trap Launcher" type="major"/>
+          <glyph effect="Increases the range of your Aspect of the Pack ability by 15 yards." icon="ability_mount_whitetiger" id="443" name="Glyph of Aspect of the Pack" type="minor"/>
+          <glyph effect="Your Mend Pet spell increases your pet's happiness slightly." icon="ability_hunter_mendpet" id="440" name="Glyph of Mend Pet" type="minor"/>
+          <glyph effect="Decreases the cooldown of Disengage by 5 sec." icon="ability_rogue_feint" id="358" name="Glyph of Disengage" type="major"/>
+          <glyph effect="Reduces the cooldown of your Feign Death spell by 5 sec." icon="ability_rogue_feigndeath" id="441" name="Glyph of Feign Death" type="minor"/>
+          <glyph effect="Reduces damage taken by 20% for 5 sec after using Raptor Strike." icon="ability_meleedamage" id="695" name="Glyph of Raptor Strike" type="major"/>
+          <glyph effect="Increases the damage dealt by Steady Shot by 10%." icon="ability_hunter_steadyshot" id="368" name="Glyph of Steady Shot" type="prime"/>
+          <glyph effect="Your Arcane Shot deals 12% more damage." icon="ability_impalingbolt" id="352" name="Glyph of Arcane Shot" type="prime"/>
+          <glyph effect="If the damage from your Kill Shot fails to kill a target at or below 20% health, your Kill Shot's cooldown is instantly reset. This effect has a 6 sec cooldown." icon="ability_hunter_assassinate2" id="692" name="Glyph of Kill Shot" type="prime"/>
+        </glyphs>
+      </talentGroup>
+      <talentGroup group="1" icon="ability_hunter_camouflage" prim="Survival">
+        <talentSpec treeOne="0" treeThree="32" treeTwo="4" value="0000000000000000000220000000000000000003223003023022121321"/>
+        <glyphs>
+          <glyph effect="Decreases the cooldown of Disengage by 5 sec." icon="ability_rogue_feint" id="358" name="Glyph of Disengage" type="major"/>
+          <glyph effect="Your Mend Pet spell increases your pet's happiness slightly." icon="ability_hunter_mendpet" id="440" name="Glyph of Mend Pet" type="minor"/>
+          <glyph effect="Increases the range of your Aspect of the Pack ability by 15 yards." icon="ability_mount_whitetiger" id="443" name="Glyph of Aspect of the Pack" type="minor"/>
+          <glyph effect="Reduces the focus cost of Trap Launcher by 10." icon="ability_hunter_traplauncher" id="353" name="Glyph of Trap Launcher" type="major"/>
+          <glyph effect="Reduces the cooldown of your Feign Death spell by 5 sec." icon="ability_rogue_feigndeath" id="441" name="Glyph of Feign Death" type="minor"/>
+          <glyph effect="Reduces damage taken by 20% for 5 sec after using Raptor Strike." icon="ability_meleedamage" id="695" name="Glyph of Raptor Strike" type="major"/>
+          <glyph effect="Increases the damage dealt by Steady Shot by 10%." icon="ability_hunter_steadyshot" id="368" name="Glyph of Steady Shot" type="prime"/>
+          <glyph effect="Increases the periodic critical strike chance of your Serpent Sting by 6%." icon="ability_hunter_quickshot" id="366" name="Glyph of Serpent Sting" type="prime"/>
+          <glyph effect="If the damage from your Kill Shot fails to kill a target at or below 20% health, your Kill Shot's cooldown is instantly reset. This effect has a 6 sec cooldown." icon="ability_hunter_assassinate2" id="692" name="Glyph of Kill Shot" type="prime"/>
+        </glyphs>
+      </talentGroup>
+      <pet catId="19" family="Tallstrider" familyId="12" icon="ability_hunter_pet_tallstrider" lvl="80" name="Tallstrider" npcId="22807" npcName="Lost Torranche">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="20" treeThree="0" treeTwo="0" value="201000131300003010122"/>
+        </talentGroup>
+      </pet>
+      <pet catId="4" family="Carrion Bird" familyId="7" icon="ability_hunter_pet_vulture" lvl="80" name="Carrion Bird" npcId="18470" npcName="Bonelasher">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="19" treeThree="0" treeTwo="0" value="210000130300003010122"/>
+        </talentGroup>
+      </pet>
+      <pet catId="1" family="Bear" familyId="4" icon="ability_hunter_pet_bear" lvl="77" name="Bear" npcId="5272" npcName="Grizzled Ironfur Bear">
+        <talentGroup active="1" group="1" icon="ability_druid_demoralizingroar" key="Tenacity" order="1" prim="Tenacity">
+          <talentSpec treeOne="0" treeThree="0" treeTwo="0" value=""/>
+        </talentGroup>
+      </pet>
+      <pet catId="10" family="Hyena" familyId="25" icon="ability_hunter_pet_hyena" lvl="77" name="Hyena" npcId="4662" npcName="Magram Bonepaw">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="0" treeThree="0" treeTwo="0" value=""/>
+        </talentGroup>
+      </pet>
+      <pet catId="8" family="Dragonhawk" familyId="30" icon="ability_hunter_pet_dragonhawk" lvl="80" name="Dragonhawk" npcId="18155" npcName="Bloodfalcon">
+        <talentGroup active="1" group="1" icon="ability_eyeoftheowl" key="Cunning" order="2" prim="Cunning">
+          <talentSpec treeOne="19" treeThree="0" treeTwo="0" value="2100002023300002110020"/>
+        </talentGroup>
+      </pet>
+      <pet catId="63" family="Silithid" familyId="41" icon="ability_hunter_pet_silithid" lvl="80" name="Silithid" npcId="4132" npcName="Silithid Ravager">
+        <talentGroup active="1" group="1" icon="ability_eyeoftheowl" key="Cunning" order="2" prim="Cunning">
+          <talentSpec treeOne="20" treeThree="0" treeTwo="0" value="2010000223301002110020"/>
+        </talentGroup>
+      </pet>
+      <pet catId="5" family="Cat" familyId="2" icon="ability_hunter_pet_cat" lvl="80" name="Turtle" npcId="3475" npcName="Echeyakee">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="16" treeThree="0" treeTwo="0" value="201000130300003010101"/>
+        </talentGroup>
+      </pet>
+      <pet catId="14" family="Ravager" familyId="31" icon="ability_hunter_pet_ravager" lvl="80" name="Ravager" npcId="22123" npcName="Rip-Blade Ravager">
+        <talentGroup active="1" group="1" icon="ability_eyeoftheowl" key="Cunning" order="2" prim="Cunning">
+          <talentSpec treeOne="19" treeThree="0" treeTwo="0" value="2010000223300002110020"/>
+        </talentGroup>
+      </pet>
+      <pet catId="13" family="Raptor" familyId="11" icon="ability_hunter_pet_raptor" lvl="80" name="Raptor" npcId="20751" npcName="Daggermaw Lashtail">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="19" treeThree="0" treeTwo="0" value="201000130300003010122"/>
+        </talentGroup>
+      </pet>
+      <pet catId="59" family="Core Hound" familyId="45" icon="ability_hunter_pet_corehound" lvl="80" name="Core Hound" npcId="21108" npcName="Spawn of Uvuros">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="19" treeThree="0" treeTwo="0" value="201000130300003010122"/>
+        </talentGroup>
+      </pet>
+      <pet catId="21" family="Turtle" familyId="21" icon="ability_hunter_pet_turtle" lvl="80" name="Turtle" npcId="3461" npcName="Oasis Snapjaw">
+        <talentGroup active="1" group="1" icon="ability_druid_demoralizingroar" key="Tenacity" order="1" prim="Tenacity">
+          <talentSpec treeOne="19" treeThree="0" treeTwo="0" value="21003000320120001022"/>
+        </talentGroup>
+      </pet>
+      <pet catId="61" family="Rhino" familyId="43" icon="ability_hunter_pet_rhino" lvl="80" name="Rhino" npcId="30445" npcName="Ice Steppe Bull">
+        <talentGroup active="1" group="1" icon="ability_druid_demoralizingroar" key="Tenacity" order="1" prim="Tenacity">
+          <talentSpec treeOne="20" treeThree="0" treeTwo="0" value="21003100320120001022"/>
+        </talentGroup>
+      </pet>
+      <pet catId="58" family="Spirit Beast" familyId="46" icon="ability_druid_primalprecision" lvl="80" name="Spirit Beast" npcId="38453" npcName="Arcturis">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="20" treeThree="0" treeTwo="0" value="201000131300003010122"/>
+        </talentGroup>
+      </pet>
+      <pet catId="23" family="Wolf" familyId="1" icon="ability_hunter_pet_wolf" lvl="80" name="Wolf" npcId="30164" npcName="Cavedweller Worg">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="16" treeThree="0" treeTwo="0" value="201000130300003010101"/>
+        </talentGroup>
+      </pet>
+      <pet catId="58" family="Spirit Beast" familyId="46" icon="ability_druid_primalprecision" lvl="80" name="Spirit Beast" npcId="33776" npcName="Gondria">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="19" treeThree="0" treeTwo="0" value="201000130300003010122"/>
+        </talentGroup>
+      </pet>
+      <pet catId="62" family="Worm" familyId="42" icon="ability_hunter_pet_worm" lvl="80" name="Worm" npcId="29390" npcName="Snowdrift Jormungar">
+        <talentGroup active="1" group="1" icon="ability_druid_demoralizingroar" key="Tenacity" order="1" prim="Tenacity">
+          <talentSpec treeOne="20" treeThree="0" treeTwo="0" value="21003100320120001022"/>
+        </talentGroup>
+      </pet>
+      <pet catId="58" family="Spirit Beast" familyId="46" icon="ability_druid_primalprecision" lvl="80" name="Sabathia" npcId="32517" npcName="Loque'nahak">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="20" treeThree="0" treeTwo="0" value="201000230300003010122"/>
+        </talentGroup>
+      </pet>
+      <pet catId="25" family="Devilsaur" familyId="39" icon="ability_hunter_pet_devilsaur" lvl="80" name="Audrey" npcId="32485" npcName="King Krush">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="20" treeThree="0" treeTwo="0" value="201000131300003010122"/>
+        </talentGroup>
+      </pet>
+      <pet catId="58" family="Spirit Beast" familyId="46" icon="ability_druid_primalprecision" lvl="80" name="Spirit Beast" npcId="35189" npcName="Skoll">
+        <talentGroup active="1" group="1" icon="ability_druid_kingofthejungle" key="Ferocity" order="0" prim="Ferocity">
+          <talentSpec treeOne="19" treeThree="0" treeTwo="0" value="201000130300003010122"/>
+        </talentGroup>
+      </pet>
+    </talents>
+  </characterInfo>
+</page>

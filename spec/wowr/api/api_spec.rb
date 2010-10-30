@@ -168,8 +168,8 @@ describe Wowr::API::API, "search" do
     end
 
     it "should return an array of instances of SearchCharacter" do
-      FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Tsigo/, :body => file_fixture('armory/search/characters_tsigo.xml'))
-      results = api.search_characters('Tsigo')
+      FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Sebudai/, :body => file_fixture('armory/search/characters_sebudai.xml'))
+      results = api.search_characters('Sebudai')
       results.should be_kind_of(Array)
       results[0].should be_kind_of(Wowr::Classes::SearchCharacter)
     end
@@ -197,9 +197,9 @@ describe Wowr::API::API do
   describe "#get_character" do
     it "should return an instance of FullCharacter when given valid parameters" do
       %w(sheet talents reputation).each do |tab|
-        FakeWeb.register_uri(:get, /character-#{tab}\.xml/, :body => file_fixture("armory/character-#{tab}/tsigo_mal_ganis.xml"))
+        FakeWeb.register_uri(:get, /character-#{tab}\.xml/, :body => file_fixture("armory/character-#{tab}/sebudai_mal_ganis.xml"))
       end
-      api.get_character('Tsigo', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::FullCharacter)
+      api.get_character('Sebudai', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::FullCharacter)
     end
 
     it "should raise CharacterNotFound when given an invalid character" do
@@ -227,15 +227,15 @@ describe Wowr::API::API do
 
   describe "#get_character_achievements" do
     it "should return an instance of CharacterAchievementsInfo when given valid parameters" do
-      FakeWeb.register_uri(:get, /character-achievements\.xml.*Tsigo/, :body => file_fixture('armory/character-achievements/tsigo_mal_ganis.xml'))
-      api.get_character_achievements(:character_name => 'Tsigo', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::CharacterAchievementsInfo)
+      FakeWeb.register_uri(:get, /character-achievements\.xml.*Sebudai/, :body => file_fixture('armory/character-achievements/sebudai_mal_ganis.xml'))
+      api.get_character_achievements(:character_name => 'Sebudai', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::CharacterAchievementsInfo)
     end
   end
 
   describe "#get_character_achievements_category" do
     it "should return an instance of AchievementsList when given valid parameters" do
-      FakeWeb.register_uri(:get, /character-achievements\.xml.*Tsigo/, :body => file_fixture('armory/character-achievements/tsigo_mal_ganis.xml'))
-      api.get_character_achievements_category(168, 'Tsigo', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::AchievementsList)
+      FakeWeb.register_uri(:get, /character-achievements\.xml.*Sebudai/, :body => file_fixture('armory/character-achievements/sebudai_mal_ganis.xml'))
+      api.get_character_achievements_category(168, 'Sebudai', :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::AchievementsList)
     end
   end
 

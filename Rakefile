@@ -100,19 +100,19 @@ namespace :file_fixtures do
     #   l: local filename without extension
     {
       'character-achievements' => [
-        {:r => "r=Mal'Ganis&cn=Tsigo", :l => 'tsigo_mal_ganis'}
+        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'}
       ],
       'character-reputation' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
-        {:r => "r=Mal'Ganis&cn=Tsigo",        :l => 'tsigo_mal_ganis'}
+        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'}
       ],
       'character-sheet' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
-        {:r => "r=Mal'Ganis&cn=Tsigo",        :l => 'tsigo_mal_ganis'}
+        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'}
       ],
       'character-talents' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
-        {:r => "r=Mal'Ganis&cn=Tsigo",        :l => 'tsigo_mal_ganis'}
+        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'}
       ],
       'guild-info' => [
         {:r => "r=Mal'Ganis&gn=DoesNotExist", :l => 'not_found'},
@@ -131,10 +131,10 @@ namespace :file_fixtures do
         {:r => "i=40111", :l => '40111'}
       ],
       'search' => [
-        {:r => "searchQuery=Lemon&searchType=arenateams",  :l => 'arena_teams_lemon'},
-        {:r => "searchQuery=Tsigo&searchType=characters",  :l => 'characters_tsigo'},
-        {:r => "searchQuery=Juggernaut&searchType=guilds", :l => 'guilds_juggernaut'},
-        {:r => "searchQuery=Cake&searchType=items",        :l => 'items_cake'}
+        {:r => "searchQuery=Lemon&searchType=arenateams",   :l => 'arena_teams_lemon'},
+        {:r => "searchQuery=Sebudai&searchType=characters", :l => 'characters_sebudai'},
+        {:r => "searchQuery=Juggernaut&searchType=guilds",  :l => 'guilds_juggernaut'},
+        {:r => "searchQuery=Cake&searchType=items",         :l => 'items_cake'}
       ],
       'team-info' => [
         {:r => "r=Mal'Ganis&ts=5&t=Fav+Five",     :l => 'fav_five_mal_ganis'},
