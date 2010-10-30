@@ -24,7 +24,6 @@ giving access to items, characters, guilds and arena teams. It is designed for b
   s.require_paths = ["lib"]
 
   s.add_development_dependency "autotest", "~> 4.4.1"
-  s.add_development_dependency "cucumber", "~> 0.9.2"
   s.add_development_dependency "fakeweb",  "~> 1.3"
   s.add_development_dependency "mocha",    "~> 0.9"
   s.add_development_dependency "rake",     "~> 0.8.7"
