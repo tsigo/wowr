@@ -321,8 +321,36 @@ describe Wowr::API::API do
     end
   end
 
+  # FIXME: I'd love to test the various permutations of ways to pass arguments to this method,
+  # but it's broken unless the first parameter is a string. See guild_bank_options in lib/wowr/api/api.rb
   describe "#get_guild_bank_contents" do
-    it { pending }
+    it "should raise CookieNotSet when not given a cookie" do
+      pending
+      # FIXME: This will never pass; see get_guild_bank_contents in lib/wowr/api/api.rb
+      # expect { api.get_guild_bank_contents('', :guild_name => 'Juggernaut') }.to raise_error(Wowr::Exceptions::CookieNotSet)
+    end
+
+    it "should raise GuildNameNotSet when not given a guild name" do
+      expect { api.get_guild_bank_contents('cookie') }.to raise_error(Wowr::Exceptions::GuildNameNotSet)
+    end
+
+    it "should raise RealmNotSet when not given a realm name" do
+      expect { api.get_guild_bank_contents('cookie', 'Juggernaut') }.to raise_error(Wowr::Exceptions::RealmNotSet)
+    end
+
+    it "should raise GuildBankNotFound when given an invalid guild name" do
+      FakeWeb.register_uri(:get, /guild-bank-contents\.xml/, :body => file_fixture('armory/guild-bank-log/not_found.xml'))
+      expect { api.get_guild_bank_contents('cookie', 'InvalidGuild', :realm => "Mal'Ganis") }.to raise_error(Wowr::Exceptions::GuildBankNotFound)
+    end
+
+    it "should return an instance of GuildBankContents when given valid parameters" do
+      pending
+      # FIXME: Will not pass (tsigo)
+      # Failure/Error: api.get_guild_bank_contents('cookie', :guild_name => "Juggernaut", :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::GuildBankContents)
+      # bad URI(is not URI?): https://www.wowarmory.com/vault/guild-bank-contents.xml?gn=cookieJSESSIONID=cookieguild_name{...}realmMal'Ganis&r=Mal%27Ganis
+      # FakeWeb.register_uri(:get, /guild-bank-contents\.xml/, :body => file_fixture('armory/guild-bank-log/juggernaut_mal_ganis.xml'))
+      # api.get_guild_bank_contents('cookie', :guild_name => "Juggernaut", :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::GuildBankContents)
+    end
   end
 
   describe "#get_guild_bank_log" do

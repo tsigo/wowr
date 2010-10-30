@@ -7,7 +7,7 @@ module Wowr
 
         def initialize(elem, api = nil)
           super(elem, api)
-          @viewable = (@viewable == "true")
+          @viewable = (@viewable == "true") # FIXME: What exactly is the point of this? (tsigo)
 
           @items = []
         end

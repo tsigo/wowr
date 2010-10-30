@@ -109,20 +109,12 @@ module Wowr
       # * guild_name (String) Guild name
       # * options (Hash) Optional hash of arguments identical to those used in the API constructor (realm, debug, cache etc.)
       def get_guild_bank_contents(cookie, name = @guild_name, options = {})
-        full_cookie = ' JSESSIONID='+cookie
-
-        if (cookie.is_a?(Hash))
-          options = full_cookie
-        elsif (name.is_a?(Hash))
-          options = name
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:guild_name => name)
-        else
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:guild_name => name)
-        end
+        options = guild_bank_options(cookie, name, options)
         options = merge_defaults(options)
 
+        # FIXME: If cookie's nil, we'll never get here because it will raise an
+        # exception in guild_bank_options If it's not nil, it will never be
+        # blank, because it's appended to " JSESSIONID=", so why is this here? (tsigo)
         if options[:cookie].nil? || options[:cookie] == ""
           raise Wowr::Exceptions::CookieNotSet.new
         elsif options[:guild_name].nil? || options[:guild_name] == ""
@@ -135,7 +127,7 @@ module Wowr
 
         xml = get_xml(@@guild_bank_contents_url, options)
 
-        if !(xml%'guildBank').children.empty?
+        if (xml%'guildBank') and (xml%'guildBank').children.length > 0
           return Wowr::Classes::GuildBankContents.new(xml, self)
         else
           raise Wowr::Exceptions::GuildBankNotFound.new(options[:guild_name])
@@ -150,19 +142,7 @@ module Wowr
       # * guild_name (String) Guild name
       # * options (Hash) Optional hash of arguments identical to those used in the API constructor (realm, debug, cache etc.)
       def get_guild_bank_log(cookie, name = @guild_name, options = {})
-        full_cookie = ' JSESSIONID='+cookie
-
-        if (cookie.is_a?(Hash))
-          options = full_cookie
-        elsif (name.is_a?(Hash))
-          options = name
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:guild_name => name)
-        else
-          options.merge!(:cookie => full_cookie)
-          options.merge!(:guild_name => name)
-        end
-
+        options = guild_bank_options(cookie, name, options)
         options = merge_defaults(options)
 
         if options[:cookie].nil? || options[:cookie] == ""
@@ -313,10 +293,14 @@ module Wowr
 
       private
 
+      # Normalize the parameters passed to calendar methods into a Hash
       def calendar_options(cookie, event = nil, name = @character_name, realm = @realm, options = {})
+        # FIXME: If cookie is a Hash (below), we're attempting to concatenate a Hash to a string
+        # which will just fail. So what are we doing here? (tsigo)
         full_cookie = ' JSESSIONID='+cookie
 
         if (cookie.is_a?(Hash))
+          # FIXME: What the fuck is this? full_cookie will NEVER be a Hash. (tsigo)
           options = full_cookie
         elsif (name.is_a?(Hash))
           options = name
@@ -332,6 +316,27 @@ module Wowr
           options.merge!(:cookie => full_cookie)
           options.merge!(:character_name => name)
           options.merge!(:realm => realm)
+        end
+
+        options
+      end
+
+      # Normalize the parameters passed to guild bank methods into a Hash
+      def guild_bank_options(cookie, name = @guild_name, options = {})
+        # FIXME: If cookie is a Hash (below), we're attempting to concatenate a Hash to a string
+        # which will just fail. So what are we doing here? (tsigo)
+        full_cookie = 'JSESSIONID='+cookie
+
+        if (cookie.is_a?(Hash))
+          # FIXME: What the fuck is this? full_cookie will NEVER be a Hash. (tsigo)
+          options = full_cookie
+        elsif (name.is_a?(Hash))
+          options = name
+          options.merge!(:cookie => full_cookie)
+          options.merge!(:guild_name => name)
+        else
+          options.merge!(:cookie => full_cookie)
+          options.merge!(:guild_name => name)
         end
 
         options
