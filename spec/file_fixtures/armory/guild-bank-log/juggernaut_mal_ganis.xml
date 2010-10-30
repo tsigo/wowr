@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/guild/bank-log.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/vault/guild-bank-log.xml">
+  <tabInfo subTab="guildBankLog" tab="guild" tabGroup="guild" tabUrl="r=Mal%27Ganis&amp;gn=Juggernaut"/>
+  <guildInfo>
+    <guildHeader battleGroup="Stormstrike" count="124" faction="1" name="Juggernaut" nameUrl="Juggernaut" realm="Mal'Ganis" realmUrl="Mal%27Ganis" url="r=Mal%27Ganis&amp;gn=Juggernaut">
+      <emblem emblemBackground="3" emblemBorderColor="15" emblemBorderStyle="1" emblemIconColor="15" emblemIconStyle="84"/>
+    </guildHeader>
+    <guildMessages info="Guild Outline &amp; History&#10;Juggernaut is a raiding guild on the Mal'Ganis US server that was first founded in 2004 during World of Warcraft's open beta. Our focus is primarily centered around endgame raiding and the healthy competition to be found therein. However, when we're not raiding, many of our members also enjoy small group dungeons and the various forms of player vs. player content that WoW has to offer.&#10;" motd="freetime"/>
+    <guildRanks>
+      <rank id="0" name="Guild Master"/>
+      <rank id="1" name="Officer"/>
+      <rank id="2" name="Active Member"/>
+      <rank id="3" name="Inactive Member"/>
+      <rank id="4" name="Raid Alt"/>
+      <rank id="5" name="Alt"/>
+      <rank id="6" name="Applicant"/>
+      <rank id="7" name="Applicant Alt"/>
+    </guildRanks>
+    <guildBank>
+      <bags>
+        <bag icon="inv_alchemy_elixir_05" id="0" name="Tab1" viewable="true"/>
+        <bag icon="inv_alchemy_elixir_02" id="1" name="Tab2" viewable="true"/>
+        <bag icon="inv_jewelcrafting_gem_22" id="2" name="Tab3" viewable="true"/>
+        <bag icon="inv_scroll_04" id="3" name="Tab4" viewable="true"/>
+        <bag icon="inv_misc_enggizmos_17" id="4" name="Tab5" viewable="true"/>
+        <bag icon="inv_misc_coin_02" id="5" name="Tab6" viewable="true"/>
+      </bags>
+    </guildBank>
+  </guildInfo>
+</page>
