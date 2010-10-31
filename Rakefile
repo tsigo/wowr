@@ -4,7 +4,6 @@ Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
 require 'rspec/core/rake_task'
-require 'cucumber/rake/task'
 
 $:.unshift(File.expand_path('../lib', __FILE__))
 
@@ -21,7 +20,6 @@ task :coverage do
   rm_f "coverage"
   rm_f "coverage.data"
   Rake::Task["coverage:rspec"].invoke
-  Rake::Task["coverage:cucumber"].invoke
 end
 
 namespace :coverage do
@@ -29,13 +27,7 @@ namespace :coverage do
   RSpec::Core::RakeTask.new(:rspec) do |t|
     t.pattern = "./spec/**/*_spec.rb"
     t.rcov = true
-    t.rcov_opts = %w{--exclude gems\/,spec\/,features\/ --sort coverage --aggregate coverage.data --text-report}
-  end
-
-  desc "Generate code coverage for Cucmber tests"
-  Cucumber::Rake::Task.new(:cucumber) do |t|
-    t.rcov = true
-    t.rcov_opts = %w{--exclude gems\/,spec\/,features\/ --sort coverage --aggregate coverage.data}
+    t.rcov_opts = %w{--exclude gems\/,spec\/ --sort coverage --aggregate coverage.data --text-report}
   end
 end
 

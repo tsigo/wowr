@@ -34,7 +34,233 @@ module Wowr::Classes
   # PENDING
 
   # Character
-  # PENDING
+  describe Character do
+    it "should subclass Wowr::Armory::Character::Base" do
+      Character.superclass.should equal(Wowr::Armory::Character::Base)
+    end
+  end
+
+  describe SearchCharacter do
+    it "should subclass Wowr::Armory::Character::Base" do
+      SearchCharacter.superclass.should equal(Wowr::Armory::Character::Base)
+    end
+  end
+
+  describe InfoCharacter do
+    it "should subclass Wowr::Armory::Character::Info" do
+      InfoCharacter.superclass.should equal(Wowr::Armory::Character::Info)
+    end
+  end
+
+  describe FullCharacter do
+    it "should subclass Wowr::Armory::Character::Full" do
+      FullCharacter.superclass.should equal(Wowr::Armory::Character::Full)
+    end
+  end
+
+  describe SecondBar do
+    it "should subclass Wowr::Armory::Character::SecondBar;" do
+      SecondBar.superclass.should equal(Wowr::Armory::Character::SecondBar)
+    end
+  end
+
+  describe BaseStat do
+    it "should subclass Wowr::Armory::Character::Stat::Base;" do
+      BaseStat.superclass.should equal(Wowr::Armory::Character::Stat::Base)
+    end
+  end
+
+  describe Strength do
+    it "should subclass Wowr::Armory::Character::Stat::Strength;" do
+      Strength.superclass.should equal(Wowr::Armory::Character::Stat::Strength)
+    end
+  end
+
+  describe Agility do
+    it "should subclass Wowr::Armory::Character::Stat::Agility" do
+      Agility.superclass.should equal(Wowr::Armory::Character::Stat::Agility)
+    end
+  end
+
+  describe Stamina do
+    it "should subclass Wowr::Armory::Character::Stat::Stamina" do
+      Stamina.superclass.should equal(Wowr::Armory::Character::Stat::Stamina)
+    end
+  end
+
+  describe Intellect do
+    it "should subclass Wowr::Armory::Character::Stat::Intellect;" do
+      Intellect.superclass.should equal(Wowr::Armory::Character::Stat::Intellect)
+    end
+  end
+
+  describe Spirit do
+    it "should subclass Wowr::Armory::Character::Stat::Spirit" do
+      Spirit.superclass.should equal(Wowr::Armory::Character::Stat::Spirit)
+    end
+  end
+
+  describe Armor do
+    it "should subclass Wowr::Armory::Character::Stat::Armor" do
+      Armor.superclass.should equal(Wowr::Armory::Character::Stat::Armor)
+    end
+  end
+
+  describe Melee do
+    it "should subclass Wowr::Armory::Character::Weapon::Melee" do
+      Melee.superclass.should equal(Wowr::Armory::Character::Weapon::Melee)
+    end
+  end
+
+  describe Ranged do
+    it "should subclass Wowr::Armory::Character::Weapon::Ranged" do
+      Ranged.superclass.should equal(Wowr::Armory::Character::Weapon::Ranged)
+    end
+  end
+
+  describe WeaponSkill do
+    it "should subclass Wowr::Armory::Character::Weapon::Skill" do
+      WeaponSkill.superclass.should equal(Wowr::Armory::Character::Weapon::Skill)
+    end
+  end
+
+  describe WeaponDamage do
+    it "should subclass Wowr::Armory::Character::Weapon::Damage" do
+      WeaponDamage.superclass.should equal(Wowr::Armory::Character::Weapon::Damage)
+    end
+  end
+
+  describe WeaponSpeed do
+    it "should subclass Wowr::Armory::Character::Weapon::Speed" do
+      WeaponSpeed.superclass.should equal(Wowr::Armory::Character::Weapon::Speed)
+    end
+  end
+
+  describe WeaponPower do
+    it "should subclass Wowr::Armory::Character::Weapon::Power" do
+      WeaponPower.superclass.should equal(Wowr::Armory::Character::Weapon::Power)
+    end
+  end
+
+  describe WeaponHitRating do
+    it "should subclass Wowr::Armory::Character::Weapon::HitRating" do
+      WeaponHitRating.superclass.should equal(Wowr::Armory::Character::Weapon::HitRating)
+    end
+  end
+
+  describe WeaponCritChance do
+    it "should subclass Wowr::Armory::Character::Weapon::CritChance" do
+      WeaponCritChance.superclass.should equal(Wowr::Armory::Character::Weapon::CritChance)
+    end
+  end
+
+  describe WeaponExpertise do
+    it "should subclass Wowr::Armory::Character::Weapon::Expertise" do
+      WeaponExpertise.superclass.should equal(Wowr::Armory::Character::Weapon::Expertise)
+    end
+  end
+
+  describe Spell do
+    it "should subclass Wowr::Armory::Character::Spell::Spell" do
+      Spell.superclass.should equal(Wowr::Armory::Character::Spell::Spell)
+    end
+  end
+
+  describe SpellSpeed do
+    it "should subclass Wowr::Armory::Character::Spell::Speed" do
+      SpellSpeed.superclass.should equal(Wowr::Armory::Character::Spell::Speed)
+    end
+  end
+
+  describe SpellDamage do
+    it "should subclass Wowr::Armory::Character::Spell::Damage" do
+      SpellDamage.superclass.should equal(Wowr::Armory::Character::Spell::Damage)
+    end
+  end
+
+  describe ManaRegen do
+    it "should subclass Wowr::Armory::Character::Spell::ManaRegen" do
+      ManaRegen.superclass.should equal(Wowr::Armory::Character::Spell::ManaRegen)
+    end
+  end
+
+  describe PetBonus do
+    it "should subclass Wowr::Armory::Character::Weapon::PetBonus" do
+      PetBonus.superclass.should equal(Wowr::Armory::Character::Weapon::PetBonus)
+    end
+  end
+
+  describe Defenses do
+    it "should subclass Wowr::Armory::Character::Stat::Defenses" do
+      Defenses.superclass.should equal(Wowr::Armory::Character::Stat::Defenses)
+    end
+  end
+
+  describe Defense do
+    it "should subclass Wowr::Armory::Character::Stat::Defense" do
+      Defense.superclass.should equal(Wowr::Armory::Character::Stat::Defense)
+    end
+  end
+
+  describe DodgeParryBlock do
+    it "should subclass Wowr::Armory::Character::Stat::DodgeParryBlock" do
+      DodgeParryBlock.superclass.should equal(Wowr::Armory::Character::Stat::DodgeParryBlock)
+    end
+  end
+
+  describe Resilience do
+    it "should subclass Wowr::Armory::Character::Stat::Resilience" do
+      Resilience.superclass.should equal(Wowr::Armory::Character::Stat::Resilience)
+    end
+  end
+
+  describe Resistance do
+    it "should subclass Wowr::Armory::Character::Stat::Resistance" do
+      Resistance.superclass.should equal(Wowr::Armory::Character::Stat::Resistance)
+    end
+  end
+
+  describe TalentSpec do
+    it "should subclass Wowr::Armory::Character::TalentSpec" do
+      TalentSpec.superclass.should equal(Wowr::Armory::Character::TalentSpec)
+    end
+  end
+
+  describe Pvp do
+    it "should subclass Wowr::Armory::Character::Pvp" do
+      Pvp.superclass.should equal(Wowr::Armory::Character::Pvp)
+    end
+  end
+
+  describe Buff do
+    it "should subclass Wowr::Armory::Character::Buff" do
+      Buff.superclass.should equal(Wowr::Armory::Character::Buff)
+    end
+  end
+
+  describe EquippedItem do
+    it "should subclass Wowr::Armory::Character::EquippedItem" do
+      EquippedItem.superclass.should equal(Wowr::Armory::Character::EquippedItem)
+    end
+  end
+
+  describe Skill do
+    it "should subclass Wowr::Armory::Character::Skill" do
+      Skill.superclass.should equal(Wowr::Armory::Character::Skill)
+    end
+  end
+
+  describe RepFactionCategory do
+    it "should subclass Wowr::Armory::Character::RepFactionCategory" do
+      RepFactionCategory.superclass.should equal(Wowr::Armory::Character::RepFactionCategory)
+    end
+  end
+
+  describe RepFaction do
+    it "should subclass Wowr::Armory::Character::RepFaction" do
+      RepFaction.superclass.should equal(Wowr::Armory::Character::RepFaction)
+    end
+  end
 
   # Dungeon
   # PENDING

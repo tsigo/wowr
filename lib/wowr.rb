@@ -29,6 +29,5 @@ require 'wowr/exceptions.rb'
 
 require 'wowr/classes'
 require 'wowr/calendar.rb'
-require 'wowr/character.rb'
 require 'wowr/achievements.rb'
 require 'wowr/dungeon.rb'
