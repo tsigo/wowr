@@ -27,8 +27,7 @@ module Wowr
                     :defenses, :resistances,
                     :talent_spec, :all_talent_specs, :pvp,
                     :professions,
-                    :items,
-                    :buffs, :debuffs
+                    :items
 
         # It's made up of two parts
         # Don't care about battlegroups yet
@@ -173,16 +172,6 @@ module Wowr
           @items = []
           (elem%'items'/:item).each do |item|
             @items << Wowr::Classes::EquippedItem.new(item, @api)
-          end
-
-          @buffs = []
-          (elem%'buffs'/:spell).each do |buff|
-            @buffs << Wowr::Classes::Buff.new(buff, @api)
-          end
-
-          @debuffs = []
-          (elem%'debuffs'/:spell).each do |debuff|
-            @debuffs << Wowr::Classes::Buff.new(debuff, @api)
           end
         end
       end

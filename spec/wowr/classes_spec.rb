@@ -232,12 +232,6 @@ module Wowr::Classes
     end
   end
 
-  describe Buff do
-    it "should subclass Wowr::Armory::Character::Buff" do
-      Buff.superclass.should equal(Wowr::Armory::Character::Buff)
-    end
-  end
-
   describe EquippedItem do
     it "should subclass Wowr::Armory::Character::EquippedItem" do
       EquippedItem.superclass.should equal(Wowr::Armory::Character::EquippedItem)
