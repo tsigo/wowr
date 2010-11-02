@@ -131,18 +131,33 @@ namespace :file_fixtures do
       'team-info' => [
         {:r => "r=Mal'Ganis&ts=5&t=Fav+Five",     :l => 'fav_five_mal_ganis'},
         {:r => "r=Mal'Ganis&ts=5&t=DoesNotExist", :l => 'not_found'}
-      ]
+      ],
+
+      # Dungeons are a special case
+      'dungeons' => [
+        {:r => '_data/dungeons',      :l => 'dungeons'},
+        {:r => 'data/dungeonStrings', :l => 'dungeonStrings'},
+      ],
     }
   end
 
-  desc "Download only missing file fixtures"
-  task :download do
+  def process(mode)
     fixtures.each do |folder, hashes|
       hashes.each do |hash|
-        remote = "http://www.wowarmory.com/#{folder}.xml?#{hash[:r]}"
-        local  = "spec/file_fixtures/armory/#{folder}/#{hash[:l]}.xml"
+        # Dungeons are a special case
+        if folder == 'dungeons'
+          remote = "http://www.wowarmory.com/#{hash[:r]}.xml"
+        else
+          remote = "http://www.wowarmory.com/#{folder}.xml?#{hash[:r]}"
+        end
 
-        unless File.exists? File.expand_path("../#{local}", __FILE__)
+        local      = "spec/file_fixtures/armory/#{folder}/#{hash[:l]}.xml"
+        full_local = File.expand_path("../#{local}", __FILE__)
+
+        FileUtils.mkdir_p(File.dirname(full_local))
+
+        # Update always downloads files; initialize only downloads missing files
+        if (mode == :update) or (mode == :initialize && !File.exists?(full_local))
           puts "#{remote.ljust(80)} -> #{local}"
           download_file(remote, File.expand_path("../#{local}", __FILE__))
         end
@@ -153,18 +168,13 @@ namespace :file_fixtures do
     system "git status -s"
   end
 
+  desc "Download only missing file fixtures"
+  task :initialize do
+    process(:initialize)
+  end
+
   desc "Update all file fixtures"
   task :update do
-    fixtures.each do |folder, hashes|
-      hashes.each do |hash|
-        remote = "http://www.wowarmory.com/#{folder}.xml?#{hash[:r]}"
-        local  = "spec/file_fixtures/armory/#{folder}/#{hash[:l]}.xml"
-        puts "#{remote.ljust(80)} -> #{local}"
-        download_file(remote, File.expand_path("../#{local}", __FILE__))
-      end
-    end
-
-    puts ""
-    system "git status -s"
+    process(:update)
   end
 end
