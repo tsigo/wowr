@@ -3,7 +3,47 @@ require 'spec_helper'
 module Wowr::Classes
 
   # Achievements
-  # PENDING
+  describe CharacterAchievementsInfo do
+    it "should subclass Wowr::Armory::Achievement::CharacterInfo" do
+      CharacterAchievementsInfo.superclass.should equal(Wowr::Armory::Achievement::CharacterInfo)
+    end
+  end
+
+  describe Achievement do
+    it "should subclass Wowr::Armory::Achievement::Base" do
+      Achievement.superclass.should equal(Wowr::Armory::Achievement::Base)
+    end
+  end
+
+  describe CompletedAchievement do
+    it "should subclass Wowr::Armory::Achievement::Completed" do
+      CompletedAchievement.superclass.should equal(Wowr::Armory::Achievement::Completed)
+    end
+  end
+
+  describe AchievementsCategory do
+    it "should subclass Wowr::Armory::Achievement::Category" do
+      AchievementsCategory.superclass.should equal(Wowr::Armory::Achievement::Category)
+    end
+  end
+
+  describe AchievementsCategoryDetails do
+    it "should subclass Wowr::Armory::Achievement::CategoryDetail" do
+      AchievementsCategoryDetails.superclass.should equal(Wowr::Armory::Achievement::CategoryDetail)
+    end
+  end
+
+  describe AchievementsCategoryDetailsWithPoints do
+    it "should subclass Wowr::Armory::Achievement::CategoryDetailWithPoints" do
+      AchievementsCategoryDetailsWithPoints.superclass.should equal(Wowr::Armory::Achievement::CategoryDetailWithPoints)
+    end
+  end
+
+  describe AchievementsList do
+    it "should subclass Wowr::Armory::Achievement::List" do
+      AchievementsList.superclass.should equal(Wowr::Armory::Achievement::List)
+    end
+  end
 
   # Arena Team
   describe ArenaTeam do
