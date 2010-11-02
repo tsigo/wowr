@@ -33,13 +33,6 @@ purposed new structure something like:
     lib/wowr/armory/character/detail/ranged.rb
     lib/wowr/armory/character/detail/weapon_skill.rb
 
-## Mock Web Requests to WoWArmory.com in Specs
-
-look into either Fakeweb or Webmock gems
-
-* http://github.com/chrisk/fakeweb
-* http://github.com/bblimke/webmock
-
 ## Performance Profiling - Perftools
 
 identify slow areas within codebase
@@ -49,3 +42,7 @@ identify slow areas within codebase
 ## Use Nokogiri gem
 
   replace Hpricot with Nokogiri gem, but wait until more specs and code coverage are in place
+
+## Ruby 1.9
+
+Ensure Wowr works with Ruby 1.9.2 at a minimum
