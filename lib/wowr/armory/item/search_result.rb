@@ -30,6 +30,7 @@ module Wowr
         # * 5 - Legendary (Orange)
         # * 6
         # * 7 - Heirloom (Gold)
+        # @return [Integer]
         attr_reader :rarity
 
         # sourceType string
