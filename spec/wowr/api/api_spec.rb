@@ -130,6 +130,16 @@ describe Wowr::API::API, "search" do
     expect { api.search('Foo', :type => 'bar') }.to raise_error(Wowr::Exceptions::InvalidSearchType)
   end
 
+  it "should raise NetworkTimeout when network times out" do
+    FakeWeb.register_uri(:get, %r{^http://timeout}, :exception => Timeout::Error)
+    expect { api.search('Foo', :type => 'items', :locale => 'timeout') }.to raise_error(Wowr::Exceptions::NetworkTimeout)
+  end
+
+  it "should raise ServerDoesNotExist when given an invalid locale" do
+    FakeWeb.register_uri(:get, %r{^http://invalid}, :exception => SocketError)
+    expect { api.search('Foo', :type => 'items', :locale => 'invalid') }.to raise_error(Wowr::Exceptions::ServerDoesNotExist)
+  end
+
   describe "#search_items" do
     it "should call #search with the correct parameters" do
       api.expects(:search).with(:search => 'ItemName', :type => 'items').twice
@@ -325,7 +335,7 @@ describe Wowr::API::API do
   # but it's broken unless the first parameter is a string. See guild_bank_options in lib/wowr/api/api.rb
   describe "#get_guild_bank_contents" do
     it "should raise CookieNotSet when not given a cookie" do
-      pending
+      pending("get_guild_bank_contents will never raise CookieNotSet")
       # FIXME: This will never pass; see get_guild_bank_contents in lib/wowr/api/api.rb
       # expect { api.get_guild_bank_contents('', :guild_name => 'Juggernaut') }.to raise_error(Wowr::Exceptions::CookieNotSet)
     end
@@ -344,7 +354,7 @@ describe Wowr::API::API do
     end
 
     it "should return an instance of GuildBankContents when given valid parameters" do
-      pending
+      pending("Fix parameter parsing in get_file")
       # FIXME: Will not pass (tsigo)
       # Failure/Error: api.get_guild_bank_contents('cookie', :guild_name => "Juggernaut", :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::GuildBankContents)
       # bad URI(is not URI?): https://www.wowarmory.com/vault/guild-bank-contents.xml?gn=cookieJSESSIONID=cookieguild_name{...}realmMal'Ganis&r=Mal%27Ganis
