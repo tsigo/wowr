@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 module Wowr::Armory::Item
-  describe Search do
-    subject { Search.new(fake_element) }
+  describe SearchResult do
+    subject { SearchResult.new(fake_element) }
 
     its(:url)         { should eql("i=45218") }
     its(:rarity)      { should eql(3) }

@@ -25,7 +25,7 @@ require 'armory/item/full'
 require 'armory/item/info'
 require 'armory/item/plan'
 require 'armory/item/reagent'
-require 'armory/item/search'
+require 'armory/item/search_result'
 require 'armory/item/tooltip'
 require 'armory/item/equip_data'
 require 'armory/item/set_data'
@@ -78,7 +78,7 @@ module Wowr
     class FullItem          < Wowr::Armory::Item::Full;           end
     class ItemInfo          < Wowr::Armory::Item::Info;           end
     class ItemTooltip       < Wowr::Armory::Item::Tooltip;        end
-    class SearchItem        < Wowr::Armory::Item::Search;         end
+    class SearchItem        < Wowr::Armory::Item::SearchResult;   end
     class DisenchantItem    < Wowr::Armory::Item::Disenchant;     end
     class CreatedItem       < Wowr::Armory::Item::Created;        end
     class PlanItem          < Wowr::Armory::Item::Plan;           end

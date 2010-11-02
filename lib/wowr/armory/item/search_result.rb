@@ -14,7 +14,7 @@ module Wowr
       # == Example Pages:
       #
       # * http://www.wowarmory.com/search.xml?searchQuery=cake&searchType=items
-      class Search < Wowr::Armory::Item::Base
+      class SearchResult < Wowr::Armory::Item::Base
         # URL parameters for the item
         # @example
         #   "i=45218"
