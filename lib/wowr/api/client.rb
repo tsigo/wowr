@@ -322,8 +322,6 @@ module Wowr
       #   => {:cn => "Tsigo", :r => "Mal'Ganis"}
       # @param [Hash] options Options hash
       def remap_parameters(options = {})
-        # Map verbose option keys to the parameter keys used by the Armory
-        # For example, ":character_name" becomes "cn"
         @option_map ||= {
           :character_name       => 'cn',
           :source               => "fl[source]",     # dungeon, badges, arena, etc
