@@ -2,6 +2,18 @@ require 'cgi'
 
 module Wowr
   module API
+    # @todo Move to separate file
+    module ArmoryClient
+      include HTTParty
+      include HTTParty::Icebox
+
+      headers 'User-Agent' => 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10'
+    end
+  end
+end
+
+module Wowr
+  module API
     module Client
       def self.included(base)
         base.class_eval do
@@ -12,12 +24,11 @@ module Wowr
           @@temporary_cookie  = 'JSESSIONID'.freeze
 
           @@max_connection_tries = 10.freeze
-          @@user_agent           = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10'.freeze
 
-          @@cache_directory_path  = 'cache/'.freeze
-          @@default_cache_timeout = (7*24*60*60).freeze
-          @@failed_cache_timeout  = (60*60*24).freeze
-          @@cache_failed_requests = true.freeze
+          @@cache_directory_path  = 'cache/'
+          @@default_cache_timeout = (7*24*60*60)
+          @@failed_cache_timeout  = (60*60*24)
+          @@cache_failed_requests = true
 
           cattr_reader :armory_base_url
           cattr_reader :login_base_url
@@ -26,18 +37,17 @@ module Wowr
           cattr_reader :temporary_cookie
 
           cattr_reader :max_connection_tries
-          cattr_reader :user_agent
 
-          cattr_reader :cache_directory_path
-          cattr_reader :default_cache_timeout
-          cattr_reader :failed_cache_timeout
-          cattr_reader :cache_failed_requests
+          cattr_accessor :cache_directory_path
+          cattr_accessor :default_cache_timeout
+          cattr_accessor :failed_cache_timeout
+          cattr_accessor :cache_failed_requests
         end
       end
 
       # Return the base url for the armory, e.g. http://eu.wowarmory.com/
       # * locale (String) The locale, defaults to that specified in the API constructor
-      def base_url(locale = @locale, options = {})
+      def base_url(options = {})
         str = ""
 
         if (options[:secure] == true)
@@ -46,11 +56,9 @@ module Wowr
           str += 'http://'
         end
 
-        if (locale == 'us')
-          str += 'www.'
-        else
-          str += locale + "."
-        end
+        # No more language-specific subdomains
+        # Language is handled in a cookie
+        str += "www."
 
         if (options[:login] == true)
           str += @@login_base_url
@@ -67,6 +75,7 @@ module Wowr
       # short = api.login("username", "password")
       # short, long = api.login("username", "password", nil, true)
       #
+      # TODO: Use HTTParty
       def login(username, password, authenticator = nil, both = false)
         # Create the base URL we will be POSTing to.
         authentication_url = base_url(@locale, {:secure => true, :login => true}) + @@login_url + "?app=armory"
@@ -158,6 +167,7 @@ module Wowr
       end
 
       # Reobtains a short term cookie by using the given long life cookie.
+      # TODO: Use HTTParty
       def refresh_login(long_life_cookie)
         # Create the base URL we will be POSTing to.
         authentication_url = base_url(@locale, {:secure => true, :login => true}) + @@login_url + "?app=armory"
@@ -187,6 +197,7 @@ module Wowr
 
       protected
 
+      # TODO: Use HTTParty
       def login_final_bounce(url)
         # Let's bounce to our page that will give us our short term cookie, URL has Kerbrose style ticket.
         finalstage = login_http(url)
@@ -206,6 +217,7 @@ module Wowr
         raise Wowr::Exceptions::LoginBroken
       end
 
+      # TODO: Use HTTParty
       def login_http(url, ssl = false, cookie = nil, data = nil, post = false)
         if (post)
           req = Net::HTTP::Post.new(url)
@@ -273,51 +285,26 @@ module Wowr
       # Return an array of hashes for the given URL
       def get_json(url, options = {})
         response = get_file(url, options)
-        raw_json = response.scan(/\w+\((.+)\);\z/)[0][0]
-        return JSON.parse(raw_json)
+        JSON.parse(response)
       end
 
-      # Perform an HTTP request and return the contents of the document
-      def http_request(url, options = {})
-        req = Net::HTTP::Get.new(url)
-        req["user-agent"] = @@user_agent # ensure returns XML
-        req["cookie"] = "cookieMenu=all; cookieLangId=" + options[:lang] + "; cookies=true;"
+      # Return a raw document for the given URL
+      # TODO: Tidy up?
+      def get_file(url, options = {})
+        query = remap_parameters(options)
 
-        req["cookie"] += options[:cookie] if options[:cookie]
+        client = ArmoryClient
+        client.base_uri(self.base_url(options) + "/")
+        client.cookies("cookieLangId" => options[:lang])
 
-        uri = URI.parse(URI.escape(url))
-
-        http = Net::HTTP.new(uri.host, uri.port)
-
-        if (options[:secure])
-          puts "Secure authentication" if options[:debug]
-
-          http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-          http.use_ssl = true
+        if options[:caching]
+          client.cache :store => 'file', :timeout => @cache_timeout, :location => @@cache_directory_path
+        else
+          client.cache :store => 'memory', :timeout => 60
         end
 
         begin
-          tries = 0
-          http.start do
-            puts "Get URL "+ url if options[:debug]
-            res = http.request req
-            # response = res.body
-
-            response = case res
-                       when Net::HTTPSuccess, Net::HTTPRedirection
-                         res.body
-                       when Net::HTTPInternalServerError
-                         # TODO: Better handling of standard Armory server errors? (tsigo)
-                         res.body
-                       else
-                         tries += 1
-                         if tries > @@max_connection_tries
-                           raise Wowr::Exceptions::NetworkTimeout.new('Timed out')
-                         else
-                           redo
-                         end
-                       end
-          end
+          client.get(url, :query => query).response.body
         rescue Timeout::Error => e
           raise Wowr::Exceptions::NetworkTimeout.new('Timed out - Timeout::Error Exception')
         rescue SocketError, Net::HTTPExceptions => e
@@ -325,122 +312,49 @@ module Wowr
         end
       end
 
-      # Return an raw document for the given URL
-      # TODO: Tidy up?
-      def get_file(url, options = {})
+      private
 
-        # better way of doing this?
-        # Map custom keys to the HTTP request values
-        # TODO add handles for searching based upon stats
-        reqs = {
-          :character_name => 'n',
-          :source => "fl[source]", # dungeon, badges, arena, etc
-          :dungeon => "fl[dungeon]", # seems it needs the dungeons id rather than name
-          :difficulty => "fl[difficulty]", # normal, heroic, etc
-          :item_type => "fl[type]", # weapon, armor, trinket, etc
-          :item_slot => "fl[slot]", # head, shoulders, etc
-          :item_sub_type => "fl[subTp]", # leather, mail, etc
-          :realm => 'r',
-          :search => 'searchQuery',
-          :type => 'searchType',
-          :guild_name => 'gn',
-          :item_id => 'i',
-          :team_size => 'ts',
-          :team_name => 't',
-          :group => 'group',
-          :callback => 'callback',
-          :calendar_type => 'type',
-          :month => 'month',
-          :year => 'year',
-          :event => 'e',
-          :now => 'now',
+      # Remap verbose option keys to the parameter keys used by the Armory
+      #
+      # @example
+      #   >> options = {:character_name => 'Tsigo', :realm => "Mal'Ganis"}
+      #   >> puts remap_parameters(options)
+      #   => {:cn => "Tsigo", :r => "Mal'Ganis"}
+      # @param [Hash] options Options hash
+      def remap_parameters(options = {})
+        # Map verbose option keys to the parameter keys used by the Armory
+        # For example, ":character_name" becomes "cn"
+        @option_map ||= {
+          :character_name       => 'cn',
+          :source               => "fl[source]",     # dungeon, badges, arena, etc
+          :dungeon              => "fl[dungeon]",    # seems it needs the dungeons id rather than name
+          :difficulty           => "fl[difficulty]", # normal, heroic, etc
+          :item_type            => "fl[type]",       # weapon, armor, trinket, etc
+          :item_slot            => "fl[slot]",       # head, shoulders, etc
+          :item_sub_type        => "fl[subTp]",      # leather, mail, etc
+          :realm                => 'r',
+          :search               => 'searchQuery',
+          :type                 => 'searchType',
+          :guild_name           => 'gn',
+          :item_id              => 'i',
+          :team_size            => 'ts',
+          :team_name            => 't',
+          :group                => 'group',
+          :callback             => 'callback',
+          :calendar_type        => 'type',
+          :month                => 'month',
+          :year                 => 'year',
+          :event                => 'e',
+          :now                  => 'now',
           :achievement_category => 'c'
         }
 
-        params = []
+        query = {}
         options.each do |key, value|
-          params << "#{reqs[key]}=#{escape(value)}" if reqs[key]
+          query.merge!(@option_map[key] => value) if @option_map[key]
         end
 
-        query = ''
-        query = query + '?' + params.join('&') if params.size > 0
-        #query = '?' + params.join('&') if params.size > 0
-
-        base = self.base_url(options[:locale], options)
-        full_query = base + url + query
-
-        if options[:caching]
-          response = get_cache(full_query, options)
-        else
-          response = http_request(full_query, options)
-        end
-      end
-
-      # remove http://*.wowarmory.com/ leaving just xml file part and request parameters
-      # Kind of assuming incoming URL is the same as the current locale
-      def url_to_filename(url) #:nodoc:
-        temp = url.gsub(base_url(), '')
-        temp.gsub!('/', '.')
-        return temp
-      end
-
-      def localised_cache_path(lang = @lang) #:nodoc:
-        return @@cache_directory_path + lang
-      end
-
-      # Translate the specified URL to the cache location, and return the file
-      # If the cache does not exist, get the contents using http_request and create it
-      def get_cache(url, options = {})
-        path = cache_path(url, options)
-
-        # file doesn't exist, make it
-        if !File.exists?(path) ||
-          options[:refresh_cache] ||
-          (File.mtime(path) < Time.now - @cache_timeout)
-
-          if options[:debug]
-            if !File.exists?(path)
-              puts 'Cache doesn\'t exist, making: ' + path
-            elsif (File.mtime(path) < Time.now - @cache_timeout)
-              puts 'Cache has expired, making again, making: ' + path
-            elsif options[:refresh_cache]
-              puts 'Forced refresh of cache, making: ' + path
-            end
-          end
-
-          # make sure dir exists
-          FileUtils.mkdir_p(localised_cache_path(options[:lang])) unless File.directory?(localised_cache_path(options[:lang]))
-
-          xml_content = http_request(url, options)
-
-          # write the cache
-          file = File.open(path, File::WRONLY|File::TRUNC|File::CREAT)
-          file.write(xml_content)
-          file.close
-
-        # file exists, return the contents
-        else
-          puts 'Cache already exists, read: ' + path if options[:debug]
-
-          file = File.open(path, 'r')
-          xml_content = file.read
-          file.close
-        end
-        return xml_content
-      end
-
-      def cache_path(url, options)
-        @@cache_directory_path + options[:lang] + '/' + url_to_filename(url)
-      end
-
-      private
-
-      def escape(str) #:nodoc:
-        if str.instance_of?(String)
-          return CGI.escape(str)
-        else
-          return str
-        end
+        query
       end
     end
   end
