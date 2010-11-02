@@ -4,20 +4,20 @@ require 'rubygems'
 require 'fakeweb'
 FakeWeb.allow_net_connect = false
 
-$:.unshift(File.expand_path("../lib", __FILE__))
+$:.unshift(File.expand_path("../../lib", __FILE__))
 require 'wowr'
 
 module Tests
   module Fixtures
     class << self
       def file_fixture(*args)
-        File.read(File.expand_path(File.join("../spec/file_fixtures/", args), __FILE__))
+        File.read(File.expand_path(File.join("../file_fixtures/", args), __FILE__))
       end
 
       def register
         # get_character
         %w(sheet talents reputation).each do |v|
-          FakeWeb.register_uri(:get, /character-#{v}/, :body => file_fixture("armory/character-#{v}/tsigo_mal_ganis.xml"))
+          FakeWeb.register_uri(:get, /character-#{v}/, :body => file_fixture("armory/character-#{v}/sebudai_mal_ganis.xml"))
         end
 
         # get_guild
@@ -35,7 +35,7 @@ module Tests
         # Search
         FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Cake/, :body => file_fixture('armory/search/items_cake.xml'))
         FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Juggernaut/, :body => file_fixture('armory/search/guilds_juggernaut.xml'))
-        FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Tsigo/, :body => file_fixture('armory/search/characters_tsigo.xml'))
+        FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Sebudai/, :body => file_fixture('armory/search/characters_sebudai.xml'))
         FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Lemon/, :body => file_fixture('armory/search/arena_teams_lemon.xml'))
       end
     end
@@ -44,7 +44,7 @@ module Tests
   # Tests
   class << self
     def get_character
-      Wowr::API.new.get_character("Tsigo", :realm => "Mal'Ganis")
+      Wowr::API.new.get_character("Sebudai", :realm => "Mal'Ganis")
     end
 
     def get_guild
@@ -72,7 +72,7 @@ module Tests
     end
 
     def search_characters
-      Wowr::API.new.search_characters('Tsigo')
+      Wowr::API.new.search_characters('Sebudai')
     end
 
     def search_arena_teams
