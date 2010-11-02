@@ -9,8 +9,6 @@
 # Author:: Ben Humphreys
 # Author:: Peter Wood
 
-require 'net/http'
-require 'net/https'
 require 'fileutils'
 
 begin
@@ -22,6 +20,7 @@ end
 Bundler.require
 
 require 'core_ext/class'
+require 'httparty/icebox'
 
 require 'wowr/api'
 require 'wowr/armory'
