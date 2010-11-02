@@ -159,7 +159,7 @@ namespace :file_fixtures do
         # Update always downloads files; initialize only downloads missing files
         if (mode == :update) or (mode == :initialize && !File.exists?(full_local))
           puts "#{remote.ljust(80)} -> #{local}"
-          download_file(remote, File.expand_path("../#{local}", __FILE__))
+          download_file(remote, full_local)
         end
       end
     end
