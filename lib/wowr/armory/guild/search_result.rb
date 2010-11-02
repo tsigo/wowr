@@ -15,7 +15,7 @@ module Wowr
       # * http://www.wowarmory.com/search.xml?searchQuery=Juggernaut&searchType=guilds
       #
       # @see Base
-      class Search < Wowr::Armory::Guild::Base
+      class SearchResult < Wowr::Armory::Guild::Base
         # @example
         #   "Alliance"
         #   "Horde"

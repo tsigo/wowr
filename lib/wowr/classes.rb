@@ -11,7 +11,7 @@ require 'armory/arena_team/search'
 # Guild
 require 'armory/guild/base'
 require 'armory/guild/full'
-require 'armory/guild/search'
+require 'armory/guild/search_result'
 
 # Item
 # TODO: Item sources - Vendors
@@ -60,9 +60,9 @@ module Wowr
     class ArenaTeamEmblem < Wowr::Armory::ArenaTeam::Emblem;  end
 
     # Guild
-    class Guild       < Wowr::Armory::Guild::Base;    end
-    class SearchGuild < Wowr::Armory::Guild::Search;  end
-    class FullGuild   < Wowr::Armory::Guild::Full;    end
+    class Guild       < Wowr::Armory::Guild::Base;         end
+    class SearchGuild < Wowr::Armory::Guild::SearchResult; end
+    class FullGuild   < Wowr::Armory::Guild::Full;         end
 
     # Guild Bank
     class GuildBank         < Wowr::Armory::GuildBank::Base;      end

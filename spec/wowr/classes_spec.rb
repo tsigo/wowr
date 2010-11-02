@@ -267,8 +267,8 @@ module Wowr::Classes
   end
 
   describe SearchGuild do
-    it "should subclass Wowr::Armory::Guild::Search" do
-      SearchGuild.superclass.should equal(Wowr::Armory::Guild::Search)
+    it "should subclass Wowr::Armory::Guild::SearchResult" do
+      SearchGuild.superclass.should equal(Wowr::Armory::Guild::SearchResult)
     end
   end
 

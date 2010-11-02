@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 module Wowr::Armory::Guild
-  describe Search do
-    subject { Search.new(fake_element) }
+  describe SearchResult do
+    subject { SearchResult.new(fake_element) }
 
     its(:faction)       { should eql("Horde") }
     its(:faction_id)    { should eql(1) }
