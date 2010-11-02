@@ -92,23 +92,23 @@ namespace :file_fixtures do
     #   l: local filename without extension
     {
       'character-achievements' => [
-        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'}
+        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'},
       ],
       'character-reputation' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
-        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'}
+        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'},
       ],
       'character-sheet' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
-        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'}
+        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'},
       ],
       'character-talents' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
-        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'}
+        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'},
       ],
       'guild-info' => [
         {:r => "r=Mal'Ganis&gn=DoesNotExist", :l => 'not_found'},
-        {:r => "r=Mal'Ganis&gn=Juggernaut",   :l => 'juggernaut_mal_ganis'}
+        {:r => "r=Mal'Ganis&gn=Juggernaut",   :l => 'juggernaut_mal_ganis'},
       ],
       'item-info' => [
         {:r => "i=0",     :l => 'not_found'},
@@ -128,11 +128,11 @@ namespace :file_fixtures do
         {:r => "searchQuery=Lemon&searchType=arenateams",   :l => 'arena_teams_lemon'},
         {:r => "searchQuery=Sebudai&searchType=characters", :l => 'characters_sebudai'},
         {:r => "searchQuery=Juggernaut&searchType=guilds",  :l => 'guilds_juggernaut'},
-        {:r => "searchQuery=Cake&searchType=items",         :l => 'items_cake'}
+        {:r => "searchQuery=Cake&searchType=items",         :l => 'items_cake'},
       ],
       'team-info' => [
         {:r => "r=Mal'Ganis&ts=5&t=Fav+Five",     :l => 'fav_five_mal_ganis'},
-        {:r => "r=Mal'Ganis&ts=5&t=DoesNotExist", :l => 'not_found'}
+        {:r => "r=Mal'Ganis&ts=5&t=DoesNotExist", :l => 'not_found'},
       ],
 
       # Dungeons are a special case
