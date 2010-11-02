@@ -8,6 +8,10 @@ require 'armory/arena_team/emblem'
 require 'armory/arena_team/full'
 require 'armory/arena_team/search'
 
+# Dungeon
+require 'armory/dungeon/dungeon'
+require 'armory/dungeon/boss'
+
 # Guild
 require 'armory/guild/base'
 require 'armory/guild/full'
@@ -58,6 +62,10 @@ module Wowr
     class SearchArenaTeam < Wowr::Armory::ArenaTeam::Search;  end
     class FullArenaTeam   < Wowr::Armory::ArenaTeam::Full;    end
     class ArenaTeamEmblem < Wowr::Armory::ArenaTeam::Emblem;  end
+
+    # Dungeon
+    class Dungeon   < Wowr::Armory::Dungeon::Dungeon;   end
+    class Boss      < Wowr::Armory::Dungeon::Boss;      end
 
     # Guild
     class Guild       < Wowr::Armory::Guild::Base;    end
