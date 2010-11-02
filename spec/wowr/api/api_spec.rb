@@ -37,8 +37,7 @@ describe Wowr::API::API, "initialization" do
   context "without options" do
     subject { Wowr::API.new }
 
-    its(:locale)        { should eql('us') }
-    its(:lang)          { should eql('default') }
+    its(:lang)          { should eql('en_US') }
     its(:caching)       { should be_true }
     its(:cache_timeout) { should eql(604800) }
     its(:debug)         { should_not be_true }
@@ -51,7 +50,6 @@ describe Wowr::API::API, "initialization" do
     its(:character_name) { should eql(options[:character_name]) }
     its(:guild_name)     { should eql(options[:guild_name]) }
     its(:realm)          { should eql(options[:realm]) }
-    its(:locale)         { should eql(options[:locale]) }
     its(:lang)           { should eql(options[:lang]) }
     its(:caching)        { should eql(options[:caching]) }
     its(:cache_timeout)  { should eql(options[:cache_timeout]) }
@@ -131,13 +129,13 @@ describe Wowr::API::API, "search" do
   end
 
   it "should raise NetworkTimeout when network times out" do
-    FakeWeb.register_uri(:get, %r{^http://timeout}, :exception => Timeout::Error)
-    expect { api.search('Foo', :type => 'items', :locale => 'timeout') }.to raise_error(Wowr::Exceptions::NetworkTimeout)
+    FakeWeb.register_uri(:get, /searchQuery=NetworkTimeout/, :exception => Timeout::Error)
+    expect { api.search('NetworkTimeout', :type => 'items') }.to raise_error(Wowr::Exceptions::NetworkTimeout)
   end
 
   it "should raise ServerDoesNotExist when given an invalid locale" do
-    FakeWeb.register_uri(:get, %r{^http://invalid}, :exception => SocketError)
-    expect { api.search('Foo', :type => 'items', :locale => 'invalid') }.to raise_error(Wowr::Exceptions::ServerDoesNotExist)
+    FakeWeb.register_uri(:get, /searchQuery=InvalidServer/, :exception => SocketError)
+    expect { api.search('InvalidServer', :type => 'items') }.to raise_error(Wowr::Exceptions::ServerDoesNotExist)
   end
 
   describe "#search_items" do
@@ -402,15 +400,11 @@ describe Wowr::API::API do
 
   describe "#base_url" do
     it "should handle a :secure option" do
-      api.base_url('us', :secure => true).should match(/^https/)
-    end
-
-    it "should handle a non-US locale" do
-      api.base_url('fr').should match(%r{^http://fr\.})
+      api.base_url(:secure => true).should match(/^https/)
     end
 
     it "should handle a :login option" do
-      api.base_url('us', :login => true).should match(Wowr::API::API.login_base_url)
+      api.base_url(:login => true).should match(Wowr::API::API.login_base_url)
     end
 
     it "should return a default when given no parameters" do

@@ -19,7 +19,10 @@ module Wowr
       @@calendar_world_types = ['player', 'holiday', 'bg', 'darkmoon', 'raidLockout', 'raidReset', 'holidayWeekly']
       @@calendar_user_types = ['raid', 'dungeon', 'pvp', 'meeting', 'other']
 
-      attr_accessor :character_name, :guild_name, :realm, :locale, :lang, :caching, :cache_timeout, :debug
+      attr_accessor :character_name, :guild_name, :realm, :lang, :caching, :cache_timeout, :debug
+
+      # Deprecated
+      attr_accessor :locale
 
       include Client
 
@@ -36,8 +39,7 @@ module Wowr
         @character_name = options[:character_name]
         @guild_name     = options[:guild_name]
         @realm          = options[:realm]
-        @locale         = options[:locale] || 'us'
-        @lang           = options[:lang].nil? ? 'default' : options[:lang]
+        @lang           = options[:lang].nil? ? 'en_US' : options[:lang]
         @caching        = options[:caching].nil? ? true : options[:caching]
         @cache_timeout  = options[:cache_timeout] || @@default_cache_timeout
         @debug          = options[:debug] || false
@@ -343,7 +345,6 @@ module Wowr
         # defaults[:character_name] = @charater_name if @charater_name
         # defaults[:guild_name] = @guild_name if @guild_name
         defaults[:realm]          = @realm          if @realm
-        defaults[:locale]         = @locale         if @locale
         defaults[:lang]           = @lang           if @lang
         defaults[:caching]        = @caching        if @caching
         defaults[:cache_timeout]  = @cache_timeout  if @cache_timeout
