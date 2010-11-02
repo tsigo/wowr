@@ -111,8 +111,9 @@ namespace :file_fixtures do
         {:r => "r=Mal'Ganis&gn=Juggernaut",   :l => 'juggernaut_mal_ganis'}
       ],
       'item-info' => [
+        {:r => "i=0",     :l => 'not_found'},
+        {:r => "i=17204", :l => '17204'},
         {:r => "i=40395", :l => '40395'},
-        {:r => "i=0",     :l => 'not_found'}
       ],
       'item-tooltip' => [
         {:r => "i=0",     :l => 'not_found'},

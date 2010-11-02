@@ -1,11 +1,49 @@
 module Wowr
   module Armory
     module Item
-      # Creatures that drop the item
-      # <creature name="Giant Marsh Frog" minLevel="1" type="Critter" maxLevel="1" dropRate="6" id="23979" classification="0" area="Dustwallow Marsh"></creature>
-      # <creature name="Nalorakk" minLevel="73" title="Bear Avatar" url="fl[source]=dungeon&amp;fl[difficulty]=normal&amp;fl[boss]=23576" type="Humanoid" maxLevel="73" dropRate="2" id="23576" classification="3" areaUrl="fl[source]=dungeon&amp;fl[boss]=all&amp;fl[difficulty]=normal&amp;fl[dungeon]=3805" area="Zul'Aman"></creature>
+      # Represents a <tt><creature></tt> element that drops an item
+      #
+      # == Relevant XML example:
+      #
+      #   <creature area="Molten Core" areaUrl="fl[source]=dungeon&amp;fl[dungeon]=moltencore&amp;fl[boss]=all&amp;fl[difficulty]=all" classification="3" dropRate="2" heroic="1" id="11502" maxLevel="63" minLevel="63" name="Ragnaros" type="Elemental" url="fl[source]=dungeon&amp;fl[dungeon]=moltencore&amp;fl[difficulty]=heroic&amp;fl[boss]=11502"/>
+      #
+      # == Example Pages:
+      #
+      # * http://www.wowarmory.com/item-info.xml?i=17204
       class DropCreature
-        attr_reader :name, :id, :type, :min_level, :max_level, :drop_rate, :classification, :area
+        # @return [String]
+        attr_reader :name
+
+        # @return [Integer]
+        attr_reader :id
+
+        # @example
+        #   "Humanoid"
+        #   "Elemental"
+        # @return [String]
+        attr_reader :type
+
+        # @return [Integer]
+        attr_reader :min_level
+
+        # @return [Integer]
+        attr_reader :max_level
+
+        # Drop rates:
+        # * 1 - ? (1%-2%)
+        # * 2 - Very Low (3%-14%)
+        # * 3 - Low (15%-24%)
+        # * 4 - Medium (25%-50%)
+        # * 5 - High (51%-99%)
+        # * 6 - Guaranteed (100%)
+        # @return [Integer]
+        attr_reader :drop_rate
+
+        # @return [Integer]
+        attr_reader :classification
+
+        # @return [String]
+        attr_reader :area
 
         def initialize(elem)
           @name           = elem[:name]
