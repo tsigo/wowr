@@ -16,11 +16,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-tooltip.xml?i=49295
-      xml = <<-XML
-      <itemSource areaId="2159" areaName="Onyxia's Lair" creatureId="10184" creatureName="Onyxia" difficulty="n" dropRate="6" value="sourceType.creatureDrop"/>
-      XML
-
+      xml = file_fixture('armory/item-tooltip/49295.xml')
       (Hpricot.XML(xml)%'itemSource')
     end
   end

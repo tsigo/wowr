@@ -11,15 +11,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-tooltip.xml?i=49295
-      xml = <<-XML
-      <equipData>
-        <inventoryType>18</inventoryType>
-        <containerSlots>22</containerSlots>
-        <subclassName>Bag</subclassName>
-      </equipData>
-      XML
-
+      xml = file_fixture('armory/item-tooltip/49295.xml')
       (Hpricot.XML(xml)%'equipData')
     end
   end
