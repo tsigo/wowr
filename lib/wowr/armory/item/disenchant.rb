@@ -1,16 +1,50 @@
 module Wowr
   module Armory
     module Item
-      # <item name="Void Crystal" minCount="1" maxCount="2" icon="inv_enchant_voidcrystal" type="Enchanting" level="70" dropRate="6" id="22450" quality="4"></item>
+      # Represents an <tt><item></tt> element in a <tt><disenchantLoot></tt> element
+      #
+      # == Relevant XML example:
+      #
+      #   <item canAuction="1" dropRate="6" icon="inv_enchant_abysscrystal" id="34057" level="80" maxCount="1" minCount="1" name="Abyss Crystal" quality="4" type="Enchanting"/>
+      #
+      # == Example Pages:
+      #
+      # * http://www.wowarmory.com/item-info.xml?i=40395
       class Disenchant < Wowr::Armory::Item::Base
-        attr_reader :level, :type, :drop_rate, :min_count, :max_count, :quality
-        # :name, :id, :icon,
+        # @return [Integer]
+        attr_reader :level
+
+        # @example
+        #   "Enchanting"
+        # @return [String]
+        attr_reader :type
+
+        # @return [Integer]
+        attr_reader :drop_rate
+
+        # Minimum number of this item from disenchanting
+        # @return [Integer]
+        attr_reader :min_count
+
+        # Maximum number of this item from disenchanting
+        # @return [Integer]
+        attr_reader :max_count
+
+        # Item rarity (quality)
+        # * 0 - Trash (Grey)
+        # * 1 - Common (White)
+        # * 2 - Uncommon (Green)
+        # * 3 - Rare (Blue)
+        # * 4 - Epic (Purple)
+        # * 5 - Legendary (Orange)
+        # * 6
+        # * 7 - Heirloom (Gold)
+        # @return [Integer]
+        attr_reader :quality
 
         def initialize(elem, api = nil)
           super(elem, api)
-          # @name       = elem[:name]
-          # @id         = elem[:id].to_i
-          # @icon       = elem[:icon]
+
           @level      = elem[:level].to_i
           @type       = elem[:type]
           @drop_rate  = elem[:dropRate].to_i
