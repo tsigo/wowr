@@ -1,37 +1,117 @@
 module Wowr
   module Armory
     module Character
-      # Short character info, used in guild lists etc.
-      # Note that the way that searches and character listings within guilds works,
-      # there can be a variable amount of information filled in within the class.
-      # Guild listings and search results contain a smaller amount of information than
-      # single queries
-      # Attributes
-      # * name (String) - Full character name
-      # * level (Fixnum) - Level
-      # See Also: Guild
+      # Basic character info
+      #
+      # This class is used when only partial character information is
+      # available, such as in guild lists, or search results.
+      #
+      # Depending on the type of listing this class represents, some data may
+      # be missing. This is a limitation of the information returned by the
+      # Armory.
+      #
+      # @see Wowr::Classes::Guild
       class Base
-        # TODO: remove non existant attr_readers? :rank, :relevance
-        attr_reader :name, :level, :url, :rank,
-                    :klass, :klass_id,
-                    :gender, :gender_id,
-                    :race, :race_id,
-                    :guild, :guild_id, :guild_url,
-                    :realm,
-                    :battle_group, :last_login,
-                    :relevance, :search_rank,
-                    :achievement_points,
+        # @return [String]
+        attr_reader :name
 
-                    :season_games_played, :season_games_won, :team_rank, :contribution # From ArenaTeam info
+        # @return [Integer]
+        attr_reader :level
+
+        # URL parameters for this character
+        # @example
+        #   r=Mal%27Ganis&cn=Sebudai
+        # @return [String]
+        attr_reader :url
+
+        # Character class
+        # @note <tt>class</tt> is a Ruby reserved keyword, so that can't be used.
+        # @example
+        #   "Hunter"
+        # @return [String]
+        attr_reader :klass
+
+        # @return [Integer]
+        attr_reader :klass_id
+
+        # @example
+        #   "Female"
+        # @return [String]
+        attr_reader :gender
+
+        # @return [Integer]
+        attr_reader :gender_id
+
+        # @example
+        #   "Orc"
+        # @return [String]
+        attr_reader :race
+
+        # @return [Integer]
+        attr_reader :race_id
+
+        # Guild name
+        # @example
+        #   "Juggernaut"
+        # @return [String]
+        attr_reader :guild
+
+        # @return [Integer]
+        attr_reader :guild_id
+
+        # URL parameters for the character's guild page
+        # @example
+        #   r=Mal%27Ganis&gn=Juggernaut
+        # @return [String]
+        attr_reader :guild_url
+
+        # @return [String]
+        attr_reader :realm
+
+        # @return [String]
+        attr_reader :battle_group
+
+        # Search relevance, when representing a search result
+        # @return [Integer]
+        attr_reader :relevance
+
+        # Search rank, when representing a search result
+        # @return [Integer]
+        attr_reader :search_rank
+
+        # @return [String]
+        attr_reader :last_login
+
+        # @return [Integer]
+        attr_reader :achievement_points
+
+        # Games played in total for the current arena season
+        # @return [Integer]
+        attr_reader :season_games_played
+
+        # Games won for the current arena season
+        # @return [Integer]
+        attr_reader :season_games_won
+
+        # Arena team rank
+        # @return [Integer]
+        attr_reader :team_rank
+
+        # Player contribution for the current arena season
+        # @return [Integer]
+        attr_reader :contribution
 
         alias_method :to_s, :name
         alias_method :to_i, :level
+        alias_method :last_modified, :last_login
+        alias_method :wow_class, :klass
+        alias_method :class_id, :klass_id
 
         @@race_icon_url_base = '_images/icons/race/'
         @@class_icon_url_base = '_images/icons/class/'
         @@portrait_url_base = '_images/portraits/'
 
-        @@icon_types = {:default => 'wow-default', 70 => 'wow-70', :other => 'wow'}
+        @@icon_types = {:default => 'wow-default', 70 => 'wow-70', 80 => 'wow-80', :other => 'wow'}
 
         def initialize(elem, api = nil)
           @api = api
@@ -57,20 +137,15 @@ module Wowr
 
           @realm      = elem[:realm] == "" ? nil : elem[:realm]
 
-          @battle_group     = elem[:battleGroup] == "" ? nil : elem[:battleGroup]
+          @battle_group = elem[:battleGroup] == "" ? nil : elem[:battleGroup]
 
-          @battle_group_id  = elem[:battleGroupId].to_i # TODO :remove? this doesn't seem to be used
-
-          @relevance    = elem[:relevance].to_i # TODO: remove? this doesn't seem to exist anymore in xml
-          @search_rank  = elem[:searchRank].to_i # TODO: remove? this doesn't seem to exist anymore in xml
+          @relevance    = elem[:relevance].to_i
+          @search_rank  = elem[:searchRank].to_i
 
           @achievement_points = elem[:points].to_i if elem[:points]
           @achievement_points = elem[:achPoints].to_i if elem[:achPoints]
 
-          # Incoming string is 2007-02-24 20:33:04.0, parse to datetime
-          #@last_login  = elem[:lastLoginDate] == "" ? nil : DateTime.parse(elem[:lastLoginDate])
-
-          @last_login   = elem[:lastLoginDate] == "" ? nil : elem[:lastLoginDate] # TODO: remove? this doesn't seem to exist anymore in xml
+          @last_login = elem[:lastLoginDate] == "" ? nil : elem[:lastLoginDate]
 
           # From ArenaTeam info, can be blank on normal requests
           #<character battleGroup="" charUrl="r=Draenor&amp;n=Lothaar" class="Paladin" classId="2"
@@ -88,8 +163,8 @@ module Wowr
             raise Wowr::Exceptions::InvalidIconType.new(@@icon_types)
           end
 
-          if (type.nil?) && (@level == 70)
-            dir = @@icon_types[70]
+          if (type.nil?) && (@level == 80 || @level == 70)
+            dir = @@icon_types[@level]
           elsif (type.nil?)
             dir = @@icon_types[:other]
           else
@@ -102,12 +177,12 @@ module Wowr
 
         def race_icon
           # http://armory.worldofwarcraft.com/images/icons/race/11-1.gif
-          return base + @@race_icon_url_base + "#{@race_id}-#{@gender_id.to_s}.gif"
+          return base + @@race_icon_url_base + "#{@race_id}-#{@gender_id}.gif"
         end
 
         def class_icon
           # http://armory.worldofwarcraft.com/images/icons/class/8.gif
-          return base + @@class_icon_url_base + "#{@klass_id.to_s}.gif"
+          return base + @@class_icon_url_base + "#{@klass_id}.gif"
         end
 
         protected

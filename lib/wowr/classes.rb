@@ -157,7 +157,6 @@ require 'armory/character/stat/resilience'
 require 'armory/character/stat/resistance'
 require 'armory/character/talent_spec'
 require 'armory/character/pvp'
-require 'armory/character/buff'
 require 'armory/character/equipped_item'
 require 'armory/character/skill'
 require 'armory/character/rep_faction_category'
@@ -199,7 +198,6 @@ module Wowr
     class Resistance          < Wowr::Armory::Character::Stat::Resistance;      end
     class TalentSpec          < Wowr::Armory::Character::TalentSpec;            end
     class Pvp                 < Wowr::Armory::Character::Pvp;                   end
-    class Buff                < Wowr::Armory::Character::Buff;                  end
     class EquippedItem        < Wowr::Armory::Character::EquippedItem;          end
     class Skill               < Wowr::Armory::Character::Skill;                 end
     class RepFactionCategory  < Wowr::Armory::Character::RepFactionCategory;    end
