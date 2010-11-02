@@ -89,35 +89,6 @@ class WowrCharacterTest < Test::Unit::TestCase
 
     end
   end
-
-  def test_character_exceptions
-    no_data_api = Wowr::API.new
-    only_realm_api = Wowr::API.new(:realm => "Stormrage")
-    defaults_api = Wowr::API.new(:character_name => "cake", :realm => "Barthilas")
-
-    assert_raises Wowr::Exceptions::CharacterNameNotSet do
-      no_data_api.get_character
-    end
-
-    assert_raises Wowr::Exceptions::CharacterNameNotSet do
-      only_realm_api.get_character
-    end
-
-    assert_raises Wowr::Exceptions::RealmNotSet do
-      no_data_api.get_character("Phog")
-    end
-
-    assert_nothing_raised do
-      defaults_api.get_character
-      only_realm_api.get_character("Phog")
-    end
-
-    assert_nothing_raised do
-      defaults_api.get_character_sheet
-      only_realm_api.get_character_sheet("Phog")
-    end
-
-  end
 =end
 
   private
