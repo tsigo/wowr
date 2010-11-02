@@ -1,6 +1,6 @@
 $:.unshift(File.dirname(__FILE__))
 
-require 'general'
+require 'money'
 
 # Arena Team
 require 'armory/arena_team/base'
