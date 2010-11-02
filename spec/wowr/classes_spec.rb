@@ -257,7 +257,17 @@ module Wowr::Classes
   end
 
   # Dungeon
-  # PENDING
+  describe Dungeon do
+    it "should subclass Wowr::Armory::Dungeon::Dungeon" do
+      Dungeon.superclass.should equal(Wowr::Armory::Dungeon::Dungeon)
+    end
+  end
+
+  describe Boss do
+    it "should subclass Wowr::Armory::Character::RepFaction" do
+      Boss.superclass.should equal(Wowr::Armory::Dungeon::Boss)
+    end
+  end
 
   # Guild
   describe Guild do
