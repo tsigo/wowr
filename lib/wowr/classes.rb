@@ -2,11 +2,29 @@ $:.unshift(File.dirname(__FILE__))
 
 require 'money'
 
+# Achievements
+require 'armory/achievement/base'
+require 'armory/achievement/character_info'
+require 'armory/achievement/completed'
+require 'armory/achievement/category'
+require 'armory/achievement/list'
+
+# Achievements
+require 'armory/achievement/base'
+require 'armory/achievement/character_info'
+require 'armory/achievement/completed'
+require 'armory/achievement/category'
+require 'armory/achievement/list'
+
 # Arena Team
 require 'armory/arena_team/base'
 require 'armory/arena_team/emblem'
 require 'armory/arena_team/full'
 require 'armory/arena_team/search'
+
+# Dungeon
+require 'armory/dungeon/dungeon'
+require 'armory/dungeon/boss'
 
 # Guild
 require 'armory/guild/base'
@@ -53,11 +71,24 @@ require 'armory/guild_bank/log_item'
 
 module Wowr
   module Classes
+    # Achievements
+    class CharacterAchievementsInfo             < Wowr::Armory::Achievement::CharacterInfo;             end
+    class Achievement                           < Wowr::Armory::Achievement::Base;                      end
+    class CompletedAchievement                  < Wowr::Armory::Achievement::Completed;                 end
+    class AchievementsCategory                  < Wowr::Armory::Achievement::Category;                  end
+    class AchievementsCategoryDetails           < Wowr::Armory::Achievement::CategoryDetail;            end
+    class AchievementsCategoryDetailsWithPoints < Wowr::Armory::Achievement::CategoryDetailWithPoints;  end
+    class AchievementsList                      < Wowr::Armory::Achievement::List;                      end
+
     # Arena Team
     class ArenaTeam       < Wowr::Armory::ArenaTeam::Base;    end
     class SearchArenaTeam < Wowr::Armory::ArenaTeam::Search;  end
     class FullArenaTeam   < Wowr::Armory::ArenaTeam::Full;    end
     class ArenaTeamEmblem < Wowr::Armory::ArenaTeam::Emblem;  end
+
+    # Dungeon
+    class Dungeon   < Wowr::Armory::Dungeon::Dungeon;   end
+    class Boss      < Wowr::Armory::Dungeon::Boss;      end
 
     # Guild
     class Guild       < Wowr::Armory::Guild::Base;         end
