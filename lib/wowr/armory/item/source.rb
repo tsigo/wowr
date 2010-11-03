@@ -1,11 +1,48 @@
 module Wowr
   module Armory
     module Item
+      # Represents an <tt>itemSource</tt> element
+      #
+      # == Relevant XML example:
+      #
+      #   <itemSource areaId="2159" areaName="Onyxia's Lair" creatureId="10184" creatureName="Onyxia" difficulty="n" dropRate="6" value="sourceType.creatureDrop"/>
+      #
+      # == Example Pages:
+      #
+      # * http://www.wowarmory.com/item-tooltip.xml?i=49295
+      # * http://www.wowarmory.com/item-tooltip.xml?i=50731
       class Source
-        attr_reader :value,
-          :area_id, :area_name,
-          :creature_id, :creature_name,
-          :difficulty, :drop_rate
+
+        # @return [String]
+        attr_reader :value
+
+        # Area (zone) ID
+        # @return [Integer]
+        attr_reader :area_id
+
+        # Area (zone) Name
+        # @return [String]
+        attr_reader :area_name
+
+        # @return [Integer]
+        attr_reader :creature_id
+
+        # @return [String]
+        attr_reader :creature_name
+
+        # Normal ('n') or Heroic ('h')
+        # @return [String]
+        attr_reader :difficulty
+
+        # Drop rates:
+        # * 1 - ? (1%-2%)
+        # * 2 - Very Low (3%-14%)
+        # * 3 - Low (15%-24%)
+        # * 4 - Medium (25%-50%)
+        # * 5 - High (51%-99%)
+        # * 6 - Guaranteed (100%)
+        # @return [Integer]
+        attr_reader :drop_rate
 
         def initialize(elem)
           @value          = elem[:value]

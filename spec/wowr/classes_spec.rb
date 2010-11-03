@@ -397,8 +397,8 @@ module Wowr::Classes
   end
 
   describe SearchItem do
-    it "should subclass Wowr::Armory::Item::Search" do
-      SearchItem.superclass.should equal(Wowr::Armory::Item::Search)
+    it "should subclass Wowr::Armory::Item::SearchResult" do
+      SearchItem.superclass.should equal(Wowr::Armory::Item::SearchResult)
     end
   end
 
