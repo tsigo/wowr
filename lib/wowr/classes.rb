@@ -9,6 +9,13 @@ require 'armory/achievement/completed'
 require 'armory/achievement/category'
 require 'armory/achievement/list'
 
+# Achievements
+require 'armory/achievement/base'
+require 'armory/achievement/character_info'
+require 'armory/achievement/completed'
+require 'armory/achievement/category'
+require 'armory/achievement/list'
+
 # Arena Team
 require 'armory/arena_team/base'
 require 'armory/arena_team/emblem'
