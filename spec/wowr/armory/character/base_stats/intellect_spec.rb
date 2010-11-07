@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Stat
+module Wowr::Armory::Character::BaseStats
   describe Intellect do
     subject { Intellect.new(fake_element) }
 

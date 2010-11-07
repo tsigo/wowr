@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Stat
+      module BaseStats
         # = Intellect
         #
         # Represents a <tt>baseStats/intellect</tt> element

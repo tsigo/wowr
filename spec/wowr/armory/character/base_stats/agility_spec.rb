@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Stat
+module Wowr::Armory::Character::BaseStats
   describe Agility do
     subject { Agility.new(fake_element) }
 

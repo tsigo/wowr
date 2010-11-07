@@ -29,13 +29,6 @@ module Wowr
     class InfoCharacter       < Wowr::Armory::Character::Info;                  end
     class FullCharacter       < Wowr::Armory::Character::Full;                  end
     class SecondBar           < Wowr::Armory::Character::SecondBar;             end
-    class BaseStat            < Wowr::Armory::Character::Stat::Base;            end
-    class Strength            < Wowr::Armory::Character::Stat::Strength;        end
-    class Agility             < Wowr::Armory::Character::Stat::Agility;         end
-    class Stamina             < Wowr::Armory::Character::Stat::Stamina;         end
-    class Intellect           < Wowr::Armory::Character::Stat::Intellect;       end
-    class Spirit              < Wowr::Armory::Character::Stat::Spirit;          end
-    class Armor               < Wowr::Armory::Character::Stat::Armor;           end
     class Melee               < Wowr::Armory::Character::Weapon::Melee;         end
     class Ranged              < Wowr::Armory::Character::Weapon::Ranged;        end
     class WeaponSkill         < Wowr::Armory::Character::Weapon::Skill;         end
@@ -50,8 +43,9 @@ module Wowr
     class SpellDamage         < Wowr::Armory::Character::Spell::Damage;         end
     class ManaRegen           < Wowr::Armory::Character::Spell::ManaRegen;      end
     class PetBonus            < Wowr::Armory::Character::Weapon::PetBonus;      end
-    class Defenses            < Wowr::Armory::Character::Stat::Defenses;        end
+    class Armor               < Wowr::Armory::Character::Stat::Armor;           end
     class Defense             < Wowr::Armory::Character::Stat::Defense;         end
+    class Defenses            < Wowr::Armory::Character::Stat::Defenses;        end
     class DodgeParryBlock     < Wowr::Armory::Character::Stat::DodgeParryBlock; end
     class Resilience          < Wowr::Armory::Character::Stat::Resilience;      end
     class Resistance          < Wowr::Armory::Character::Stat::Resistance;      end
@@ -61,6 +55,12 @@ module Wowr
     class Skill               < Wowr::Armory::Character::Skill;                 end
     class RepFactionCategory  < Wowr::Armory::Character::RepFactionCategory;    end
     class RepFaction          < Wowr::Armory::Character::RepFaction;            end
+
+    class Agility             < Wowr::Armory::Character::BaseStats::Agility;   end
+    class Intellect           < Wowr::Armory::Character::BaseStats::Intellect; end
+    class Spirit              < Wowr::Armory::Character::BaseStats::Spirit;    end
+    class Stamina             < Wowr::Armory::Character::BaseStats::Stamina;   end
+    class Strength            < Wowr::Armory::Character::BaseStats::Strength;  end
 
     # Dungeon
     class Dungeon < Wowr::Armory::Dungeon::Dungeon; end

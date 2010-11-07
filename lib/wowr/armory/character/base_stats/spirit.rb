@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Stat
+      module BaseStats
         # = Spirit
         #
         # Represents a <tt>baseStats/spirit</tt> element

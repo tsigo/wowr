@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Stat
+      module BaseStats
         # = Agility
         #
         # Represents a <tt>baseStats/agility</tt> element

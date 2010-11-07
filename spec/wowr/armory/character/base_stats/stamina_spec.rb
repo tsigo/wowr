@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Stat
+module Wowr::Armory::Character::BaseStats
   describe Stamina do
     subject { Stamina.new(fake_element) }
 

@@ -21,19 +21,22 @@ module Wowr
         autoload :Spell,              'character/spell/spell'
       end
 
+      module BaseStats
+        autoload :Agility,            'character/base_stats/agility'
+        autoload :Intellect,          'character/base_stats/intellect'
+        autoload :Spirit,             'character/base_stats/spirit'
+        autoload :Stamina,            'character/base_stats/stamina'
+        autoload :Strength,           'character/base_stats/strength'
+      end
+
       module Stat
-        autoload :Agility,            'character/stat/agility'
         autoload :Armor,              'character/stat/armor'
         autoload :Base,               'character/stat/base'
         autoload :Defense,            'character/stat/defense'
         autoload :Defenses,           'character/stat/defenses'
         autoload :DodgeParryBlock,    'character/stat/dodge_parry_block'
-        autoload :Intellect,          'character/stat/intellect'
         autoload :Resilience,         'character/stat/resilience'
         autoload :Resistance,         'character/stat/resistance'
-        autoload :Spirit,             'character/stat/spirit'
-        autoload :Stamina,            'character/stat/stamina'
-        autoload :Strength,           'character/stat/strength'
       end
 
       module Weapon

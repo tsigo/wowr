@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Stat
+      module BaseStats
         # = Stamina
         #
         # Represents a <tt>baseStats/stamina</tt> element

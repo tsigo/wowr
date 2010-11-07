@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 module Wowr::Classes
-
   # Achievements
   describe CharacterAchievementsInfo do
     it "should subclass Wowr::Armory::Achievement::CharacterInfo" do
@@ -99,44 +98,38 @@ module Wowr::Classes
   end
 
   describe SecondBar do
-    it "should subclass Wowr::Armory::Character::SecondBar;" do
+    it "should subclass Wowr::Armory::Character::SecondBar" do
       SecondBar.superclass.should equal(Wowr::Armory::Character::SecondBar)
     end
   end
 
-  describe BaseStat do
-    it "should subclass Wowr::Armory::Character::Stat::Base;" do
-      BaseStat.superclass.should equal(Wowr::Armory::Character::Stat::Base)
-    end
-  end
-
   describe Strength do
-    it "should subclass Wowr::Armory::Character::Stat::Strength;" do
-      Strength.superclass.should equal(Wowr::Armory::Character::Stat::Strength)
+    it "should subclass Wowr::Armory::Character::BaseStats::Strength" do
+      Strength.superclass.should equal(Wowr::Armory::Character::BaseStats::Strength)
     end
   end
 
   describe Agility do
-    it "should subclass Wowr::Armory::Character::Stat::Agility" do
-      Agility.superclass.should equal(Wowr::Armory::Character::Stat::Agility)
+    it "should subclass Wowr::Armory::Character::BaseStats::Agility" do
+      Agility.superclass.should equal(Wowr::Armory::Character::BaseStats::Agility)
     end
   end
 
   describe Stamina do
-    it "should subclass Wowr::Armory::Character::Stat::Stamina" do
-      Stamina.superclass.should equal(Wowr::Armory::Character::Stat::Stamina)
+    it "should subclass Wowr::Armory::Character::BaseStats::Stamina" do
+      Stamina.superclass.should equal(Wowr::Armory::Character::BaseStats::Stamina)
     end
   end
 
   describe Intellect do
-    it "should subclass Wowr::Armory::Character::Stat::Intellect;" do
-      Intellect.superclass.should equal(Wowr::Armory::Character::Stat::Intellect)
+    it "should subclass Wowr::Armory::Character::BaseStats::Intellect" do
+      Intellect.superclass.should equal(Wowr::Armory::Character::BaseStats::Intellect)
     end
   end
 
   describe Spirit do
-    it "should subclass Wowr::Armory::Character::Stat::Spirit" do
-      Spirit.superclass.should equal(Wowr::Armory::Character::Stat::Spirit)
+    it "should subclass Wowr::Armory::Character::BaseStats::Spirit" do
+      Spirit.superclass.should equal(Wowr::Armory::Character::BaseStats::Spirit)
     end
   end
 
