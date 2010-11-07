@@ -43,6 +43,13 @@ module Wowr::Classes
       it { Strength.should  superclass(Wowr::Armory::Character::BaseStats::Strength) }
     end
 
+    describe "Defenses" do
+      it { Armor.should           superclass(Wowr::Armory::Character::Defenses::Armor) }
+      it { Defense.should         superclass(Wowr::Armory::Character::Defenses::Defense) }
+      it { DodgeParryBlock.should superclass(Wowr::Armory::Character::Defenses::DodgeParryBlock) }
+      it { Resilience.should      superclass(Wowr::Armory::Character::Defenses::Resilience) }
+    end
+
     describe "Spell" do
       it { ManaRegen.should   superclass(Wowr::Armory::Character::Spell::ManaRegen) }
       it { Spell.should       superclass(Wowr::Armory::Character::Spell::Spell) }
@@ -51,11 +58,7 @@ module Wowr::Classes
     end
 
     describe "Stat" do
-      it { Armor.should           superclass(Wowr::Armory::Character::Stat::Armor) }
-      it { Defense.should         superclass(Wowr::Armory::Character::Stat::Defense) }
       it { Defenses.should        superclass(Wowr::Armory::Character::Stat::Defenses) }
-      it { DodgeParryBlock.should superclass(Wowr::Armory::Character::Stat::DodgeParryBlock) }
-      it { Resilience.should      superclass(Wowr::Armory::Character::Stat::Resilience) }
       it { Resistance.should      superclass(Wowr::Armory::Character::Stat::Resistance) }
     end
 

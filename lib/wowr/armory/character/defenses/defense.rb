@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Stat
+      module Defenses
         class Defense
           attr_reader :value, :increase_percent, :decrease_percent, :plus_defense, :rating
 

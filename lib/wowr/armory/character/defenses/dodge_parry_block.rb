@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Stat
+      module Defenses
         class DodgeParryBlock
           attr_reader :percent, :increase_percent, :rating
 

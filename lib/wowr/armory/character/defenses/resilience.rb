@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Stat
+      module Defenses
         class Resilience
           attr_reader :damage_percent, :hit_percent, :value
 
