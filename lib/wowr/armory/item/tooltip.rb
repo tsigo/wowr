@@ -50,7 +50,7 @@ module Wowr
         # Flavor text
         # @example
         #   "The power of creation courses through this weapon."
-        # @returns [String]
+        # @return [String]
         attr_reader :desc
 
         # Item quality ID
