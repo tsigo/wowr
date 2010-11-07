@@ -31,15 +31,6 @@ namespace :coverage do
   end
 end
 
-# TODO: remove Rake::TestTask :test once tests have been converted and functionality has been confirmed with Specs
-# bundle exec rcov -Ilib -t test/**/*.rb --exclude gems/ -o coverage_test
-desc "Run tests"
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/*_test.rb'
-  test.verbose = true
-end
-
 namespace :whitespace do
   FIND_FILE_BLACKLIST = "find . -type f | grep -v -e '.git/' -e 'coverage/' -e 'pkg/' -e 'vendor/' -e '.data' -e '.DS_Store'"
 
