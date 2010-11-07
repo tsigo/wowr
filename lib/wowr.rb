@@ -13,19 +13,18 @@ require 'net/http'
 require 'net/https'
 require 'fileutils'
 
-# gems
-require "rubygems"
-require "bundler"
-Bundler.setup
-
-require 'json'
-require 'hpricot'
+begin
+  require 'bundler'
+rescue LoadError
+  require 'rubygems'
+  require 'bundler'
+end
+Bundler.require
 
 require 'core_ext/class'
 
 require 'wowr/api'
-
-require 'wowr/exceptions.rb'
-
+require 'wowr/calendar'
 require 'wowr/classes'
-require 'wowr/calendar.rb'
+require 'wowr/exceptions'
+require 'wowr/money'

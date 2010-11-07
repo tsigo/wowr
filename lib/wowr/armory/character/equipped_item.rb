@@ -2,7 +2,7 @@ module Wowr
   module Armory
     module Character
       # An item equipped to a player
-      class EquippedItem < Wowr::Classes::Item
+      class EquippedItem < Wowr::Armory::Item::Base
         attr_reader :durability, :max_durability, #:id, :item_id, :icon,
                     :gems, :permanent_enchant,
                     :random_properties_id, :seed, :slot
