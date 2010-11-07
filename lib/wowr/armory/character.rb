@@ -13,6 +13,7 @@ module Wowr
       autoload :SecondBar,          'character/second_bar'
       autoload :Skill,              'character/skill'
       autoload :TalentSpec,         'character/talent_spec'
+      autoload :Resistance,         'character/resistance'
 
       module BaseStats
         autoload :Agility,            'character/base_stats/agility'
@@ -38,7 +39,6 @@ module Wowr
 
       module Stat
         autoload :Defenses,           'character/stat/defenses'
-        autoload :Resistance,         'character/stat/resistance'
       end
 
       module Weapon

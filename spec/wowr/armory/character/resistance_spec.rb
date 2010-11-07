@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Stat
+module Wowr::Armory::Character
   describe Resistance do
 
     it { pending }

@@ -28,6 +28,7 @@ module Wowr::Classes
     it { InfoCharacter.should      superclass(Wowr::Armory::Character::Info) }
     it { FullCharacter.should      superclass(Wowr::Armory::Character::Full) }
     it { SecondBar.should          superclass(Wowr::Armory::Character::SecondBar) }
+    it { Resistance.should         superclass(Wowr::Armory::Character::Resistance) }
     it { TalentSpec.should         superclass(Wowr::Armory::Character::TalentSpec) }
     it { Pvp.should                superclass(Wowr::Armory::Character::Pvp) }
     it { EquippedItem.should       superclass(Wowr::Armory::Character::EquippedItem) }
@@ -59,7 +60,6 @@ module Wowr::Classes
 
     describe "Stat" do
       it { Defenses.should        superclass(Wowr::Armory::Character::Stat::Defenses) }
-      it { Resistance.should      superclass(Wowr::Armory::Character::Stat::Resistance) }
     end
 
     describe "Weapon" do

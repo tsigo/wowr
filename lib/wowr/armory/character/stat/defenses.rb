@@ -6,12 +6,13 @@ module Wowr
           attr_reader :armor, :defense, :dodge, :parry, :block, :resilience
 
           def initialize(elem)
-            @armor      = Armor.new(elem%'armor')
-            @defense    = Defense.new(elem%'defense')
-            @dodge      = DodgeParryBlock.new(elem%'dodge')
-            @parry      = DodgeParryBlock.new(elem%'parry')
-            @block      = DodgeParryBlock.new(elem%'block')
-            @resilience = Resilience.new(elem%'resilience')
+            # TODO: Clean this namespace up
+            @armor      = Wowr::Armory::Character::Defenses::Armor.new(elem%'armor')
+            @defense    = Wowr::Armory::Character::Defenses::Defense.new(elem%'defense')
+            @dodge      = Wowr::Armory::Character::Defenses::DodgeParryBlock.new(elem%'dodge')
+            @parry      = Wowr::Armory::Character::Defenses::DodgeParryBlock.new(elem%'parry')
+            @block      = Wowr::Armory::Character::Defenses::DodgeParryBlock.new(elem%'block')
+            @resilience = Wowr::Armory::Character::Defenses::Resilience.new(elem%'resilience')
           end
         end
       end

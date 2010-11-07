@@ -29,22 +29,7 @@ module Wowr
     class InfoCharacter       < Wowr::Armory::Character::Info;                  end
     class FullCharacter       < Wowr::Armory::Character::Full;                  end
     class SecondBar           < Wowr::Armory::Character::SecondBar;             end
-    class Melee               < Wowr::Armory::Character::Weapon::Melee;         end
-    class Ranged              < Wowr::Armory::Character::Weapon::Ranged;        end
-    class WeaponSkill         < Wowr::Armory::Character::Weapon::Skill;         end
-    class WeaponDamage        < Wowr::Armory::Character::Weapon::Damage;        end
-    class WeaponSpeed         < Wowr::Armory::Character::Weapon::Speed;         end
-    class WeaponPower         < Wowr::Armory::Character::Weapon::Power;         end
-    class WeaponHitRating     < Wowr::Armory::Character::Weapon::HitRating;     end
-    class WeaponCritChance    < Wowr::Armory::Character::Weapon::CritChance;    end
-    class WeaponExpertise     < Wowr::Armory::Character::Weapon::Expertise;     end
-    class Spell               < Wowr::Armory::Character::Spell::Spell;          end
-    class SpellSpeed          < Wowr::Armory::Character::Spell::Speed;          end
-    class SpellDamage         < Wowr::Armory::Character::Spell::Damage;         end
-    class ManaRegen           < Wowr::Armory::Character::Spell::ManaRegen;      end
-    class PetBonus            < Wowr::Armory::Character::Weapon::PetBonus;      end
-    class Defenses            < Wowr::Armory::Character::Stat::Defenses;        end
-    class Resistance          < Wowr::Armory::Character::Stat::Resistance;      end
+    class Resistance          < Wowr::Armory::Character::Resistance;            end
     class TalentSpec          < Wowr::Armory::Character::TalentSpec;            end
     class Pvp                 < Wowr::Armory::Character::Pvp;                   end
     class EquippedItem        < Wowr::Armory::Character::EquippedItem;          end
@@ -62,6 +47,24 @@ module Wowr
     class Defense             < Wowr::Armory::Character::Defenses::Defense;         end
     class DodgeParryBlock     < Wowr::Armory::Character::Defenses::DodgeParryBlock; end
     class Resilience          < Wowr::Armory::Character::Defenses::Resilience;      end
+
+    class Spell               < Wowr::Armory::Character::Spell::Spell;          end
+    class SpellSpeed          < Wowr::Armory::Character::Spell::Speed;          end
+    class SpellDamage         < Wowr::Armory::Character::Spell::Damage;         end
+    class ManaRegen           < Wowr::Armory::Character::Spell::ManaRegen;      end
+
+    class Defenses            < Wowr::Armory::Character::Stat::Defenses;        end
+
+    class Melee               < Wowr::Armory::Character::Weapon::Melee;         end
+    class Ranged              < Wowr::Armory::Character::Weapon::Ranged;        end
+    class WeaponSkill         < Wowr::Armory::Character::Weapon::Skill;         end
+    class WeaponDamage        < Wowr::Armory::Character::Weapon::Damage;        end
+    class WeaponSpeed         < Wowr::Armory::Character::Weapon::Speed;         end
+    class WeaponPower         < Wowr::Armory::Character::Weapon::Power;         end
+    class WeaponHitRating     < Wowr::Armory::Character::Weapon::HitRating;     end
+    class WeaponCritChance    < Wowr::Armory::Character::Weapon::CritChance;    end
+    class WeaponExpertise     < Wowr::Armory::Character::Weapon::Expertise;     end
+    class PetBonus            < Wowr::Armory::Character::Weapon::PetBonus;      end
 
     # Dungeon
     class Dungeon < Wowr::Armory::Dungeon::Dungeon; end
