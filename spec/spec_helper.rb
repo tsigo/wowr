@@ -12,4 +12,5 @@ Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 RSpec.configure do |config|
   config.mock_with :mocha
   config.include(FileFixtures)
+  config.include(SuperclassMatcher)
 end
