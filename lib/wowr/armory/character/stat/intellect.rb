@@ -2,9 +2,35 @@ module Wowr
   module Armory
     module Character
       module Stat
-        class Intellect < Wowr::Armory::Character::Stat::Base
-          attr_reader :mana, :crit_hit_percent, :pet_bonus
+        # = Intellect
+        #
+        # Represents a <tt>baseStats/intellect</tt> element
+        #
+        # == Relevant XML example:
+        #
+        #   <intellect base="163" critHitPercent="14.80" effective="2176" mana="32360" petBonus="653"/>
+        class Intellect
+          # Character's base Intellect stat, before bonuses
+          # @return [Integer]
+          attr_reader :base
 
+          # Character's effective Intellect, after bonuses
+          # @return [Integer]
+          attr_reader :effective
+
+          # Amount of Mana given by this amount of Intellect
+          # @return [Integer]
+          attr_reader :mana
+
+          # Critical hit chance given by this amount of Intellect
+          # @return [Integer]
+          attr_reader :crit_hit_percent
+
+          # @todo Unknown purpose
+          # @return [Integer]
+          attr_reader :pet_bonus
+
+          # @param [Hpricot::Elem] elem <tt>intellect</tt> element
           def initialize(elem)
             @base             = elem[:base].to_i
             @effective        = elem[:effective].to_i
