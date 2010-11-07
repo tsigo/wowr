@@ -2,7 +2,7 @@ module Wowr
   module Armory
     module Character
       module Stat
-        class Armor < Wowr::Armory::Character::Stat::Base
+        class Armor
           attr_reader :base, :effective, :percent, :pet_bonus
 
           def initialize(elem)
