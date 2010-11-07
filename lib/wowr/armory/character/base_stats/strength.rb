@@ -27,10 +27,10 @@ module Wowr
           attr_reader :block
 
           def initialize(elem)
-            @base       = elem['base'].to_i
-            @effective  = elem['effective'].to_i
-            @attack     = elem['attack'].to_i
-            @block      = elem['block'].to_i == -1 ? nil : elem['block'].to_i
+            @base       = elem[:base].to_i
+            @effective  = elem[:effective].to_i
+            @attack     = elem[:attack].to_i
+            @block      = elem[:block].to_i == -1 ? nil : elem[:block].to_i
           end
         end
       end

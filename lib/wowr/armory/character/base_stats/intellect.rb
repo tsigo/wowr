@@ -23,7 +23,7 @@ module Wowr
           attr_reader :mana
 
           # Critical hit chance given by this amount of Intellect
-          # @return [Integer]
+          # @return [Float]
           attr_reader :crit_hit_percent
 
           # @todo Unknown purpose

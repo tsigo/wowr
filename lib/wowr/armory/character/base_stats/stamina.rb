@@ -22,7 +22,7 @@ module Wowr
           # @return [Integer]
           attr_reader :health
 
-          # Amount of health given to the character's pet by this amount of Stamina
+          # Amount of Stamina given to the character's pet
           # @return [Integer]
           attr_reader :pet_bonus
 

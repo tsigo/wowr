@@ -27,7 +27,7 @@ module Wowr
           attr_reader :attack
 
           # Critical hit chance given by this amount of Agility
-          # @return [Integer]
+          # @return [Float]
           attr_reader :crit_hit_percent
 
           # @param [Hpricot::Elem] elem <tt>agility</tt> element
