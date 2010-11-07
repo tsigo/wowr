@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/sheet.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-sheet.xml">
+  <tabInfo subTab="profile" tab="character" tabGroup="character" tabUrl="r=Mal%27Ganis&amp;cn=Fearsom&amp;gn=Juggernaut"/>
+  <characterInfo>
+    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Fearsom" class="Warlock" classId="9" classUrl="c=Warlock" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="Juggernaut" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" lastModified="November 7, 2010" level="80" name="Fearsom" points="9190" prefix="" race="Orc" raceId="2" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138">
+      <arenaTeams>
+        <arenaTeam battleGroup="Stormstrike" created="1266624000000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="just screwin aroudn" ranking="0" rating="0" realm="Mal'Ganis" realmUrl="b=Stormstrike&amp;r=Mal%27Ganis&amp;ts=2&amp;t=just+screwin+aroudn&amp;ff=realm&amp;fv=Mal%27Ganis&amp;select=just+screwin+aroudn" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="2" teamSize="2" teamUrl="r=Mal%27Ganis&amp;ts=2&amp;t=just+screwin+aroudn&amp;select=just+screwin+aroudn" url="r=Mal%27Ganis&amp;ts=2&amp;t=just+screwin+aroudn&amp;select=just+screwin+aroudn">
+          <emblem background="fff03936" borderColor="ff3c49f5" borderStyle="1" iconColor="ffa9d135" iconStyle="41"/>
+          <members>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Fearsom" class="Warlock" classId="9" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Fearsom" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="0"/>
+          </members>
+        </arenaTeam>
+        <arenaTeam battleGroup="Stormstrike" created="1270944000000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="we quit and came back" ranking="0" rating="0" realm="Mal'Ganis" realmUrl="b=Stormstrike&amp;r=Mal%27Ganis&amp;ts=3&amp;t=we+quit+and+came+back&amp;ff=realm&amp;fv=Mal%27Ganis&amp;select=we+quit+and+came+back" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="3" teamSize="3" teamUrl="r=Mal%27Ganis&amp;ts=3&amp;t=we+quit+and+came+back&amp;select=we+quit+and+came+back" url="r=Mal%27Ganis&amp;ts=3&amp;t=we+quit+and+came+back&amp;select=we+quit+and+came+back">
+          <emblem background="ff001387" borderColor="fffa162b" borderStyle="6" iconColor="ff94bf33" iconStyle="74"/>
+          <members>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Jayhawk" class="Shaman" classId="7" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Thuggernaut" guildId="11885948" guildUrl="r=Mal%27Ganis&amp;gn=Thuggernaut" name="Jayhawk" race="Tauren" raceId="6" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="0"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Fearsom" class="Warlock" classId="9" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Fearsom" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+          </members>
+        </arenaTeam>
+        <arenaTeam battleGroup="Stormstrike" created="1265155200000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="Xipe" ranking="0" rating="0" realm="Mal'Ganis" realmUrl="b=Stormstrike&amp;r=Mal%27Ganis&amp;ts=5&amp;t=Xipe&amp;ff=realm&amp;fv=Mal%27Ganis&amp;select=Xipe" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="5" teamSize="5" teamUrl="r=Mal%27Ganis&amp;ts=5&amp;t=Xipe&amp;select=Xipe" url="r=Mal%27Ganis&amp;ts=5&amp;t=Xipe&amp;select=Xipe">
+          <emblem background="ff000000" borderColor="ff00ff1d" borderStyle="4" iconColor="ff0ddb00" iconStyle="55"/>
+          <members>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Duskshadow" class="Priest" classId="5" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guildId="0" name="Duskshadow" race="Undead" raceId="5" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="0"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Kapetal" class="Shaman" classId="7" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guildId="0" name="Kapetal" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Fearsom" class="Warlock" classId="9" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Fearsom" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Modk" class="Death Knight" classId="6" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Modk" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+          </members>
+        </arenaTeam>
+      </arenaTeams>
+      <modelBasePath value="http://us.media.battle.net.edgesuite.net/"/>
+    </character>
+    <characterTab>
+      <talentSpecs>
+        <talentSpec group="2" icon="spell_shadow_rainoffire" prim="Destruction" treeOne="2" treeThree="31" treeTwo="3"/>
+        <talentSpec active="1" group="1" icon="spell_shadow_metamorphosis" prim="Demonology" treeOne="0" treeThree="5" treeTwo="31"/>
+      </talentSpecs>
+      <buffs/>
+      <debuffs/>
+      <pvp>
+        <lifetimehonorablekills value="27034"/>
+        <arenacurrency value="0"/>
+      </pvp>
+      <professions>
+        <skill id="333" key="enchanting" max="450" name="Enchanting" value="450"/>
+        <skill id="755" key="jewelcrafting" max="450" name="Jewelcrafting" value="450"/>
+      </professions>
+      <secondaryProfessions>
+        <skill id="185" key="cooking" max="450" name="Cooking" value="450"/>
+        <skill id="129" key="firstaid" max="450" name="First Aid" value="450"/>
+        <skill id="356" key="fishing" max="300" name="Fishing" value="296"/>
+      </secondaryProfessions>
+      <characterBars>
+        <health effective="37784"/>
+        <secondBar casting="193" effective="36216" notCasting="364" type="m"/>
+      </characterBars>
+      <baseStats>
+        <strength attack="62" base="62" block="-1" effective="72"/>
+        <agility armor="148" attack="-1" base="64" critHitPercent="4.09" effective="74"/>
+        <stamina base="99" effective="3080" health="30620" petBonus="924"/>
+        <intellect base="163" critHitPercent="14.80" effective="2176" mana="32360" petBonus="653"/>
+        <spirit base="168" effective="219" healthRegen="14" manaRegen="170"/>
+        <armor base="7441" effective="7441" percent="32.82" petBonus="2604"/>
+      </baseStats>
+      <resistances>
+        <arcane petBonus="0" value="0"/>
+        <fire petBonus="0" value="0"/>
+        <frost petBonus="0" value="0"/>
+        <holy petBonus="0" value="0"/>
+        <nature petBonus="0" value="0"/>
+        <shadow petBonus="0" value="0"/>
+      </resistances>
+      <melee>
+        <mainHandDamage dps="202.5" max="326" min="182" percent="0" speed="1.26"/>
+        <offHandDamage dps="0.0" max="0" min="0" percent="0" speed="1.39"/>
+        <mainHandSpeed hastePercent="43.37" hasteRating="1422" value="1.26"/>
+        <offHandSpeed hastePercent="43.37" hasteRating="1422" value="1.39"/>
+        <power base="124" effective="124" increasedDps="8.0"/>
+        <hitRating increasedHitPercent="14.50" penetration="0" reducedArmorPercent="0.00" value="446"/>
+        <critChance percent="15.63" plusPercent="11.55" rating="530"/>
+        <expertise additional="0" percent="0.00" rating="0" value="0"/>
+      </melee>
+      <ranged>
+        <weaponSkill rating="0" value="0"/>
+        <damage dps="597.4" max="1029" min="554" percent="0" speed="1.33"/>
+        <speed hastePercent="43.37" hasteRating="1422" value="1.33"/>
+        <power base="0" effective="0" increasedDps="0.0" petAttack="-1.00" petSpell="-1.00"/>
+        <hitRating increasedHitPercent="14.50" penetration="0" reducedArmorPercent="0.00" value="446"/>
+        <critChance percent="15.63" plusPercent="11.55" rating="530"/>
+      </ranged>
+      <spell>
+        <bonusDamage>
+          <arcane value="4126"/>
+          <fire value="4126"/>
+          <frost value="4126"/>
+          <holy value="4126"/>
+          <nature value="4126"/>
+          <shadow value="4126"/>
+          <petBonus attack="2352" damage="619" fromType="fire"/>
+        </bonusDamage>
+        <bonusHealing value="3928"/>
+        <hitRating increasedHitPercent="17.00" penetration="0" reducedResist="0" value="446"/>
+        <critChance rating="530">
+          <arcane percent="26.34"/>
+          <fire percent="26.34"/>
+          <frost percent="26.34"/>
+          <holy percent="26.34"/>
+          <nature percent="26.34"/>
+          <shadow percent="26.34"/>
+        </critChance>
+        <penetration value="0"/>
+        <manaRegen casting="193.00" notCasting="364.00"/>
+        <hasteRating hastePercent="43.37" hasteRating="1422"/>
+      </spell>
+      <defenses>
+        <armor base="7441" effective="7441" percent="32.82" petBonus="2604"/>
+        <defense decreasePercent="0.00" increasePercent="0.00" plusDefense="0" rating="0" value="400.00"/>
+        <dodge increasePercent="0.00" percent="3.46" rating="0"/>
+        <parry increasePercent="0.00" percent="0.00" rating="0"/>
+        <block increasePercent="0.00" percent="0.00" rating="0"/>
+        <resilience damagePercent="0" hitPercent="0" value="0.00"/>
+      </defenses>
+      <items>
+        <item displayInfoId="64281" durability="56" gem0Id="41285" gem1Id="40153" gem2Id="0" gemIcon0="inv_jewelcrafting_icediamond_02" gemIcon1="inv_jewelcrafting_gem_40" icon="inv_helmet_152" id="51231" level="277" maxDurability="100" name="Sanctified Dark Coven Hood" permanentEnchantIcon="spell_fire_masterofelements" permanentEnchantItemId="44877" permanentenchant="3820" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="0" slot="0"/>
+        <item displayInfoId="64219" durability="0" gem0Id="40155" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_39" icon="item_icecrownnecklaced" id="50658" level="277" maxDurability="0" name="Amulet of the Silent Eulogy" permanentenchant="0" pickUp="PickUpRing" putDown="PutDownRing" randomPropertiesId="0" rarity="4" seed="1792276352" slot="1"/>
+        <item displayInfoId="64278" durability="75" gem0Id="40155" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_39" icon="inv_shoulder_114" id="51234" level="277" maxDurability="100" name="Sanctified Dark Coven Shoulderpads" permanentEnchantIcon="spell_nature_lightningoverload" permanentEnchantItemId="44874" permanentenchant="3810" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="0" slot="2"/>
+        <item displayInfoId="58539" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_shirt_grey_01" id="45672" level="1" maxDurability="0" name="Orgrimmar Doublet" permanentenchant="0" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="1" seed="0" slot="3"/>
+        <item displayInfoId="64279" durability="88" gem0Id="40113" gem1Id="40155" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_37" gemIcon1="inv_jewelcrafting_gem_39" icon="inv_chest_cloth_77" id="51233" level="277" maxDurability="165" name="Sanctified Dark Coven Robe" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="44465" permanentenchant="3832" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="0" slot="4"/>
+        <item displayInfoId="64349" durability="27" gem0Id="40153" gem1Id="40113" gem2Id="40113" gemIcon0="inv_jewelcrafting_gem_40" gemIcon1="inv_jewelcrafting_gem_37" gemIcon2="inv_jewelcrafting_gem_37" icon="inv_belt_64" id="50613" level="277" maxDurability="55" name="Crushing Coldwraith Belt" permanentenchant="0" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="1216359744" slot="5"/>
+        <item displayInfoId="64291" durability="86" gem0Id="40153" gem1Id="40155" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_40" gemIcon1="inv_jewelcrafting_gem_39" icon="inv_kilt_cloth_02" id="51232" level="277" maxDurability="120" name="Sanctified Dark Coven Leggings" permanentEnchantIcon="spell_nature_astralrecalgroup" permanentEnchantItemId="41604" permanentenchant="3721" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="0" slot="6"/>
+        <item displayInfoId="64351" durability="42" gem0Id="40153" gem1Id="42144" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_40" gemIcon1="inv_jewelcrafting_dragonseye05" icon="inv_boots_cloth_24" id="50699" level="277" maxDurability="75" name="Plague Scientist's Boots" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="39006" permanentenchant="3232" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="2135248768" slot="7"/>
+        <item displayInfoId="64345" durability="35" gem0Id="42144" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_dragonseye05" icon="inv_bracer_45" id="54582" level="284" maxDurability="55" name="Bracers of Fiery Night" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="44470" permanentenchant="2332" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="770025472" slot="8"/>
+        <item displayInfoId="64359" durability="36" gem0Id="40153" gem1Id="40113" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_40" gemIcon1="inv_jewelcrafting_gem_37" icon="inv_gauntlets_88" id="50663" level="277" maxDurability="55" name="Gunship Captain's Mittens" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="38979" permanentenchant="3246" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="-1777400576" slot="9"/>
+        <item displayInfoId="64174" durability="0" gem0Id="40153" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_40" icon="inv_jewelry_ring_81" id="50714" level="277" maxDurability="0" name="Valanar's Other Signet Ring" permanentEnchantIcon="trade_engraving" permanentEnchantSpellDesc="Permanently enchant a ring to increase spell power by 23.  Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound." permanentEnchantSpellName="Enchant Ring - Greater Spellpower" permanentenchant="3840" pickUp="PickUpRing" putDown="PutDownRing" randomPropertiesId="0" rarity="4" seed="1981425536" slot="10"/>
+        <item displayInfoId="63960" durability="0" gem0Id="40155" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_39" icon="inv_jewelry_ring_83" id="50398" level="277" maxDurability="0" name="Ashen Band of Endless Destruction" permanentEnchantIcon="trade_engraving" permanentEnchantSpellDesc="Permanently enchant a ring to increase spell power by 23.  Only the Enchanter's rings can be enchanted, and enchanting a ring will cause it to become soulbound." permanentEnchantSpellName="Enchant Ring - Greater Spellpower" permanentenchant="3840" pickUp="PickUpMetalSmall" putDown="PutDownSmallMEtal" randomPropertiesId="0" rarity="4" seed="820777920" slot="11"/>
+        <item displayInfoId="64245" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_jewelry_trinket_01" id="50348" level="277" maxDurability="0" name="Dislodged Foreign Object" permanentenchant="0" pickUp="PickUpWand" putDown="PutDownWand" randomPropertiesId="0" rarity="4" seed="1672921408" slot="12"/>
+        <item displayInfoId="70524" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_misc_rubysanctum2" id="54588" level="284" maxDurability="0" name="Charred Twilight Scale" permanentenchant="0" pickUp="PickUpGems" putDown="PutDownGems" randomPropertiesId="0" rarity="4" seed="1606453952" slot="13"/>
+        <item displayInfoId="64300" durability="0" gem0Id="40153" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_40" icon="item_icecrowncape" id="50668" level="277" maxDurability="0" name="Greatcloak of the Turned Champion" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="39003" permanentenchant="3831" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="1016543360" slot="14"/>
+        <item displayInfoId="64530" durability="103" gem0Id="42144" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_dragonseye05" icon="inv_sword_150" id="50732" level="284" maxDurability="105" name="Bloodsurge, Kel'Thuzad's Blade of Agony" permanentEnchantIcon="inv_scroll_05" permanentEnchantItemId="43987" permanentenchant="3790" pickUp="PickUpMetalSmall" putDown="PutDownSmallMEtal" randomPropertiesId="0" rarity="4" seed="1203448640" slot="15"/>
+        <item displayInfoId="64440" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_misc_thread_01" id="50719" level="277" maxDurability="0" name="Shadow Silk Spindle" permanentenchant="0" pickUp="PickUpWand" putDown="PutDownWand" randomPropertiesId="0" rarity="4" seed="1146734240" slot="16"/>
+        <item displayInfoId="64995" durability="75" gem0Id="40155" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_39" icon="inv_wand_34" id="51852" level="264" maxDurability="75" name="Wand of Ruby Claret" permanentenchant="0" pickUp="PickUpWand" putDown="PutDownWand" randomPropertiesId="0" rarity="4" seed="-1689316096" slot="17"/>
+        <item displayInfoId="59978" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_misc_tournaments_tabard_orc" id="45581" level="1" maxDurability="0" name="Orgrimmar Tabard" permanentenchant="0" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="1" seed="0" slot="18"/>
+      </items>
+      <glyphs>
+        <glyph effect="Reduces the global cooldown of your Life Tap by .5 sec." icon="spell_shadow_burningspirit" id="760" name="Glyph of Life Tap" type="major"/>
+        <glyph effect="Increases the range of your Curse of Exhaustion spell by 5 yards." icon="spell_shadow_grimward" id="480" name="Glyph of Curse of Exhaustion" type="minor"/>
+        <glyph effect="Your Drain Soul restores 10% of your total mana after you kill a target that yields experience or honor." icon="spell_shadow_haunting" id="478" name="Glyph of Drain Soul" type="minor"/>
+        <glyph effect="Your Shadowflame also applies a 70% movement speed slow on its victims." icon="ability_warlock_shadowflame" id="759" name="Glyph of Shadowflame" type="major"/>
+        <glyph effect="Increases the swim speed of targets affected by your Unending Breath spell by 20%." icon="spell_shadow_demonbreath" id="477" name="Glyph of Unending Breath" type="minor"/>
+        <glyph effect="Your Fear causes the target to tremble in place instead of fleeing in fear, but now causes Fear to have a 5 sec cooldown." icon="spell_shadow_possession" id="277" name="Glyph of Fear" type="major"/>
+        <glyph effect="Increases the damage done by your Felguard's Legion Strike by 5%." icon="spell_shadow_summonfelguard" id="278" name="Glyph of Felguard" type="prime"/>
+        <glyph effect="Increases the duration of your Metamorphosis by 6 sec." icon="spell_shadow_demonform" id="756" name="Glyph of Metamorphosis" type="prime"/>
+        <glyph effect="Increases the periodic damage of your Immolate by 10%." icon="spell_fire_immolation" id="283" name="Glyph of Immolate" type="prime"/>
+      </glyphs>
+    </characterTab>
+    <summary>
+      <c earned="862" points="9190" total="1056" totalPoints="11640"/>
+      <category id="92" name="General">
+        <c earned="36" earnedPoints="375" total="52" totalPoints="535"/>
+      </category>
+      <category id="96" name="Quests">
+        <c earned="41" earnedPoints="410" total="49" totalPoints="530"/>
+      </category>
+      <category id="97" name="Exploration">
+        <c earned="49" earnedPoints="520" total="70" totalPoints="830"/>
+      </category>
+      <category id="95" name="Player vs. Player">
+        <c earned="100" earnedPoints="1050" total="166" totalPoints="1930"/>
+      </category>
+      <category id="168" name="Dungeons &amp; Raids">
+        <c earned="437" earnedPoints="4735" total="458" totalPoints="4955"/>
+      </category>
+      <category id="169" name="Professions">
+        <c earned="38" earnedPoints="380" total="75" totalPoints="760"/>
+      </category>
+      <category id="201" name="Reputation">
+        <c earned="24" earnedPoints="270" total="45" totalPoints="560"/>
+      </category>
+      <category id="155" name="World Events">
+        <c earned="137" earnedPoints="1450" total="141" totalPoints="1540"/>
+      </category>
+      <category id="81" name="Feats of Strength">
+        <c earned="25"/>
+      </category>
+    </summary>
+  </characterInfo>
+</page>

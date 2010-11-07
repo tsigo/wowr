@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/sheet.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-sheet.xml">
+  <tabInfo subTab="profile" tab="character" tabGroup="character" tabUrl="r=Mal%27Ganis&amp;cn=Alephone&amp;gn=Juggernaut"/>
+  <characterInfo>
+    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Alephone" class="Paladin" classId="2" classUrl="c=Paladin" faction="Horde" factionId="1" gender="Female" genderId="1" guildName="Juggernaut" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" lastModified="November 7, 2010" level="80" name="Alephone" points="9925" prefix="" race="Blood Elf" raceId="10" realm="Mal'Ganis" suffix=" the Love Fool" titleId="103">
+      <arenaTeams>
+        <arenaTeam battleGroup="Stormstrike" created="1229644800000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="WE R NOT TRYING" ranking="0" rating="0" realm="Mal'Ganis" realmUrl="b=Stormstrike&amp;r=Mal%27Ganis&amp;ts=2&amp;t=WE+R+NOT+TRYING&amp;ff=realm&amp;fv=Mal%27Ganis&amp;select=WE+R+NOT+TRYING" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="2" teamSize="2" teamUrl="r=Mal%27Ganis&amp;ts=2&amp;t=WE+R+NOT+TRYING&amp;select=WE+R+NOT+TRYING" url="r=Mal%27Ganis&amp;ts=2&amp;t=WE+R+NOT+TRYING&amp;select=WE+R+NOT+TRYING">
+          <emblem background="fff8fff9" borderColor="ffe02cd7" borderStyle="5" iconColor="fff50ad7" iconStyle="90"/>
+          <members>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Alephone" class="Paladin" classId="2" contribution="0" gamesPlayed="0" gamesWon="0" gender="Female" genderId="1" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Alephone" race="Blood Elf" raceId="10" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="0"/>
+          </members>
+        </arenaTeam>
+        <arenaTeam battleGroup="Stormstrike" created="1229904000000" faction="Horde" factionId="1" gamesPlayed="0" gamesWon="0" lastSeasonRanking="0" name="Howard the Duck Fanclub" ranking="0" rating="0" realm="Mal'Ganis" realmUrl="b=Stormstrike&amp;r=Mal%27Ganis&amp;ts=3&amp;t=Howard+the+Duck+Fanclub&amp;ff=realm&amp;fv=Mal%27Ganis&amp;select=Howard+the+Duck+Fanclub" season="0" seasonGamesPlayed="0" seasonGamesWon="0" size="3" teamSize="3" teamUrl="r=Mal%27Ganis&amp;ts=3&amp;t=Howard+the+Duck+Fanclub&amp;select=Howard+the+Duck+Fanclub" url="r=Mal%27Ganis&amp;ts=3&amp;t=Howard+the+Duck+Fanclub&amp;select=Howard+the+Duck+Fanclub">
+          <emblem background="ffd2d9ce" borderColor="ffc4b600" borderStyle="3" iconColor="fff0ed00" iconStyle="78"/>
+          <members>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Retaliator" class="Rogue" classId="4" contribution="0" gamesPlayed="0" gamesWon="0" gender="Male" genderId="0" guildId="0" name="Retaliator" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="0"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Alephone" class="Paladin" classId="2" contribution="0" gamesPlayed="0" gamesWon="0" gender="Female" genderId="1" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Alephone" race="Blood Elf" raceId="10" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+            <character battleGroup="" charUrl="r=Mal%27Ganis&amp;cn=Skoguli" class="Death Knight" classId="6" contribution="0" gamesPlayed="0" gamesWon="0" gender="Female" genderId="1" guild="Juggernaut" guildId="7386931" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" name="Skoguli" race="Orc" raceId="2" seasonGamesPlayed="0" seasonGamesWon="0" teamRank="1"/>
+          </members>
+        </arenaTeam>
+      </arenaTeams>
+      <modelBasePath value="http://us.media.battle.net.edgesuite.net/"/>
+    </character>
+    <characterTab>
+      <talentSpecs>
+        <talentSpec group="2" icon="ability_paladin_shieldofthetemplar" prim="Protection" treeOne="0" treeThree="4" treeTwo="32"/>
+        <talentSpec active="1" group="1" icon="spell_holy_holybolt" prim="Holy" treeOne="31" treeThree="0" treeTwo="5"/>
+      </talentSpecs>
+      <buffs/>
+      <debuffs/>
+      <pvp>
+        <lifetimehonorablekills value="29376"/>
+        <arenacurrency value="0"/>
+      </pvp>
+      <professions>
+        <skill id="202" key="engineering" max="450" name="Engineering" value="434"/>
+        <skill id="755" key="jewelcrafting" max="450" name="Jewelcrafting" value="425"/>
+      </professions>
+      <secondaryProfessions>
+        <skill id="185" key="cooking" max="450" name="Cooking" value="450"/>
+        <skill id="129" key="firstaid" max="450" name="First Aid" value="404"/>
+        <skill id="356" key="fishing" max="450" name="Fishing" value="450"/>
+      </secondaryProfessions>
+      <characterBars>
+        <health effective="33741"/>
+        <secondBar casting="457" effective="38929" notCasting="695" type="m"/>
+      </characterBars>
+      <baseStats>
+        <strength attack="316" base="148" block="8" effective="168"/>
+        <agility armor="224" attack="-1" base="92" critHitPercent="2.81" effective="112"/>
+        <stamina base="143" effective="2580" health="25620" petBonus="-1"/>
+        <intellect base="101" critHitPercent="17.30" effective="2321" mana="34535" petBonus="-1"/>
+        <spirit base="103" effective="590" healthRegen="80" manaRegen="475"/>
+        <armor base="21842" effective="21842" percent="58.91" petBonus="-1"/>
+      </baseStats>
+      <resistances>
+        <arcane petBonus="-1" value="0"/>
+        <fire petBonus="-1" value="0"/>
+        <frost petBonus="-1" value="0"/>
+        <holy petBonus="-1" value="0"/>
+        <nature petBonus="-1" value="0"/>
+        <shadow petBonus="-1" value="0"/>
+      </resistances>
+      <melee>
+        <mainHandDamage dps="174.3" max="302" min="195" percent="0" speed="1.42"/>
+        <offHandDamage dps="0.0" max="0" min="0" percent="0" speed="1.58"/>
+        <mainHandSpeed hastePercent="26.29" hasteRating="862" value="1.42"/>
+        <offHandSpeed hastePercent="26.29" hasteRating="862" value="1.58"/>
+        <power base="556" effective="556" increasedDps="39.0"/>
+        <hitRating increasedHitPercent="7.90" penetration="0" reducedArmorPercent="0.00" value="243"/>
+        <critChance percent="14.68" plusPercent="11.87" rating="545"/>
+        <expertise additional="0" percent="0.00" rating="0" value="0"/>
+      </melee>
+      <ranged>
+        <weaponSkill rating="0" value="0"/>
+        <damage dps="0.0" max="0" min="0" percent="0" speed="0.00"/>
+        <speed hastePercent="26.29" hasteRating="862" value="0.00"/>
+        <power base="0" effective="0" increasedDps="0.0" petAttack="-1.00" petSpell="-1.00"/>
+        <hitRating increasedHitPercent="7.90" penetration="0" reducedArmorPercent="0.00" value="243"/>
+        <critChance percent="14.68" plusPercent="11.87" rating="545"/>
+      </ranged>
+      <spell>
+        <bonusDamage>
+          <arcane value="3271"/>
+          <fire value="3271"/>
+          <frost value="3271"/>
+          <holy value="3271"/>
+          <nature value="3271"/>
+          <shadow value="3271"/>
+          <petBonus attack="-1" damage="-1" fromType=""/>
+        </bonusDamage>
+        <bonusHealing value="3271"/>
+        <hitRating increasedHitPercent="9.26" penetration="0" reducedResist="0" value="243"/>
+        <critChance rating="545">
+          <arcane percent="29.18"/>
+          <fire percent="29.18"/>
+          <frost percent="29.18"/>
+          <holy percent="29.18"/>
+          <nature percent="29.18"/>
+          <shadow percent="29.18"/>
+        </critChance>
+        <penetration value="0"/>
+        <manaRegen casting="457.00" notCasting="695.00"/>
+        <hasteRating hastePercent="26.29" hasteRating="862"/>
+      </spell>
+      <defenses>
+        <armor base="21842" effective="21842" percent="58.91" petBonus="-1"/>
+        <defense decreasePercent="0.00" increasePercent="0.00" plusDefense="0" rating="0" value="400.00"/>
+        <dodge increasePercent="0.00" percent="5.82" rating="0"/>
+        <parry increasePercent="0.11" percent="5.12" rating="5"/>
+        <block increasePercent="0.00" percent="5.00" rating="0"/>
+        <resilience damagePercent="0" hitPercent="0" value="0.00"/>
+      </defenses>
+      <items>
+        <item displayInfoId="35174" durability="70" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_helmet_66" id="12185" level="60" maxDurability="70" name="Bloodsail Admiral's Hat" permanentenchant="0" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="2" seed="474248110" slot="0"/>
+        <item displayInfoId="64222" durability="0" gem0Id="49110" gem1Id="0" gem2Id="0" gemIcon0="inv_misc_gem_pearl_12" icon="inv_jewelcrafting_crimsonspinel_02" id="50724" level="277" maxDurability="0" name="Blood Queen's Crimson Choker" permanentenchant="0" pickUp="PickUpRing" putDown="PutDownRing" randomPropertiesId="0" rarity="4" seed="438045040" slot="1"/>
+        <item displayInfoId="65000" durability="70" gem0Id="40123" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_37" icon="inv_shoulder_117" id="51273" level="277" maxDurability="100" name="Sanctified Lightsworn Spaulders" permanentEnchantIcon="spell_arcane_teleportorgrimmar" permanentEnchantItemId="44872" permanentenchant="3809" pickUp="PickUpLargeChain" putDown="PutDownLArgeChain" randomPropertiesId="0" rarity="4" seed="0" slot="2"/>
+        <item displayInfoId="64872" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_misc_ribbon_01" id="52019" level="1" maxDurability="0" name="Precious's Ribbon" permanentenchant="0" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="2" seed="1787273472" slot="3"/>
+        <item displayInfoId="64695" durability="124" gem0Id="40113" gem1Id="40113" gem2Id="45882" gemIcon0="inv_jewelcrafting_gem_37" gemIcon1="inv_jewelcrafting_gem_37" gemIcon2="inv_jewelcrafting_gem_37" icon="inv_chest_plate22" id="50680" level="277" maxDurability="165" name="Rot-Resistant Breastplate" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="44465" permanentenchant="3832" pickUp="PickUpLargeChain" putDown="PutDownLArgeChain" randomPropertiesId="0" rarity="4" seed="-1979586048" slot="4"/>
+        <item displayInfoId="64702" durability="40" gem0Id="40123" gem1Id="40123" gem2Id="40123" gemIcon0="inv_jewelcrafting_gem_37" gemIcon1="inv_jewelcrafting_gem_37" gemIcon2="inv_jewelcrafting_gem_37" icon="inv_belt_70" id="50667" level="277" maxDurability="55" name="Waistband of Righteous Fury" permanentenchant="0" pickUp="PickUpLargeChain" putDown="PutDownLArgeChain" randomPropertiesId="0" rarity="4" seed="-1462298112" slot="5"/>
+        <item displayInfoId="64674" durability="95" gem0Id="40123" gem1Id="40123" gem2Id="40123" gemIcon0="inv_jewelcrafting_gem_37" gemIcon1="inv_jewelcrafting_gem_37" gemIcon2="inv_jewelcrafting_gem_37" icon="inv_pants_plate_33" id="50623" level="277" maxDurability="120" name="Leggings of Dying Candles" permanentEnchantIcon="spell_nature_astralrecalgroup" permanentEnchantItemId="41602" permanentenchant="3719" pickUp="PickUpLargeChain" putDown="PutDownLArgeChain" randomPropertiesId="0" rarity="4" seed="1397977664" slot="6"/>
+        <item displayInfoId="64664" durability="53" gem0Id="40123" gem1Id="40123" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_37" gemIcon1="inv_jewelcrafting_gem_37" icon="inv_boots_plate_14" id="54586" level="284" maxDurability="75" name="Foreshadow Steps" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="39006" permanentenchant="3232" pickUp="PickUpLargeChain" putDown="PutDownLArgeChain" randomPropertiesId="0" rarity="4" seed="2014106496" slot="7"/>
+        <item displayInfoId="64690" durability="43" gem0Id="40113" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_37" icon="inv_bracer_46" id="50721" level="277" maxDurability="55" name="Crypt Keeper's Bracers" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="38968" permanentenchant="1119" pickUp="PickUpLargeChain" putDown="PutDownLArgeChain" randomPropertiesId="0" rarity="4" seed="-1729456128" slot="8"/>
+        <item displayInfoId="64694" durability="48" gem0Id="42144" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_dragonseye05" icon="inv_gauntlets_85" id="51270" level="277" maxDurability="55" name="Sanctified Lightsworn Gloves" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="38979" permanentenchant="3246" pickUp="PickUpLargeChain" putDown="PutDownLArgeChain" randomPropertiesId="0" rarity="4" seed="0" slot="9"/>
+        <item displayInfoId="64230" durability="0" gem0Id="42144" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_dragonseye05" icon="item_icecrownringb" id="54585" level="284" maxDurability="0" name="Ring of Phased Regeneration" permanentenchant="0" pickUp="PickUpRing" putDown="PutDownRing" randomPropertiesId="0" rarity="4" seed="973425568" slot="10"/>
+        <item displayInfoId="63949" durability="0" gem0Id="42148" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_dragonseye05" icon="inv_jewelry_ring_85" id="50400" level="277" maxDurability="0" name="Ashen Band of Endless Wisdom" permanentenchant="0" pickUp="PickUpMetalSmall" putDown="PutDownSmallMEtal" randomPropertiesId="0" rarity="4" seed="1318826240" slot="11"/>
+        <item displayInfoId="59319" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="achievement_dungeon_ulduar77_25man" id="47432" level="258" maxDurability="0" name="Solace of the Fallen" permanentenchant="0" pickUp="PickUpWand" putDown="PutDownWand" randomPropertiesId="0" rarity="4" seed="-2065014848" slot="12"/>
+        <item displayInfoId="59319" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="achievement_dungeon_ulduar77_25man" id="47271" level="245" maxDurability="0" name="Solace of the Fallen" permanentenchant="0" pickUp="PickUpWand" putDown="PutDownWand" randomPropertiesId="0" rarity="4" seed="-2051609152" slot="13"/>
+        <item displayInfoId="28951" durability="0" gem0Id="40123" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_37" icon="inv_misc_cape_16" id="54583" level="284" maxDurability="0" name="Cloak of Burning Dusk" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="39003" permanentenchant="3831" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="4" seed="654107040" slot="14"/>
+        <item displayInfoId="61655" durability="121" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_mace_99" id="46017" level="245" maxDurability="125" name="Val'anyr, Hammer of Ancient Kings" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="44467" permanentenchant="3834" pickUp="PickUpMetalSmall" putDown="PutDownSmallMEtal" randomPropertiesId="0" rarity="5" seed="1232127872" slot="15"/>
+        <item displayInfoId="65029" durability="120" gem0Id="40123" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_37" icon="inv_shield_72" id="50616" level="277" maxDurability="120" name="Bulwark of Smouldering Steel" permanentEnchantIcon="inv_scroll_03" permanentEnchantItemId="44455" permanentenchant="1128" pickUp="PickUpMetalLArge" putDown="PutDownLArgeMEtal" randomPropertiesId="0" rarity="4" seed="-1894472064" slot="16"/>
+        <item displayInfoId="64625" durability="0" gem0Id="40113" gem1Id="0" gem2Id="0" gemIcon0="inv_jewelcrafting_gem_37" icon="spell_holy_blessedresillience" id="50460" level="264" maxDurability="0" name="Libram of Blinding Light" permanentenchant="0" pickUp="PickUpBook" putDown="PutDownBook" randomPropertiesId="0" rarity="4" seed="0" slot="17"/>
+        <item displayInfoId="60400" durability="0" gem0Id="0" gem1Id="0" gem2Id="0" icon="inv_shirt_guildtabard_01" id="46874" level="1" maxDurability="0" name="Argent Crusader's Tabard" permanentenchant="0" pickUp="PickUpCloth_Leather01" putDown="PutDownCloth_Leather01" randomPropertiesId="0" rarity="3" seed="0" slot="18"/>
+      </items>
+      <glyphs>
+        <glyph effect="Your Lay on Hands grants twice as much mana as normal and also grants you as much mana as it grants your target." icon="spell_holy_layonhands" id="198" name="Glyph of Divinity" type="major"/>
+        <glyph effect="Reduces the mana cost of Blessing of Kings by 50%." icon="spell_magic_magearmor" id="452" name="Glyph of Blessing of Kings" type="minor"/>
+        <glyph effect="Reduces the mana cost of Seal of Insight by 50%." icon="spell_holy_healingaura" id="454" name="Glyph of Insight" type="minor"/>
+        <glyph effect="Reduces the cooldown of Light of Dawn by 10 sec and the amount healed by 20%." icon="spell_paladin_lightofdawn" id="199" name="Glyph of Light of Dawn" type="major"/>
+        <glyph effect="Reduces the cooldown of your Lay on Hands spell by 2 min." icon="spell_holy_layonhands" id="455" name="Glyph of Lay on Hands" type="minor"/>
+        <glyph effect="Increases the duration of Beacon of Light by 30 sec." icon="ability_paladin_beaconoflight" id="701" name="Glyph of Beacon of Light" type="major"/>
+        <glyph effect="Increases the critical effect chance of Holy Shock by 5%." icon="spell_holy_searinglight" id="706" name="Glyph of Holy Shock" type="prime"/>
+        <glyph effect="Increases the healing done by Word of Glory by 10%." icon="inv_helmet_96" id="195" name="Glyph of Word of Glory" type="prime"/>
+        <glyph effect="While Seal of Insight is active, the effect of your healing spells is increased by 5%." icon="spell_holy_healingaura" id="200" name="Glyph of Seal of Insight" type="prime"/>
+      </glyphs>
+    </characterTab>
+    <summary>
+      <c earned="923" points="9925" total="1056" totalPoints="11640"/>
+      <category id="92" name="General">
+        <c earned="45" earnedPoints="465" total="52" totalPoints="535"/>
+      </category>
+      <category id="96" name="Quests">
+        <c earned="34" earnedPoints="340" total="49" totalPoints="530"/>
+      </category>
+      <category id="97" name="Exploration">
+        <c earned="68" earnedPoints="780" total="70" totalPoints="830"/>
+      </category>
+      <category id="95" name="Player vs. Player">
+        <c earned="86" earnedPoints="900" total="166" totalPoints="1930"/>
+      </category>
+      <category id="168" name="Dungeons &amp; Raids">
+        <c earned="458" earnedPoints="4955" total="458" totalPoints="4955"/>
+      </category>
+      <category id="169" name="Professions">
+        <c earned="63" earnedPoints="630" total="75" totalPoints="760"/>
+      </category>
+      <category id="201" name="Reputation">
+        <c earned="33" earnedPoints="415" total="45" totalPoints="560"/>
+      </category>
+      <category id="155" name="World Events">
+        <c earned="136" earnedPoints="1440" total="141" totalPoints="1540"/>
+      </category>
+      <category id="81" name="Feats of Strength">
+        <c earned="34"/>
+      </category>
+    </summary>
+  </characterInfo>
+</page>

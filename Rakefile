@@ -91,6 +91,8 @@ namespace :file_fixtures do
       ],
       'character-sheet' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
+        {:r => "r=Mal'Ganis&cn=Alephone",     :l => 'alephone_mal_ganis'},
+        {:r => "r=Mal'Ganis&cn=Fearsom",      :l => 'fearsom_mal_ganis'},
         {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'},
       ],
       'character-talents' => [
