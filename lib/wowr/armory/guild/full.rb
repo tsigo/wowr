@@ -26,7 +26,7 @@ module Wowr
       # * http://www.wowarmory.com/guild-info.xml?gn=Vigil&r=Mal%27Ganis
       #
       # @see Base
-      class Full < Wowr::Armory::Guild::Base
+      class Full < Base
         # Hash of <tt>"MemberName" => Character</tt> pairs
         # @see Wowr::Classes::Character
         # @return [Hash]

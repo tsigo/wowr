@@ -4,10 +4,10 @@ module Wowr::Armory::Guild
   describe Full do
     subject { Full.new(fake_element) }
 
-    its(:name_url)      { should eql("Juggernaut") }
-    its(:realm_url)     { should eql("Mal%27Ganis") }
-    its(:members)       { should be_a(Hash) }
-    its(:member_count)  { should satisfy { |n| n > 0 && n <= 1000 } }
+    its(:name_url)     { should eql("Juggernaut") }
+    its(:realm_url)    { should eql("Mal%27Ganis") }
+    its(:members)      { should be_a(Hash) }
+    its(:member_count) { should satisfy { |n| n > 0 && n <= 1000 } }
 
     describe "members hash" do
       it "should contain 'Name' => Character instance pairs" do
@@ -16,10 +16,7 @@ module Wowr::Armory::Guild
       end
     end
 
-    # Inherited from Base
-    its(:name)   { should eql("Juggernaut") }
-    its(:realm)  { should eql("Mal'Ganis") }
-    its(:url)    { should eql("r=Mal%27Ganis&gn=Juggernaut") }
+    its(:class) { should superclass(Wowr::Armory::Guild::Base) }
 
     protected
 

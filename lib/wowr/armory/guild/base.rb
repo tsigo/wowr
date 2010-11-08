@@ -1,26 +1,38 @@
 module Wowr
   module Armory
     module Guild
-      # A player guild containing members
-      # Abstract
+      # = Base
+      #
+      # Shared properties for a <tt>guild</tt> element
+      #
+      # @abstract
       class Base
-        attr_reader :name, :url, :realm
-        # :roster_url, :stats_url, :stats_url_escape,
+        # @return [String]
+        attr_reader :name
+
+        # URL parameters
+        # @return [String]
+        attr_reader :url
+
+        # @return [String]
+        attr_reader :realm
+
         alias_method :to_s, :name
 
+        # @param [Hpricot::Elem] elem
         def initialize(elem)
+          # guild-info.xml has a guildHeader element; search doesn't
           if (elem%'guildHeader')
             guild = (elem%'guildHeader')
           else
             guild = elem
           end
 
-          @name         = guild[:name]
-          @url          = guild[:url]
-          @realm        = guild[:realm]
+          @name  = guild[:name]
+          @url   = guild[:url]
+          @realm = guild[:realm]
         end
       end
-
     end
   end
 end
