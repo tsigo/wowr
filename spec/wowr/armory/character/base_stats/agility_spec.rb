@@ -4,9 +4,6 @@ module Wowr::Armory::Character::BaseStats
   describe Agility do
     subject { Agility.new(fake_element) }
 
-    # Using non-exact values so that we're not constantly updating specs as the
-    # character used upgrades his gear
-
     its(:base)             { should satisfy { |v| v > 100 && v < 300 } }
     its(:effective)        { should satisfy { |v| v > 2000 } }
     its(:armor)            { should satisfy { |v| v > 5000 } }

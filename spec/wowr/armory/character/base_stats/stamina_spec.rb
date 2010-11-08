@@ -4,9 +4,6 @@ module Wowr::Armory::Character::BaseStats
   describe Stamina do
     subject { Stamina.new(fake_element) }
 
-    # Using non-exact values so that we're not constantly updating specs as the
-    # character used upgrades his gear
-
     its(:base)       { should satisfy { |v| v > 0 && v < 300} }
     its(:effective)  { should satisfy { |v| v > 0 && v < 4000 } }
     its(:health)     { should satisfy { |v| v > 0 && v < 40000 } }

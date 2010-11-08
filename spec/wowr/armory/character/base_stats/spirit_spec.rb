@@ -4,9 +4,6 @@ module Wowr::Armory::Character::BaseStats
   describe Spirit do
     subject { Spirit.new(fake_element) }
 
-    # Using non-exact values so that we're not constantly updating specs as the
-    # character used upgrades his gear
-
     its(:base)          { should satisfy { |v| v > 0 && v < 300} }
     its(:effective)     { should satisfy { |v| v > 0 && v < 300 } }
     its(:health_regen)  { should satisfy { |v| v > 0 } }

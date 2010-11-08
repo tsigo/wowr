@@ -4,9 +4,6 @@ module Wowr::Armory::Character::BaseStats
   describe Strength do
     subject { Strength.new(fake_element) }
 
-    # Using non-exact values so that we're not constantly updating specs as the
-    # character used upgrades his gear
-
     its(:base)       { should satisfy { |v| v > 0 && v < 200 } }
     its(:effective)  { should satisfy { |v| v > 0 && v < 200 } }
     its(:attack)     { should satisfy { |v| v > 0 && v < 2000 } }
