@@ -45,10 +45,10 @@ module Wowr::Classes
     end
 
     describe "Defenses" do
-      it { Armor.should           superclass(Wowr::Armory::Character::Defenses::Armor) }
-      it { Defense.should         superclass(Wowr::Armory::Character::Defenses::Defense) }
-      it { DodgeParryBlock.should superclass(Wowr::Armory::Character::Defenses::DodgeParryBlock) }
-      it { Resilience.should      superclass(Wowr::Armory::Character::Defenses::Resilience) }
+      it { Armor.should      superclass(Wowr::Armory::Character::Defenses::Armor) }
+      it { Avoidance.should  superclass(Wowr::Armory::Character::Defenses::Avoidance) }
+      it { Defense.should    superclass(Wowr::Armory::Character::Defenses::Defense) }
+      it { Resilience.should superclass(Wowr::Armory::Character::Defenses::Resilience) }
     end
 
     describe "Spell" do

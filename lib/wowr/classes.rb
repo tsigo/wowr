@@ -24,47 +24,47 @@ module Wowr
     class ArenaTeamEmblem < Wowr::Armory::ArenaTeam::Emblem; end
 
     # Character
-    class Character           < Wowr::Armory::Character::Base;                  end
-    class SearchCharacter     < Wowr::Armory::Character::Base;                  end
-    class InfoCharacter       < Wowr::Armory::Character::Info;                  end
-    class FullCharacter       < Wowr::Armory::Character::Full;                  end
-    class SecondBar           < Wowr::Armory::Character::SecondBar;             end
-    class Resistance          < Wowr::Armory::Character::Resistance;            end
-    class TalentSpec          < Wowr::Armory::Character::TalentSpec;            end
-    class Pvp                 < Wowr::Armory::Character::Pvp;                   end
-    class EquippedItem        < Wowr::Armory::Character::EquippedItem;          end
-    class Skill               < Wowr::Armory::Character::Skill;                 end
-    class RepFactionCategory  < Wowr::Armory::Character::RepFactionCategory;    end
-    class RepFaction          < Wowr::Armory::Character::RepFaction;            end
+    class Character          < Wowr::Armory::Character::Base;                 end
+    class SearchCharacter    < Wowr::Armory::Character::Base;                 end
+    class InfoCharacter      < Wowr::Armory::Character::Info;                 end
+    class FullCharacter      < Wowr::Armory::Character::Full;                 end
+    class SecondBar          < Wowr::Armory::Character::SecondBar;            end
+    class Resistance         < Wowr::Armory::Character::Resistance;           end
+    class TalentSpec         < Wowr::Armory::Character::TalentSpec;           end
+    class Pvp                < Wowr::Armory::Character::Pvp;                  end
+    class EquippedItem       < Wowr::Armory::Character::EquippedItem;         end
+    class Skill              < Wowr::Armory::Character::Skill;                end
+    class RepFactionCategory < Wowr::Armory::Character::RepFactionCategory;   end
+    class RepFaction         < Wowr::Armory::Character::RepFaction;           end
 
-    class Agility             < Wowr::Armory::Character::BaseStats::Agility;    end
-    class Intellect           < Wowr::Armory::Character::BaseStats::Intellect;  end
-    class Spirit              < Wowr::Armory::Character::BaseStats::Spirit;     end
-    class Stamina             < Wowr::Armory::Character::BaseStats::Stamina;    end
-    class Strength            < Wowr::Armory::Character::BaseStats::Strength;   end
+    class Agility            < Wowr::Armory::Character::BaseStats::Agility;   end
+    class Intellect          < Wowr::Armory::Character::BaseStats::Intellect; end
+    class Spirit             < Wowr::Armory::Character::BaseStats::Spirit;    end
+    class Stamina            < Wowr::Armory::Character::BaseStats::Stamina;   end
+    class Strength           < Wowr::Armory::Character::BaseStats::Strength;  end
 
-    class Armor               < Wowr::Armory::Character::Defenses::Armor;           end
-    class Defense             < Wowr::Armory::Character::Defenses::Defense;         end
-    class DodgeParryBlock     < Wowr::Armory::Character::Defenses::DodgeParryBlock; end
-    class Resilience          < Wowr::Armory::Character::Defenses::Resilience;      end
+    class Armor              < Wowr::Armory::Character::Defenses::Armor;      end
+    class Avoidance          < Wowr::Armory::Character::Defenses::Avoidance;  end
+    class Defense            < Wowr::Armory::Character::Defenses::Defense;    end
+    class Resilience         < Wowr::Armory::Character::Defenses::Resilience; end
 
-    class Spell               < Wowr::Armory::Character::Spell::Spell;          end
-    class SpellSpeed          < Wowr::Armory::Character::Spell::Speed;          end
-    class SpellDamage         < Wowr::Armory::Character::Spell::Damage;         end
-    class ManaRegen           < Wowr::Armory::Character::Spell::ManaRegen;      end
+    class Spell              < Wowr::Armory::Character::Spell::Spell;         end
+    class SpellSpeed         < Wowr::Armory::Character::Spell::Speed;         end
+    class SpellDamage        < Wowr::Armory::Character::Spell::Damage;        end
+    class ManaRegen          < Wowr::Armory::Character::Spell::ManaRegen;     end
 
-    class Defenses            < Wowr::Armory::Character::Stat::Defenses;        end
+    class Defenses           < Wowr::Armory::Character::Stat::Defenses;       end
 
-    class Melee               < Wowr::Armory::Character::Weapon::Melee;         end
-    class Ranged              < Wowr::Armory::Character::Weapon::Ranged;        end
-    class WeaponSkill         < Wowr::Armory::Character::Weapon::Skill;         end
-    class WeaponDamage        < Wowr::Armory::Character::Weapon::Damage;        end
-    class WeaponSpeed         < Wowr::Armory::Character::Weapon::Speed;         end
-    class WeaponPower         < Wowr::Armory::Character::Weapon::Power;         end
-    class WeaponHitRating     < Wowr::Armory::Character::Weapon::HitRating;     end
-    class WeaponCritChance    < Wowr::Armory::Character::Weapon::CritChance;    end
-    class WeaponExpertise     < Wowr::Armory::Character::Weapon::Expertise;     end
-    class PetBonus            < Wowr::Armory::Character::Weapon::PetBonus;      end
+    class Melee              < Wowr::Armory::Character::Weapon::Melee;        end
+    class Ranged             < Wowr::Armory::Character::Weapon::Ranged;       end
+    class WeaponSkill        < Wowr::Armory::Character::Weapon::Skill;        end
+    class WeaponDamage       < Wowr::Armory::Character::Weapon::Damage;       end
+    class WeaponSpeed        < Wowr::Armory::Character::Weapon::Speed;        end
+    class WeaponPower        < Wowr::Armory::Character::Weapon::Power;        end
+    class WeaponHitRating    < Wowr::Armory::Character::Weapon::HitRating;    end
+    class WeaponCritChance   < Wowr::Armory::Character::Weapon::CritChance;   end
+    class WeaponExpertise    < Wowr::Armory::Character::Weapon::Expertise;    end
+    class PetBonus           < Wowr::Armory::Character::Weapon::PetBonus;     end
 
     # Dungeon
     class Dungeon < Wowr::Armory::Dungeon::Dungeon; end

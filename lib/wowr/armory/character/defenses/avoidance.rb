@@ -2,7 +2,7 @@ module Wowr
   module Armory
     module Character
       module Defenses
-        # = DodgeParryBlock
+        # = Avoidance
         #
         # Represents a <tt>defenses/dodge</tt>, <tt>defenses/parry</tt> or
         # <tt>defenses/block</tt> element
@@ -12,7 +12,7 @@ module Wowr
         #   <dodge increasePercent="0.00" percent="5.82" rating="0"/>
         #   <parry increasePercent="0.11" percent="5.12" rating="5"/>
         #   <block increasePercent="0.00" percent="5.00" rating="0"/>
-        class DodgeParryBlock
+        class Avoidance
           # @return [Float]
           attr_reader :percent
 

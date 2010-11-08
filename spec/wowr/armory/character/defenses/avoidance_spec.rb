@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 module Wowr::Armory::Character::Defenses
-  describe DodgeParryBlock, "dodge" do
-    subject { DodgeParryBlock.new(fake_element) }
+  describe Avoidance, "dodge" do
+    subject { Avoidance.new(fake_element) }
 
     its(:percent)          { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
     its(:increase_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
@@ -16,8 +16,8 @@ module Wowr::Armory::Character::Defenses
     end
   end
 
-  describe DodgeParryBlock, "parry" do
-    subject { DodgeParryBlock.new(fake_element) }
+  describe Avoidance, "parry" do
+    subject { Avoidance.new(fake_element) }
 
     its(:percent)          { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
     its(:increase_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
@@ -31,8 +31,8 @@ module Wowr::Armory::Character::Defenses
     end
   end
 
-  describe DodgeParryBlock, "block" do
-    subject { DodgeParryBlock.new(fake_element) }
+  describe Avoidance, "block" do
+    subject { Avoidance.new(fake_element) }
 
     its(:percent)          { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
     its(:increase_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }

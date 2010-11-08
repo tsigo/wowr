@@ -24,10 +24,10 @@ module Wowr
       end
 
       module Defenses
-        autoload :Armor,              'character/defenses/armor'
-        autoload :Defense,            'character/defenses/defense'
-        autoload :DodgeParryBlock,    'character/defenses/dodge_parry_block'
-        autoload :Resilience,         'character/defenses/resilience'
+        autoload :Armor,      'character/defenses/armor'
+        autoload :Avoidance,  'character/defenses/avoidance'
+        autoload :Defense,    'character/defenses/defense'
+        autoload :Resilience, 'character/defenses/resilience'
       end
 
       module Spell
