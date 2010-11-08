@@ -4,6 +4,8 @@ module Wowr::Armory::ArenaTeam
   describe SearchResult do
     subject { SearchResult.new(fake_element) }
 
+    its(:class) { should superclass(Base) }
+
     its(:relevance) { should_not be_nil }
 
     protected
