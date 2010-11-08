@@ -2,9 +2,31 @@ module Wowr
   module Armory
     module Character
       module Defenses
+        # = Armor
+        #
+        # Represents a <tt>defenses/armor</tt> element
+        #
+        # == Relevant XML example:
+        #
+        #   <armor base="12235" effective="12235" percent="44.54" petBonus="4282"/>
         class Armor
-          attr_reader :base, :effective, :percent, :pet_bonus
+          # Character's base Armor stat, before bonuses
+          # @return [Integer]
+          attr_reader :base
 
+          # Character's effective Armor, after bonuses
+          # @return [Integer]
+          attr_reader :effective
+
+          # Physical damage reduction given by this amount of Armor
+          # @return [Float]
+          attr_reader :percent
+
+          # Amount of Armor given to the character's pet
+          # @return [Integer]
+          attr_reader :pet_bonus
+
+          # @param [Hpricot::Elem] elem <tt>armor</tt> element
           def initialize(elem)
             @base       = elem[:base].to_i
             @effective  = elem[:effective].to_i
