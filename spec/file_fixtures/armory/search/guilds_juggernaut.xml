@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/search/search.xsl"?><page globalSearch="1" lang="en_us" requestQuery="searchQuery=Juggernaut&amp;searchType=guilds" requestUrl="/search.xml">
   <armorySearch>
-    <tabs count="143" selected="guilds">
-      <tab count="143" label="armory.tabs.guilds" type="guilds"/>
+    <tabs count="144" selected="guilds">
+      <tab count="144" label="armory.tabs.guilds" type="guilds"/>
     </tabs>
     <searchResults pageCount="1" pageCurrent="1" searchError="" searchFilter="" searchMsg="" searchText="Juggernaut" searchType="guilds" url="searchType=guilds&amp;searchQuery=Juggernaut&amp;p=1&amp;selectedTab=guilds&amp;sd=a" version="1.0">
       <filters/>
@@ -33,6 +33,7 @@
         <guild battleGroup="Ruin" emblemBackground="-1" emblemBorderColor="-1" emblemBorderStyle="-1" emblemIconColor="-1" emblemIconStyle="-1" faction="Horde" factionId="1" name="Juggernaut" realm="Trollbane" relevance="100" url="r=Trollbane&amp;gn=Juggernaut"/>
         <guild battleGroup="Ruin" emblemBackground="47" emblemBorderColor="1" emblemBorderStyle="3" emblemIconColor="1" emblemIconStyle="13" faction="Alliance" factionId="0" name="Juggernaut" realm="Mannoroth" relevance="100" url="r=Mannoroth&amp;gn=Juggernaut"/>
         <guild battleGroup="Ruin" emblemBackground="-1" emblemBorderColor="-1" emblemBorderStyle="-1" emblemIconColor="-1" emblemIconStyle="-1" faction="Horde" factionId="1" name="Juggernaut" realm="Shattered Hand" relevance="100" url="r=Shattered+Hand&amp;gn=Juggernaut"/>
+        <guild battleGroup="Ruin" emblemBackground="-1" emblemBorderColor="-1" emblemBorderStyle="-1" emblemIconColor="-1" emblemIconStyle="-1" faction="Alliance" factionId="0" name="Juggernaut" realm="Stormrage" relevance="100" url="r=Stormrage&amp;gn=Juggernaut"/>
         <guild battleGroup="Vindication" emblemBackground="2" emblemBorderColor="16" emblemBorderStyle="0" emblemIconColor="16" emblemIconStyle="38" faction="Alliance" factionId="0" name="juggernaut" realm="Kargath" relevance="100" url="r=Kargath&amp;gn=juggernaut"/>
         <guild battleGroup="Vindication" emblemBackground="-1" emblemBorderColor="-1" emblemBorderStyle="-1" emblemIconColor="-1" emblemIconStyle="-1" faction="Alliance" factionId="0" name="JUGGERNAUT" realm="Laughing Skull" relevance="100" url="r=Laughing+Skull&amp;gn=JUGGERNAUT"/>
         <guild battleGroup="Vindication" emblemBackground="45" emblemBorderColor="3" emblemBorderStyle="1" emblemIconColor="14" emblemIconStyle="168" faction="Horde" factionId="1" name="Juggernaut" realm="Burning Legion" relevance="100" url="r=Burning+Legion&amp;gn=Juggernaut"/>
@@ -97,7 +98,7 @@
         <guild battleGroup="Stormstrike" emblemBackground="35" emblemBorderColor="11" emblemBorderStyle="4" emblemIconColor="8" emblemIconStyle="60" faction="Alliance" factionId="0" name="Juggernaut" realm="Steamwheedle Cartel" relevance="100" url="r=Steamwheedle+Cartel&amp;gn=Juggernaut"/>
         <guild battleGroup="Stormstrike" emblemBackground="35" emblemBorderColor="7" emblemBorderStyle="5" emblemIconColor="6" emblemIconStyle="164" faction="Horde" factionId="1" name="Juggernaut" realm="Executus" relevance="100" url="r=Executus&amp;gn=Juggernaut"/>
         <guild battleGroup="Stormstrike" emblemBackground="11" emblemBorderColor="9" emblemBorderStyle="0" emblemIconColor="14" emblemIconStyle="25" faction="Horde" factionId="1" name="Juggernaut" realm="Anetheron" relevance="100" url="r=Anetheron&amp;gn=Juggernaut"/>
-        <guild battleGroup="Stormstrike" emblemBackground="4" emblemBorderColor="15" emblemBorderStyle="1" emblemIconColor="15" emblemIconStyle="84" faction="Horde" factionId="1" name="Juggernaut" realm="Mal'Ganis" relevance="100" url="r=Mal%27Ganis&amp;gn=Juggernaut"/>
+        <guild battleGroup="Stormstrike" emblemBackground="43" emblemBorderColor="16" emblemBorderStyle="1" emblemIconColor="16" emblemIconStyle="66" faction="Horde" factionId="1" name="Juggernaut" realm="Mal'Ganis" relevance="100" url="r=Mal%27Ganis&amp;gn=Juggernaut"/>
         <guild battleGroup="Stormstrike" emblemBackground="-1" emblemBorderColor="-1" emblemBorderStyle="-1" emblemIconColor="-1" emblemIconStyle="-1" faction="Alliance" factionId="0" name="Juggernaut" realm="Zuluhed" relevance="100" url="r=Zuluhed&amp;gn=Juggernaut"/>
         <guild battleGroup="Stormstrike" emblemBackground="30" emblemBorderColor="14" emblemBorderStyle="4" emblemIconColor="14" emblemIconStyle="123" faction="Alliance" factionId="0" name="JUGGERNAUT" realm="Ysera" relevance="100" url="r=Ysera&amp;gn=JUGGERNAUT"/>
         <guild battleGroup="Stormstrike" emblemBackground="45" emblemBorderColor="15" emblemBorderStyle="5" emblemIconColor="10" emblemIconStyle="126" faction="Alliance" factionId="0" name="Juggernaut" realm="Thrall" relevance="100" url="r=Thrall&amp;gn=Juggernaut"/>

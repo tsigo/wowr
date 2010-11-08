@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/character/achievements.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/character-achievements.xml">
   <tabInfo subTab="achievements" tab="character" tabGroup="character" tabUrl="r=Mal%27Ganis&amp;cn=Sebudai&amp;gn=Juggernaut"/>
   <characterInfo>
-    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Sebudai" class="Hunter" classId="3" classUrl="c=Hunter" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="Juggernaut" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" lastModified="October 30, 2010" level="80" name="Sebudai" points="9180" prefix="" race="Orc" raceId="2" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138"/>
+    <character battleGroup="Stormstrike" charUrl="r=Mal%27Ganis&amp;cn=Sebudai" class="Hunter" classId="3" classUrl="c=Hunter" faction="Horde" factionId="1" gender="Male" genderId="0" guildName="Juggernaut" guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" lastModified="November 7, 2010" level="80" name="Sebudai" points="9180" prefix="" race="Orc" raceId="2" realm="Mal'Ganis" suffix=" the Light of Dawn" titleId="138"/>
   </characterInfo>
   <achievements>
     <summary>

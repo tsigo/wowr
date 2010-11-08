@@ -309,8 +309,8 @@ describe Wowr::API::API do
 
   describe "#get_arena_team" do
     it "should return an instance of ArenaTeam when given valid parameters" do
-      FakeWeb.register_uri(:get, /team-info\.xml/, :body => file_fixture('armory/team-info/fav_five_mal_ganis.xml'))
-      api.get_arena_team('Fav Five', 5, :realm => "Mal'Ganis").should be_kind_of(Wowr::Classes::ArenaTeam)
+      FakeWeb.register_uri(:get, /team-info\.xml/, :body => file_fixture('armory/team-info/dont_kill_comfort_ysera.xml'))
+      api.get_arena_team('Dont Kill Comfort', 5, :realm => "Ysera").should be_kind_of(Wowr::Classes::ArenaTeam)
     end
 
     it "should raise ArenaTeamNotFound when given an invalid team name" do

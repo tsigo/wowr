@@ -124,8 +124,8 @@ namespace :file_fixtures do
         {:r => "searchQuery=Cake&searchType=items",         :l => 'items_cake'},
       ],
       'team-info' => [
-        {:r => "r=Mal'Ganis&ts=5&t=Fav+Five",     :l => 'fav_five_mal_ganis'},
-        {:r => "r=Mal'Ganis&ts=5&t=DoesNotExist", :l => 'not_found'},
+        {:r => "r=Mal'Ganis&ts=5&t=DoesNotExist",  :l => 'not_found'},
+        {:r => "r=Ysera&ts=5&t=Dont+Kill+Comfort", :l => 'dont_kill_comfort_ysera'},
       ],
 
       # Dungeons are a special case
