@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Defenses
+      module DefenseStats
         # = Avoidance
         #
         # Represents a <tt>defenses/dodge</tt>, <tt>defenses/parry</tt> or

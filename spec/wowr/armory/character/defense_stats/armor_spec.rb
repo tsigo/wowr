@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Defenses
+module Wowr::Armory::Character::DefenseStats
   describe Armor do
     subject { Armor.new(fake_element) }
 

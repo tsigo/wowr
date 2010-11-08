@@ -28,6 +28,7 @@ module Wowr
     class SearchCharacter    < Wowr::Armory::Character::Base;                 end
     class InfoCharacter      < Wowr::Armory::Character::Info;                 end
     class FullCharacter      < Wowr::Armory::Character::Full;                 end
+    class Defenses           < Wowr::Armory::Character::Defenses;             end
     class SecondBar          < Wowr::Armory::Character::SecondBar;            end
     class Resistance         < Wowr::Armory::Character::Resistance;           end
     class TalentSpec         < Wowr::Armory::Character::TalentSpec;           end
@@ -41,17 +42,15 @@ module Wowr
     class Stamina            < Wowr::Armory::Character::BaseStats::Stamina;   end
     class Strength           < Wowr::Armory::Character::BaseStats::Strength;  end
 
-    class Armor              < Wowr::Armory::Character::Defenses::Armor;      end
-    class Avoidance          < Wowr::Armory::Character::Defenses::Avoidance;  end
-    class Defense            < Wowr::Armory::Character::Defenses::Defense;    end
-    class Resilience         < Wowr::Armory::Character::Defenses::Resilience; end
+    class Armor              < Wowr::Armory::Character::DefenseStats::Armor;      end
+    class Avoidance          < Wowr::Armory::Character::DefenseStats::Avoidance;  end
+    class Defense            < Wowr::Armory::Character::DefenseStats::Defense;    end
+    class Resilience         < Wowr::Armory::Character::DefenseStats::Resilience; end
 
     class Spell              < Wowr::Armory::Character::Spell::Spell;         end
     class SpellSpeed         < Wowr::Armory::Character::Spell::Speed;         end
     class SpellDamage        < Wowr::Armory::Character::Spell::Damage;        end
     class ManaRegen          < Wowr::Armory::Character::Spell::ManaRegen;     end
-
-    class Defenses           < Wowr::Armory::Character::Stat::Defenses;       end
 
     class Melee              < Wowr::Armory::Character::Weapon::Melee;        end
     class Ranged             < Wowr::Armory::Character::Weapon::Ranged;       end

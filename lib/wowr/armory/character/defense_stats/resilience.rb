@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Defenses
+      module DefenseStats
         # = Resilience
         #
         # Represents a <tt>defenses/resilience</tt> element

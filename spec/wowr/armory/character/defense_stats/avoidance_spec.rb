@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Defenses
+module Wowr::Armory::Character::DefenseStats
   describe Avoidance, "dodge" do
     subject { Avoidance.new(fake_element) }
 

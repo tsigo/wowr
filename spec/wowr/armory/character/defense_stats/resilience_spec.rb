@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Defenses
+module Wowr::Armory::Character::DefenseStats
   describe Resilience do
     subject { Resilience.new(fake_element) }
 

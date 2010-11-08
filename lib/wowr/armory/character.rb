@@ -4,6 +4,7 @@ module Wowr
   module Armory
     module Character
       autoload :Base,         'character/base'
+      autoload :Defenses,     'character/defenses'
       autoload :EquippedItem, 'character/equipped_item'
       autoload :Faction,      'character/faction'
       autoload :Full,         'character/full'
@@ -22,11 +23,11 @@ module Wowr
         autoload :Strength,  'character/base_stats/strength'
       end
 
-      module Defenses
-        autoload :Armor,      'character/defenses/armor'
-        autoload :Avoidance,  'character/defenses/avoidance'
-        autoload :Defense,    'character/defenses/defense'
-        autoload :Resilience, 'character/defenses/resilience'
+      module DefenseStats
+        autoload :Armor,      'character/defense_stats/armor'
+        autoload :Avoidance,  'character/defense_stats/avoidance'
+        autoload :Defense,    'character/defense_stats/defense'
+        autoload :Resilience, 'character/defense_stats/resilience'
       end
 
       module Spell
@@ -37,7 +38,6 @@ module Wowr
       end
 
       module Stat
-        autoload :Defenses, 'character/stat/defenses'
       end
 
       module Weapon

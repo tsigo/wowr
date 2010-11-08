@@ -23,16 +23,17 @@ module Wowr::Classes
   end
 
   describe "Character" do
-    it { Character.should          superclass(Wowr::Armory::Character::Base) }
-    it { SearchCharacter.should    superclass(Wowr::Armory::Character::Base) }
-    it { InfoCharacter.should      superclass(Wowr::Armory::Character::Info) }
-    it { FullCharacter.should      superclass(Wowr::Armory::Character::Full) }
-    it { SecondBar.should          superclass(Wowr::Armory::Character::SecondBar) }
-    it { Resistance.should         superclass(Wowr::Armory::Character::Resistance) }
-    it { TalentSpec.should         superclass(Wowr::Armory::Character::TalentSpec) }
-    it { Pvp.should                superclass(Wowr::Armory::Character::Pvp) }
-    it { EquippedItem.should       superclass(Wowr::Armory::Character::EquippedItem) }
-    it { Skill.should              superclass(Wowr::Armory::Character::Skill) }
+    it { Character.should       superclass(Wowr::Armory::Character::Base) }
+    it { SearchCharacter.should superclass(Wowr::Armory::Character::Base) }
+    it { InfoCharacter.should   superclass(Wowr::Armory::Character::Info) }
+    it { FullCharacter.should   superclass(Wowr::Armory::Character::Full) }
+    it { Defenses.should        superclass(Wowr::Armory::Character::Defenses) }
+    it { SecondBar.should       superclass(Wowr::Armory::Character::SecondBar) }
+    it { Resistance.should      superclass(Wowr::Armory::Character::Resistance) }
+    it { TalentSpec.should      superclass(Wowr::Armory::Character::TalentSpec) }
+    it { Pvp.should             superclass(Wowr::Armory::Character::Pvp) }
+    it { EquippedItem.should    superclass(Wowr::Armory::Character::EquippedItem) }
+    it { Skill.should           superclass(Wowr::Armory::Character::Skill) }
 
     describe "BaseStats" do
       it { Agility.should   superclass(Wowr::Armory::Character::BaseStats::Agility) }
@@ -42,11 +43,11 @@ module Wowr::Classes
       it { Strength.should  superclass(Wowr::Armory::Character::BaseStats::Strength) }
     end
 
-    describe "Defenses" do
-      it { Armor.should      superclass(Wowr::Armory::Character::Defenses::Armor) }
-      it { Avoidance.should  superclass(Wowr::Armory::Character::Defenses::Avoidance) }
-      it { Defense.should    superclass(Wowr::Armory::Character::Defenses::Defense) }
-      it { Resilience.should superclass(Wowr::Armory::Character::Defenses::Resilience) }
+    describe "DefenseStats" do
+      it { Armor.should      superclass(Wowr::Armory::Character::DefenseStats::Armor) }
+      it { Avoidance.should  superclass(Wowr::Armory::Character::DefenseStats::Avoidance) }
+      it { Defense.should    superclass(Wowr::Armory::Character::DefenseStats::Defense) }
+      it { Resilience.should superclass(Wowr::Armory::Character::DefenseStats::Resilience) }
     end
 
     describe "Spell" do
@@ -57,7 +58,6 @@ module Wowr::Classes
     end
 
     describe "Stat" do
-      it { Defenses.should        superclass(Wowr::Armory::Character::Stat::Defenses) }
     end
 
     describe "Weapon" do
