@@ -16,11 +16,11 @@ module Wowr
       autoload :Resistance,         'character/resistance'
 
       module BaseStats
-        autoload :Agility,            'character/base_stats/agility'
-        autoload :Intellect,          'character/base_stats/intellect'
-        autoload :Spirit,             'character/base_stats/spirit'
-        autoload :Stamina,            'character/base_stats/stamina'
-        autoload :Strength,           'character/base_stats/strength'
+        autoload :Agility,   'character/base_stats/agility'
+        autoload :Intellect, 'character/base_stats/intellect'
+        autoload :Spirit,    'character/base_stats/spirit'
+        autoload :Stamina,   'character/base_stats/stamina'
+        autoload :Strength,  'character/base_stats/strength'
       end
 
       module Defenses
@@ -31,27 +31,27 @@ module Wowr
       end
 
       module Spell
-        autoload :Damage,             'character/spell/damage'
-        autoload :ManaRegen,          'character/spell/mana_regen'
-        autoload :Speed,              'character/spell/speed'
-        autoload :Spell,              'character/spell/spell'
+        autoload :Damage,    'character/spell/damage'
+        autoload :ManaRegen, 'character/spell/mana_regen'
+        autoload :Speed,     'character/spell/speed'
+        autoload :Spell,     'character/spell/spell'
       end
 
       module Stat
-        autoload :Defenses,           'character/stat/defenses'
+        autoload :Defenses, 'character/stat/defenses'
       end
 
       module Weapon
-        autoload :CritChance,         'character/weapon/crit_chance'
-        autoload :Damage,             'character/weapon/damage'
-        autoload :Expertise,          'character/weapon/expertise'
-        autoload :HitRating,          'character/weapon/hit_rating'
-        autoload :Melee,              'character/weapon/melee'
-        autoload :PetBonus,           'character/weapon/pet_bonus'
-        autoload :Power,              'character/weapon/power'
-        autoload :Ranged,             'character/weapon/ranged'
-        autoload :Skill,              'character/weapon/skill'
-        autoload :Speed,              'character/weapon/speed'
+        autoload :CritChance, 'character/weapon/crit_chance'
+        autoload :Damage,     'character/weapon/damage'
+        autoload :Expertise,  'character/weapon/expertise'
+        autoload :HitRating,  'character/weapon/hit_rating'
+        autoload :Melee,      'character/weapon/melee'
+        autoload :PetBonus,   'character/weapon/pet_bonus'
+        autoload :Power,      'character/weapon/power'
+        autoload :Ranged,     'character/weapon/ranged'
+        autoload :Skill,      'character/weapon/skill'
+        autoload :Speed,      'character/weapon/speed'
       end
     end
   end
