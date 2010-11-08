@@ -5,11 +5,10 @@ module Wowr
     module Character
       autoload :Base,               'character/base'
       autoload :EquippedItem,       'character/equipped_item'
+      autoload :Faction,            'character/faction'
       autoload :Full,               'character/full'
       autoload :Info,               'character/info'
       autoload :Pvp,                'character/pvp'
-      autoload :RepFaction,         'character/rep_faction'
-      autoload :RepFactionCategory, 'character/rep_faction_category'
       autoload :SecondBar,          'character/second_bar'
       autoload :Skill,              'character/skill'
       autoload :TalentSpec,         'character/talent_spec'

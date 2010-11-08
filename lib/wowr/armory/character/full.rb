@@ -3,10 +3,11 @@ module Wowr
     module Character
       # Full character details with reputations
       class Full < Wowr::Armory::Character::Info
-        attr_reader :reputation_categories
+        # Array of {Wowr::Armory::Faction} instances
+        # @return [Array]
+        attr_reader :reputation
 
-        alias_method :rep, :reputation_categories
-        alias_method :reputation, :reputation_categories
+        alias_method :rep, :reputation
 
         def initialize(sheet, reputation, talents, api = nil)
           @api = api
@@ -15,15 +16,17 @@ module Wowr
           super(sheet, talents, api)
 
           # Add reputations
-          character_reputation(reputation)
+          @reputation = []
+          (reputation/'faction').each do |faction_elem|
+            faction = Faction.new(faction_elem)
+            @reputation << faction unless faction.header?
+          end
         end
 
-        # character-reputation.xml
-        def character_reputation(elem)
-          @reputation_categories = {}
-          (elem/:factionCategory).each do |category|
-            @reputation_categories[category[:key]] = RepFactionCategory.new(category)
-          end
+        # @deprecated
+        def reputation_categories
+          puts "** [DEPRECATED] 'reputation_categories' is deprecated. Use 'reputation' instead."
+          reputation
         end
       end
     end

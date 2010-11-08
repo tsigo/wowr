@@ -33,8 +33,6 @@ module Wowr::Classes
     it { Pvp.should                superclass(Wowr::Armory::Character::Pvp) }
     it { EquippedItem.should       superclass(Wowr::Armory::Character::EquippedItem) }
     it { Skill.should              superclass(Wowr::Armory::Character::Skill) }
-    it { RepFactionCategory.should superclass(Wowr::Armory::Character::RepFactionCategory) }
-    it { RepFaction.should         superclass(Wowr::Armory::Character::RepFaction) }
 
     describe "BaseStats" do
       it { Agility.should   superclass(Wowr::Armory::Character::BaseStats::Agility) }

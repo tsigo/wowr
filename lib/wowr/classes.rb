@@ -34,8 +34,6 @@ module Wowr
     class Pvp                < Wowr::Armory::Character::Pvp;                  end
     class EquippedItem       < Wowr::Armory::Character::EquippedItem;         end
     class Skill              < Wowr::Armory::Character::Skill;                end
-    class RepFactionCategory < Wowr::Armory::Character::RepFactionCategory;   end
-    class RepFaction         < Wowr::Armory::Character::RepFaction;           end
 
     class Agility            < Wowr::Armory::Character::BaseStats::Agility;   end
     class Intellect          < Wowr::Armory::Character::BaseStats::Intellect; end
