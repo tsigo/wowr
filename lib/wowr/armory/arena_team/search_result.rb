@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module ArenaTeam
-      class Search < Wowr::Armory::ArenaTeam::Base
+      class SearchResult < Wowr::Armory::ArenaTeam::Base
         def initialize(elem)
           super(elem)
         end

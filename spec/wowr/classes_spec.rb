@@ -13,7 +13,7 @@ module Wowr::Classes
 
   describe "ArenaTeam" do
     it { ArenaTeam.should       superclass(Wowr::Armory::ArenaTeam::Base) }
-    it { SearchArenaTeam.should superclass(Wowr::Armory::ArenaTeam::Search) }
+    it { SearchArenaTeam.should superclass(Wowr::Armory::ArenaTeam::SearchResult) }
     it { FullArenaTeam.should   superclass(Wowr::Armory::ArenaTeam::Full) }
     it { ArenaTeamEmblem.should superclass(Wowr::Armory::ArenaTeam::Emblem) }
   end

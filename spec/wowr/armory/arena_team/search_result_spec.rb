@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Wowr::Armory::ArenaTeam
-  describe Search do
+  describe SearchResult do
     it { pending }
   end
 end

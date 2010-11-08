@@ -3,16 +3,16 @@ $:.unshift(File.dirname(__FILE__))
 module Wowr
   module Armory
     module Character
-      autoload :Base,               'character/base'
-      autoload :EquippedItem,       'character/equipped_item'
-      autoload :Faction,            'character/faction'
-      autoload :Full,               'character/full'
-      autoload :Info,               'character/info'
-      autoload :Pvp,                'character/pvp'
-      autoload :SecondBar,          'character/second_bar'
-      autoload :Skill,              'character/skill'
-      autoload :TalentSpec,         'character/talent_spec'
-      autoload :Resistance,         'character/resistance'
+      autoload :Base,         'character/base'
+      autoload :EquippedItem, 'character/equipped_item'
+      autoload :Faction,      'character/faction'
+      autoload :Full,         'character/full'
+      autoload :Info,         'character/info'
+      autoload :Pvp,          'character/pvp'
+      autoload :SecondBar,    'character/second_bar'
+      autoload :Skill,        'character/skill'
+      autoload :TalentSpec,   'character/talent_spec'
+      autoload :Resistance,   'character/resistance'
 
       module BaseStats
         autoload :Agility,   'character/base_stats/agility'

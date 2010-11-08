@@ -18,10 +18,10 @@ module Wowr
     class AchievementsList                      < Wowr::Armory::Achievement::List;                     end
 
     # Arena Team
-    class ArenaTeam       < Wowr::Armory::ArenaTeam::Base;   end
-    class SearchArenaTeam < Wowr::Armory::ArenaTeam::Search; end
-    class FullArenaTeam   < Wowr::Armory::ArenaTeam::Full;   end
-    class ArenaTeamEmblem < Wowr::Armory::ArenaTeam::Emblem; end
+    class ArenaTeam       < Wowr::Armory::ArenaTeam::Base;         end
+    class SearchArenaTeam < Wowr::Armory::ArenaTeam::SearchResult; end
+    class FullArenaTeam   < Wowr::Armory::ArenaTeam::Full;         end
+    class ArenaTeamEmblem < Wowr::Armory::ArenaTeam::Emblem;       end
 
     # Character
     class Character          < Wowr::Armory::Character::Base;                 end
