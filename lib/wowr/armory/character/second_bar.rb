@@ -1,10 +1,41 @@
 module Wowr
   module Armory
     module Character
-      # Second stat bar, depends on character class
+      # = SecondBar
+      #
+      # Represents a character's <tt>secondBar</tt> (e.g., focus, mana, rage) element
+      #
+      # == Relevant XML examples:
+      #
+      #   <secondBar casting="-1" effective="120" notCasting="-1" type="e"/>
+      #
+      #   <secondBar casting="-1" effective="100" notCasting="-1" perFive="-1" type="f"/>
+      #
+      #   <secondBar casting="457" effective="38929" notCasting="695" type="m"/>
+      #
+      #   <secondBar casting="-1" effective="100" notCasting="-1" perFive="-1" type="p"/>
+      #
+      #   <secondBar casting="-1" effective="100" notCasting="-1" perFive="-1" type="r"/>
       class SecondBar
-        attr_reader :effective, :casting, :not_casting, :type
+        # @return [Integer]
+        attr_reader :effective
 
+        # @return [Integer]
+        attr_reader :casting
+
+        # @return [Integer]
+        attr_reader :not_casting
+
+        # Type:
+        # * 'e' - Energy
+        # * 'f' - Focus
+        # * 'm' - Mana
+        # * 'p' - Runic Power
+        # * 'r' - Rage
+        # @return [String]
+        attr_reader :type
+
+        # @param [Hpricot::Elem] elem <tt>secondBar</tt> element
         def initialize(elem)
           @effective    = elem[:effective].to_i
           @casting      = elem[:casting].to_i == -1 ? nil : elem[:casting].to_i
