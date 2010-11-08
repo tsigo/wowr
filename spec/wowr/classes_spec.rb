@@ -57,9 +57,6 @@ module Wowr::Classes
       it { SpellSpeed.should  superclass(Wowr::Armory::Character::Spell::Speed) }
     end
 
-    describe "Stat" do
-    end
-
     describe "Weapon" do
       it { Melee.should            superclass(Wowr::Armory::Character::Weapon::Melee) }
       it { Ranged.should           superclass(Wowr::Armory::Character::Weapon::Ranged) }
