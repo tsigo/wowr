@@ -2,6 +2,15 @@ require 'spec_helper'
 
 module Wowr::Armory::ArenaTeam
   describe SearchResult do
-    it { pending }
+    subject { SearchResult.new(fake_element) }
+
+    its(:relevance) { should_not be_nil }
+
+    protected
+
+    def fake_element
+      xml = file_fixture('armory/search/arena_teams_lemon.xml')
+      (Hpricot.XML(xml).search("arenaTeam[@battleGroup='Cyclone']").first)
+    end
   end
 end

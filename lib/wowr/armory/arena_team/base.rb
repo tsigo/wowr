@@ -60,9 +60,6 @@ module Wowr
         # @return [Integer]
         attr_reader :last_season_ranking
 
-        # @return [Integer]
-        attr_reader :relevance
-
         # @return [String]
         attr_reader :url
 
@@ -71,6 +68,7 @@ module Wowr
 
         alias_method :to_s, :name
 
+        # @param [Hpricot::Elem] elem <tt>arenaTeam</tt> element
         def initialize(elem)
           @name                = elem[:name]
           @size                = elem[:size].to_i
@@ -88,7 +86,6 @@ module Wowr
           @season_games_won    = elem[:seasonGamesWon].to_i
           @last_season_ranking = elem[:lastSeasonRanking].to_i
 
-          @relevance           = elem[:relevance].to_i # TODO: Move to SearchResult (tsigo)
           @url                 = elem[:url]
 
           @emblem              = Wowr::Classes::ArenaTeamEmblem.new(elem%'emblem')

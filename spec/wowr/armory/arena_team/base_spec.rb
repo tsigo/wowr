@@ -17,7 +17,6 @@ module Wowr::Armory::ArenaTeam
     its(:season_games_played) { should eql(0) }
     its(:season_games_won)    { should eql(0) }
     its(:last_season_ranking) { should eql(0) }
-    its(:relevance)           { should_not be_nil }
     its(:url)                 { should match(/r=Stormscale.+ts=2.+t=LEMON/) }
     its(:emblem)              { should be_kind_of(Emblem) }
 
