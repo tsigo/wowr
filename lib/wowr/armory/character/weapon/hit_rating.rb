@@ -2,13 +2,28 @@ module Wowr
   module Armory
     module Character
       module Weapon
+        # = HitRating
+        #
+        # Represents a <tt>hitRating</tt> element
+        #
+        # == Relevant XML example:
+        #
+        #   <hitRating increasedHitPercent="11.22" penetration="0" reducedArmorPercent="0.00" value="345"/>
         class HitRating
-          attr_reader :increased_hit_percent, :value, :armor_penetration
+          # @return [Float]
+          attr_reader :increased_hit_percent
 
+          # @return [Float]
+          attr_reader :armor_penetration
+
+          # @return [Integer]
+          attr_reader :value
+
+          # @param [Hpricot::Elem] elem <tt>hitRating</tt> element
           def initialize(elem)
-            @armor_penetration = elem[:penetration].to_f
-            @increased_hit_percent  = elem[:increasedHitPercent].to_f
-            @value                  = elem[:value].to_f
+            @increased_hit_percent = elem[:increasedHitPercent].to_f
+            @armor_penetration     = elem[:penetration].to_f
+            @value                 = elem[:value].to_i
           end
         end
       end

@@ -2,15 +2,28 @@ module Wowr
   module Armory
     module Character
       module Weapon
+        # = Power
+        #
+        # Represents a <tt>power</tt> element
+        #
+        # == Relevant XML example:
+        #
+        #   <power base="5256" effective="5559" increasedDps="397.0"/>
         class Power
-          attr_reader :base, :effective, :increased_dps, :pet_attack, :pet_spell, :haste_rating
+          # @return [Integer]
+          attr_reader :base
 
+          # @return [Integer]
+          attr_reader :effective
+
+          # @return [Float]
+          attr_reader :increased_dps
+
+          # @param [Hpricot::Elem] elem <tt>power</tt> element
           def initialize(elem)
-            @base           = elem[:base].to_i
-            @haste_rating   = elem[:effective].to_i
-            @increased_dps  = elem[:increasedDps].to_f
-            @pet_attack     = (elem[:petAttack].to_f == -1 ? nil : elem[:petAttack].to_f)
-            @pet_spell      = (elem[:petSpell].to_f == -1 ? nil : elem[:petSpell].to_f)
+            @base          = elem[:base].to_i
+            @effective     = elem[:effective].to_i
+            @increased_dps = elem[:increasedDps].to_f
           end
         end
       end
