@@ -83,7 +83,9 @@ namespace :file_fixtures do
     #   l: local filename without extension
     {
       'character-achievements' => [
-        {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'},
+        {:r => "r=Mal'Ganis&cn=Sebudai",       :l => 'sebudai_mal_ganis'},
+        {:r => "r=Mal'Ganis&cn=Sebudai&c=81",  :l => 'sebudai_mal_ganis_c_81'},  # Feats of Strength
+        {:r => "r=Mal'Ganis&cn=Sebudai&c=168", :l => 'sebudai_mal_ganis_c_168'}, # Dungeons & Raids
       ],
       'character-reputation' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
