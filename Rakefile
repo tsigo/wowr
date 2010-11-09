@@ -163,7 +163,6 @@ namespace :file_fixtures do
     end
 
     puts ""
-    system "git status -s"
   end
 
   desc "Download only missing file fixtures"
