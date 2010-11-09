@@ -46,30 +46,33 @@ module Wowr
           # Just have one class, and it either has the extra completion data, or it doesn't
 
           # Get the list of rootCategories
-          achievements.search('rootCategories/category').each_with_index do |category, i|
-            elem = Hash.new
+          achievements.search('rootCategories/category').each_with_index do |elem, i|
+            details = {}
+
             type = Wowr::Classes::AchievementsCategoryDetails
-            elem['id'] = category['id']
-            elem['name'] = category['name']
             completion = categories_completion[i]
-            elem['earned'] = completion['earned']
+
+            details[:id]     = elem[:id]
+            details[:name]   = elem[:name]
+            details[:earned] = completion[:earned]
 
             # All categories with the exception of Feats of Strength have a "total" attribute
-            if completion['total']
+            if completion[:total]
               type = Wowr::Classes::AchievementsCategoryDetailsWithPoints
-              elem['total'] = completion['total']
-              elem['totalPoints'] = completion['totalPoints']
-              elem['earnedPoints'] = completion['earnedPoints']
+
+              details[:total]        = completion[:total]
+              details[:totalPoints]  = completion[:totalPoints]
+              details[:earnedPoints] = completion[:earnedPoints]
             end
-            new_cat = type.new(elem)
+
+            category = type.new(details)
 
             # Add subcategories
-            category.search('category').each do |subcategory|
-              subcat = Wowr::Classes::AchievementsCategory.new subcategory
-              new_cat.add_subcategory subcat
+            elem.search('category').each do |sub_elem|
+              category.add_subcategory(Wowr::Classes::AchievementsCategory.new(sub_elem))
             end
 
-            @categories << new_cat
+            @categories << category
           end
         end
       end
