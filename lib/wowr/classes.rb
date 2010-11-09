@@ -61,7 +61,6 @@ module Wowr
     class WeaponHitRating    < Wowr::Armory::Character::Weapon::HitRating;    end
     class WeaponCritChance   < Wowr::Armory::Character::Weapon::CritChance;   end
     class WeaponExpertise    < Wowr::Armory::Character::Weapon::Expertise;    end
-    class PetBonus           < Wowr::Armory::Character::Weapon::PetBonus;     end
 
     # Dungeon
     class Dungeon < Wowr::Armory::Dungeon::Dungeon; end

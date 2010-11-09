@@ -67,7 +67,6 @@ module Wowr::Classes
       it { WeaponHitRating.should  superclass(Wowr::Armory::Character::Weapon::HitRating) }
       it { WeaponCritChance.should superclass(Wowr::Armory::Character::Weapon::CritChance) }
       it { WeaponExpertise.should  superclass(Wowr::Armory::Character::Weapon::Expertise) }
-      it { PetBonus.should         superclass(Wowr::Armory::Character::Weapon::PetBonus) }
     end
   end
 

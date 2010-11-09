@@ -46,7 +46,6 @@ module Wowr
         autoload :Expertise,  'character/weapon/expertise'
         autoload :HitRating,  'character/weapon/hit_rating'
         autoload :Melee,      'character/weapon/melee'
-        autoload :PetBonus,   'character/weapon/pet_bonus'
         autoload :Power,      'character/weapon/power'
         autoload :Ranged,     'character/weapon/ranged'
         autoload :Skill,      'character/weapon/skill'
