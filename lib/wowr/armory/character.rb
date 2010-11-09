@@ -48,7 +48,6 @@ module Wowr
         autoload :Melee,      'character/weapon/melee'
         autoload :Power,      'character/weapon/power'
         autoload :Ranged,     'character/weapon/ranged'
-        autoload :Skill,      'character/weapon/skill'
         autoload :Speed,      'character/weapon/speed'
       end
     end

@@ -60,7 +60,6 @@ module Wowr::Classes
     describe "Weapon" do
       it { Melee.should            superclass(Wowr::Armory::Character::Weapon::Melee) }
       it { Ranged.should           superclass(Wowr::Armory::Character::Weapon::Ranged) }
-      it { WeaponSkill.should      superclass(Wowr::Armory::Character::Weapon::Skill) }
       it { WeaponDamage.should     superclass(Wowr::Armory::Character::Weapon::Damage) }
       it { WeaponSpeed.should      superclass(Wowr::Armory::Character::Weapon::Speed) }
       it { WeaponPower.should      superclass(Wowr::Armory::Character::Weapon::Power) }

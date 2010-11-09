@@ -54,7 +54,6 @@ module Wowr
 
     class Melee              < Wowr::Armory::Character::Weapon::Melee;        end
     class Ranged             < Wowr::Armory::Character::Weapon::Ranged;       end
-    class WeaponSkill        < Wowr::Armory::Character::Weapon::Skill;        end
     class WeaponDamage       < Wowr::Armory::Character::Weapon::Damage;       end
     class WeaponSpeed        < Wowr::Armory::Character::Weapon::Speed;        end
     class WeaponPower        < Wowr::Armory::Character::Weapon::Power;        end

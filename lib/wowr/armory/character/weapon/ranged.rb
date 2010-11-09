@@ -22,11 +22,6 @@ module Wowr
         # * http://www.wowarmory.com/character-sheet.xml?r=Mal'Ganis&cn=Alephone
         # * http://www.wowarmory.com/character-sheet.xml?r=Mal'Ganis&cn=Sebudai
         class Ranged
-          # <tt>weaponSkill</tt> element
-          # @todo Maybe delete as useless; rating and value are always 0
-          # @return [Skill]
-          attr_reader :weapon_skill
-
           # <tt>damage</tt> element
           # @return [Damage]
           attr_reader :damage
@@ -49,7 +44,6 @@ module Wowr
 
           # @param [Hpricot::Elem] elem <tt>ranged</tt> element
           def initialize(elem)
-            @weapon_skill = Skill.new(elem%'weaponSkill')
             @damage       = Damage.new(elem%'damage')
             @speed        = Speed.new(elem%'speed')
             @power        = Power.new(elem%'power')
