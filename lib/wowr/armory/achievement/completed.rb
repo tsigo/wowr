@@ -3,7 +3,7 @@ module Wowr
     module Achievement
       # = Completed
       #
-      # Represents a <tt>achievement</tt> element with a <tt>dateCompleted</tt> attribute
+      # Represents an <tt>achievement</tt> element with a <tt>dateCompleted</tt> attribute
       #
       # == Relevant XML example:
       #
