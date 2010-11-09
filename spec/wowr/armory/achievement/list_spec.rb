@@ -14,7 +14,7 @@ module Wowr::Armory::Achievement
     protected
 
     def fake_element
-      xml = file_fixture('armory/character-achievements/sebudai_mal_ganis_c_81.xml')
+      xml = file_fixture('armory/character-achievements/sebudai_mal_ganis_c_168.xml')
       (Hpricot.XML(xml))
     end
   end
