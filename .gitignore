@@ -6,3 +6,4 @@ pkg/*
 coverage
 coverage.data
 cache
+spec/file_fixtures/*

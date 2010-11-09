@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/_layout/guild/bank-log.xsl"?><page globalSearch="1" lang="en_us" requestUrl="/vault/guild-bank-log.xml">
-  <tabInfo subTab="guildBankLog" tab="guild" tabGroup="guild" tabUrl="r=Mal%27Ganis&amp;gn=InvalidGuild"/>
-  <guildInfo>
-    <guildHeader battleGroup="Stormstrike" count="124" faction="1" name="Juggernaut" nameUrl="InvalidGuild" realm="Mal'Ganis" realmUrl="Mal%27Ganis" url="r=Mal%27Ganis&amp;gn=InvalidGuild">
-      <emblem emblemBackground="3" emblemBorderColor="15" emblemBorderStyle="1" emblemIconColor="15" emblemIconStyle="84"/>
-    </guildHeader>
-  </guildInfo>
-</page>
