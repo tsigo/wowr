@@ -2,25 +2,59 @@ module Wowr
   module Armory
     module Character
       module Weapon
-        # <ranged>
-        #   <weaponSkill rating="0" value="-1"/>
-        #   <damage dps="0.0" max="0" min="0" percent="0" speed="0.00"/>
-        #   <speed hastePercent="0.00" hasteRating="0" value="0.00"/>
-        #   <power base="57" effective="57" increasedDps="4.0" petAttack="-1.00" petSpell="-1.00"/>
-        #   <hitRating increasedHitPercent="0.00" value="0"/>
-        #   <critChance percent="0.92" plusPercent="0.00" rating="0"/>
-        # </ranged>
+        # = Ranged
+        #
+        # Represents a <tt>ranged</tt> element
+        #
+        # == Relevant XML example:
+        #
+        #   <ranged>
+        #     <weaponSkill rating="0" value="0"/>
+        #     <damage dps="597.4" max="1029" min="554" percent="0" speed="1.33"/>
+        #     <speed hastePercent="43.37" hasteRating="1422" value="1.33"/>
+        #     <power base="0" effective="0" increasedDps="0.0" petAttack="-1.00" petSpell="-1.00"/>
+        #     <hitRating increasedHitPercent="14.50" penetration="0" reducedArmorPercent="0.00" value="446"/>
+        #     <critChance percent="15.63" plusPercent="11.55" rating="530"/>
+        #   </ranged>
+        #
+        # == Example Pages:
+        #
+        # * http://www.wowarmory.com/character-sheet.xml?r=Mal'Ganis&cn=Alephone
+        # * http://www.wowarmory.com/character-sheet.xml?r=Mal'Ganis&cn=Sebudai
         class Ranged
-          attr_reader :weapon_skill, :damage, :speed, :power,
-                      :hit_rating, :crit_chance
+          # <tt>weaponSkill</tt> element
+          # @todo Maybe delete as useless; rating and value are always 0
+          # @return [Skill]
+          attr_reader :weapon_skill
 
+          # <tt>damage</tt> element
+          # @return [Damage]
+          attr_reader :damage
+
+          # <tt>speed</tt> element
+          # @return [Speed]
+          attr_reader :speed
+
+          # <tt>power</tt> element
+          # @return [Power]
+          attr_reader :power
+
+          # <tt>hitRating</tt> element
+          # @return [HitRating]
+          attr_reader :hit_rating
+
+          # <tt>critChance</tt> element
+          # @return [CritChance]
+          attr_reader :crit_chance
+
+          # @param [Hpricot::Elem] elem <tt>ranged</tt> element
           def initialize(elem)
-            @weapon_skill = Wowr::Classes::WeaponSkill.new(elem%'weaponSkill')
-            @damage       = Wowr::Classes::WeaponDamage.new(elem%'damage')
-            @speed        = Wowr::Classes::WeaponSpeed.new(elem%'speed')
-            @power        = Wowr::Classes::WeaponPower.new(elem%'power')
-            @hit_rating   = Wowr::Classes::WeaponHitRating.new(elem%'hitRating')
-            @crit_chance  = Wowr::Classes::WeaponCritChance.new(elem%'critChance')
+            @weapon_skill = Skill.new(elem%'weaponSkill')
+            @damage       = Damage.new(elem%'damage')
+            @speed        = Speed.new(elem%'speed')
+            @power        = Power.new(elem%'power')
+            @hit_rating   = HitRating.new(elem%'hitRating')
+            @crit_chance  = CritChance.new(elem%'critChance')
           end
         end
       end
