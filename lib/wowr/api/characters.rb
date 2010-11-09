@@ -60,7 +60,7 @@ module Wowr
 
         character_achievements = get_xml(@@character_achievements_url, options)
 
-        return Wowr::Classes::CharacterAchievementsInfo.new(character_achievements, self)
+        return Wowr::Classes::CharacterAchievementsInfo.new(character_achievements)
       end
 
       # Get details for all achievements in a category for a character.
@@ -74,7 +74,7 @@ module Wowr
 
         character_achievements_category = get_xml(@@character_achievements_url, options)
 
-        return Wowr::Classes::AchievementsList.new(character_achievements_category, self)
+        return Wowr::Classes::AchievementsList.new(character_achievements_category)
       end
 
       protected

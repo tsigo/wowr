@@ -1,29 +1,52 @@
 module Wowr
   module Armory
     module Achievement
+      # = CharacterInfo
+      #
+      # Represents a summarized <tt>page</tt> element from <tt>character-achievements.xml</tt>
+      #
+      # == Example Pages:
+      #
+      # * http://www.wowarmory.com/character-achievements.xml?r=Mal'Ganis&cn=Sebudai&gn=Juggernaut
       class CharacterInfo
-        attr_reader :latest_achievements, :categories
+        # Five most recently earned achievements
+        # @return [Array]
+        attr_reader :latest_achievements
 
-        def initialize elem, api
-          @api = api
+        # An array of {CategoryDetails} or {CategoryDetailsWithPoints}
+        # attributes, depending on the type of achievement category
+        # @return [Array]
+        attr_reader :categories
+
+        # @param [Hpricot::Elem] elem <tt>page</tt> element
+        def initialize(elem)
           @latest_achievements = Array.new
-          @categories = Array.new
+          @categories          = Array.new
 
           achievements = elem%'achievements'
-          summary = achievements%'summary'
 
-          # Get list of latest achievements
-          summary.search('achievement').each do |achievement|
+          populate_latest_achievements(achievements)
+          populate_categories(achievements)
+        end
+
+        private
+
+        def populate_latest_achievements(achievements)
+          achievements.search('summary/achievement').each do |achievement|
             @latest_achievements << Wowr::Classes::CompletedAchievement.new(achievement)
           end
+        end
 
-          # Get the infos about categories completion
-          # They are ordered in same order as categories below
-          categories_completion = summary.search('category/c')
+        def populate_categories(achievements)
+          # Completion info is stored in "summary/category/c" without any id attribute,
+          # so we're forced to access it by array index. Luckily they're in the same order.
+          categories_completion = achievements.search('summary/category/c')
+
+          # TODO: The two AchievementsCategoryDetails classes make this more complicated than it needs to be (tsigo)
+          # Just have one class, and it either has the extra completion data, or it doesn't
 
           # Get the list of rootCategories
-          i = 0
-          achievements.search('rootCategories/category').each do |category|
+          achievements.search('rootCategories/category').each_with_index do |category, i|
             elem = Hash.new
             type = Wowr::Classes::AchievementsCategoryDetails
             elem['id'] = category['id']
@@ -31,7 +54,7 @@ module Wowr
             completion = categories_completion[i]
             elem['earned'] = completion['earned']
 
-            # If we have more informations
+            # All categories with the exception of Feats of Strength have a "total" attribute
             if completion['total']
               type = Wowr::Classes::AchievementsCategoryDetailsWithPoints
               elem['total'] = completion['total']
@@ -47,7 +70,6 @@ module Wowr
             end
 
             @categories << new_cat
-            i = i+1
           end
         end
       end
