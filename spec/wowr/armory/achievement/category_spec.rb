@@ -4,12 +4,12 @@ module Wowr::Armory::Achievement
   describe Category do
     it { pending }
   end
-  
-  describe CategoryDetail do
+
+  describe CategoryDetails do
     it { pending }
   end
-  
-  describe CategoryDetailWithPoints do
+
+  describe CategoryDetailsWithPoints do
     it { pending }
   end
 end

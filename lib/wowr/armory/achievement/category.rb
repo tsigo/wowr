@@ -17,16 +17,16 @@ module Wowr
           category.parent = self
         end
       end
-      
-      class CategoryDetail < Category
+
+      class CategoryDetails < Category
         attr_reader :earned
         def initialize category
           super(category)
           @earned = category['earned'].to_i
         end
       end
-      
-      class CategoryDetailWithPoints < CategoryDetail
+
+      class CategoryDetailsWithPoints < CategoryDetails
         attr_reader :earned_points, :total, :total_points
         def initialize category
           super(category)

@@ -6,8 +6,8 @@ module Wowr::Classes
     it { Achievement.should                           superclass(Wowr::Armory::Achievement::Base) }
     it { CompletedAchievement.should                  superclass(Wowr::Armory::Achievement::Completed) }
     it { AchievementsCategory.should                  superclass(Wowr::Armory::Achievement::Category) }
-    it { AchievementsCategoryDetails.should           superclass(Wowr::Armory::Achievement::CategoryDetail) }
-    it { AchievementsCategoryDetailsWithPoints.should superclass(Wowr::Armory::Achievement::CategoryDetailWithPoints) }
+    it { AchievementsCategoryDetails.should           superclass(Wowr::Armory::Achievement::CategoryDetails) }
+    it { AchievementsCategoryDetailsWithPoints.should superclass(Wowr::Armory::Achievement::CategoryDetailsWithPoints) }
     it { AchievementsList.should                      superclass(Wowr::Armory::Achievement::List) }
   end
 

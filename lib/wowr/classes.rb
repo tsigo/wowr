@@ -9,13 +9,13 @@ module Wowr
   # @private
   module Classes
     # Achievements
-    class CharacterAchievementsInfo             < Wowr::Armory::Achievement::CharacterInfo;            end
-    class Achievement                           < Wowr::Armory::Achievement::Base;                     end
-    class CompletedAchievement                  < Wowr::Armory::Achievement::Completed;                end
-    class AchievementsCategory                  < Wowr::Armory::Achievement::Category;                 end
-    class AchievementsCategoryDetails           < Wowr::Armory::Achievement::CategoryDetail;           end
-    class AchievementsCategoryDetailsWithPoints < Wowr::Armory::Achievement::CategoryDetailWithPoints; end
-    class AchievementsList                      < Wowr::Armory::Achievement::List;                     end
+    class CharacterAchievementsInfo             < Wowr::Armory::Achievement::CharacterInfo;             end
+    class Achievement                           < Wowr::Armory::Achievement::Base;                      end
+    class CompletedAchievement                  < Wowr::Armory::Achievement::Completed;                 end
+    class AchievementsCategory                  < Wowr::Armory::Achievement::Category;                  end
+    class AchievementsCategoryDetails           < Wowr::Armory::Achievement::CategoryDetails;           end
+    class AchievementsCategoryDetailsWithPoints < Wowr::Armory::Achievement::CategoryDetailsWithPoints; end
+    class AchievementsList                      < Wowr::Armory::Achievement::List;                      end
 
     # Arena Team
     class ArenaTeam       < Wowr::Armory::ArenaTeam::Base;         end
