@@ -7,17 +7,61 @@
 module Wowr
   module Armory
     module Dungeon
+      # = Dungeon
+      #
+      # Represents a <tt>dungeon</tt> element
+      #
+      # == Relevant XML example:
+      #
+      #   <dungeon hasHeroic="1" id="2159" key="onyxiaslair" levelMax="80" levelMin="80" nameId="2159" partySize="25" raid="1" release="2">
+      #       <bosses>
+      #       <boss id="10184" key="onyxia" type="npc">
+      #           <lootTable difficulty="n" id="10184" type="npc"/>
+      #           <lootTable difficulty="h" id="36538" type="npc"/>
+      #       </boss>
+      #       </bosses>
+      #   </dungeon>
       class Dungeon
-        attr_reader :id, :key, :name,
-                    :level_minimum, :level_maximum,
-                    :party_size, :raid,
-                    :release, :heroic, :bosses
+        # @return [Integer]
+        attr_reader :id
+
+        # @example
+        #   "onyxiaslair"
+        # @return [String]
+        attr_reader :key
+
+        # @example
+        #   "Onyxia's Lair"
+        # @return [String]
+        attr_reader :name
+
+        # @return [Integer]
+        attr_reader :level_minimum
+
+        # @return [Integer]
+        attr_reader :level_maximum
+
+        # @return [Integer]
+        attr_reader :party_size
+
+        # @return [Boolean]
+        attr_reader :raid
+
+        # @return [Integer]
+        attr_reader :release
+
+        # @return [Boolean]
+        attr_reader :heroic
+
+        # @return [Hash]
+        attr_reader :bosses
 
         alias_method :to_s, :name
         alias_method :to_i, :id
         alias_method :max_level, :level_maximum
         alias_method :min_level, :level_minimum
 
+        # @param [Hpricot::Elem] elem <tt>dungeon</tt> element
         def initialize(elem)
           @id             = elem[:id].to_i
           @key            = elem[:key]
