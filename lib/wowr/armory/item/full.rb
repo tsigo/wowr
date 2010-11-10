@@ -3,7 +3,7 @@ module Wowr
     module Item
       # Represents an item containing full information from both item-info and
       # item-tooltip pages
-      class Full < Wowr::Armory::Item::Base
+      class Full < Base
         def initialize(info, tooltip, api = nil)
           super(info, api)
           @info = Info.new(info, api)
