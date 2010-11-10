@@ -25,6 +25,18 @@ Alternatively, the latest version can be downloaded from SVN with:
 
     svn checkout http://wowr.rubyforge.org/svn/trunk/lib/
 
+## Development
+
+Prior to running Specs Developers should ensure Warcraft Armory file fixtures are up-to-date.
+
+    # Download only missing file fixtures
+    rake file_fixtures:initialize
+
+    # Update all file fixtures
+    rake file_fixtures:update
+
+    rake spec
+
 ## Authors
 
 Originally written by Ben Humphreys benhumphreys[at]gmail.com
