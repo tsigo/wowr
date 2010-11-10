@@ -36,7 +36,6 @@ module Wowr
             ['vendors',           '@vendors',             'creature', Wowr::Classes::ItemVendor, false],
             ['dropCreatures',     '@drop_creatures',      'creature', Wowr::Classes::ItemDropCreature, false],
             ['plansFor',          '@plans_for',           'spell',    Wowr::Classes::ItemPlansFor, true],
-            ['createdBy',         '@created_by',          'spell',    Wowr::Classes::ItemCreatedBy, true],
           ]
 
           etc.each do |b|

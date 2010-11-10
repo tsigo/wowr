@@ -98,7 +98,6 @@ module Wowr::Classes
     it { SearchItem.should       superclass(Wowr::Armory::Item::SearchResult) }
     it { DisenchantItem.should   superclass(Wowr::Armory::Item::Disenchant) }
     it { CreatedItem.should      superclass(Wowr::Armory::Item::Created) }
-    it { PlanItem.should         superclass(Wowr::Armory::Item::Plan) }
     it { Reagent.should          superclass(Wowr::Armory::Item::Reagent) }
     it { ItemEquipData.should    superclass(Wowr::Armory::Item::EquipData) }
     it { ItemSetData.should      superclass(Wowr::Armory::Item::SetData) }
@@ -113,6 +112,5 @@ module Wowr::Classes
     it { ItemVendor.should       superclass(Wowr::Armory::Item::Vendor) }
     it { ItemCreation.should     superclass(Wowr::Armory::Item::Creation) }
     it { ItemPlansFor.should     superclass(Wowr::Armory::Item::PlansFor) }
-    it { ItemCreatedBy.should    superclass(Wowr::Armory::Item::CreatedBy) }
   end
 end

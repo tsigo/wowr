@@ -87,7 +87,6 @@ module Wowr
     class SearchItem       < Wowr::Armory::Item::SearchResult; end
     class DisenchantItem   < Wowr::Armory::Item::Disenchant;   end
     class CreatedItem      < Wowr::Armory::Item::Created;      end
-    class PlanItem         < Wowr::Armory::Item::Plan;         end
     class Reagent          < Wowr::Armory::Item::Reagent;      end
     class ItemEquipData    < Wowr::Armory::Item::EquipData;    end
     class ItemSetData      < Wowr::Armory::Item::SetData;      end
@@ -102,6 +101,5 @@ module Wowr
     class ItemVendor       < Wowr::Armory::Item::Vendor;       end
     class ItemCreation     < Wowr::Armory::Item::Creation;     end
     class ItemPlansFor     < Wowr::Armory::Item::PlansFor;     end
-    class ItemCreatedBy    < Wowr::Armory::Item::CreatedBy;    end
   end
 end
