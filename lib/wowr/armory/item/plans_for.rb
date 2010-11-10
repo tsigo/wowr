@@ -8,6 +8,7 @@ module Wowr
       #   </spell>
       # </plansFor>
       # FIXME: I cannot find "plansFor" anywhere on the Armory. Has it been removed? (tsigo)
+      #        Update: I think it's been replaced by <tt>reagentFor</tt> - see http://www.wowarmory.com/item-info.xml?i=17204
       class PlansFor < Wowr::Armory::Item::Creation
         def initialize(elem, api = nil)
           super(elem, api)
