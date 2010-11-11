@@ -99,7 +99,6 @@ module Wowr
     class ItemCost         < Wowr::Armory::Item::Cost;         end
     class ItemCostToken    < Wowr::Armory::Item::CostToken;    end
     class ItemVendor       < Wowr::Armory::Item::Vendor;       end
-    class ItemCreation     < Wowr::Armory::Item::Creation;     end
     class ItemReagentFor   < Wowr::Armory::Item::ReagentFor;   end
   end
 end

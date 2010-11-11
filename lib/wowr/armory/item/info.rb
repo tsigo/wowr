@@ -72,9 +72,9 @@ module Wowr
         # @return [Array] Array of {DropCreature} instances
         attr_reader :drop_creatures
 
-        # @todo Unknown purpose
-        # @return [Array]
-        attr_reader :plans_for
+        # Any <tt>reagentFor/spell</tt> elements
+        # @return [Array] Array of {ReagentFor} instances
+        attr_reader :reagent_for
 
         # @todo Unknown purpose
         # @todo Never assigned
@@ -125,7 +125,7 @@ module Wowr
           @reward_from_quests  = extra_element(elem, :xml => 'rewardFromQuests',  :list => 'quest',    :class => 'ItemQuest')
           @vendors             = extra_element(elem, :xml => 'vendors',           :list => 'creature', :class => 'ItemDropCreature')
           @drop_creatures      = extra_element(elem, :xml => 'dropCreatures',     :list => 'creature', :class => 'ItemDropCreature')
-          @plans_for           = extra_element(elem, :xml => 'plansFor',          :list => 'spell',    :class => 'ItemPlansFor', :api => api)
+          @reagent_for         = extra_element(elem, :xml => 'reagentFor',        :list => 'spell',    :class => 'ItemReagentFor', :api => api)
 
           # Rest of disenchant contents is done in the method above
           if (elem%'disenchantLoot')

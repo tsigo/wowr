@@ -1,19 +1,39 @@
 module Wowr
   module Armory
     module Item
-      # <plansFor>
-      #   <spell name="Shadowprowler's Chestguard" icon="trade_leatherworking" id="42731">
-      #     <item name="Shadowprowler's Chestguard" icon="inv_chest_plate11" type="Leather" level="105" id="33204" quality="4"></item>
-      #     <reagent name="Heavy Knothide Leather" icon="inv_misc_leatherscrap_11" id="23793" count="10"></reagent>
-      #   </spell>
-      # </plansFor>
-      # FIXME: I cannot find "plansFor" anywhere on the Armory. Has it been removed? (tsigo)
-      #        Update: I think it's been replaced by <tt>reagentFor</tt> - see http://www.wowarmory.com/item-info.xml?i=17204
-      class ReagentFor < Wowr::Armory::Item::Creation
+      # = ReagentFor
+      #
+      # Represents a <tt>reagentFor/spell</tt> element
+      #
+      # == Relevant XML example:
+      #
+      #   <reagentFor>
+      #     <spell icon="spell_shadow_sealofkings" id="21160" name="Eye of Sulfuras">
+      #       <item icon="inv_hammer_unique_sulfuras" id="17182" level="80" name="Sulfuras, Hand of Ragnaros" quality="5" type="Two-Handed Maces"/>
+      #       <reagent count="1" icon="inv_hammer_unique_sulfuras" id="17193" name="Sulfuron Hammer" quality="4"/>
+      #       <reagent count="1" icon="inv_misc_gem_pearl_05" id="17204" name="Eye of Sulfuras" quality="5"/>
+      #     </spell>
+      #   </reagentFor>
+      class ReagentFor < Base
+        # @return [Created]
+        attr_reader :item
+
+        # @return [Array] Array of {Reagent} instances
+        attr_reader :reagents
+
+        # @param [Hpricot::Elem] elem <tt>spell</tt> element
+        # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           super(elem, api)
-          # TODO: Multiple items?
-          @item = CreatedItem.new(elem%'item') if (elem%'item')
+
+          @item = Created.new(elem%'item') if (elem%'item')
+
+          @reagents = []
+          if (elem%'reagent')
+            (elem/:reagent).each do |reagent|
+              @reagents << Reagent.new(reagent, api)
+            end
+          end
         end
       end
     end

@@ -69,6 +69,21 @@ module Wowr::Armory::Item
     end
   end
 
-  # TODO: Test the following elements:
-  # * plansFor/spell
+  describe Info, "17204 - Eye of Sulfuras" do
+    subject { Info.new(fake_element) }
+
+    describe "reagent_for" do
+      it "should be an Array of ReagentFor instances" do
+        subject.reagent_for.should be_kind_of(Array)
+        subject.reagent_for[0].should be_kind_of(ReagentFor)
+      end
+    end
+
+    protected
+
+    def fake_element
+      xml = file_fixture('armory/item-info/17204.xml')
+      (Hpricot.XML(xml)%'item')
+    end
+  end
 end

@@ -7,7 +7,6 @@ module Wowr
       autoload :Cost,         'item/cost'
       autoload :CostToken,    'item/cost_token'
       autoload :Created,      'item/created'
-      autoload :Creation,     'item/creation'
       autoload :DamageData,   'item/damage_data'
       autoload :Disenchant,   'item/disenchant'
       autoload :DropCreature, 'item/drop_creature'
