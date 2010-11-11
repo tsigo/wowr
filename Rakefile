@@ -96,10 +96,12 @@ namespace :file_fixtures do
         {:r => "r=Mal'Ganis&cn=Alephone",     :l => 'alephone_mal_ganis'},
         {:r => "r=Mal'Ganis&cn=Baud",         :l => 'baud_mal_ganis'},
         {:r => "r=Mal'Ganis&cn=Fearsom",      :l => 'fearsom_mal_ganis'},
+        {:r => "r=Mal'Ganis&cn=Kamien",       :l => 'kamien_mal_ganis'},
         {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'},
       ],
       'character-talents' => [
         {:r => "r=Mal'Ganis&cn=DoesNotExist", :l => 'not_found'},
+        {:r => "r=Mal'Ganis&cn=Kamien",       :l => 'kamien_mal_ganis'},
         {:r => "r=Mal'Ganis&cn=Sebudai",      :l => 'sebudai_mal_ganis'},
       ],
       'guild-info' => [

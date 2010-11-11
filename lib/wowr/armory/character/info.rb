@@ -1,42 +1,117 @@
 module Wowr
   module Armory
     module Character
-      # Character details without reputations
-      # uses characterInfo element
-      # Made up of two parts, character and charactertab
-      class Info < Wowr::Armory::Character::Base
+      # = Info
+      #
+      # Represents basic information about a character, along with their talent
+      # information from the <tt>character-sheet.xml</tt> and
+      # <tt>character-talents.xml</tt> pages
+      class Info < Base
+        # Character URL parameters
+        # @example
+        #   "r=Mal%27Ganis&amp;cn=Sebudai"
+        # @return [String]
+        attr_reader :char_url
 
-        # character_info
-        attr_reader :char_url,
-                     :title, :known_titles,
-                    :faction, :faction_id,
-                    :arena_teams,
-                    :last_modified,
-                    :points
+        # A formatted string containing either the character's prefix or suffix
+        # @example
+        #   "Grand Crusader %s"
+        #   "%s the Light of Dawn"
+        #   "%s Jenkins"
+        # @return [String]
+        attr_reader :title
 
-        # character_tab
-        attr_reader :health, :second_bar,
-                    :strength, :agility, :stamina, :intellect, :spirit
-        alias_method :str, :strength
+        # @return [String]
+        attr_reader :faction
+
+        # @see Wowr::Armory#faction
+        # @return [Integer]
+        attr_reader :faction_id
+
+        # @return [Array] Array of Wowr::ArenaTeam::Base instances
+        attr_reader :arena_teams
+
+        # @return [DateTime, String]
+        attr_reader :last_modified
+
+        # Achievement points
+        # @return [Integer]
+        attr_reader :points
+
+        # @return [Integer]
+        attr_reader :health
+
+        # @return [SecondBar]
+        attr_reader :second_bar
+
+        # @return [BaseStats::Agility]
+        attr_reader :agility
+
+        # @return [BaseStats::Intellect]
+        attr_reader :intellect
+
+        # @return [BaseStats::Spirit]
+        attr_reader :spirit
+
+        # @return [BaseStats::Stamina]
+        attr_reader :stamina
+
+        # @return [BaseStats::Strength]
+        attr_reader :strength
+
+        # Melee stats
+        # @return [Melee]
+        attr_reader :melee
+
+        # Ranged stats
+        # @return [Ranged]
+        attr_reader :ranged
+
+        # Spell stats
+        # @return [Spell]
+        attr_reader :spell
+
+        # Defense stats
+        # @return [Defenses]
+        attr_reader :defenses
+
+        # @return [Array] Array of {Resistance} instances
+        attr_reader :resistances
+
+        # Currently active talent spec
+        # @return [TalentSpec]
+        attr_reader :talent_spec
+
+        # @return [Array] Array of {TalentSpec} instances
+        attr_reader :all_talent_specs
+
+        # PVP statistics
+        # @return [Pvp]
+        attr_reader :pvp
+
+        # @return [Array] Array of {Skill} instances
+        attr_reader :professions
+
+        # @return [Array] Array of {Skill} instances
+        attr_reader :secondary_professions
+
+        # @return [Array] Array of {EquippedItem} instances
+        attr_reader :items
+
         alias_method :agi, :agility
-        alias_method :sta, :stamina
         alias_method :int, :intellect
         alias_method :spi, :spirit
+        alias_method :sta, :stamina
+        alias_method :str, :strength
 
-        attr_reader :melee, :ranged, :spell,
-                    :defenses, :resistances,
-                    :talent_spec, :all_talent_specs, :pvp,
-                    :professions,
-                    :items
-
-        # It's made up of two parts
-        # Don't care about battlegroups yet
-        # I don't think I can call stuff from the constructor?
+        # @param [Hpricot::Elem] sheet <tt>character-sheet.xml</tt> page
+        # @param [Hpricot::Elem] talents <tt>character-talents.xml</tt> page
+        # @param [Wowr::API::API] api
         def initialize(sheet, talents, api = nil)
           super(sheet%'character', api)
 
           @api = api
-          @talents = talents
+          @talent_elem = talents
 
           character_info(sheet%'character')
 
@@ -46,28 +121,29 @@ module Wowr
           character_tab(sheet%'characterTab')
         end
 
-        # <character
-        #  battleGroup="Conviction"
-        #  charUrl="r=Genjuros&amp;n=Jonlok"
-        #  class="Warlock"
-        #  classId="9"
-        #  faction="Horde"
-        #  factionId="1"
-        #  gender="Male"
-        #  genderId="0"
-        #  guildName=""
-        #  lastModified="12 February 2008"
-        #  level="41"
-        #  name="Jonlok"
-        #  prefix=""
-        #  points="2270"
-        #  race="Orc"
-        #  raceId="2"
-        #  realm="Genjuros"
-        #  suffix=""/>
+        # @deprecated
+        def known_titles
+          puts "** [DEPRECATED] 'known_titles' is deprecated, as the data has been removed from the Armory"
+          [@title]
+        end
 
+        private
+
+        # Populate what we can from the basic <tt>character</tt> element
+        #
+        # == Relevant XML example:
+        #
+        #   <character battleGroup="Stormstrike"
+        #     charUrl="r=Mal%27Ganis&amp;cn=Sebudai" class="Hunter" classId="3"
+        #     classUrl="c=Hunter" faction="Horde" factionId="1" gender="Male"
+        #     genderId="0" guildName="Juggernaut"
+        #     guildUrl="r=Mal%27Ganis&amp;gn=Juggernaut" lastModified="November
+        #     9, 2010" level="80" name="Sebudai" points="9180" prefix=""
+        #     race="Orc" raceId="2" realm="Mal'Ganis" suffix=" the Light of Dawn"
+        #     titleId="138">
+        #
+        # @param [Hpricot::Elem] elem <tt>character</tt> element
         def character_info(elem)
-          # basic info
           @name       = elem[:name]
           @level      = elem[:level].to_i
           @char_url   = elem[:charUrl]
@@ -87,13 +163,13 @@ module Wowr
           @guild      = elem[:guildName] == "" ? nil : elem[:guildName]
           @guild_url  = elem[:guildUrl] == "" ? nil : elem[:guildUrl]
 
-          @prefix     = elem[:prefix] == "" ? nil : elem[:prefix]
-          @suffix     = elem[:suffix] == "" ? nil : elem[:suffix]
+          if elem[:prefix] || elem[:suffix]
+            @title = elem[:prefix].to_s + "%s" + elem[:suffix].to_s
+          end
 
-          @points     = elem[:points].to_i
+          @points = elem[:points].to_i
 
-          @realm      = elem[:realm]
-
+          @realm = elem[:realm]
           @battle_group = elem[:battleGroup]
 
           # format is February 11, 2008
@@ -102,76 +178,64 @@ module Wowr
           # TODO: Datetime doesn't parse other languages nicely
           #       Until then, just save it as a string
           begin
-            @last_modified  = elem[:lastModified] == "" ? nil : DateTime.parse(elem[:lastModified])
-          rescue
-            @last_modified  = elem[:lastModified] == "" ? nil : elem[:lastModified]
+            @last_modified = DateTime.parse(elem[:lastModified].to_s)
+          rescue ArgumentError
+            @last_modified = elem[:lastModified].to_s
           end
-          #@last_modified = elem[:lastModified]#.to_time
 
           @arena_teams = []
           (elem/:arenaTeam).each do |arena_team|
-            @arena_teams << Wowr::Classes::ArenaTeam.new(arena_team)
+            @arena_teams << Wowr::Armory::ArenaTeam::Base.new(arena_team)
           end
 
         end
 
+        # Populate remaining attributes from the <tt>characterTab</tt> element
+        #
+        # @param [Hpricot::Elem] elem <tt>characterTab</tt> element
         def character_tab(elem)
-          # <title value=""/>
-          #@title       = (elem%'title')[:value] == "" ? nil : (elem%'title')[:value]
-          if (@prefix || @suffix)
-            @title = (@prefix ? @prefix : "") + "%s" + (@suffix ? @suffix : "")
-          end
-
-          @known_titles = []
-
-          @known_titles << @title if (@title)
-
-          #@known_titles << @title if (@title)
-          #(elem%'knownTitles'/:title).each do |entry|
-          #  @known_titles << entry[:value] if (!@known_titles.include?(entry[:value]))
-          #end
-
           @health     = (elem%'characterBars'%'health')[:effective].to_i
-          @second_bar = Wowr::Classes::SecondBar.new(elem%'characterBars'%'secondBar')
+          @second_bar = SecondBar.new(elem%'characterBars'%'secondBar')
 
-          # base stats
-          @strength   = Wowr::Classes::Strength.new(elem%'baseStats'%'strength')
-          @agility    = Wowr::Classes::Agility.new(elem%'baseStats'%'agility')
-          @stamina    = Wowr::Classes::Stamina.new(elem%'baseStats'%'stamina')
-          @intellect  = Wowr::Classes::Intellect.new(elem%'baseStats'%'intellect')
-          @spirit     = Wowr::Classes::Spirit.new(elem%'baseStats'%'spirit')
+          @agility    = BaseStats::Agility.new(elem%'baseStats'%'agility')
+          @intellect  = BaseStats::Intellect.new(elem%'baseStats'%'intellect')
+          @spirit     = BaseStats::Spirit.new(elem%'baseStats'%'spirit')
+          @stamina    = BaseStats::Stamina.new(elem%'baseStats'%'stamina')
+          @strength   = BaseStats::Strength.new(elem%'baseStats'%'strength')
 
-          # damage stuff
-          @melee    = Wowr::Classes::Melee.new(elem%'melee')
-          @ranged   = Wowr::Classes::Ranged.new(elem%'ranged')
-          @spell    = Wowr::Classes::Spell.new(elem.at(' > spell'))  # TODO: hacky?
-          @defenses = Wowr::Classes::Defenses.new(elem%'defenses')
+          @defenses = Defenses.new(elem%'defenses')
+          @melee    = Melee.new(elem%'melee')
+          @ranged   = Ranged.new(elem%'ranged')
+          @spell    = Spell.new(elem%'spell')
 
-          # TODO: Massive problem, doesn't fill in resistances for some reason
-          resist_types = ['arcane', 'fire', 'frost', 'holy', 'nature', 'shadow']
           @resistances = {}
-          resist_types.each do |res|
-            @resistances[res] = Wowr::Classes::Resistance.new(elem%'resistances'%res)
+          Wowr::Armory::ELEMENT_TYPES.each do |type|
+            @resistances[type.to_s] = Resistance.new(elem%'resistances'%type)
           end
 
           @all_talent_specs = []
-          (@talents/'//characterInfo/talents/talentGroup').each do |spec|
-             new_spec = Wowr::Classes::TalentSpec.new(spec)
-             @all_talent_specs << new_spec
+          @talent_elem.search('talents/TalentGroup').each do |group|
+             spec = TalentSpec.new(group)
+             @all_talent_specs << spec
 
-             @talent_spec = new_spec if (new_spec.active)
+             @talent_spec = spec if spec.active
           end
 
-          @pvp = Wowr::Classes::Pvp.new(elem%'pvp')
+          @pvp = Pvp.new(elem%'pvp')
 
           @professions = []
           (elem%'professions'/:skill).each do |skill|
-            @professions << Wowr::Classes::Skill.new(skill)
+            @professions << Skill.new(skill)
+          end
+
+          @secondary_professions = []
+          (elem%'secondaryProfessions'/:skill).each do |skill|
+            @secondary_professions << Skill.new(skill)
           end
 
           @items = []
           (elem%'items'/:item).each do |item|
-            @items << Wowr::Classes::EquippedItem.new(item, @api)
+            @items << EquippedItem.new(item, @api)
           end
         end
       end

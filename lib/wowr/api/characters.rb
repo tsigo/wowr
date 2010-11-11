@@ -38,9 +38,10 @@ module Wowr
       # * options (Hash) Optional hash of arguments identical to those used in the API constructor (realm, debug, cache etc.)
       def get_character(name = @character_name, options = {})
         options = character_options(name, options)
-        character_sheet = get_xml(@@character_sheet_url, options)
+
+        character_sheet      = get_xml(@@character_sheet_url,      options)
         character_reputation = get_xml(@@character_reputation_url, options)
-        character_talents = get_xml(@@character_talents_url, options)
+        character_talents    = get_xml(@@character_talents_url,    options)
 
         return Wowr::Classes::FullCharacter.new(character_sheet, character_reputation, character_talents, self)
       end
