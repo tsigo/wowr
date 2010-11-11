@@ -22,9 +22,7 @@ module Wowr
         # @return [String]
         attr_reader :faction
 
-        # Faction ID:
-        # * 0 - Alliance
-        # * 1 - Horde
+        # @see Wowr::Armory#faction
         # @return [Integer]
         attr_reader :faction_id
 

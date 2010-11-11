@@ -13,6 +13,18 @@ module Wowr
     end
   end
 
+  describe Armory, "#faction" do
+    Armory::FACTIONS.each_with_index do |val, i|
+      it "should map #{i} to #{val}" do
+        Armory.faction(i).should eql(val)
+      end
+    end
+
+    it "should raise ArgumentError when given an invalid value" do
+      expect { Armory.faction(10) }.to raise_error(ArgumentError, /invalid faction/)
+    end
+  end
+
   describe Armory, "#power_type" do
     Armory::POWER_TYPES.each_pair do |k, v|
       it "should map #{k} to #{v}" do
