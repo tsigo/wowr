@@ -111,6 +111,6 @@ module Wowr::Classes
     it { ItemCostToken.should    superclass(Wowr::Armory::Item::CostToken) }
     it { ItemVendor.should       superclass(Wowr::Armory::Item::Vendor) }
     it { ItemCreation.should     superclass(Wowr::Armory::Item::Creation) }
-    it { ItemPlansFor.should     superclass(Wowr::Armory::Item::PlansFor) }
+    it { ItemReagentFor.should   superclass(Wowr::Armory::Item::ReagentFor) }
   end
 end

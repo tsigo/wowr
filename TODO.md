@@ -52,9 +52,3 @@ Ensure Wowr works with Ruby 1.9.2 at a minimum
 Handle `startsQuest` elements on item-info pages. Example:
 
 * http://www.wowarmory.com/item-info.xml?i=51316
-
-## reagentFor elements
-
-Handle `reagentFor` elements on item-info pages (did this maybe replace the plansFor element we can't find anywhere?). Example:
-
-* http://www.wowarmory.com/item-info.xml?i=17204

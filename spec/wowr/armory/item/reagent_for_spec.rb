@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Wowr::Armory::Item
-  describe PlansFor do
+  describe ReagentFor do
     it { pending }
   end
 end

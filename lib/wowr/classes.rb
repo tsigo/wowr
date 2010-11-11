@@ -100,6 +100,6 @@ module Wowr
     class ItemCostToken    < Wowr::Armory::Item::CostToken;    end
     class ItemVendor       < Wowr::Armory::Item::Vendor;       end
     class ItemCreation     < Wowr::Armory::Item::Creation;     end
-    class ItemPlansFor     < Wowr::Armory::Item::PlansFor;     end
+    class ItemReagentFor   < Wowr::Armory::Item::ReagentFor;   end
   end
 end
