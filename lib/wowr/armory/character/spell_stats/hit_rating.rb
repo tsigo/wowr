@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Spell
+      module SpellStats
         # = HitRating
         #
         # Represents a <tt>hitRating</tt> element inside a <tt>spell</tt>

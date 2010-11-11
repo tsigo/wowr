@@ -14,6 +14,7 @@ module Wowr
       autoload :Skill,        'character/skill'
       autoload :TalentSpec,   'character/talent_spec'
       autoload :Resistance,   'character/resistance'
+      autoload :Spell,        'character/spell'
 
       module BaseStats
         autoload :Agility,   'character/base_stats/agility'
@@ -30,15 +31,11 @@ module Wowr
         autoload :Resilience, 'character/defense_stats/resilience'
       end
 
-      module Spell
-        autoload :Damage,    'character/spell/damage'
-        autoload :HitRating, 'character/spell/hit_rating'
-        autoload :ManaRegen, 'character/spell/mana_regen'
-        autoload :Speed,     'character/spell/speed'
-        autoload :Spell,     'character/spell/spell'
-      end
-
-      module Stat
+      module SpellStats
+        autoload :Damage,    'character/spell_stats/damage'
+        autoload :HitRating, 'character/spell_stats/hit_rating'
+        autoload :ManaRegen, 'character/spell_stats/mana_regen'
+        autoload :Speed,     'character/spell_stats/speed'
       end
 
       module Weapon

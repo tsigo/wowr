@@ -34,6 +34,7 @@ module Wowr::Classes
     it { Pvp.should             superclass(Wowr::Armory::Character::Pvp) }
     it { EquippedItem.should    superclass(Wowr::Armory::Character::EquippedItem) }
     it { Skill.should           superclass(Wowr::Armory::Character::Skill) }
+    it { Spell.should           superclass(Wowr::Armory::Character::Spell) }
 
     describe "BaseStats" do
       it { Agility.should   superclass(Wowr::Armory::Character::BaseStats::Agility) }
@@ -51,10 +52,9 @@ module Wowr::Classes
     end
 
     describe "Spell" do
-      it { ManaRegen.should   superclass(Wowr::Armory::Character::Spell::ManaRegen) }
-      it { Spell.should       superclass(Wowr::Armory::Character::Spell::Spell) }
-      it { SpellDamage.should superclass(Wowr::Armory::Character::Spell::Damage) }
-      it { SpellSpeed.should  superclass(Wowr::Armory::Character::Spell::Speed) }
+      it { ManaRegen.should   superclass(Wowr::Armory::Character::SpellStats::ManaRegen) }
+      it { SpellDamage.should superclass(Wowr::Armory::Character::SpellStats::Damage) }
+      it { SpellSpeed.should  superclass(Wowr::Armory::Character::SpellStats::Speed) }
     end
 
     describe "Weapon" do

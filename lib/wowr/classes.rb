@@ -35,6 +35,7 @@ module Wowr
     class Pvp                < Wowr::Armory::Character::Pvp;                  end
     class EquippedItem       < Wowr::Armory::Character::EquippedItem;         end
     class Skill              < Wowr::Armory::Character::Skill;                end
+    class Spell              < Wowr::Armory::Character::Spell;                end
 
     class Agility            < Wowr::Armory::Character::BaseStats::Agility;   end
     class Intellect          < Wowr::Armory::Character::BaseStats::Intellect; end
@@ -47,10 +48,9 @@ module Wowr
     class Defense            < Wowr::Armory::Character::DefenseStats::Defense;    end
     class Resilience         < Wowr::Armory::Character::DefenseStats::Resilience; end
 
-    class Spell              < Wowr::Armory::Character::Spell::Spell;         end
-    class SpellSpeed         < Wowr::Armory::Character::Spell::Speed;         end
-    class SpellDamage        < Wowr::Armory::Character::Spell::Damage;        end
-    class ManaRegen          < Wowr::Armory::Character::Spell::ManaRegen;     end
+    class SpellSpeed         < Wowr::Armory::Character::SpellStats::Speed;         end
+    class SpellDamage        < Wowr::Armory::Character::SpellStats::Damage;        end
+    class ManaRegen          < Wowr::Armory::Character::SpellStats::ManaRegen;     end
 
     class Melee              < Wowr::Armory::Character::Weapon::Melee;        end
     class Ranged             < Wowr::Armory::Character::Weapon::Ranged;       end

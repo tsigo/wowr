@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Spell
+      module SpellStats
         # = Damage
         #
         # Combines <tt>spell/bonusDamage</tt> and <tt>spell/critChance</tt>

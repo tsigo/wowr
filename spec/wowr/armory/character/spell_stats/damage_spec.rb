@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Spell
+module Wowr::Armory::Character::SpellStats
   describe Damage do
     subject { Damage.new(*fake_element) }
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Spell
+module Wowr::Armory::Character::SpellStats
   describe HitRating do
     subject { HitRating.new(fake_element) }
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Spell
+module Wowr::Armory::Character::SpellStats
   describe ManaRegen do
     subject { ManaRegen.new(fake_element) }
 

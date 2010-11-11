@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Spell
+      module SpellStats
         # = ManaRegen
         #
         # Represents a <tt>spell/manaRegen</tt> element

@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Spell
+      module SpellStats
         # = Speed
         #
         # Represents a <tt>hasteRating</tt> element
