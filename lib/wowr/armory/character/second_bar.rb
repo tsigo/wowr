@@ -26,12 +26,7 @@ module Wowr
         # @return [Integer]
         attr_reader :not_casting
 
-        # Type:
-        # * 'e' - Energy
-        # * 'f' - Focus
-        # * 'm' - Mana
-        # * 'p' - Runic Power
-        # * 'r' - Rage
+        # @see Wowr::Armory#power_type
         # @return [String]
         attr_reader :type
 

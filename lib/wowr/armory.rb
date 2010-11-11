@@ -10,6 +10,9 @@ module Wowr
     # @see #damage_type
     DAMAGE_TYPES = [:physical, :holy, :fire, :nature, :frost, :shadow, :arcane].freeze
 
+    # @see #power_type
+    POWER_TYPES = {:e => :energy, :f => :focus, :m => :mana, :p => :runic_power, :r => :rage}.freeze
+
     # @see #quality
     QUALITIES = [:trash, :common, :uncommon, :rare, :epic, :legendary, :artifact, :heirloom].freeze
 
@@ -29,6 +32,24 @@ module Wowr
       raise ArgumentError, 'invalid damage type' unless (0..6).include? type
 
       DAMAGE_TYPES[type]
+    end
+
+    # Maps a single-letter power type to its full name
+    #
+    # @example
+    #   >> Armory.power_type('e')
+    #   => :energy
+    #   >> Armory.power_type(:m)
+    #   => :mana
+    # @raise [ArgumentError] Invalid power type
+    # @param [String, Symbol] type
+    # @return [Symbol]
+    def power_type(type)
+      type = type.to_sym if type.respond_to? :to_sym
+
+      raise ArgumentError, 'invalid power type' unless POWER_TYPES.keys.include? type
+
+      POWER_TYPES[type]
     end
 
     # Maps an integer-based quality value to its name

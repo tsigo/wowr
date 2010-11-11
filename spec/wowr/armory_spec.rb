@@ -13,6 +13,18 @@ module Wowr
     end
   end
 
+  describe Armory, "#power_type" do
+    Armory::POWER_TYPES.each_pair do |k, v|
+      it "should map #{k} to #{v}" do
+        Armory.power_type(k).should eql(v)
+      end
+    end
+
+    it "should raise ArgumentError when given an invalid value" do
+      expect { Armory.power_type(:z) }.to raise_error(ArgumentError, /invalid power type/)
+    end
+  end
+
   describe Armory, "#quality" do
     Armory::QUALITIES.each_with_index do |val, i|
       it "should map #{i} to #{val}" do
