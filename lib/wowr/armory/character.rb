@@ -32,6 +32,7 @@ module Wowr
 
       module Spell
         autoload :Damage,    'character/spell/damage'
+        autoload :HitRating, 'character/spell/hit_rating'
         autoload :ManaRegen, 'character/spell/mana_regen'
         autoload :Speed,     'character/spell/speed'
         autoload :Spell,     'character/spell/spell'

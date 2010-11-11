@@ -1,21 +1,24 @@
 module Wowr
   module Armory
     module Character
-      module Weapon
+      module Spell
         # = HitRating
         #
-        # Represents a <tt>hitRating</tt> element inside a <tt>melee</tt> or
-        # <tt>ranged</tt> element
+        # Represents a <tt>hitRating</tt> element inside a <tt>spell</tt>
+        # element
         #
         # == Relevant XML example:
         #
-        #   <hitRating increasedHitPercent="11.22" penetration="0" reducedArmorPercent="0.00" value="345"/>
+        #   <hitRating increasedHitPercent="17.00" penetration="0" reducedResist="0" value="446"/>
         class HitRating
           # @return [Float]
           attr_reader :increased_hit_percent
 
-          # @return [Float]
-          attr_reader :armor_penetration
+          # @return [Integer]
+          attr_reader :penetration
+
+          # @return [Integer]
+          attr_reader :reduced_resist
 
           # @return [Integer]
           attr_reader :value
@@ -23,7 +26,8 @@ module Wowr
           # @param [Hpricot::Elem] elem <tt>hitRating</tt> element
           def initialize(elem)
             @increased_hit_percent = elem[:increasedHitPercent].to_f
-            @armor_penetration     = elem[:penetration].to_f
+            @penetration           = elem[:penetration].to_i
+            @reduced_resist        = elem[:reducedResist].to_i
             @value                 = elem[:value].to_i
           end
         end
