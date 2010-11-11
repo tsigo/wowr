@@ -24,6 +24,7 @@ Bundler.require
 require 'core_ext/class'
 
 require 'wowr/api'
+require 'wowr/armory'
 require 'wowr/calendar'
 require 'wowr/classes'
 require 'wowr/exceptions'
