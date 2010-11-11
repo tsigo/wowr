@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Weapon
+      module WeaponStats
         # = Damage
         #
         # Represents a <tt>mainHandDamage</tt> or <tt>offHandDamage</tt> element

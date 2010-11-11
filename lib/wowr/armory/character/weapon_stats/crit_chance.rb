@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Weapon
+      module WeaponStats
         # = CritChance
         #
         # Represents a <tt>melee/critChance</tt> element

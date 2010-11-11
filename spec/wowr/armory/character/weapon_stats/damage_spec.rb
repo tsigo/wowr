@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Weapon
+module Wowr::Armory::Character::WeaponStats
   describe Damage do
     subject { Damage.new(fake_element) }
 

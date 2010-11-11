@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Weapon
+      module WeaponStats
         # = HitRating
         #
         # Represents a <tt>hitRating</tt> element inside a <tt>melee</tt> or

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Weapon
+module Wowr::Armory::Character::WeaponStats
   describe Power do
     subject { Power.new(fake_element) }
 

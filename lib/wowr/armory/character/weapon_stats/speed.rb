@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Weapon
+      module WeaponStats
         # = Speed
         #
         # Represents a <tt>mainHandSpeed</tt> or <tt>offHandSpeed</tt> element

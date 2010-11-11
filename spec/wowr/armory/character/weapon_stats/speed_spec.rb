@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Weapon
+module Wowr::Armory::Character::WeaponStats
   describe Speed do
     subject { Speed.new(fake_element) }
 

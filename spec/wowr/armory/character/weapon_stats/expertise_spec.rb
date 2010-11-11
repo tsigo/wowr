@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Wowr::Armory::Character::Weapon
+module Wowr::Armory::Character::WeaponStats
   describe Expertise do
     subject { Expertise.new(fake_element) }
 

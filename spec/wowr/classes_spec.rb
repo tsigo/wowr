@@ -35,6 +35,8 @@ module Wowr::Classes
     it { EquippedItem.should    superclass(Wowr::Armory::Character::EquippedItem) }
     it { Skill.should           superclass(Wowr::Armory::Character::Skill) }
     it { Spell.should           superclass(Wowr::Armory::Character::Spell) }
+    it { Melee.should           superclass(Wowr::Armory::Character::Melee) }
+    it { Ranged.should          superclass(Wowr::Armory::Character::Ranged) }
 
     describe "BaseStats" do
       it { Agility.should   superclass(Wowr::Armory::Character::BaseStats::Agility) }
@@ -58,14 +60,12 @@ module Wowr::Classes
     end
 
     describe "Weapon" do
-      it { Melee.should            superclass(Wowr::Armory::Character::Weapon::Melee) }
-      it { Ranged.should           superclass(Wowr::Armory::Character::Weapon::Ranged) }
-      it { WeaponDamage.should     superclass(Wowr::Armory::Character::Weapon::Damage) }
-      it { WeaponSpeed.should      superclass(Wowr::Armory::Character::Weapon::Speed) }
-      it { WeaponPower.should      superclass(Wowr::Armory::Character::Weapon::Power) }
-      it { WeaponHitRating.should  superclass(Wowr::Armory::Character::Weapon::HitRating) }
-      it { WeaponCritChance.should superclass(Wowr::Armory::Character::Weapon::CritChance) }
-      it { WeaponExpertise.should  superclass(Wowr::Armory::Character::Weapon::Expertise) }
+      it { WeaponDamage.should     superclass(Wowr::Armory::Character::WeaponStats::Damage) }
+      it { WeaponSpeed.should      superclass(Wowr::Armory::Character::WeaponStats::Speed) }
+      it { WeaponPower.should      superclass(Wowr::Armory::Character::WeaponStats::Power) }
+      it { WeaponHitRating.should  superclass(Wowr::Armory::Character::WeaponStats::HitRating) }
+      it { WeaponCritChance.should superclass(Wowr::Armory::Character::WeaponStats::CritChance) }
+      it { WeaponExpertise.should  superclass(Wowr::Armory::Character::WeaponStats::Expertise) }
     end
   end
 

@@ -9,12 +9,14 @@ module Wowr
       autoload :Faction,      'character/faction'
       autoload :Full,         'character/full'
       autoload :Info,         'character/info'
+      autoload :Melee,        'character/melee'
       autoload :Pvp,          'character/pvp'
+      autoload :Ranged,       'character/ranged'
+      autoload :Resistance,   'character/resistance'
       autoload :SecondBar,    'character/second_bar'
       autoload :Skill,        'character/skill'
-      autoload :TalentSpec,   'character/talent_spec'
-      autoload :Resistance,   'character/resistance'
       autoload :Spell,        'character/spell'
+      autoload :TalentSpec,   'character/talent_spec'
 
       module BaseStats
         autoload :Agility,   'character/base_stats/agility'
@@ -38,15 +40,13 @@ module Wowr
         autoload :Speed,     'character/spell_stats/speed'
       end
 
-      module Weapon
-        autoload :CritChance, 'character/weapon/crit_chance'
-        autoload :Damage,     'character/weapon/damage'
-        autoload :Expertise,  'character/weapon/expertise'
-        autoload :HitRating,  'character/weapon/hit_rating'
-        autoload :Melee,      'character/weapon/melee'
-        autoload :Power,      'character/weapon/power'
-        autoload :Ranged,     'character/weapon/ranged'
-        autoload :Speed,      'character/weapon/speed'
+      module WeaponStats
+        autoload :CritChance, 'character/weapon_stats/crit_chance'
+        autoload :Damage,     'character/weapon_stats/damage'
+        autoload :Expertise,  'character/weapon_stats/expertise'
+        autoload :HitRating,  'character/weapon_stats/hit_rating'
+        autoload :Power,      'character/weapon_stats/power'
+        autoload :Speed,      'character/weapon_stats/speed'
       end
     end
   end

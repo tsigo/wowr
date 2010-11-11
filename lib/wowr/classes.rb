@@ -36,6 +36,8 @@ module Wowr
     class EquippedItem       < Wowr::Armory::Character::EquippedItem;         end
     class Skill              < Wowr::Armory::Character::Skill;                end
     class Spell              < Wowr::Armory::Character::Spell;                end
+    class Melee              < Wowr::Armory::Character::Melee;                end
+    class Ranged             < Wowr::Armory::Character::Ranged;               end
 
     class Agility            < Wowr::Armory::Character::BaseStats::Agility;   end
     class Intellect          < Wowr::Armory::Character::BaseStats::Intellect; end
@@ -52,14 +54,12 @@ module Wowr
     class SpellDamage        < Wowr::Armory::Character::SpellStats::Damage;        end
     class ManaRegen          < Wowr::Armory::Character::SpellStats::ManaRegen;     end
 
-    class Melee              < Wowr::Armory::Character::Weapon::Melee;        end
-    class Ranged             < Wowr::Armory::Character::Weapon::Ranged;       end
-    class WeaponDamage       < Wowr::Armory::Character::Weapon::Damage;       end
-    class WeaponSpeed        < Wowr::Armory::Character::Weapon::Speed;        end
-    class WeaponPower        < Wowr::Armory::Character::Weapon::Power;        end
-    class WeaponHitRating    < Wowr::Armory::Character::Weapon::HitRating;    end
-    class WeaponCritChance   < Wowr::Armory::Character::Weapon::CritChance;   end
-    class WeaponExpertise    < Wowr::Armory::Character::Weapon::Expertise;    end
+    class WeaponDamage       < Wowr::Armory::Character::WeaponStats::Damage;       end
+    class WeaponSpeed        < Wowr::Armory::Character::WeaponStats::Speed;        end
+    class WeaponPower        < Wowr::Armory::Character::WeaponStats::Power;        end
+    class WeaponHitRating    < Wowr::Armory::Character::WeaponStats::HitRating;    end
+    class WeaponCritChance   < Wowr::Armory::Character::WeaponStats::CritChance;   end
+    class WeaponExpertise    < Wowr::Armory::Character::WeaponStats::Expertise;    end
 
     # Dungeon
     class Dungeon < Wowr::Armory::Dungeon::Dungeon; end

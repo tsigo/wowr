@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Weapon
+      module WeaponStats
         # = Power
         #
         # Represents a <tt>power</tt> element

@@ -1,7 +1,7 @@
 module Wowr
   module Armory
     module Character
-      module Weapon
+      module WeaponStats
         # = Expertise
         #
         # Represents an <tt>expertise</tt> element
