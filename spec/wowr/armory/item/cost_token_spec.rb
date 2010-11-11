@@ -4,22 +4,15 @@ module Wowr::Armory::Item
   describe CostToken do
     subject { CostToken.new(fake_element) }
 
-    its(:count) { should eql(1) }
+    its(:count) { should eql(20) }
 
-    # Inherited from Base
-    its(:id) { should eql(52030) }
-    its(:name) { should be_nil }
-    its(:icon_base) { should eql("ability_paladin_judgementsofthejust") }
+    its(:class) { should superclass(Base) }
 
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-info.xml?i=51255
-      xml = <<-XML
-      <token count="1" icon="ability_paladin_judgementsofthejust" id="52030"/>
-      XML
-
-      (Hpricot.XML(xml)%'token')
+      xml = file_fixture('armory/item-info/27644.xml')
+      (Hpricot.XML(xml)%'cost'/'token')[0]
     end
   end
 end

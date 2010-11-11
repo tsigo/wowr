@@ -8,7 +8,7 @@ module Wowr::Armory::Item
     its(:items) { should be_an(Array) }
     its(:set_bonuses) { should be_an(Array) }
 
-    # Alias methods
+    # Aliased methods
     its(:to_s) { should eql("Sanctification Garb") }
 
     it "should parse items in the set" do
@@ -28,20 +28,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-tooltip.xml?i=46163
-      xml = <<-XML
-      <setData>
-        <name>Sanctification Garb</name>
-        <item name="Circlet of Sanctification"/>
-        <item name="Handwraps of Sanctification"/>
-        <item name="Mantle of Sanctification"/>
-        <item name="Pants of Sanctification"/>
-        <item name="Raiments of Sanctification"/>
-        <setBonus desc="Increases the damage done by your Devouring Plague by 15%." threshold="2"/>
-        <setBonus desc="Your Mind Blast also grants you 240 haste rating for 4 sec." threshold="4"/>
-      </setData>
-      XML
-
+      xml = file_fixture('armory/item-tooltip/46163.xml')
       (Hpricot.XML(xml)%'setData')
     end
   end

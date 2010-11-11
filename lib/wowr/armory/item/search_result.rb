@@ -1,7 +1,9 @@
 module Wowr
   module Armory
     module Item
-      # Represents a single <tt><item></tt> element returned by an item search
+      # = SearchResult
+      #
+      # Represents a single <tt>item</tt> element returned by an item search
       #
       # == Relevant XML example:
       #
@@ -49,11 +51,13 @@ module Wowr
 
         alias_method :level, :item_level
 
+        # @param [Hpricot::Elem] elem <tt>item</tt> element
+        # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           super(elem, api)
+
           @rarity     = elem[:rarity].to_i
           @url        = elem[:url]
-
           @item_level = elem.at("filter[@name='itemLevel']")[:value].to_i
           @source     = elem.at("filter[@name='source']")[:value]
           @relevance  = elem.at("filter[@name='relevance']")[:value].to_i

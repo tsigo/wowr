@@ -4,8 +4,8 @@ module Wowr::Armory::Item
   describe Cost, "with tokens" do
     subject { Cost.new(fake_element) }
 
-    its(:buy_price)   { should be_nil }
-    its(:sell_price)  { should be_nil }
+    its(:buy_price)   { subject.to_i.should eql(137_714) }
+    its(:sell_price)  { subject.to_i.should eql(27_542) }
     its(:tokens)      { should be_an(Array) }
     its(:honor_price) { should be_nil }
     its(:arena_price) { should be_nil }
@@ -23,14 +23,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-info.xml?i=51255
-      xml = <<-XML
-      <cost>
-        <token count="1" icon="ability_paladin_judgementsofthejust" id="52030"/>
-        <token count="1" icon="inv_helmet_156" id="51184"/>
-      </cost>
-      XML
-
+      xml = file_fixture('armory/item-info/27644.xml')
       (Hpricot.XML(xml)%'cost')
     end
   end
@@ -38,20 +31,16 @@ module Wowr::Armory::Item
   describe Cost, "without tokens" do
     subject { Cost.new(fake_element) }
 
-    its(:buy_price)   { should be_a(Wowr::Classes::Money) }
-    its(:sell_price)  { should be_a(Wowr::Classes::Money) }
-    its(:tokens)      { should be_nil }
+    its(:buy_price)   { should be_nil }
+    its(:sell_price)  { subject.to_i.should eql(225_096) }
+    its(:tokens)      { should eql([]) }
     its(:honor_price) { should be_nil }
     its(:arena_price) { should be_nil }
 
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-info.xml?i=16453
-      xml = <<-XML
-      <cost buyPrice="201241" sellPrice="40248"/>
-      XML
-
+      xml = file_fixture('armory/item-info/40395.xml')
       (Hpricot.XML(xml)%'cost')
     end
   end

@@ -22,13 +22,11 @@ module Wowr::Armory::Item
 
     def fake_info
       xml = file_fixture('armory/item-info/40395.xml')
-
       (Hpricot.XML(xml)%'itemInfo')
     end
 
     def fake_tooltip
       xml = file_fixture('armory/item-tooltip/40395.xml')
-
       (Hpricot.XML(xml)%'itemTooltip')
     end
   end

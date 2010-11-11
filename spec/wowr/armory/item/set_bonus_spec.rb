@@ -15,14 +15,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-tooltip.xml?i=46163
-      xml = <<-XML
-      <setData>
-        <setBonus desc="Increases the damage done by your Devouring Plague by 15%." threshold="2"/>
-        <setBonus desc="Your Mind Blast also grants you 240 haste rating for 4 sec." threshold="4"/>
-      </setData>
-      XML
-
+      xml = file_fixture('armory/item-tooltip/46163.xml')
       (Hpricot.XML(xml)%'setData'/'setBonus')[0]
     end
   end

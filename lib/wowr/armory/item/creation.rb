@@ -2,10 +2,12 @@ module Wowr
   module Armory
     module Item
       # TODO rename
-      # There is some sort of opposite relationship between PlansFor and CreatedBy
       class Creation < Wowr::Armory::Item::Base
 
-        # FIXME: item attribute is never assigned to; working as intended? (tsigo)
+        # NOTE: item is assigned by PlansFor, which subclasses Creation
+        # This seems like bad, confusing design. Why doesn't PlansFor just
+        # define the item attribute?
+
         attr_reader :item, :reagents
 
         def initialize(elem, api = nil)

@@ -1,7 +1,9 @@
 module Wowr
   module Armory
     module Item
-      # Represents a <tt><damageData></tt> element
+      # = DamageData
+      #
+      # Represents a <tt>damageData</tt> element
       #
       # == Relevant XML example:
       #
@@ -47,6 +49,7 @@ module Wowr
         # @return [Float]
         attr_reader :dps
 
+        # @param [Hpricot::Elem] elem <tt>damageData</tt> element
         def initialize(elem)
           @type   = (elem%'damage'%'type').html.to_i
           @min    = (elem%'damage'%'min').html.to_i

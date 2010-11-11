@@ -1,7 +1,9 @@
 module Wowr
   module Armory
     module Item
-      # Represents an <tt><item></tt> element in a <tt><disenchantLoot></tt> element
+      # = Disenchant
+      #
+      # Represents an <tt>item</tt> element in a <tt>disenchantLoot</tt> element
       #
       # == Relevant XML example:
       #
@@ -42,6 +44,8 @@ module Wowr
         # @return [Integer]
         attr_reader :quality
 
+        # @param [Hpricot::Elem] elem <tt>item</tt> element
+        # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           super(elem, api)
 

@@ -14,13 +14,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-info.xml?i=44382
-      xml = <<-XML
-      <rewardFromQuests>
-        <quest area="Icecrown" id="13219" level="80" name="Battle at Valhalas: Final Challenge" reqMinLevel="77" suggestedPartySize="5" type="Group"/>
-      </rewardFromQuests>
-      XML
-
+      xml = file_fixture('armory/item-info/44382.xml')
       (Hpricot.XML(xml)%'rewardFromQuests'/'quest')[0]
     end
   end

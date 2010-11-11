@@ -1,12 +1,21 @@
 module Wowr
   module Armory
     module Item
-      # Represents an item containing full information from both item-info and
-      # item-tooltip pages
+      # = Full
+      #
+      # Acts as a gateway for a complete item, containing information from both
+      # <tt>item-info.xml</tt> and <tt>item-tooltip.xml</tt> pages
+      #
+      # @see {Info}
+      # @see {Tooltip}
       class Full < Base
+        # @param [Hpricot::Elem] info <tt>itemInfo/item</tt> element
+        # @param [Hpricot::Elem] tooltip <tt>itemTooltip</tt> element
+        # @param [Wowr::API::API] api
         def initialize(info, tooltip, api = nil)
           super(info, api)
-          @info = Info.new(info, api)
+
+          @info    = Info.new(info, api)
           @tooltip = Tooltip.new(tooltip, api)
         end
 

@@ -1,7 +1,9 @@
 module Wowr
   module Armory
     module Item
-      # Represents an <tt><equipData></tt> element
+      # = EquipData
+      #
+      # Represents an <tt>equipData</tt> element
       #
       # == Relevant XML example:
       #
@@ -29,10 +31,11 @@ module Wowr
         # @return [Integer]
         attr_reader :container_slots
 
+        # @param [Hpricot::Elem] elem <tt>equipData</tt> element
         def initialize(elem)
-          @inventory_type = (elem%'inventoryType').html.to_i
-          @subclass_name = (elem%'subclassName').html if (elem%'subclassName')
-          @container_slots = (elem%'containerSlots').html.to_i if (elem%'containerSlots') # for baggies
+          @inventory_type  = (elem%'inventoryType').html.to_i
+          @subclass_name   = (elem%'subclassName').html        if (elem%'subclassName')
+          @container_slots = (elem%'containerSlots').html.to_i if (elem%'containerSlots')
         end
       end
     end

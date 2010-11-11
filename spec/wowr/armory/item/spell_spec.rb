@@ -3,28 +3,19 @@ require 'spec_helper'
 module Wowr::Armory::Item
   describe Spell do
     subject { Spell.new(fake_element) }
-    let(:expected_desc) { "Teaches you how to summon this mount.  This is a very fast mount." }
+    let(:expected_desc) { "Your healing spells have a chance to cause Blessing of Ancient Kings for 15 sec allowing your heals to shield the target absorbing damage equal to 15% of the amount healed." }
 
-    its(:trigger)     { should eql(6) }
+    its(:trigger)     { should eql(1) }
     its(:description) { should eql(expected_desc) }
 
-    # Alias methods
+    # Aliased methods
     its(:desc) { should eql(expected_desc) }
     its(:to_s) { should eql(expected_desc) }
 
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-tooltip.xml?i=49098
-      xml = <<-XML
-      <spellData>
-        <spell>
-          <trigger>6</trigger>
-          <desc>Teaches you how to summon this mount.  This is a very fast mount.</desc>
-        </spell>
-      </spellData>
-      XML
-
+      xml = file_fixture('armory/item-tooltip/46017.xml')
       (Hpricot.XML(xml)%'spellData'/'spell')[0]
     end
   end

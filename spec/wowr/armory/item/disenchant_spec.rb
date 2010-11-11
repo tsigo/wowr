@@ -11,10 +11,7 @@ module Wowr::Armory::Item
     its(:max_count)  { should eql(1) }
     its(:quality)    { should eql(4) }
 
-    # Inherited from Base
-    its(:name)       { should eql("Abyss Crystal") }
-    its(:icon_base)  { should eql("inv_enchant_abysscrystal") }
-    its(:id)         { should eql(34057) }
+    its(:class) { should superclass(Base) }
 
     protected
 

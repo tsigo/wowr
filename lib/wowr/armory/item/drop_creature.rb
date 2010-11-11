@@ -1,11 +1,17 @@
 module Wowr
   module Armory
     module Item
-      # Represents a <tt><creature></tt> element that drops an item
+      # = DropCreature
+      #
+      # Represents a <tt>creature</tt> element that drops an item
       #
       # == Relevant XML example:
       #
-      #   <creature area="Molten Core" areaUrl="fl[source]=dungeon&amp;fl[dungeon]=moltencore&amp;fl[boss]=all&amp;fl[difficulty]=all" classification="3" dropRate="2" heroic="1" id="11502" maxLevel="63" minLevel="63" name="Ragnaros" type="Elemental" url="fl[source]=dungeon&amp;fl[dungeon]=moltencore&amp;fl[difficulty]=heroic&amp;fl[boss]=11502"/>
+      #   <creature area="Molten Core"
+      #     areaUrl="fl[source]=dungeon&amp;fl[dungeon]=moltencore&amp;fl[boss]=all&amp;fl[difficulty]=all"
+      #     classification="3" dropRate="2" heroic="1" id="11502" maxLevel="63"
+      #     minLevel="63" name="Ragnaros" type="Elemental"
+      #     url="fl[source]=dungeon&amp;fl[dungeon]=moltencore&amp;fl[difficulty]=heroic&amp;fl[boss]=11502"/>
       #
       # == Example Pages:
       #
@@ -45,6 +51,7 @@ module Wowr
         # @return [String]
         attr_reader :area
 
+        # @param [Hpricot::Elem] elem <tt>creature</tt> element
         def initialize(elem)
           @name           = elem[:name]
           @id             = elem[:id].to_i

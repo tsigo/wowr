@@ -1,7 +1,9 @@
 module Wowr
   module Armory
     module Item
-      # Represents a spell description for an item
+      # = Spell
+      #
+      # Represents an item's <tt>spell</tt> element
       #
       # == Relevant XML Example:
       #
@@ -16,20 +18,18 @@ module Wowr
       # * http://www.wowarmory.com/item-tooltip.xml?i=50818
       # * http://www.wowarmory.com/item-tooltip.xml?i=49177
       class Spell
-        # Spell trigger
         # @return [Integer]
         attr_reader :trigger
 
-        # Spell description
         # @return [String]
         attr_reader :description
 
         alias_method :desc, :description
         alias_method :to_s, :description
 
-        # @param [Hpricot::Elem] elem <tt><spell></tt> element
+        # @param [Hpricot::Elem] elem <tt>spell</tt> element
         def initialize(elem)
-          @trigger = (elem%'trigger').html.to_i
+          @trigger     = (elem%'trigger').html.to_i
           @description = (elem%'desc').html
         end
       end

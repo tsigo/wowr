@@ -1,6 +1,8 @@
 module Wowr
   module Armory
     module Item
+      # = Source
+      #
       # Represents an <tt>itemSource</tt> element
       #
       # == Relevant XML example:
@@ -44,15 +46,16 @@ module Wowr
         # @return [Integer]
         attr_reader :drop_rate
 
+        # @param [Hpricot::Elem] elem <tt>itemSource</tt> element
         def initialize(elem)
           @value          = elem[:value]
-          @area_id        = elem[:areaId].to_i      if elem[:areaId]
-          @area_name      = elem[:areaName]         if elem[:areaName]
-          @creature_id    = elem[:creatureId].to_i  if elem[:creatureId]
-          @creature_name  = elem[:creatureName]     if elem[:creatureName]
-          @difficulty     = elem[:difficulty]       if elem[:difficulty]
-          @drop_rate      = elem[:dropRate].to_i    if elem[:dropRate]
-          @required_level = elem[:reqLvl].to_i      if elem[:reqLvl]
+          @area_id        = elem[:areaId].to_i     if elem[:areaId]
+          @area_name      = elem[:areaName]        if elem[:areaName]
+          @creature_id    = elem[:creatureId].to_i if elem[:creatureId]
+          @creature_name  = elem[:creatureName]    if elem[:creatureName]
+          @difficulty     = elem[:difficulty]      if elem[:difficulty]
+          @drop_rate      = elem[:dropRate].to_i   if elem[:dropRate]
+          @required_level = elem[:reqLvl].to_i     if elem[:reqLvl]
         end
       end
     end
