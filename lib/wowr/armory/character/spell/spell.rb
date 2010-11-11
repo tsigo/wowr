@@ -69,18 +69,24 @@ module Wowr
 
           # @param [Hpricot::Elem] elem <tt>spell</tt> element
           def initialize(elem)
-            @arcane = Wowr::Classes::SpellDamage.new(elem%'bonusDamage'%'arcane', elem%'critChance'%'arcane')
-            @fire   = Wowr::Classes::SpellDamage.new(elem%'bonusDamage'%'fire',   elem%'critChance'%'fire')
-            @frost  = Wowr::Classes::SpellDamage.new(elem%'bonusDamage'%'frost',  elem%'critChance'%'frost')
-            @holy   = Wowr::Classes::SpellDamage.new(elem%'bonusDamage'%'holy',   elem%'critChance'%'holy')
-            @nature = Wowr::Classes::SpellDamage.new(elem%'bonusDamage'%'nature', elem%'critChance'%'nature')
-            @shadow = Wowr::Classes::SpellDamage.new(elem%'bonusDamage'%'shadow', elem%'critChance'%'shadow')
+            @arcane = damage_type(elem, :arcane)
+            @fire   = damage_type(elem, :fire)
+            @frost  = damage_type(elem, :frost)
+            @holy   = damage_type(elem, :holy)
+            @nature = damage_type(elem, :nature)
+            @shadow = damage_type(elem, :shadow)
 
             @bonus_healing = (elem%'bonusHealing')[:value].to_i
             @penetration   = (elem%'penetration')[:value].to_i
             @hit_rating    = HitRating.new(elem%'hitRating')
-            @mana_regen    = Wowr::Classes::ManaRegen.new(elem%'manaRegen')
-            @speed         = Wowr::Classes::SpellSpeed.new(elem%'hasteRating')
+            @mana_regen    = ManaRegen.new(elem%'manaRegen')
+            @speed         = Speed.new(elem%'hasteRating')
+          end
+
+          private
+
+          def damage_type(elem, type)
+            Damage.new(elem%'bonusDamage'%type, elem%'critChance'%type)
           end
         end
       end
