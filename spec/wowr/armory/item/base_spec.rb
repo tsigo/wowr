@@ -16,13 +16,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-info.xml?i=40395
-      xml = <<-XML
-      <itemInfo>
-        <item icon="inv_mace_82" id="40395" level="226" name="Torch of Holy Fire" quality="4" type="One-Handed Maces">
-      </itemInfo>
-      XML
-
+      xml = file_fixture('armory/item-info/40395.xml')
       (Hpricot.XML(xml)%'itemInfo'/'item')[0]
     end
   end
@@ -59,13 +53,7 @@ module Wowr::Armory::Item
     protected
 
     def fake_element
-      # http://www.wowarmory.com/item-info.xml?i=40395
-      xml = <<-XML
-      <itemInfo>
-        <item icon="inv_mace_82" id="40395" level="226" name="Torch of Holy Fire" quality="4" type="One-Handed Maces">
-      </itemInfo>
-      XML
-
+      xml = file_fixture('armory/item-info/40395.xml')
       (Hpricot.XML(xml)%'itemInfo'/'item')[0]
     end
   end

@@ -4,10 +4,10 @@ module Wowr::Armory::Item
   describe Info, "40395 - Torch of Holy Fire" do
     subject { Info.new(fake_element) }
 
-    its(:level) { should eql(226) }
+    its(:level)   { should eql(226) }
     its(:quality) { should eql(4) }
-    its(:type) { should eql("One-Handed Maces") }
-    its(:cost) { should be_kind_of(Cost) }
+    its(:type)    { should eql("One-Handed Maces") }
+    its(:cost)    { should be_kind_of(Cost) }
 
     describe "disenchant_items" do
       it "should be an Array of Disenchant instances" do
