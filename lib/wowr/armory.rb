@@ -7,16 +7,29 @@ module Wowr
   module Armory
     extend self
 
-    QUALITIES = [
-      :trash,
-      :common,
-      :uncommon,
-      :rare,
-      :epic,
-      :legendary,
-      :artifact,
-      :heirloom
-    ]
+    # @see #damage_type
+    DAMAGE_TYPES = [:physical, :holy, :fire, :nature, :frost, :shadow, :arcane].freeze
+
+    # @see #quality
+    QUALITIES = [:trash, :common, :uncommon, :rare, :epic, :legendary, :artifact, :heirloom].freeze
+
+    # Maps an integer-based damage type to its name
+    #
+    # @example
+    #   >> Armory.damage_type(3)
+    #   => :fire
+    #   >> Armory.damage_type(6)
+    #   => :arcane
+    # @raise [ArgumentError] Invalid damage type
+    # @param [Integer] type
+    # @return [Symbol]
+    def damage_type(type)
+      type = type.to_i
+
+      raise ArgumentError, 'invalid damage type' unless (0..6).include? type
+
+      DAMAGE_TYPES[type]
+    end
 
     # Maps an integer-based quality value to its name
     #

@@ -26,14 +26,7 @@ module Wowr
       # * http://www.wowarmory.com/item-tooltip.xml?i=50727
       # * http://www.wowarmory.com/item-tooltip.xml?i=50733
       class DamageData
-        # Damage type:
-        # * 0 - Physical
-        # * 1 - Holy
-        # * 2 - Fire
-        # * 3 - Nature
-        # * 4 - Frost
-        # * 5 - Shadow
-        # * 6 - Arcane
+        # @see Wowr::Armory#damage_type
         # @return [Integer]
         attr_reader :type
 
