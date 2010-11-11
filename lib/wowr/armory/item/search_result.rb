@@ -23,17 +23,9 @@ module Wowr
         # @return [String]
         attr_reader :url
 
-        # Item rarity (quality)
-        # * 0 - Trash (Grey)
-        # * 1 - Common (White)
-        # * 2 - Uncommon (Green)
-        # * 3 - Rare (Blue)
-        # * 4 - Epic (Purple)
-        # * 5 - Legendary (Orange)
-        # * 6
-        # * 7 - Heirloom (Gold)
+        # @see Wowr::Armory#quality
         # @return [Integer]
-        attr_reader :rarity
+        attr_reader :quality
 
         # sourceType string
         # @example
@@ -50,13 +42,14 @@ module Wowr
         attr_reader :relevance
 
         alias_method :level, :item_level
+        alias_method :rarity, :quality
 
         # @param [Hpricot::Elem] elem <tt>item</tt> element
         # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           super(elem, api)
 
-          @rarity     = elem[:rarity].to_i
+          @quality    = elem[:rarity].to_i
           @url        = elem[:url]
           @item_level = elem.at("filter[@name='itemLevel']")[:value].to_i
           @source     = elem.at("filter[@name='source']")[:value]

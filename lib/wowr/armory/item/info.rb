@@ -28,17 +28,9 @@ module Wowr
         # @return [Integer]
         attr_reader :level
 
-        # Item rarity (quality)
-        # * 0 - Trash (Grey)
-        # * 1 - Common (White)
-        # * 2 - Uncommon (Green)
-        # * 3 - Rare (Blue)
-        # * 4 - Epic (Purple)
-        # * 5 - Legendary (Orange)
-        # * 6
-        # * 7 - Heirloom (Gold)
+        # @see Wowr::Armory#quality
         # @return [Integer]
-        attr_reader :quality # FIXME: SearchResult calls this attribute 'rarity', here we call it 'quality' - normalize or alias
+        attr_reader :quality
 
         # @example
         #   "One-Handed Maces"
