@@ -8,6 +8,8 @@ module Wowr
     # @see #damage_type
     DAMAGE_TYPES = [:physical, :holy, :fire, :nature, :frost, :shadow, :arcane].freeze
 
+    ELEMENT_TYPES = DAMAGE_TYPES.dup.delete_if { |v| v == :physical }.freeze
+
     # @see #faction
     FACTIONS = [:alliance, :horde].freeze
 
