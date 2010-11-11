@@ -1,14 +1,25 @@
 module Wowr
   module Armory
     module Character
-      # Full character details with reputations
-      class Full < Wowr::Armory::Character::Info
-        # Array of {Wowr::Armory::Faction} instances
-        # @return [Array]
+      # = Full
+      #
+      # Represents a full collection of information for a character. Requires
+      # information from <tt>character-sheet.xml</tt>,
+      # <tt>character-reputation.xml</tt> and <tt>character-talents.xml</tt>
+      # pages.
+      #
+      # @todo Info is only used by this class and never instantiated directly.
+      #   Could we just incorporate it here?
+      class Full < Info
+        # @return [Array] Array of {Faction} instances
         attr_reader :reputation
 
         alias_method :rep, :reputation
 
+        # @param [Hpricot::Elem] sheet <tt>character-sheet.xml</tt> page
+        # @param [Hpricot::Elem] reputation <tt>character-reputation.xml</tt> page
+        # @param [Hpricot::Elem] talents <tt>character-talents.xml</tt> page
+        # @param [Wowr::API::API] api
         def initialize(sheet, reputation, talents, api = nil)
           @api = api
 
