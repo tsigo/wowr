@@ -23,7 +23,6 @@
 # Source: http://gist.github.com/361658
 
 require 'logger'
-require 'ftools'
 require 'tmpdir'
 require 'pathname'
 require 'digest/md5'
