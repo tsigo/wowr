@@ -1,20 +1,16 @@
-require 'cgi'
-
-module Wowr
-  module API
-    # @todo Move to separate file
-    module ArmoryClient
-      include HTTParty
-      include HTTParty::Icebox
-
-      headers 'User-Agent' => 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10'
-    end
-  end
-end
-
 module Wowr
   module API
     module Client
+      # = ArmoryClient
+      #
+      # HTTParty class for making requests to the Armory
+      class ArmoryClient
+        include HTTParty
+        include HTTParty::Icebox
+
+        headers 'User-Agent' => 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.10) Gecko/20100914 Firefox/3.6.10'
+      end
+
       def self.included(base)
         base.class_eval do
           @@armory_base_url   = 'wowarmory.com/'.freeze
@@ -257,7 +253,6 @@ module Wowr
         end
       end
 
-      # TODO: moved parsing out of get_xml, maybe add Nokogiri faster than Hpricot?
       def parser(response, options = {})
         doc = Hpricot.XML(response)
         errors = doc.search("*[@errCode]")
@@ -288,8 +283,7 @@ module Wowr
         JSON.parse(response)
       end
 
-      # Return a raw document for the given URL
-      # TODO: Tidy up?
+      # Given a url and a hash of query parameters, fetches a file from the Armory as raw XML
       def get_file(url, options = {})
         query = remap_parameters(options)
 
@@ -300,6 +294,7 @@ module Wowr
         if options[:caching]
           client.cache :store => 'file', :timeout => @cache_timeout, :location => @@cache_directory_path
         else
+          # Default setting
           client.cache :store => 'memory', :timeout => 60
         end
 
@@ -317,9 +312,8 @@ module Wowr
       # Remap verbose option keys to the parameter keys used by the Armory
       #
       # @example
-      #   >> options = {:character_name => 'Tsigo', :realm => "Mal'Ganis"}
-      #   >> puts remap_parameters(options)
-      #   => {:cn => "Tsigo", :r => "Mal'Ganis"}
+      #   >> remap_parameters(:character_name => 'Tsigo', :realm => "Mal'Ganis", :guild_name => 'Juggernaut')
+      #   => {:cn => "Tsigo", :r => "Mal'Ganis", :gn => "Juggernaut"}
       # @param [Hash] options Options hash
       def remap_parameters(options = {})
         @option_map ||= {
