@@ -31,7 +31,6 @@ giving access to items, characters, guilds and arena teams. It is designed for b
   s.add_development_dependency "rspec",    "~> 2.0.0"
   s.add_development_dependency "yard",     "~> 0.6.1"
 
-  s.add_dependency "hpricot",  "= 0.8.2" # TODO: Remove after transition to Nokogiri
   s.add_dependency "httparty", "~> 0.6.1"
   s.add_dependency "json",     "~> 1.4.3"
   s.add_dependency "nokogiri", "~> 1.4"
