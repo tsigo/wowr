@@ -13,7 +13,7 @@ module Wowr::Armory::Character::BaseStats
 
     def fake_element
       xml = file_fixture('armory/character-sheet/fearsom_mal_ganis.xml')
-      (Hpricot.XML(xml)%'baseStats'%'spirit')
+      (Nokogiri::XML(xml)%'baseStats'%'spirit')
     end
   end
 end

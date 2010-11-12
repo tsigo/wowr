@@ -20,7 +20,7 @@ module Wowr::Armory::Character
 
       %w(sheet reputation talents).each do |page|
         xml = file_fixture("armory/character-#{page}/sebudai_mal_ganis.xml")
-        pages << (Hpricot.XML(xml)%'page')
+        pages << (Nokogiri::XML(xml)%'page')
       end
 
       pages

@@ -11,7 +11,7 @@ module Wowr::Armory::Character
 
     def fake_element
       xml = file_fixture('armory/character-sheet/sebudai_mal_ganis.xml')
-      (Hpricot.XML(xml)%'pvp')
+      (Nokogiri::XML(xml)%'pvp')
     end
   end
 end

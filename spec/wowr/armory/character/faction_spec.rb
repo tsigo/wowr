@@ -15,7 +15,7 @@ module Wowr::Armory::Character
 
     def fake_element
       xml = file_fixture('armory/character-reputation/sebudai_mal_ganis.xml')
-      (Hpricot.XML(xml).search("faction[@key='thetaunka']").first)
+      (Nokogiri::XML(xml).search("faction[@key='thetaunka']").first)
     end
   end
 
@@ -33,7 +33,7 @@ module Wowr::Armory::Character
 
     def fake_element
       xml = file_fixture('armory/character-reputation/sebudai_mal_ganis.xml')
-      (Hpricot.XML(xml).search("faction[@header='1']").first)
+      (Nokogiri::XML(xml).search("faction[@header='1']").first)
     end
   end
 end

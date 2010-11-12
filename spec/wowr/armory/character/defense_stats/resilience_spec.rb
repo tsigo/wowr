@@ -12,7 +12,7 @@ module Wowr::Armory::Character::DefenseStats
 
     def fake_element
       xml = file_fixture('armory/character-sheet/sebudai_mal_ganis.xml')
-      (Hpricot.XML(xml)%'defenses'%'resilience')
+      (Nokogiri::XML(xml)%'defenses'%'resilience')
     end
   end
 end

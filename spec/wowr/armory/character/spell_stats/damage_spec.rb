@@ -14,7 +14,7 @@ module Wowr::Armory::Character::SpellStats
 
     def fake_element
       xml = file_fixture('armory/character-sheet/fearsom_mal_ganis.xml')
-      elem = (Hpricot.XML(xml)%'spell')
+      elem = (Nokogiri::XML(xml)%'spell')
 
       [elem%'bonusDamage'%'shadow', elem%'critChance'%'shadow']
     end

@@ -16,7 +16,7 @@ module Wowr::Armory::Achievement
 
     def fake_element
       xml = file_fixture('armory/character-achievements/sebudai_mal_ganis_c_168.xml')
-      (Hpricot.XML(xml).search("achievement[@id=4603]").first)
+      (Nokogiri::XML(xml).search("achievement[@id='4603']").first)
     end
   end
 
@@ -30,7 +30,7 @@ module Wowr::Armory::Achievement
 
     def fake_element
       xml = file_fixture('armory/character-achievements/sebudai_mal_ganis_c_81.xml')
-      (Hpricot.XML(xml).search("achievement[@id=4079]").first)
+      (Nokogiri::XML(xml).search("achievement[@id='4079']").first)
     end
   end
 end

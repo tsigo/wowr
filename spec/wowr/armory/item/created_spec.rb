@@ -14,7 +14,7 @@ module Wowr::Armory::Item
 
     def fake_element
       xml = file_fixture('armory/item-info/17204.xml')
-      (Hpricot.XML(xml)%'reagentFor'/'spell'/'item')[0]
+      (Nokogiri::XML(xml)%'reagentFor'/'spell'/'item')[0]
     end
   end
 end

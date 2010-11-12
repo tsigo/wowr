@@ -21,7 +21,7 @@ module Wowr::Armory::ArenaTeam
 
     def fake_element
       xml = file_fixture('armory/team-info/dont_kill_comfort_ysera.xml')
-      (Hpricot.XML(xml)%'arenaTeam')
+      (Nokogiri::XML(xml)%'arenaTeam')
     end
   end
 end

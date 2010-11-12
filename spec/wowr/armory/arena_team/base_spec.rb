@@ -24,7 +24,7 @@ module Wowr::Armory::ArenaTeam
 
     def fake_element
       xml = file_fixture('armory/search/arena_teams_lemon.xml')
-      (Hpricot.XML(xml).search("arenaTeam[@battleGroup='Cyclone']").first)
+      (Nokogiri::XML(xml).search("arenaTeam[@battleGroup='Cyclone']").first)
     end
   end
 end

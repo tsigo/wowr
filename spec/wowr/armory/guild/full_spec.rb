@@ -22,7 +22,7 @@ module Wowr::Armory::Guild
 
     def fake_element
       xml = file_fixture('armory/guild-info/juggernaut_mal_ganis.xml')
-      (Hpricot.XML(xml)%'page')
+      (Nokogiri::XML(xml)%'page')
     end
   end
 end

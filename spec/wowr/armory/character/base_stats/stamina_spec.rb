@@ -13,7 +13,7 @@ module Wowr::Armory::Character::BaseStats
 
     def fake_element
       xml = file_fixture('armory/character-sheet/sebudai_mal_ganis.xml')
-      (Hpricot.XML(xml)%'baseStats'%'stamina')
+      (Nokogiri::XML(xml)%'baseStats'%'stamina')
     end
   end
 end

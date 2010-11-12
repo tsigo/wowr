@@ -26,7 +26,7 @@ module Wowr::Armory::Achievement
 
     def fake_element
       xml = file_fixture('armory/character-achievements/sebudai_mal_ganis.xml')
-      (Hpricot.XML(xml).search("category[@id=96]").first)
+      (Nokogiri::XML(xml).search("category[@id='96']").first)
     end
   end
 end

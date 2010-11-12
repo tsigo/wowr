@@ -13,7 +13,7 @@ module Wowr::Armory::Character
 
     def fake_element
       xml = file_fixture('armory/character-sheet/alephone_mal_ganis.xml')
-      (Hpricot.XML(xml)%'secondBar')
+      (Nokogiri::XML(xml)%'secondBar')
     end
   end
 end

@@ -27,7 +27,7 @@ module Wowr::Armory::Dungeon
 
     def fake_element
       xml = file_fixture('armory/dungeons/dungeons.xml')
-      (Hpricot.XML(xml).search("dungeon[@key='onyxiaslair']").first)
+      (Nokogiri::XML(xml).search("dungeon[@key='onyxiaslair']").first)
     end
   end
 end

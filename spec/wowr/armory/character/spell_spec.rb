@@ -18,7 +18,7 @@ module Wowr::Armory::Character
 
     def fake_element
       xml = file_fixture('armory/character-sheet/fearsom_mal_ganis.xml')
-      (Hpricot.XML(xml)%'spell')
+      (Nokogiri::XML(xml)%'spell')
     end
 
   end

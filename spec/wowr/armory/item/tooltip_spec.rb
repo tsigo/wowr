@@ -49,7 +49,7 @@ module Wowr::Armory::Item
 
     def fake_element
       xml = file_fixture('armory/item-tooltip/40395.xml')
-      (Hpricot.XML(xml)%'itemTooltip')
+      (Nokogiri::XML(xml)%'itemTooltip')
     end
   end
 
@@ -79,7 +79,7 @@ module Wowr::Armory::Item
 
     def fake_element
       xml = file_fixture('armory/item-tooltip/46017.xml')
-      (Hpricot.XML(xml)%'itemTooltip')
+      (Nokogiri::XML(xml)%'itemTooltip')
     end
   end
 
@@ -113,7 +113,7 @@ module Wowr::Armory::Item
 
     def fake_element
       xml = file_fixture('armory/item-tooltip/16922.xml')
-      (Hpricot.XML(xml)%'itemTooltip')
+      (Nokogiri::XML(xml)%'itemTooltip')
     end
   end
 
@@ -128,7 +128,7 @@ module Wowr::Armory::Item
 
     def fake_element
       xml = file_fixture('armory/item-tooltip/50727.xml')
-      (Hpricot.XML(xml)%'itemTooltip')
+      (Nokogiri::XML(xml)%'itemTooltip')
     end
   end
 
@@ -141,7 +141,7 @@ module Wowr::Armory::Item
 
     def fake_element
       xml = file_fixture('armory/item-tooltip/40111.xml')
-      (Hpricot.XML(xml)%'itemTooltip')
+      (Nokogiri::XML(xml)%'itemTooltip')
     end
   end
 

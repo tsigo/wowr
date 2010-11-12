@@ -100,7 +100,7 @@ module Wowr::Armory::Character
 
     def fake_element
       xml = file_fixture('armory/search/characters_sebudai.xml')
-      (Hpricot.XML(xml)%'characters'/'character')[3]
+      (Nokogiri::XML(xml)%'characters'/'character')[3]
     end
   end
 end

@@ -12,7 +12,7 @@ module Wowr::Armory::Item
 
     def fake_element
       xml = file_fixture('armory/item-tooltip/49295.xml')
-      (Hpricot.XML(xml)%'equipData')
+      (Nokogiri::XML(xml)%'equipData')
     end
   end
 end

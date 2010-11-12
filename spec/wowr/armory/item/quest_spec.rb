@@ -15,7 +15,7 @@ module Wowr::Armory::Item
 
     def fake_element
       xml = file_fixture('armory/item-info/44382.xml')
-      (Hpricot.XML(xml)%'rewardFromQuests'/'quest')[0]
+      (Nokogiri::XML(xml)%'rewardFromQuests'/'quest')[0]
     end
   end
 end

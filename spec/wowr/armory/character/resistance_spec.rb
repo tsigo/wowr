@@ -15,7 +15,7 @@ module Wowr::Armory::Character
       # using a fixture to catch any changes to the Armory attributes.
 
       xml = file_fixture('armory/character-sheet/sebudai_mal_ganis.xml')
-      elem = (Hpricot.XML(xml)%'resistances'/'shadow')[0]
+      elem = (Nokogiri::XML(xml)%'resistances'/'shadow')[0]
 
       elem[:value].should_not be_nil
       elem[:petBonus].should_not be_nil

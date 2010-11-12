@@ -12,7 +12,7 @@ module Wowr::Armory::Character::DefenseStats
 
     def fake_element
       xml = file_fixture('armory/character-sheet/alephone_mal_ganis.xml')
-      (Hpricot.XML(xml)%'defenses'%'dodge')
+      (Nokogiri::XML(xml)%'defenses'%'dodge')
     end
   end
 
@@ -27,7 +27,7 @@ module Wowr::Armory::Character::DefenseStats
 
     def fake_element
       xml = file_fixture('armory/character-sheet/alephone_mal_ganis.xml')
-      (Hpricot.XML(xml)%'defenses'%'parry')
+      (Nokogiri::XML(xml)%'defenses'%'parry')
     end
   end
 
@@ -42,7 +42,7 @@ module Wowr::Armory::Character::DefenseStats
 
     def fake_element
       xml = file_fixture('armory/character-sheet/alephone_mal_ganis.xml')
-      (Hpricot.XML(xml)%'defenses'%'block')
+      (Nokogiri::XML(xml)%'defenses'%'block')
     end
   end
 end

@@ -15,7 +15,7 @@ module Wowr::Armory::Achievement
       {:name => '', :id => 0, :earned => "20"}
 
       # xml = file_fixture('armory/character-achievements/sebudai_mal_ganis.xml')
-      # (Hpricot.XML(xml).search('category/c:not([total])').first)
+      # (Nokogiri::XML(xml).search('category/c:not([total])').first)
     end
   end
 end

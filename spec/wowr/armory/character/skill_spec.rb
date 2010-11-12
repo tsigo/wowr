@@ -13,7 +13,7 @@ module Wowr::Armory::Character
 
     def fake_element
       xml = file_fixture('armory/character-sheet/sebudai_mal_ganis.xml')
-      (Hpricot.XML(xml).search("skill[@id=129]").first)
+      (Nokogiri::XML(xml).search("skill[@id='129']").first)
     end
   end
 end

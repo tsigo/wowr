@@ -15,7 +15,7 @@ module Wowr::Armory::Guild
 
     def fake_element
       xml = file_fixture('armory/search/guilds_juggernaut.xml')
-      (Hpricot.XML(xml).search(%{guild[@realm$="Ganis"]})[0])
+      (Nokogiri::XML(xml).search(%{guild[@realm$="Ganis"]})[0])
     end
   end
 end
