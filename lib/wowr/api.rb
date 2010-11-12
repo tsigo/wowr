@@ -4,8 +4,10 @@ module Wowr
     autoload :Client,     'wowr/api/client'
 
     autoload :ArenaTeams, 'wowr/api/arena_teams'
+    autoload :Calendar,   'wowr/api/calendar'
     autoload :Characters, 'wowr/api/characters'
     autoload :Dungeons,   'wowr/api/dungeons'
+    autoload :GuildBank,  'wowr/api/guild_bank'
     autoload :Guilds,     'wowr/api/guilds'
     autoload :Items,      'wowr/api/items'
 

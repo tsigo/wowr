@@ -22,7 +22,6 @@ module Wowr
           @@max_connection_tries = 10.freeze
 
           @@cache_directory_path  = 'cache/'
-          @@default_cache_timeout = (7*24*60*60)
           @@failed_cache_timeout  = (60*60*24)
           @@cache_failed_requests = true
 
@@ -35,7 +34,6 @@ module Wowr
           cattr_reader :max_connection_tries
 
           cattr_accessor :cache_directory_path
-          cattr_accessor :default_cache_timeout
           cattr_accessor :failed_cache_timeout
           cattr_accessor :cache_failed_requests
         end

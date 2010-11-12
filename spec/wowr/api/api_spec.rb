@@ -23,7 +23,6 @@ describe Wowr::API::API, "class accessors" do
   its(:dungeons_strings_url)     { should eql('data/dungeonStrings.xml') }
   its(:max_connection_tries)     { should eql(10) }
   its(:cache_directory_path)     { should eql('cache/') }
-  its(:default_cache_timeout)    { should eql(604800) }
   its(:failed_cache_timeout)     { should eql(86400) }
   its(:cache_failed_requests)    { should be_true }
   its(:calendar_user_url)        { should eql('vault/calendar/month-user.json') }
