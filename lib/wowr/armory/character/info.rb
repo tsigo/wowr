@@ -214,7 +214,7 @@ module Wowr
           end
 
           @all_talent_specs = []
-          @talent_elem.search('talents/TalentGroup').each do |group|
+          @talent_elem.search('talents/talentGroup').each do |group|
              spec = TalentSpec.new(group)
              @all_talent_specs << spec
 

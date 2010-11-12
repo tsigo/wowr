@@ -121,7 +121,7 @@ module Wowr
           @id                 = (elem%'id').inner_text.to_i
           @name               = (elem%'name').inner_text
           @icon_base          = (elem%'icon').inner_text
-          @desc               = (elem/"/desc").text if (elem%'desc')
+          @desc               = elem.xpath('desc').inner_text unless elem.xpath('desc').blank?
           @overall_quality_id = (elem%'overallQualityId').inner_text.to_i
           @bonding            = (elem%'bonding').inner_text.to_i
           @stackable          = (elem%'stackable').inner_text.to_i if (elem%'stackable')

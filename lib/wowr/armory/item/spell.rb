@@ -29,8 +29,8 @@ module Wowr
 
         # @param [Hpricot::Elem] elem <tt>spell</tt> element
         def initialize(elem)
-          @trigger     = (elem%'trigger').html.to_i
-          @description = (elem%'desc').html
+          @trigger     = (elem%'trigger').inner_text.to_i
+          @description = (elem%'desc').inner_text
         end
       end
     end

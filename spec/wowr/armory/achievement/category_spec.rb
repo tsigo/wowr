@@ -10,7 +10,7 @@ module Wowr::Armory::Achievement
     its(:subcategories) { should eql([]) }
 
     describe "add_subcategory" do
-      let(:sub) { (fake_element.search('category').first) }
+      let(:sub) { Category.new(fake_element.search('category').first) }
 
       it "should assign parent" do
         expect { subject.add_subcategory(sub) }.to change(sub, :parent).to(subject)
