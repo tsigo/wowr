@@ -46,8 +46,8 @@ module Wowr
         return Wowr::Classes::FullCharacter.new(character_sheet, character_reputation, character_talents, self)
       end
 
-      # DEPRECATED
-      # See get_character
+      # @deprecated
+      # @see #get_character
       def get_character_sheet(name = @character_name, options = {})
         return get_character(name, options)
       end
