@@ -30,7 +30,7 @@ module Tests
         FakeWeb.register_uri(:get, /item-tooltip\.xml/, :body => file_fixture('armory/item-tooltip/40395.xml'))
 
         # get_arena_team
-        FakeWeb.register_uri(:get, /team-info\.xml/, :body => file_fixture('armory/team-info/fav_five_mal_ganis.xml'))
+        FakeWeb.register_uri(:get, /team-info\.xml/, :body => file_fixture('armory/team-info/dont_kill_comfort_ysera.xml'))
 
         # Search
         FakeWeb.register_uri(:get, /search\.xml.*searchQuery=Cake/, :body => file_fixture('armory/search/items_cake.xml'))
@@ -60,7 +60,7 @@ module Tests
     end
 
     def get_arena_team
-      Wowr::API.new.get_arena_team('Fav Five', 5, :realm => "Mal'Ganis")
+      Wowr::API.new.get_arena_team('Dont Kill Comfort', 5, :realm => "Ysera")
     end
 
     def search_items
