@@ -5,6 +5,7 @@ PATH
       hpricot (= 0.8.2)
       httparty (~> 0.6.1)
       json (~> 1.4.3)
+      nokogiri (~> 1.4)
 
 GEM
   remote: http://rubygems.org/
@@ -19,6 +20,7 @@ GEM
     json (1.4.6)
     mocha (0.9.8)
       rake
+    nokogiri (1.4.3.1)
     rake (0.8.7)
     rcov (0.9.9)
     rspec (2.0.0)
@@ -43,6 +45,7 @@ DEPENDENCIES
   httparty (~> 0.6.1)
   json (~> 1.4.3)
   mocha (~> 0.9)
+  nokogiri (~> 1.4)
   rake (~> 0.8.7)
   rcov (~> 0.9.9)
   rspec (~> 2.0.0)
