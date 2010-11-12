@@ -76,7 +76,7 @@ module Wowr
       protected
 
       def parser(response, options = {})
-        doc = Hpricot.XML(response)
+        doc = Nokogiri::XML(response)
         errors = doc.search("*[@errCode]")
         if errors.size > 0
           errors.each do |error|

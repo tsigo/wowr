@@ -33,9 +33,9 @@ module Wowr
 
         # @param [Hpricot::Elem] elem <tt>equipData</tt> element
         def initialize(elem)
-          @inventory_type  = (elem%'inventoryType').html.to_i
-          @subclass_name   = (elem%'subclassName').html        if (elem%'subclassName')
-          @container_slots = (elem%'containerSlots').html.to_i if (elem%'containerSlots')
+          @inventory_type  = (elem%'inventoryType').inner_text.to_i
+          @subclass_name   = (elem%'subclassName').inner_text        if (elem%'subclassName')
+          @container_slots = (elem%'containerSlots').inner_text.to_i if (elem%'containerSlots')
         end
       end
     end

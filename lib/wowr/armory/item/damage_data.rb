@@ -44,11 +44,11 @@ module Wowr
 
         # @param [Hpricot::Elem] elem <tt>damageData</tt> element
         def initialize(elem)
-          @type   = (elem%'damage'%'type').html.to_i
-          @min    = (elem%'damage'%'min').html.to_i
-          @max    = (elem%'damage'%'max').html.to_i
-          @speed  = (elem%'speed').html.to_f  if (elem%'speed')
-          @dps    = (elem%'dps').html.to_f    if (elem%'dps')
+          @type   = (elem%'damage'%'type').inner_text.to_i
+          @min    = (elem%'damage'%'min').inner_text.to_i
+          @max    = (elem%'damage'%'max').inner_text.to_i
+          @speed  = (elem%'speed').inner_text.to_f if (elem%'speed')
+          @dps    = (elem%'dps').inner_text.to_f   if (elem%'dps')
         end
       end
     end

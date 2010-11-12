@@ -118,25 +118,25 @@ module Wowr
         def initialize(elem, api = nil)
           super(elem, api)
 
-          @id                 = (elem%'id').html.to_i
-          @name               = (elem%'name').html
-          @icon_base          = (elem%'icon').html
+          @id                 = (elem%'id').inner_text.to_i
+          @name               = (elem%'name').inner_text
+          @icon_base          = (elem%'icon').inner_text
           @desc               = (elem/"/desc").text if (elem%'desc')
-          @overall_quality_id = (elem%'overallQualityId').html.to_i
-          @bonding            = (elem%'bonding').html.to_i
-          @stackable          = (elem%'stackable').html.to_i if (elem%'stackable')
-          @max_count          = (elem%'maxCount').html.to_i if (elem%'maxCount')
-          @class_id           = (elem%'classId').html.to_i
-          @required_level     = (elem%'requiredLevel').html.to_i if (elem%'requiredLevel')
+          @overall_quality_id = (elem%'overallQualityId').inner_text.to_i
+          @bonding            = (elem%'bonding').inner_text.to_i
+          @stackable          = (elem%'stackable').inner_text.to_i if (elem%'stackable')
+          @max_count          = (elem%'maxCount').inner_text.to_i if (elem%'maxCount')
+          @class_id           = (elem%'classId').inner_text.to_i
+          @required_level     = (elem%'requiredLevel').inner_text.to_i if (elem%'requiredLevel')
 
           @equip_data         = EquipData.new(elem%'equipData')
 
           # TODO: This appears to be a plain string at the moment
           #<gemProperties>+26 Healing +9 Spell Damage and 2% Reduced Threat</gemProperties>
-          @gem_properties     = (elem%'gemProperties').html if (elem%'gemProperties')
+          @gem_properties     = (elem%'gemProperties').inner_text if (elem%'gemProperties')
 
           # not all items have damage data
-          @damage             = DamageData.new(elem%'damageData') unless !(elem%'damageData') || (elem%'damageData').empty?
+          @damage             = DamageData.new(elem%'damageData') unless !(elem%'damageData') || (elem%'damageData').blank?
 
           # TODO: Test socket data with a variety of items
           # TODO: replace with socket Class?
@@ -210,12 +210,12 @@ module Wowr
           if (elem%'allowableClasses')
             @allowable_classes = []
             (elem%'allowableClasses'/:class).each do |klass|
-              @allowable_classes << klass.html
+              @allowable_classes << klass.inner_text
             end
           end
 
           # NOTE not representing armor bonus
-          @armor      = (elem%'armor').html.to_i            if (elem%'armor')
+          @armor      = (elem%'armor').inner_text.to_i            if (elem%'armor')
 
           # NOTE not representing max
           @durability = (elem%'durability')[:current].to_i  if (elem%'durability')
@@ -241,8 +241,8 @@ module Wowr
 
         def test_stat(elem)
           if elem
-            if !elem.html.empty?
-              return elem.html.to_i
+            if !elem.inner_text.blank?
+              return elem.inner_text.to_i
             end
           end
           return nil
