@@ -329,9 +329,11 @@ describe Wowr::API::API do
     end
   end
 
-  # FIXME: I'd love to test the various permutations of ways to pass arguments to this method,
-  # but it's broken unless the first parameter is a string. See guild_bank_options in lib/wowr/api/api.rb
   describe "#get_guild_bank_contents" do
+    it "should raise NotImplementedError" do
+      expect { api.login }.to raise_error(NotImplementedError)
+    end
+
     it "should raise CookieNotSet when not given a cookie" do
       pending("get_guild_bank_contents will never raise CookieNotSet")
       # FIXME: This will never pass; see get_guild_bank_contents in lib/wowr/api/api.rb
@@ -363,27 +365,39 @@ describe Wowr::API::API do
   end
 
   describe "#get_guild_bank_log" do
-    it { pending }
+    it "should raise NotImplementedError" do
+      expect { api.get_guild_bank_log }.to raise_error(NotImplementedError)
+    end
   end
 
   describe "#get_complete_world_calendar" do
-    it { pending }
+    it "should raise NotImplementedError" do
+      expect { api.get_complete_world_calendar }.to raise_error(NotImplementedError)
+    end
   end
 
   describe "#get_world_calendar" do
-    it { pending }
+    it "should raise NotImplementedError" do
+      expect { api.get_world_calendar }.to raise_error(NotImplementedError)
+    end
   end
 
   describe "#get_full_user_calendar" do
-    it { pending }
+    it "should raise NotImplementedError" do
+      expect { api.get_full_user_calendar }.to raise_error(NotImplementedError)
+    end
   end
 
   describe "#get_user_calendar" do
-    it { pending }
+    it "should raise NotImplementedError" do
+      expect { api.get_user_calendar }.to raise_error(NotImplementedError)
+    end
   end
 
   describe "#get_calendar_event" do
-    it { pending }
+    it "should raise NotImplementedError" do
+      expect { api.get_calendar_event }.to raise_error(NotImplementedError)
+    end
   end
 
   describe "#get_dungeons" do
@@ -391,11 +405,15 @@ describe Wowr::API::API do
   end
 
   describe "#login" do
-    it { pending }
+    it "should raise NotImplementedError" do
+      expect { api.login }.to raise_error(NotImplementedError)
+    end
   end
 
   describe "#refresh_login" do
-    it { pending }
+    it "should raise NotImplementedError" do
+      expect { api.refresh_login }.to raise_error(NotImplementedError)
+    end
   end
 
   describe "#base_url" do
