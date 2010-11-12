@@ -30,7 +30,7 @@ module Wowr
         # @return [String]
         attr_reader :type
 
-        # @param [Hpricot::Elem] elem <tt>secondBar</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>secondBar</tt> element
         def initialize(elem)
           @effective    = elem[:effective].to_i
           @casting      = elem[:casting].to_i == -1 ? nil : elem[:casting].to_i

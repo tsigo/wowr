@@ -26,7 +26,7 @@ module Wowr
           # @return [Integer]
           attr_reader :mana_regen
 
-          # @param [Hpricot::Elem] elem <tt>spirit</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>spirit</tt> element
           def initialize(elem)
             @base         = elem[:base].to_i
             @effective    = elem[:effective].to_i

@@ -30,7 +30,7 @@ module Wowr
           # @return [Integer]
           attr_reader :pet_bonus
 
-          # @param [Hpricot::Elem] elem <tt>intellect</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>intellect</tt> element
           def initialize(elem)
             @base             = elem[:base].to_i
             @effective        = elem[:effective].to_i

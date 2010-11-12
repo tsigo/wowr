@@ -18,7 +18,7 @@ module Wowr
         # @return [Intenger]
         attr_reader :arena_currency
 
-        # @param [Hpricot::Elem] elem pvp element
+        # @param [Nokogiri::XML::Element] elem pvp element
         def initialize(elem)
           @lifetime_honorable_kills = (elem%'lifetimehonorablekills')[:value].to_i
           @arena_currency           = (elem%'arenacurrency')[:value].to_i

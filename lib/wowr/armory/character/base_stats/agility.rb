@@ -30,7 +30,7 @@ module Wowr
           # @return [Float]
           attr_reader :crit_hit_percent
 
-          # @param [Hpricot::Elem] elem <tt>agility</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>agility</tt> element
           def initialize(elem)
             @base             = elem[:base].to_i
             @effective        = elem[:effective].to_i

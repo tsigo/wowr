@@ -16,7 +16,7 @@ module Wowr
         # @param [String|DateTime]
         attr_reader :date_completed
 
-        # @param [Hpricot::Elem] achievement <tt>achievement</tt> element
+        # @param [Nokogiri::XML::Element] achievement <tt>achievement</tt> element
         def initialize achievement
           super(achievement)
 

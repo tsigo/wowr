@@ -21,7 +21,7 @@ module Wowr
         alias_method :desc, :description
         alias_method :to_s, :description
 
-        # @param [Hpricot::Elem] elem <tt>setBonus</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>setBonus</tt> element
         def initialize(elem)
           @threshold   = elem[:threshold].to_i
           @description = elem[:desc]

@@ -68,7 +68,7 @@ module Wowr
 
         alias_method :to_s, :name
 
-        # @param [Hpricot::Elem] elem <tt>arenaTeam</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>arenaTeam</tt> element
         def initialize(elem)
           @name                = elem[:name]
           @size                = elem[:size].to_i

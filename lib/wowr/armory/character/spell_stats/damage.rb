@@ -36,8 +36,8 @@ module Wowr
 
           alias_method :percent, :crit_chance_percent
 
-          # @param [Hpricot::Elem] bonusDamage_elem An element under <tt>spell/bonusDamage</tt>
-          # @param [Hpricot::Elem] critChance_elem An element under <tt>spell/critChance</tt>
+          # @param [Nokogiri::XML::Element] bonusDamage_elem An element under <tt>spell/bonusDamage</tt>
+          # @param [Nokogiri::XML::Element] critChance_elem An element under <tt>spell/critChance</tt>
           def initialize(bonusDamage_elem, critChance_elem)
             @value               = bonusDamage_elem[:value].to_i
             @crit_chance_percent = critChance_elem[:percent].to_f

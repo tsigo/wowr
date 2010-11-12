@@ -27,7 +27,7 @@ module Wowr
         # @return [Array]
         attr_reader :achievements
 
-        # @param [Hpricot::Elem] elem <tt>achievements</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>achievements</tt> element
         def initialize(elem)
           @achievements = Array.new
           elem.search('achievement').each do |achievement|

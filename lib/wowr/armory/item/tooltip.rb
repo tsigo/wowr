@@ -114,7 +114,7 @@ module Wowr
 
         alias_method :description, :desc
 
-        # @param [Hpricot::Elem] elem <tt><itemTooltip></tt> element
+        # @param [Nokogiri::XML::Element] elem <tt><itemTooltip></tt> element
         def initialize(elem, api = nil)
           super(elem, api)
 

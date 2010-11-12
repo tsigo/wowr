@@ -19,7 +19,7 @@ module Wowr
 
         alias_method :to_s, :name
 
-        # @param [Hpricot::Elem] elem
+        # @param [Nokogiri::XML::Element] elem
         def initialize(elem)
           # guild-info.xml has a guildHeader element; search doesn't
           if (elem%'guildHeader')

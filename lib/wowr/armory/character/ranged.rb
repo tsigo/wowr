@@ -41,7 +41,7 @@ module Wowr
         # @return [WeaponStats::CritChance]
         attr_reader :crit_chance
 
-        # @param [Hpricot::Elem] elem <tt>ranged</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>ranged</tt> element
         def initialize(elem)
           @damage       = WeaponStats::Damage.new(elem%'damage')
           @speed        = WeaponStats::Speed.new(elem%'speed')

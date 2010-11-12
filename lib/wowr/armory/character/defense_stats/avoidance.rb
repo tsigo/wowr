@@ -22,7 +22,7 @@ module Wowr
           # @return [Integer]
           attr_reader :rating
 
-          # @param [Hpricot::Elem] elem <tt>dodge</tt>, <tt>parry</tt> or <tt>block</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>dodge</tt>, <tt>parry</tt> or <tt>block</tt> element
           def initialize(elem)
             @percent          = elem[:percent].to_f
             @increase_percent = elem[:increasePercent].to_f

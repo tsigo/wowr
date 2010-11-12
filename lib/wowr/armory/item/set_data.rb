@@ -33,7 +33,7 @@ module Wowr
 
         alias_method :to_s, :name
 
-        # @param [Hpricot::Elem] elem <tt>setData</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>setData</tt> element
         def initialize(elem)
           @name = (elem/:name).text
 

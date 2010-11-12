@@ -21,7 +21,7 @@ module Wowr
         # @return [Array] Array of {Reagent} instances
         attr_reader :reagents
 
-        # @param [Hpricot::Elem] elem <tt>spell</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>spell</tt> element
         # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           super(elem, api)

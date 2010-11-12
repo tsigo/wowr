@@ -50,7 +50,7 @@ module Wowr
         alias_method :to_s, :name
         alias_method :to_i, :id
 
-        # @param [Hpricot::Elem] elem <tt><creature/></tt> element
+        # @param [Nokogiri::XML::Element] elem <tt><creature/></tt> element
         def initialize(elem)
           @id             = elem[:id].to_i
           @name           = elem[:name]

@@ -18,7 +18,7 @@ module Wowr
           # @return [Float]
           attr_reader :not_casting
 
-          # @param [Hpricot::Elem] elem <tt>spell/manaRegen</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>spell/manaRegen</tt> element
           def initialize(elem)
             @casting      = elem[:casting].to_f
             @not_casting  = elem[:notCasting].to_f

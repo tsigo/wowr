@@ -104,8 +104,8 @@ module Wowr
         alias_method :sta, :stamina
         alias_method :str, :strength
 
-        # @param [Hpricot::Elem] sheet <tt>character-sheet.xml</tt> page
-        # @param [Hpricot::Elem] talents <tt>character-talents.xml</tt> page
+        # @param [Nokogiri::XML::Element] sheet <tt>character-sheet.xml</tt> page
+        # @param [Nokogiri::XML::Element] talents <tt>character-talents.xml</tt> page
         # @param [Wowr::API::API] api
         def initialize(sheet, talents, api = nil)
           super(sheet%'character', api)
@@ -142,7 +142,7 @@ module Wowr
         #     race="Orc" raceId="2" realm="Mal'Ganis" suffix=" the Light of Dawn"
         #     titleId="138">
         #
-        # @param [Hpricot::Elem] elem <tt>character</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>character</tt> element
         def character_info(elem)
           @name       = elem[:name]
           @level      = elem[:level].to_i
@@ -192,7 +192,7 @@ module Wowr
 
         # Populate remaining attributes from the <tt>characterTab</tt> element
         #
-        # @param [Hpricot::Elem] elem <tt>characterTab</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>characterTab</tt> element
         def character_tab(elem)
           @health     = (elem%'characterBars'%'health')[:effective].to_i
           @second_bar = SecondBar.new(elem%'characterBars'%'secondBar')

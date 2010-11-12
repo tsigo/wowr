@@ -46,7 +46,7 @@ module Wowr
         # @return [Integer]
         attr_reader :drop_rate
 
-        # @param [Hpricot::Elem] elem <tt>itemSource</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>itemSource</tt> element
         def initialize(elem)
           @value          = elem[:value]
           @area_id        = elem[:areaId].to_i     if elem[:areaId]

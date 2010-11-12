@@ -9,8 +9,8 @@ module Wowr
       # @see {Info}
       # @see {Tooltip}
       class Full < Base
-        # @param [Hpricot::Elem] info <tt>itemInfo/item</tt> element
-        # @param [Hpricot::Elem] tooltip <tt>itemTooltip</tt> element
+        # @param [Nokogiri::XML::Element] info <tt>itemInfo/item</tt> element
+        # @param [Nokogiri::XML::Element] tooltip <tt>itemTooltip</tt> element
         # @param [Wowr::API::API] api
         def initialize(info, tooltip, api = nil)
           super(info, api)

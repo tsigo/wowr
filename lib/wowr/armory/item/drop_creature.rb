@@ -51,7 +51,7 @@ module Wowr
         # @return [String]
         attr_reader :area
 
-        # @param [Hpricot::Elem] elem <tt>creature</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>creature</tt> element
         def initialize(elem)
           @name           = elem[:name]
           @id             = elem[:id].to_i

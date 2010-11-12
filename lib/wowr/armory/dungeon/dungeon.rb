@@ -61,7 +61,7 @@ module Wowr
         alias_method :max_level, :level_maximum
         alias_method :min_level, :level_minimum
 
-        # @param [Hpricot::Elem] elem <tt>dungeon</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>dungeon</tt> element
         def initialize(elem)
           @id             = elem[:id].to_i
           @key            = elem[:key]

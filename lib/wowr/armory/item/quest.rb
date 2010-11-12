@@ -40,7 +40,7 @@ module Wowr
         # @return [Integer]
         attr_reader :suggested_party_size
 
-        # @param [Hpricot::Elem] elem <tt>quest</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>quest</tt> element
         def initialize(elem)
           @name                 = elem[:name]
           @id                   = elem[:id].to_i

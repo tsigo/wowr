@@ -93,13 +93,11 @@ module Wowr
         end
       end
 
-      # Return an Hpricot document for the given URL, TODO: see :parser
       def get_xml(url, options = {})
         response = get_file(url, options)
         parser(response, options)
       end
 
-      # Return an array of hashes for the given URL
       def get_json(url, options = {})
         response = get_file(url, options)
         JSON.parse(response)

@@ -33,7 +33,7 @@ module Wowr
         # @return [Integer]
         attr_reader :relevance
 
-        # @param [Hpricot::Elem] elem <tt><guild></tt> element
+        # @param [Nokogiri::XML::Element] elem <tt><guild></tt> element
         def initialize(elem)
           super(elem)
 

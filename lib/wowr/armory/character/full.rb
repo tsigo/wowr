@@ -16,9 +16,9 @@ module Wowr
 
         alias_method :rep, :reputation
 
-        # @param [Hpricot::Elem] sheet <tt>character-sheet.xml</tt> page
-        # @param [Hpricot::Elem] reputation <tt>character-reputation.xml</tt> page
-        # @param [Hpricot::Elem] talents <tt>character-talents.xml</tt> page
+        # @param [Nokogiri::XML::Element] sheet <tt>character-sheet.xml</tt> page
+        # @param [Nokogiri::XML::Element] reputation <tt>character-reputation.xml</tt> page
+        # @param [Nokogiri::XML::Element] talents <tt>character-talents.xml</tt> page
         # @param [Wowr::API::API] api
         def initialize(sheet, reputation, talents, api = nil)
           @api = api

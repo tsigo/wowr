@@ -29,7 +29,7 @@ module Wowr
         # @return [Integer]
         attr_reader :header
 
-        # @param [Hpricot::Elem] elem <tt>faction</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>faction</tt> element
         def initialize(elem)
           @id         = elem[:id].to_i
           @key        = elem[:key]

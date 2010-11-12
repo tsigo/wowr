@@ -18,7 +18,7 @@ module Wowr
           # @return [Integer]
           attr_reader :haste_rating
 
-          # @param [Hpricot::Elem] elem <tt>hasteRating</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>hasteRating</tt> element
           def initialize(elem)
             @percent_increase = elem[:hastePercent].to_f
             @haste_rating     = elem[:hasteRating].to_i

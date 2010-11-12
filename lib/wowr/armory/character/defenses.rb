@@ -39,7 +39,7 @@ module Wowr
         # @return [DefenseStats::Resilience]
         attr_reader :resilience
 
-        # @param [Hpricot::Elem] elem <tt>defenses</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>defenses</tt> element
         def initialize(elem)
           @armor      = DefenseStats::Armor.new(elem%'armor')
           @defense    = DefenseStats::Defense.new(elem%'defense')

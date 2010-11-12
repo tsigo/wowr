@@ -29,7 +29,7 @@ module Wowr
         # @return [Hash]
         attr_reader :members
 
-        # @param [Hpricot::Elem] elem <tt>arenaTeam</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>arenaTeam</tt> element
         def initialize(elem)
           super(elem)
 

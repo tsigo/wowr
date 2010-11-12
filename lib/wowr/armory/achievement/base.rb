@@ -35,7 +35,7 @@ module Wowr
         # @return [String]
         attr_reader :reward
 
-        # @param [Hpricot::Elem] achievement <tt>achievement</tt> element
+        # @param [Nokogiri::XML::Element] achievement <tt>achievement</tt> element
         def initialize(achievement)
           @desc        = achievement[:desc]
           @category_id = achievement[:categoryId].to_i

@@ -36,7 +36,7 @@ module Wowr
         # @return [Integer]
         attr_reader :quality
 
-        # @param [Hpricot::Elem] elem <tt>item</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>item</tt> element
         # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           super(elem, api)

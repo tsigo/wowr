@@ -27,7 +27,7 @@ module Wowr
         alias_method :desc, :description
         alias_method :to_s, :description
 
-        # @param [Hpricot::Elem] elem <tt>spell</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>spell</tt> element
         def initialize(elem)
           @trigger     = (elem%'trigger').inner_text.to_i
           @description = (elem%'desc').inner_text

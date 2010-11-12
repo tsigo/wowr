@@ -55,7 +55,7 @@ module Wowr
         # @return [WeaponStats::Expertise]
         attr_reader :expertise
 
-        # @param [Hpricot::Elem] elem <tt>melee</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>melee</tt> element
         def initialize(elem)
           @main_hand_damage = WeaponStats::Damage.new(elem%'mainHandDamage')
           @off_hand_damage  = WeaponStats::Damage.new(elem%'offHandDamage')

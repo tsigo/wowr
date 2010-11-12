@@ -29,7 +29,7 @@ module Wowr
         # @return [Integer]
         attr_reader :pet_bonus
 
-        # @param [Hpricot::Elem] elem An element under <tt>resistances</tt>
+        # @param [Nokogiri::XML::Element] elem An element under <tt>resistances</tt>
         def initialize(elem)
           @value      = elem[:value].to_i
           @pet_bonus  = elem[:petBonus].to_i == -1 ? nil : elem[:petBonus].to_i

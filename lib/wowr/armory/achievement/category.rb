@@ -21,7 +21,7 @@ module Wowr
         # @return [Category]
         attr_accessor :parent
 
-        # @param [Hpricot::Elem] elem <tt>category</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>category</tt> element
         def initialize(elem)
           @name          = elem[:name]
           @id            = elem[:id].to_i if elem[:id]

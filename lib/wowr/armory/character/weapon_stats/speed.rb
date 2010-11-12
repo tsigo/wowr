@@ -21,7 +21,7 @@ module Wowr
           # @return [Float]
           attr_reader :value
 
-          # @param [Hpricot::Elem] elem
+          # @param [Nokogiri::XML::Element] elem
           def initialize(elem)
             @haste_percent = elem[:hastePercent].to_f
             @haste_rating  = elem[:hasteRating].to_i

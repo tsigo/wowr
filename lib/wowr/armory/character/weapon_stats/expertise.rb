@@ -22,7 +22,7 @@ module Wowr
           # @return [Integer]
           attr_reader :value
 
-          # @param [Hpricot::Elem] elem <tt>expertise</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>expertise</tt> element
           def initialize(elem)
             @additional = elem[:additional].to_i
             @percent    = elem[:percent].to_f

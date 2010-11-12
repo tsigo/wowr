@@ -19,7 +19,7 @@ module Wowr
           # @return [Integer]
           attr_reader :rating
 
-          # @param [Hpricot::Elem] elem <tt>critChance</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>critChance</tt> element
           def initialize(elem)
             @percent      = elem[:percent].to_f
             @plus_percent = elem[:plusPercent].to_f

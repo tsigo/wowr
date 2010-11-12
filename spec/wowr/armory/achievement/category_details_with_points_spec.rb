@@ -13,7 +13,7 @@ module Wowr::Armory::Achievement
     protected
 
     def fake_element
-      # NOTE: CategoryDetailsWithPoints actually expects a Hash, and not an Hpricot::Elem instance
+      # NOTE: CategoryDetailsWithPoints actually expects a Hash, and not an Nokogiri::XML::Element instance
       {:name => '', :id => 0, :earned => "20", :earnedPoints => "200", :total => "50", :totalPoints => "500"}
     end
   end

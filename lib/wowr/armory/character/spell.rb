@@ -66,7 +66,7 @@ module Wowr
         # @return [SpellStats::Speed]
         attr_reader :speed
 
-        # @param [Hpricot::Elem] elem <tt>spell</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>spell</tt> element
         def initialize(elem)
           @arcane = damage_type(elem, :arcane)
           @fire   = damage_type(elem, :fire)

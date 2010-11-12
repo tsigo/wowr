@@ -27,7 +27,7 @@ module Wowr
           # @return [Float]
           attr_reader :speed
 
-          # @param [Hpricot::Elem] elem
+          # @param [Nokogiri::XML::Element] elem
           def initialize(elem)
             @dps     = elem[:dps].to_f
             @max     = elem[:max].to_i

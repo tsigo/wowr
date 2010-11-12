@@ -31,7 +31,7 @@ module Wowr
         # @return [Integer]
         attr_reader :container_slots
 
-        # @param [Hpricot::Elem] elem <tt>equipData</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>equipData</tt> element
         def initialize(elem)
           @inventory_type  = (elem%'inventoryType').inner_text.to_i
           @subclass_name   = (elem%'subclassName').inner_text        if (elem%'subclassName')

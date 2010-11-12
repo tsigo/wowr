@@ -18,7 +18,7 @@ module Wowr
         # @return [Array]
         attr_reader :categories
 
-        # @param [Hpricot::Elem] elem <tt>page</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>page</tt> element
         def initialize(elem)
           @latest_achievements = Array.new
           @categories          = Array.new

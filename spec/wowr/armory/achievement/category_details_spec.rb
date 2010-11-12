@@ -11,7 +11,7 @@ module Wowr::Armory::Achievement
     protected
 
     def fake_element
-      # NOTE: CategoryDetails actually expects a Hash, and not an Hpricot::Elem instance
+      # NOTE: CategoryDetails actually expects a Hash, and not an Nokogiri::XML::Element instance
       {:name => '', :id => 0, :earned => "20"}
 
       # xml = file_fixture('armory/character-achievements/sebudai_mal_ganis.xml')

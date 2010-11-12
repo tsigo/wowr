@@ -29,7 +29,7 @@ module Wowr
         @@icon_url_base    = 'wow-icons/_images/'.freeze
         @@icon_url_base_tw = 'wow-icons/_images/'.freeze
 
-        # @param [Hpricot::Elem] elem <tt>item</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>item</tt> element
         # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           @api = api

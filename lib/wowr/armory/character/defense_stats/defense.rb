@@ -30,7 +30,7 @@ module Wowr
           # @return [Integer]
           attr_reader :rating
 
-          # @param [Hpricot::Elem] elem <tt>defense</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>defense</tt> element
           def initialize(elem)
             @value            = elem[:value].to_i
             @increase_percent = elem[:increasePercent].to_f

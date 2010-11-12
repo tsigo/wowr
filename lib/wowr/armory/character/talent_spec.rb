@@ -41,7 +41,7 @@ module Wowr
         # @return [String]
         attr_reader :point_distribution
 
-        # @param [Hpricot::Elem] elem <tt>talentGroup</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>talentGroup</tt> element
         def initialize(elem)
           tree_elem           = elem%'talentSpec'
           @trees              = []

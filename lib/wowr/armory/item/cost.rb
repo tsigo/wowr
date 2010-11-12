@@ -34,7 +34,7 @@ module Wowr
         # @return [Wowr::Classes::Money]
         attr_reader :arena_price
 
-        # @param [Hpricot::Elem] elem <tt>cost</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>cost</tt> element
         def initialize(elem)
           @honor_price = Wowr::Classes::Money.new(elem[:honor].to_i)     if elem[:honor]
           @arena_price = Wowr::Classes::Money.new(elem[:arena].to_i)     if elem[:arena]

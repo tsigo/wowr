@@ -42,7 +42,7 @@ module Wowr
         # @return [Float]
         attr_reader :dps
 
-        # @param [Hpricot::Elem] elem <tt>damageData</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>damageData</tt> element
         def initialize(elem)
           @type   = elem.search('damage/type').inner_text.to_i
           @min    = elem.search('damage/min').inner_text.to_i

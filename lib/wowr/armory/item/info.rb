@@ -75,7 +75,7 @@ module Wowr
 
         alias_method :disenchants, :disenchant_items
 
-        # @param [Hpricot::Elem] elem <tt>itemInfo</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>itemInfo</tt> element
         # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           super(elem, api)

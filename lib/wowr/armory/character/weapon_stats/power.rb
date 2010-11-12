@@ -19,7 +19,7 @@ module Wowr
           # @return [Float]
           attr_reader :increased_dps
 
-          # @param [Hpricot::Elem] elem <tt>power</tt> element
+          # @param [Nokogiri::XML::Element] elem <tt>power</tt> element
           def initialize(elem)
             @base          = elem[:base].to_i
             @effective     = elem[:effective].to_i

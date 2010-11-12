@@ -24,7 +24,7 @@ module Wowr
         # @return [Integer]
         attr_reader :icon_style
 
-        # @param [Hpricot::Elem] elem <tt>emblem</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>emblem</tt> element
         def initialize(elem)
           @background   = elem[:background]
           @border_color = elem[:borderColor]

@@ -12,7 +12,7 @@ module Wowr
         # @return [Integer]
         attr_reader :count
 
-        # @param [Hpricot::Elem] elem <tt>token</tt> element
+        # @param [Nokogiri::XML::Element] elem <tt>token</tt> element
         # @param [Wowr::API::API] api
         def initialize(elem, api = nil)
           super(elem, api)
