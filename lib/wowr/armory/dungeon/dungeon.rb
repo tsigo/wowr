@@ -72,19 +72,11 @@ module Wowr
           @release        = elem[:release].to_i
           @heroic         = elem[:hasHeroic].to_i == 1 ? true : false
 
-          # Ideally want to be able to get the boss by both ID and key
-          # but by using normal hash.
-          # After a test it seems the method below creates 2 references to an object.
-          @bosses = {}
+          @bosses = Bosses.new
 
           (elem/:boss).each do |elem|
-            # TODO: Is this insane?
-            #       After object test, appears this will be references to the same object
             boss = Wowr::Classes::Boss.new(elem)
-            # FIXME: do we really need to have 'boss' for both 'id' and 'key' in the dungeon's bosses hash?
-            # We should make a custom class that inherits from Hash but lets you access a boss by id OR key (tsigo)
-            @bosses[boss.id]  = boss
-            @bosses[boss.key] = boss
+            @bosses[boss.id, boss.key] = boss
           end
         end
 
@@ -97,8 +89,6 @@ module Wowr
 
           (elem/:boss).each do |boss_elem|
             id = boss_elem[:id].to_i
-            # key = boss_elem[:key] # dungeonString.xml boss elements don't have a "key" attribute
-
             @bosses[id].name = boss_elem[:name]
           end
         end

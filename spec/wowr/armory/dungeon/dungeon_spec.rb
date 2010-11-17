@@ -25,11 +25,12 @@ module Wowr::Armory::Dungeon
 
       it "should assign to bosses" do
         subject.add_name_data(name_data)
-        subject.bosses.size.should eql(2) # NOTE: Really it's 1, but we're assigning to the id AND the key
+        subject.bosses.size.should eql(1)
         subject.bosses[10184].should be_kind_of(Boss)
+        subject.bosses['onyxia'].should equal(subject.bosses[10184])
       end
 
-      it "should return the subject.'s name as a string" do
+      it "should return the subject's name as a string" do
         subject.add_name_data(name_data)
         subject.to_s.should eql("Onyxia's Lair")
       end
