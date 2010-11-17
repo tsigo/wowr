@@ -81,22 +81,22 @@ module Wowr
             # TODO: Is this insane?
             #       After object test, appears this will be references to the same object
             boss = Wowr::Classes::Boss.new(elem)
-            @bosses[boss.id]  = boss  if boss.id
-            @bosses[boss.key] = boss  if boss.key
+            # FIXME: do we really need to have 'boss' for both 'id' and 'key' in the dungeon's bosses hash?
+            @bosses[boss.id]  = boss
+            @bosses[boss.key] = boss
           end
         end
 
         # Add the name data from dungeonStrings.xml
         def add_name_data(elem)
-          # puts elem.raw_string.to_yaml
           @name = elem.attributes["name"]
 
           (elem/:boss).each do |boss_elem|
             id = boss_elem[:id].to_i
             key = boss_elem[:key]
 
-            @bosses[id].add_name_data(boss_elem)  if id && @bosses[id]
-            @bosses[key].add_name_data(boss_elem) if key && @bosses[key]
+            @bosses[id].add_name_data(boss_elem)
+            @bosses[key].add_name_data(boss_elem)
           end
         end
       end

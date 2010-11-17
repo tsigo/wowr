@@ -1,8 +1,6 @@
 module Wowr
   module Armory
     module Dungeon
-      # Note Key or id can be nil, but not both - TODO: verify that this statement is still true - 11/09/10
-
       # = Boss
       #
       # Represents a <tt>boss</tt> element
@@ -27,17 +25,18 @@ module Wowr
         # @return [String]
         attr_reader :type
 
+        # @example
+        #   "Onyxia"
+        # @return [String]
         attr_reader :name
 
         alias_method :to_s, :name
         alias_method :to_i, :id
 
         def initialize(elem)
-          @id     = elem[:id].to_i if elem[:id].to_i
-          @key    = elem[:key] if elem[:key]
-          @id     = @key if !elem[:id].to_i # TODO: see statement above and add to 'boss_spec.rb' if true - 11/09/10
-
-          @type     = elem[:type]
+          @id   = elem[:id].to_i
+          @key  = elem[:key]
+          @type = elem[:type]
         end
 
         def add_name_data(elem)

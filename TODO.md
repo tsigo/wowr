@@ -1,6 +1,15 @@
 TODO
 ====
 
+## Fix Pending Specs
+
+    rake spec
+
+## Aim for 100% Test Coverage
+
+    rake coverage
+    open coverage/index.html
+
 ## Performance Profiling - Perftools
 
 identify slow areas within codebase
