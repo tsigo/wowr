@@ -68,9 +68,9 @@ module Wowr
           @level_minimum  = elem[:levelMin].to_i
           @level_maximum  = elem[:levelMax].to_i
           @party_size     = elem[:partySize].to_i
-          @raid           = (elem[:raid].to_i == 1) ? true : false
+          @raid           = elem[:raid].to_i == 1 ? true : false
           @release        = elem[:release].to_i
-          @heroic         = (elem[:hasHeroic].to_i == 1) ? true : false
+          @heroic         = elem[:hasHeroic].to_i == 1 ? true : false
 
           # Ideally want to be able to get the boss by both ID and key
           # but by using normal hash.
@@ -82,21 +82,24 @@ module Wowr
             #       After object test, appears this will be references to the same object
             boss = Wowr::Classes::Boss.new(elem)
             # FIXME: do we really need to have 'boss' for both 'id' and 'key' in the dungeon's bosses hash?
+            # We should make a custom class that inherits from Hash but lets you access a boss by id OR key (tsigo)
             @bosses[boss.id]  = boss
             @bosses[boss.key] = boss
           end
         end
 
-        # Add the name data from dungeonStrings.xml
+        # Assigns the dungeon's name as well as the name of all bosses in this
+        # dungeon
+        #
+        # @param [Nokogiri::XML::Element] elem <tt>dungeon</tt> element with child <tt>boss</tt> elements
         def add_name_data(elem)
-          @name = elem.attributes["name"]
+          @name = elem[:name]
 
           (elem/:boss).each do |boss_elem|
             id = boss_elem[:id].to_i
-            key = boss_elem[:key]
+            # key = boss_elem[:key] # dungeonString.xml boss elements don't have a "key" attribute
 
-            @bosses[id].add_name_data(boss_elem)
-            @bosses[key].add_name_data(boss_elem)
+            @bosses[id].name = boss_elem[:name]
           end
         end
       end

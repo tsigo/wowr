@@ -28,7 +28,7 @@ module Wowr
         # @example
         #   "Onyxia"
         # @return [String]
-        attr_reader :name
+        attr_accessor :name
 
         alias_method :to_s, :name
         alias_method :to_i, :id
@@ -37,10 +37,6 @@ module Wowr
           @id   = elem[:id].to_i
           @key  = elem[:key]
           @type = elem[:type]
-        end
-
-        def add_name_data(elem)
-          @name = elem['name']
         end
       end
     end

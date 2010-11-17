@@ -16,23 +16,24 @@ module Wowr::Armory::Dungeon
     its(:max_level)     { should eql(80) }
     its(:min_level)     { should eql(80) }
 
-    # # FIXME: subject 'dungeon' is nil?
-    # describe "add_name_data" do
-    #   let(:sub) { fake_dungeon_element }
-    # 
-    #   it "should assign to name" do
-    #     expect { subject.add_name_data(sub) }.to change(subject, :name).to('Onyxia\'s Lair')
-    #   end
-    # 
-    #   it "should assign to bosses" do
-    #     expect { subject.add_name_data(sub) }.to change(subject, :bosses).to({})
-    #   end
-    # 
-    #   it "should return the dungeons's name as a string" do
-    #     subject.add_name_data(sub)
-    #     subject.to_s.should eql('Onyxia\'s Lair')
-    #   end
-    # end
+    describe "add_name_data" do
+      let(:name_data) { fake_name_data }
+
+      it "should assign to name" do
+        expect { subject.add_name_data(name_data) }.to change(subject, :name).to("Onyxia's Lair")
+      end
+
+      it "should assign to bosses" do
+        subject.add_name_data(name_data)
+        subject.bosses.size.should eql(2) # NOTE: Really it's 1, but we're assigning to the id AND the key
+        subject.bosses[10184].should be_kind_of(Boss)
+      end
+
+      it "should return the subject.'s name as a string" do
+        subject.add_name_data(name_data)
+        subject.to_s.should eql("Onyxia's Lair")
+      end
+    end
 
     protected
 
@@ -41,7 +42,7 @@ module Wowr::Armory::Dungeon
       (Nokogiri::XML(xml).search("dungeon[@key='onyxiaslair']").first)
     end
 
-    def fake_dungeon_element
+    def fake_name_data
       xml = file_fixture('armory/dungeons/dungeonStrings.xml')
       (Nokogiri::XML(xml).search("dungeon[@key='onyxiaslair']").first)
     end

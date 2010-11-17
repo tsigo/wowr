@@ -8,17 +8,8 @@ module Wowr::Armory::Dungeon
     its(:key)   { should eql('onyxia') }
     its(:to_i)  { should eql(10184) }
 
-    describe "add_name_data" do
-      let(:sub) { fake_boss_element }
-
-      it "should assign to name" do
-        expect { subject.add_name_data(sub) }.to change(subject, :name).to('Onyxia')
-      end
-
-      it "should return the boss's name as a string" do
-        subject.add_name_data(sub)
-        subject.to_s.should eql('Onyxia')
-      end
+    it "should have a name accessor" do
+      expect { subject.name = 'Foo' }.to change(subject, :name).from(nil).to('Foo')
     end
 
     protected
