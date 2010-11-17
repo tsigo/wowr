@@ -3,4 +3,4 @@ require 'wowr'
 
 api = Wowr::API.new(:caching => false, :debug => true)
 dungeons = api.get_dungeons()
-puts dungeons.to_yaml
+puts dungeons['icecrowncitadel25'].to_yaml

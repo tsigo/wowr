@@ -15,6 +15,9 @@ module Wowr
         # @return [Integer]
         attr_reader :id
 
+        # @return [Integer]
+        attr_reader :name_id
+
         # @example
         #   "onyxia"
         # @return [String]
@@ -34,9 +37,10 @@ module Wowr
         alias_method :to_i, :id
 
         def initialize(elem)
-          @id   = elem[:id].to_i
-          @key  = elem[:key]
-          @type = elem[:type]
+          @id      = elem[:id].to_i
+          @name_id = elem[:nameId].to_i if elem[:nameId]
+          @key     = elem[:key]
+          @type    = elem[:type]
         end
       end
     end

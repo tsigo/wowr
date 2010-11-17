@@ -29,23 +29,13 @@ module Wowr
 
         results = {}
 
-        # TODO: Pass the correct part of dungeon_strings_xml to each dungeon?
         if dungeon_xml && !dungeon_xml.children.empty?
           (dungeon_xml/:dungeon).each do |elem|
-            dungeon = Wowr::Classes::Dungeon.new(elem)
-            results[dungeon.id] = dungeon   if dungeon.id
+            dungeon = Wowr::Classes::Dungeon.new(elem, dungeon_strings_xml.search("dungeon[@id='#{elem[:id]}']"))
+
+            # TODO: Need another hash with indifferent access here
+            results[dungeon.id]  = dungeon  if dungeon.id
             results[dungeon.key] = dungeon  if dungeon.key
-          end
-
-          (dungeon_strings_xml/:dungeon).each do |elem|
-            id = elem[:id].to_i
-            key = elem[:key]
-
-            if (results[id])
-              results[id].add_name_data(elem)
-            elsif (results[key])
-              results[key].add_name_data(elem)
-            end
           end
         else
           raise Wowr::Exceptions::InvalidXML.new()

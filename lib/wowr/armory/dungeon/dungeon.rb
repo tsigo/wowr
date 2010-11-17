@@ -53,7 +53,7 @@ module Wowr
         # @return [Boolean]
         attr_reader :heroic
 
-        # @return [Hash]
+        # @return [Bosses]
         attr_reader :bosses
 
         alias_method :to_s, :name
@@ -61,10 +61,12 @@ module Wowr
         alias_method :max_level, :level_maximum
         alias_method :min_level, :level_minimum
 
-        # @param [Nokogiri::XML::Element] elem <tt>dungeon</tt> element
-        def initialize(elem)
+        # @param [Nokogiri::XML::Element] elem <tt>dungeon</tt> element from <tt>dungeons.xml</tt>
+        # @param [Nokogiri::XML::Element] name_data_elem <tt>dungeon</tt> element from <tt>dungeonStrings.xml</tt>
+        def initialize(elem, name_data_elem)
           @id             = elem[:id].to_i
           @key            = elem[:key]
+          @name           = name_data_elem[:name]
           @level_minimum  = elem[:levelMin].to_i
           @level_maximum  = elem[:levelMax].to_i
           @party_size     = elem[:partySize].to_i
@@ -73,23 +75,13 @@ module Wowr
           @heroic         = elem[:hasHeroic].to_i == 1 ? true : false
 
           @bosses = Bosses.new
-
           (elem/:boss).each do |elem|
-            boss = Wowr::Classes::Boss.new(elem)
+            boss = Boss.new(elem)
+
+            name_id = boss.name_id ? boss.name_id : boss.id
+            boss.name = name_data_elem.search("boss[@id='#{name_id}']").first[:name]
+
             @bosses[boss.id, boss.key] = boss
-          end
-        end
-
-        # Assigns the dungeon's name as well as the name of all bosses in this
-        # dungeon
-        #
-        # @param [Nokogiri::XML::Element] elem <tt>dungeon</tt> element with child <tt>boss</tt> elements
-        def add_name_data(elem)
-          @name = elem[:name]
-
-          (elem/:boss).each do |boss_elem|
-            id = boss_elem[:id].to_i
-            @bosses[id].name = boss_elem[:name]
           end
         end
       end

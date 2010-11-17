@@ -371,7 +371,33 @@ describe Wowr::API::API do
   end
 
   describe "#get_dungeons" do
-    it { pending }
+    # OPTIMIZE: This test is *slow*. A big part of it is probably just dealing with the two large files.
+    context "valid XML" do
+      before do
+        FakeWeb.register_uri(:get, /_data\/dungeons\.xml/,      :body => file_fixture('armory/dungeons/dungeons.xml'))
+        FakeWeb.register_uri(:get, /data\/dungeonStrings\.xml/, :body => file_fixture('armory/dungeons/dungeonStrings.xml'))
+        @dungeons = api.get_dungeons
+      end
+
+      describe "results" do
+        it "should be a Hash of Dungeon instances" do
+          @dungeons.should be_kind_of(Hash)
+          @dungeons.first[1].should be_kind_of(Wowr::Classes::Dungeon)
+        end
+      end
+    end
+
+    context "invalid XML" do
+      it "should raise InvalidXML" do
+        # FIXME: clean_registry is not working, or something, causing this spec to fail
+        pending("FakeWeb.clean_registry failure?")
+        FakeWeb.clean_registry
+        FakeWeb.register_uri(:get, /_data\/dungeons\.xml/,      :body => %{<?xml version="1.0" encoding="UTF-8"?><dungeons/>})
+        FakeWeb.register_uri(:get, /data\/dungeonStrings\.xml/, :body => %{<?xml version="1.0" encoding="UTF-8"?><dungeons/>})
+        expect { api.get_dungeons }.to raise_error(Wowr::Exceptions::InvalidXML)
+      end
+    end
+
   end
 
   describe "#login" do
