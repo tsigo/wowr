@@ -21,7 +21,7 @@ module Wowr::Armory::Character::DefenseStats
 
     its(:percent)          { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
     its(:increase_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
-    its(:rating)           { should satisfy { |v| v >= 0 && v <= 100 } }
+    its(:rating)           { should satisfy { |v| v >= 0 && v <= 1000 } }
 
     protected
 

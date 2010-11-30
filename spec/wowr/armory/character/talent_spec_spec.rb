@@ -6,7 +6,7 @@ module Wowr::Armory::Character
 
     its(:active) { should be_true }
     its(:group) { should eql(2) }
-    its(:primary) { should eql("Marksmanship") }
+    its(:primary) { should eql("Beast Mastery") }
     its(:point_distribution) { should match(/^\d+$/) }
 
     protected

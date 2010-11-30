@@ -4,7 +4,7 @@ module Wowr::Armory::Character
   describe Skill do
     subject { Skill.new(fake_element) }
 
-    its(:key)   { should eql('firstaid') }
+    its(:key)   { should eql('spell_holy_sealofsacrifice') }
     its(:name)  { should eql('First Aid') }
     its(:value) { should eql(450) }
     its(:max)   { should eql(450) }

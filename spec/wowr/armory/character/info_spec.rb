@@ -21,7 +21,7 @@ module Wowr::Armory::Character
       its(:faction_id)    { should eql(1) }
       its(:guild)         { should eql('Juggernaut') }
       its(:guild_url)     { should match(/Mal%27Ganis.+Juggernaut/) }
-      its(:points)        { should satisfy { |v| v > 9000 } }
+      its(:points)        { should satisfy { |v| v >= 8960 } }
       its(:realm)         { should eql("Mal'Ganis") }
       its(:battle_group)  { should eql('Stormstrike') }
       its(:last_modified) { should be_kind_of(DateTime) }

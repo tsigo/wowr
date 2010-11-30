@@ -4,7 +4,7 @@ module Wowr::Armory::Character::DefenseStats
   describe Defense do
     subject { Defense.new(fake_element) }
 
-    its(:value)            { should satisfy { |v| v == 400.00 } }
+    its(:value)            { should satisfy { |v| v == -1.00 } }
     its(:increase_percent) { should satisfy { |v| v == 0.00 } }
     its(:decrease_percent) { should satisfy { |v| v == 0.00 } }
     its(:plus_defense)     { should satisfy { |v| v == 0 } }

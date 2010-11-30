@@ -5,9 +5,9 @@ module Wowr::Armory::Character::BaseStats
     subject { Strength.new(fake_element) }
 
     its(:base)       { should satisfy { |v| v > 0 && v < 200 } }
-    its(:effective)  { should satisfy { |v| v > 0 && v < 200 } }
-    its(:attack)     { should satisfy { |v| v > 0 && v < 2000 } }
-    its(:block)      { should satisfy { |v| v > 0 && v < 20 } }
+    its(:effective)  { should satisfy { |v| v > 0 && v < 10000 } }
+    its(:attack)     { should satisfy { |v| v > 0 && v < 10000 } }
+    its(:block)      { should satisfy { |v| v > 0 && v < 2000 } }
 
     protected
 
