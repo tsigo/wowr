@@ -23,38 +23,6 @@ module Wowr
       #   </talentGroup>
       #
       # @todo Rename? It's a Talent Group, not just a Talent Spec
-      class Glyph
-        # The item ID for the particular glyph
-        # @return [Integer]
-        attr_reader :id
-
-        # The specified effect of the glyph
-        # @return [String]
-        attr_reader :effect
-
-        # The name of the glyph
-        # @return [String]
-        attr_reader :name
-
-        # The type of glyph, either "Minor", "Major", or "Prime"
-        # @return [String]
-        attr_reader :type
-
-        # The icon for this glyph
-        # @return [String]
-        attr_reader :icon
-
-        # @param [Nokogiri::XML::Element] elem <tt>glyph</tt> element
-        def initialize(elem)
-          @id = elem[:id].to_i
-          @effect = elem[:effect]
-          @name = elem[:name]
-          @type = elem[:type]
-          @icon = elem[:icon]
-        end
-      end
-
-
       class TalentSpec
         # An array containing the total points in each tree.
         # @note Tree one is in array index 0, two is in 1, and three is in 2
@@ -99,11 +67,7 @@ module Wowr
           @primary            = elem[:prim]
           @point_distribution = tree_elem[:value]
 
-          @glyphs             = []
-          glyph_elem          = elem%'glyphs'
-          glyph_elem.elements.each do |glyph|
-            @glyphs << Glyph.new(glyph)
-          end
+          @glyphs = elem.search('glyph').collect { |g| Wowr::Armory::Item::Glyph.new(g) }
         end
       end
     end

@@ -12,6 +12,7 @@ module Wowr
       autoload :DropCreature, 'item/drop_creature'
       autoload :EquipData,    'item/equip_data'
       autoload :Full,         'item/full'
+      autoload :Glyph,        'item/glyph'
       autoload :Info,         'item/info'
       autoload :Quest,        'item/quest'
       autoload :Reagent,      'item/reagent'
