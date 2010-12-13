@@ -5,7 +5,7 @@ module Wowr::Armory::Character
     subject { Base.new(fake_element) }
 
     its(:name)               { should eql('Sebudai') }
-    its(:level)              { should eql(80) }
+    its(:level)              { should eql(85) }
     its(:url)                { should eql("r=Mal%27Ganis&cn=Sebudai") }
     its(:klass)              { should eql('Hunter') }
     its(:klass_id)           { should eql(3) }
@@ -25,7 +25,7 @@ module Wowr::Armory::Character
 
     # Aliased methods
     its(:to_s)          { should eql('Sebudai') }
-    its(:to_i)          { should eql(80) }
+    its(:to_i)          { should eql(85) }
     its(:last_modified) { should_not be_nil }
     its(:class_id)      { should eql(3) }
     its(:wow_class)     { should eql('Hunter') }

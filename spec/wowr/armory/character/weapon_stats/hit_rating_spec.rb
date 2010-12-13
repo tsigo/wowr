@@ -6,7 +6,7 @@ module Wowr::Armory::Character::WeaponStats
 
     its(:increased_hit_percent) { should be_percentage }
     its(:armor_penetration)     { should be_percentage }
-    its(:value)                 { should satisfy { |v| v > 0 && v < 1000 } }
+    its(:value)                 { should satisfy { |v| v > 0 && v < 3000 } }
 
     protected
 

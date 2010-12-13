@@ -4,11 +4,11 @@ module Wowr::Armory::Character::BaseStats
   describe Intellect do
     subject { Intellect.new(fake_element) }
 
-    its(:base)             { should satisfy { |v| v > 0 && v < 300} }
-    its(:effective)        { should satisfy { |v| v > 0 && v < 3000 } }
+    its(:base)             { should satisfy { |v| v > 0 } }
+    its(:effective)        { should satisfy { |v| v > 0 } }
     its(:mana)             { should satisfy { |v| v > 30000 } }
-    its(:pet_bonus)        { should satisfy { |v| v > 0 && v < 1000 } }
     its(:crit_hit_percent) { should be_percentage }
+    its(:pet_bonus)        { should satisfy { |v| v > 0 } }
 
     protected
 

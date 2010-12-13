@@ -6,7 +6,7 @@ module Wowr::Armory::Character::WeaponStats
 
     its(:additional) { should satisfy { |v| v > 0 && v < 100 } }
     its(:percent)    { should be_percentage }
-    its(:rating)     { should satisfy { |v| v > 0 && v < 500 } }
+    its(:rating)     { should satisfy { |v| v > 0 && v < 1000 } }
     its(:value)      { should satisfy { |v| v > 0 && v < 100 } }
 
     protected

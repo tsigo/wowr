@@ -5,7 +5,7 @@ module Wowr::Armory::Character::SpellStats
     subject { Speed.new(fake_element) }
 
     its(:haste_rating)     { should satisfy { |v| v > 0 && v < 5000 } }
-    its(:percent_increase) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
+    its(:percent_increase) { should be_percentage }
 
     protected
 

@@ -4,9 +4,9 @@ module Wowr::Armory::Character
   describe SecondBar do
     subject { SecondBar.new(fake_element) }
 
-    its(:effective)   { should satisfy { |v| v > 5000 && v < 80000 } }
-    its(:casting)     { should satisfy { |v| v > 0 && v < 2000 } }
-    its(:not_casting) { should satisfy { |v| v > 0 && v < 2000 } }
+    its(:effective)   { should satisfy { |v| v > 5000 && v < 150_000 } }
+    its(:casting)     { should satisfy { |v| v > 0 && v < 4000 } }
+    its(:not_casting) { should satisfy { |v| v > 0 && v < 8000 } }
     its(:type)        { should eql('m') }
 
     protected

@@ -4,10 +4,10 @@ module Wowr::Armory::Character::SpellStats
   describe HitRating do
     subject { HitRating.new(fake_element) }
 
-    its(:penetration)           { should satisfy { |v| v >= 0 && v <= 1000 } }
-    its(:reduced_resist)        { should satisfy { |v| v >= 0 && v <= 1000 } }
-    its(:value)                 { should satisfy { |v| v >= 0 && v <= 1000 } }
     its(:increased_hit_percent) { should be_percentage }
+    its(:penetration)           { should satisfy { |v| v >= 0 } }
+    its(:reduced_resist)        { should satisfy { |v| v >= 0 } }
+    its(:value)                 { should satisfy { |v| v >= 0 } }
 
     protected
 

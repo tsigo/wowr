@@ -5,9 +5,9 @@ module Wowr::Armory::Character::BaseStats
     subject { Stamina.new(fake_element) }
 
     its(:base)       { should satisfy { |v| v > 0 && v < 300} }
-    its(:effective)  { should satisfy { |v| v > 0 && v < 4000 } }
-    its(:health)     { should satisfy { |v| v > 0 && v < 40000 } }
-    its(:pet_bonus)  { should satisfy { |v| v > 0 && v < 1000 } }
+    its(:effective)  { should satisfy { |v| v > 0 && v < 8000 } }
+    its(:health)     { should satisfy { |v| v > 0 && v < 100_000 } }
+    its(:pet_bonus)  { should satisfy { |v| v > 0 && v < 3000 } }
 
     protected
 
