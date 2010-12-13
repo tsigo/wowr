@@ -5,7 +5,7 @@ module Wowr::Armory::Character::SpellStats
     subject { Damage.new(*fake_element) }
 
     its(:value)               { should satisfy { |v| v > 3000 } }
-    its(:crit_chance_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
+    its(:crit_chance_percent) { should be_percentage }
 
     # Aliased methods
     its(:percent) { should_not be_nil }

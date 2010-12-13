@@ -7,8 +7,8 @@ module Wowr::Armory::Character::BaseStats
     its(:base)             { should satisfy { |v| v > 0 && v < 300} }
     its(:effective)        { should satisfy { |v| v > 0 && v < 3000 } }
     its(:mana)             { should satisfy { |v| v > 30000 } }
-    its(:crit_hit_percent) { should satisfy { |v| v.kind_of?(Float) && v > 10.00 } }
     its(:pet_bonus)        { should satisfy { |v| v > 0 && v < 1000 } }
+    its(:crit_hit_percent) { should be_percentage }
 
     protected
 

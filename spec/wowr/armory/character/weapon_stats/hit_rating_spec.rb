@@ -4,8 +4,8 @@ module Wowr::Armory::Character::WeaponStats
   describe HitRating do
     subject { HitRating.new(fake_element) }
 
-    its(:increased_hit_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
-    its(:armor_penetration)     { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
+    its(:increased_hit_percent) { should be_percentage }
+    its(:armor_penetration)     { should be_percentage }
     its(:value)                 { should satisfy { |v| v > 0 && v < 1000 } }
 
     protected

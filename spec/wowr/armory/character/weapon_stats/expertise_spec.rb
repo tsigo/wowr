@@ -5,7 +5,7 @@ module Wowr::Armory::Character::WeaponStats
     subject { Expertise.new(fake_element) }
 
     its(:additional) { should satisfy { |v| v > 0 && v < 100 } }
-    its(:percent)    { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
+    its(:percent)    { should be_percentage }
     its(:rating)     { should satisfy { |v| v > 0 && v < 500 } }
     its(:value)      { should satisfy { |v| v > 0 && v < 100 } }
 

@@ -4,8 +4,8 @@ module Wowr::Armory::Character::DefenseStats
   describe Avoidance, "dodge" do
     subject { Avoidance.new(fake_element) }
 
-    its(:percent)          { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
-    its(:increase_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
+    its(:percent)          { should be_percentage }
+    its(:increase_percent) { should be_percentage }
     its(:rating)           { should satisfy { |v| v >= 0 && v <= 100 } }
 
     protected
@@ -19,8 +19,8 @@ module Wowr::Armory::Character::DefenseStats
   describe Avoidance, "parry" do
     subject { Avoidance.new(fake_element) }
 
-    its(:percent)          { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
-    its(:increase_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
+    its(:percent)          { should be_percentage }
+    its(:increase_percent) { should be_percentage }
     its(:rating)           { should satisfy { |v| v >= 0 && v <= 1000 } }
 
     protected
@@ -34,8 +34,8 @@ module Wowr::Armory::Character::DefenseStats
   describe Avoidance, "block" do
     subject { Avoidance.new(fake_element) }
 
-    its(:percent)          { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
-    its(:increase_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
+    its(:percent)          { should be_percentage }
+    its(:increase_percent) { should be_percentage }
     its(:rating)           { should satisfy { |v| v >= 0 && v <= 100 } }
 
     protected

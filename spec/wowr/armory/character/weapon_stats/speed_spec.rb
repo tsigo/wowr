@@ -4,7 +4,7 @@ module Wowr::Armory::Character::WeaponStats
   describe Speed do
     subject { Speed.new(fake_element) }
 
-    its(:haste_percent) { should satisfy { |v| v >= 0.00 && v <= 100.00 } }
+    its(:haste_percent) { should be_percentage }
     its(:haste_rating)  { should satisfy { |v| v > 0 && v < 2000 } }
     its(:value)         { should satisfy { |v| v > 0.00 && v < 15.00 } }
 
