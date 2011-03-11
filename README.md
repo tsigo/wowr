@@ -2,6 +2,9 @@ Wowr
 ====
 Ruby Library for the World of Warcraft Armory
 
+NOTICE: The current development version accesses the old wowarmory.com XML API, and as such will be outdated. We are willing and anxious to update the library to work with the new battle.net Armory site, just as soon as they provide a non-HTML API for us to use.
+====
+
 Introduction
 ------------
 
